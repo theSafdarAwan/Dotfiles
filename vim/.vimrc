@@ -97,7 +97,6 @@
   call plug#begin('~/.vim/plugged')
 
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'airblade/vim-gitgutter'
   Plug 'morhetz/gruvbox'
   Plug 'tpope/vim-commentary'
   Plug 'dracula/vim', { 'as': 'dracula' }
@@ -132,71 +131,3 @@
  set wildignore+=**/android/*
  set wildignore+=**/ios/*
  set wildignore+=**/.git/*
-
- set laststatus=2
- function! StatuslineGit()
- 	let l:branchname = GitBranch()
- 	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
- endfunction
-
- set statusline=
- set statusline+=%{StatuslineGit()}
- set statusline=
- set statusline+=\ %f
- set statusline=
- set statusline+=%#LineNr#
- set statusline+=\ %f
-
- function! GitBranch()
- 	return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
- endfunction
-
- function! StatuslineGit()
- 	let l:branchname = GitBranch()
- 	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
- endfunction
-
- set statusline=
- set statusline+=%#PmenuSel#
- set statusline+=%{StatuslineGit()}
- set statusline+=%#LineNr#
- set statusline+=\ %f
- set statusline+=%m\
- set statusline+=%=
- set statusline+=%#CursorColumn#
- set statusline+=\ %y
- set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
- set statusline+=\[%{&fileformat}\]
- set statusline+=\ %p%%
- set statusline+=\ %l:%c
- set statusline+=\ 
-
- function! GitStatus()
- 	let [a,m,r] = GitGutterGetHunkSummary()
- 	return printf('+%d ~%d -%d', a, m, r)
- endfunction
- set statusline+=%{GitStatus()}
-
- let g:gitgutter_max_signs = 500  " default value (Vim < 8.1.0614, Neovim < 0.4.0)
- let g:gitgutter_max_signs = -1   " default value (otherwise)
-
- let g:gitgutter_max_signs = 500  " default value (Vim < 8.1.0614, Neovim < 0.4.0)
- let g:gitgutter_max_signs = -1   " default value (otherwise)
- autocmd VimEnter * GitGutter
-
- nmap ghs <Plug>(GitGutterStageHunk)
- nmap ghu <Plug>(GitGutterUndoHunk)
- nmap ghp <Plug>(GitGutterPreviewHunk)
-
- vnoremap <C-[> <C-\><C-n>
- nnoremap <C-t> :terminal<CR>
- nnoremap <leader>so :so %<CR>
-
- " Make Background Transparent
- highlight ColorColumn ctermbg=0 guibg=grey
- hi SignColumn guibg=#1E222a
- hi CursorLineNR guibg=#000000
- highlight Normal guibg=#1E222b
- highlight LineNr guifg=#5eacd3
- highlight netrwDir guifg=#5eacd3
- highlight qfFileName guifg=#aed75f
