@@ -1,0 +1,21 @@
+configuration {
+    modi: [run,drun,window,ssh];
+    location: 6;
+    display-drun: " ❯ ";
+    /* display-drun: ""; */
+    display-run: " ❯ ";
+    /* d */isplay-run: " 省 ";
+    /* display-window: ""; */
+    display-ssh: " $";
+    display-window: " 﩯 ";
+
+    /* show-icons: true; */
+
+    ml-row-down: "ScrollDown";
+    me-select-entry: "MousePrimary";
+    me-accept-entry: "MouseDPrimary";
+    me-accept-custom: "Control+MouseDPrimary";
+
+    font: "MonoLisa 12";
+
+}

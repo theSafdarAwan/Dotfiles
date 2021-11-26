@@ -1,0 +1,322 @@
+{
+    /* Editor Typogrophy */
+    "editor.fontFamily": "Monolisa",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 25,
+    "editor.suggestFontSize": 14,
+    // "editor.suggestLineHeight": 20,
+    "terminal.integrated.fontSize": 13,
+    /* Theme */
+    "workbench.colorCustomizations": {
+        "[Dracula]": {
+            "scrollbar.shadow": "#282a36",
+            "editorGroupHeader.tabsBackground": "#282a36",
+            "tab.activeBackground": "#7059ab66",
+            "breadcrumb.foreground": "#bcbabd"
+        },
+        "[SynthWave '84]": {
+            // "editor.background": "#241f31"
+        },
+        "[Default Dark+]": {
+            "scrollbar.shadow": "#1e1e1e",
+            "editorGroupHeader.tabsBackground": "#1e1e1e",
+            "editor.rangeHighlightBackground": "#7059ab66"
+        },
+        "[GitHub*]": {
+            "editorCursor.background": "#fff"
+        },
+        "[GitHub Dark Dimmed]": {
+            "editorCursor.background": "#000"
+        },
+        "[Nord]": {
+            "scrollbar.shadow": "#2E3440"
+        },
+        "[Dracula Soft]": {
+            "scrollbar.shadow": "#282A36"
+        },
+        "[Palenight (Mild Contrast)]": {
+            "editorCursor.foreground": "#fae04d"
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "[Default Dark+]": {
+            "textMateRules": [
+                {
+                    "scope": ["variable.parameter"],
+                    "settings": {
+                        "fontStyle": "italic"
+                    }
+                }
+            ]
+        },
+        "[Gruvbox*]": {
+            "textMateRules": [
+                {
+                    "scope": "text.html entity.name.tag",
+                    "settings": {
+                        "fontStyle": ""
+                    }
+                }
+            ]
+        }
+    },
+    /* Editor Functinality Changes */
+    "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.editor.enablePreview": false,
+    "editor.suggestSelection": "first",
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.find.cursorMoveOnType": false,
+    /* vscode additional fetures changes */
+    "explorer.copyRelativePathSeparator": "/",
+    "editor.bracketPairColorization.enabled": true,
+    // "editor.hover.enabled": false,
+    /* UI aka Big changes*/
+    "workbench.startupEditor": "none",
+    "workbench.tips.enabled": false,
+    "window.menuBarVisibility": "toggle",
+    // shows you active files in tabs but i like to see a single file
+    "workbench.editor.tabSizing": "shrink",
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.horizontal": "hidden", // add a border around the current line
+    "editor.renderLineHighlight": "none",
+    // shut up and dono't highlight what i selected
+    "editor.selectionHighlight": false,
+    "editor.occurrencesHighlight": false,
+    "editor.matchBrackets": "never",
+    /* Editor Funcatinality Changes */
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "phase",
+    "editor.lineNumbers": "relative",
+    "editor.suggest.showWords": false, // stop showing me words in suggestions
+    "editor.snippetSuggestions": "top", // show snippets at top of the suggestions
+    "screencastMode.onlyKeyboardShortcuts": true,
+    "winopacity.opacity": 240,
+    /* Live Server */
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.NoBrowser": true,
+    /* WebHint */
+    "webhint.enableTelemetry": "disabled",
+    /* Sync settings Backup */
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.gist": "bc0d3a913a0efdbf1aa64a8987952237",
+    /* Formatter */
+    "editor.formatOnSave": true,
+    // Prettier
+    "prettier.printWidth": 200,
+    "prettier.arrowParens": "avoid",
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // Eslint
+    "eslint.format.enable": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": ["javascript"],
+    // "[javascript]": {
+    //     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    // },
+    /* GitLens */
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.enabled": false,
+    "gitlens.blame.format": "${message|50?} ${agoOrDate|14-} ${id} ",
+    "gitlens.statusBar.format": "${'😎'author}${'⏲️'agoOrDate}${'🧲'' via 'pullRequest}${'⭐'id}${'💬'message}",
+    /* Terminal */
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.confirmOnExit": "hasChildProcesses",
+    /* Vim */
+    "vim.leader": " ",
+    "vim.surround": true,
+    // vim Extention
+    "vim.easymotion": false,
+    "vim.camelCaseMotion.enable": false,
+    "vim.replaceWithRegister": false,
+    "vim.sneak": false,
+    "vim.visualstar": false,
+    //
+    "vim.useCtrlKeys": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "#7059ab66",
+    "vim.highlightedyank.duration": 100,
+    "vim.insertModeKeyBindingsNonRecursive": [],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["n"],
+            "after": ["n", "z", "z"]
+        },
+        {
+            "before": ["N"],
+            "after": ["N", "z", "z"]
+        },
+        {
+            "before": ["J"],
+            "after": ["m", "z", "J", "`", "z"]
+        },
+        {
+            "before": ["c", "n"],
+            "after": ["*", "`", "`", "c", "g", "n"]
+        },
+        {
+            "before": ["c", "N"],
+            "after": ["*", "`", "`", "c", "g", "N"]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["leader", "y"],
+            "after": ["\"", "*", "y"]
+        },
+        {
+            "before": ["leader", "Y"],
+            "after": ["m", "z", "g", "g", "\"", "*", "y", "G", "`", "z", "z", "z"]
+        },
+        {
+            "before": ["Y"],
+            "after": ["y", "$"]
+        },
+        {
+            "before": ["leader", "n"],
+            "after": [":nohl"]
+        },
+        {
+            "before": ["leader", "s"],
+            "after": ["\"", "*"]
+        },
+        {
+            "before": ["<leader>", "w"],
+            "after": [":", "w", "<CR>"]
+        },
+        {
+            "before": ["="],
+            "commands": ["editor.action.formatDocument"]
+        },
+        {
+            "before": ["leader", "e", "n"],
+            "commands": ["editor.action.marker.nextInFiles"]
+        },
+        {
+            "before": ["leader", "e", "p"],
+            "commands": ["editor.action.marker.prev"]
+        },
+        {
+            "before": ["u"],
+            "commands": ["undo"]
+        },
+        {
+            "before": ["<C-r>"],
+            "commands": ["redo"]
+        },
+        {
+            "before": ["leader", "d"],
+            "commands": ["editor.action.duplicateSelection"]
+        },
+        {
+            "before": ["leader", "v", "e", "x"],
+            "commands": ["workbench.action.splitEditor"]
+        },
+        {
+            "before": ["leader", "s", "e", "x"],
+            "commands": ["workbench.action.splitEditorOrthogonal"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["leader>", "\""],
+            "after": ["<esc>", "`", ">", "a", "\"", "<esc>", "`", "<", "i", "\"", "<esc>"]
+        },
+        {
+            "before": ["leader>", "'"],
+            "after": ["<esc>", "`", ">", "a", "'", "<esc>", "`", "<", "i", "'", "<esc>"]
+        },
+        {
+            "before": ["leader>", "`"],
+            "after": ["<esc>", "`", ">", "a", "`", "<esc>", "`", "<", "i", "`", "<esc>"]
+        },
+        {
+            "before": ["leader>", ")"],
+            "after": ["<esc>", "`", ">", "a", ")", "<esc>", "`", "<", "i", "(", "<esc>"]
+        },
+        {
+            "before": ["leader>", "["],
+            "after": ["<esc>", "`", ">", "a", "]", "<esc>", "`", "<", "i", "[", "<esc>"]
+        },
+        {
+            "before": ["leader>", "{"],
+            "after": ["<esc>", "`", ">", "a", "}", "<esc>", "`", "<", "i", "{", "<esc>"]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["Y"],
+            "after": ["y", "$"]
+        },
+        {
+            "before": ["leader", "y"],
+            "after": ["\"", "*", "y"]
+        },
+        {
+            "before": ["leader", "p"],
+            "after": ["\"", "_", "d", "P"]
+        },
+        {
+            "before": ["leader", "d"],
+            "commands": ["editor.action.duplicateSelection"]
+        },
+        {
+            "before": ["="],
+            "commands": ["editor.action.formatDocument"]
+        },
+        {
+            "before": [">"],
+            "after": [">", "g", "v"]
+        },
+        {
+            "before": ["<"],
+            "after": ["<", "g", "v"]
+        }
+    ],
+    "vim.handleKeys": {
+        "<C-k>": false,
+        "<C-b>": false,
+        "<C-w>": true,
+        "<C-f>": false,
+        "<C-l>": false,
+        "<C-h>": false,
+        "<C-u>": true,
+        "<C-t>": true
+    },
+    //////////////////
+    "tabnine.experimentalAutoImports": true,
+    "workbench.sideBar.location": "right",
+    "extensions.autoUpdate": false,
+    /* Search (Fuzzy Finder) */
+    "search.mode": "reuseEditor",
+    "search.collapseResults": "alwaysCollapse",
+    "search.exclude": {
+        "**/node_modules": true
+    },
+    "search.searchEditor.reusePriorSearchConfiguration": true,
+    "editor.foldingImportsByDefault": true,
+    "breadcrumbs.enabled": false,
+    "workbench.activityBar.visible": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Dracula"
+}

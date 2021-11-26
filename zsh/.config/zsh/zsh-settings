@@ -1,0 +1,28 @@
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
+
+zstyle ':completion:*' menu select
+# zstyle ':completion::complete:lsof:*' menu yes select
+zmodload zsh/complist
+# compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+# Edit line in vim with ctrl-e:
+bindkey -v
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+# Environment variables set everywhere
+export EDITOR="nvim"
+export TERMINAL="kitty"
+export BROWSER="brave"
+
+# "bat" as manpager
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# "vim" as manpager
+export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+
+export BAT_THEME="base16"

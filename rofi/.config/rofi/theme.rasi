@@ -1,0 +1,143 @@
+@import "sid-color-scheme.rasi"
+* {
+    foreground: @sid-4;
+    background: @sid-0;
+    urgent-background: @sid-11;
+    
+    separatorcolor: @active-background;
+
+	active-background: @sid-3;
+    active-foreground: @sid-6;
+	selected-active-background: @sid-3;
+    selected-background: @sid-1;
+    selected-urgent-background: @sid-11;
+
+    bordercolor: @sid-1;
+}
+
+#window {
+    background-color: @background;
+    border-color: @bordercolor;
+    padding: 0;
+	location: south;
+	anchor: south;
+	height: 15%;
+	width: 30%;
+	orientation: vertical;
+	children: [mainbox];
+	border: 3px 2px 0px 3px;
+}
+#mainbox {
+    border:  0;
+    padding: 2;
+}
+#textbox {
+    text-color: @foreground;
+}
+#listview {
+    fixed-height: 0;
+    border:       3px 0px 0px dash;
+    border-color: @sid-1;
+    spacing:      0px ;
+    scrollbar:    false;
+    padding:      2px 0px 0px ;
+}
+#scrollbar {
+    foreground: @sid-8;
+    background-color: @sid-0;
+    handle-color: @sid-6;
+    border-color: red;
+}
+#element {
+    border:  0;
+    padding: 1px ;
+}
+#element.normal.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @background;
+}
+#element.selected.normal {
+    background-color: @selected-background;
+    text-color:       @foreground;
+}
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @foreground;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @background;
+}
+#element.alternate.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+#element.alternate.urgent {
+    background-color: @urgent-background;
+    text-color:       @foreground;
+}
+#element.alternate.active {
+    background-color: @active-background;
+    text-color:       @foreground;
+}
+#element-text {
+    highlight: underline red;
+    highlight: none #71f094;
+}
+#scrollbar {
+    width:        2px ;
+    border:       0;
+    handle-width: 8px ;
+    padding:      0;
+}
+#sidebar {
+    border:       2px dash 0px 0px ;
+    border-color: @separatorcolor;
+}
+#button.selected {
+    background-color: @selected-background;
+    text-color:       @foreground;
+}
+#inputbar {
+    spacing:    0;
+    text-color: @foreground;
+    padding:    1px ;
+}
+#case-indicator {
+    spacing:    0;
+    text-color: @foreground;
+}
+#entry {
+    spacing:    0;
+    text-color: @sid-3;
+    placeholder: "";
+}
+#prompt {
+    spacing:    0;
+    text-color: @sid-12;
+    border-color: @sid-6;
+    /* border: 2 2 0; */
+    /* padding: 5 10 0; */
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry, num-filtered-rows, case-indicator ];
+}
+#textbox-prompt-colon {
+    expand:     false;
+    /* str:        ":"; */
+    str:        "";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: inherit;
+}
+#num-filtered-rows, num-rows {
+    text-color: @sid-1;
+    expand:     false;
+}

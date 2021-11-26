@@ -1,0 +1,424 @@
+# set the modifier key in my case i use alt 
+set $mod Mod1
+
+# Font for the title bar for windows
+font pango:Source Sans Pro 10
+ # Hide title bar for stacked/tabbed containers
+font pango:DejaVu Sans Mono 0
+
+####################
+#  startup porgrams
+####################
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --no-startup-id --no-startup-id i3exit lock, mode "default" --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# start the status bar
+# exec --no-startup-id polybar sid
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+exec --no-startup-id nitrogen --restore; sleep 1;
+exec --no-startup-id  picom --experimental-backends
+exec --no-startup-id numlockx off
+
+# exec --no-startup-id pcmanfm
+# for_window [class="pcmanfm"] move workspace $ws1
+
+# exec --no-startup-id kitty 
+# for_window [class="kitty"] move workspace $ws2
+
+# exec --no-startup-id thunar 
+# for_window [class="Thunar"] move workspace $ws9
+
+exec --no-startup-id i4-msg 'workspace 2; exec kitty -e tmux new -s new'
+exec --no-startup-id i3-msg 'workspace 1; exec pcmanfm'
+exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/kitty -e htop'
+
+# arbitrary command
+for_window [class="ksnip"] floating enable
+for_window [class="Gpick"] floating enable
+for_window [class="xdman-Main"] floating enable
+
+##################################################
+#    forece open programs on a specific workspace
+##################################################
+# workspace 1
+assign [class="Pcmanfm"] → number 1
+
+# workspace 2
+assign [class="vlc"] → number 2
+assign [class="mpv"] → number 2
+assign [class="Parole"] → number 2
+assign [class="Microsoft-edge-dev"] → number 2
+assign [class="Shotwell"] → number 2
+
+# workspace 3
+# assign [class="kitty"] → number 3
+
+# workspace 4
+assign [class="Brave"] → number 4
+assign [class="discord"] → number 4
+assign [class="qutebrowser"] → number 4
+
+# workspace 5
+assign [class="Nitrogen"] → number 5
+assign [class="stacer"] → number 5
+assign [class="TIPP10"] → number 5
+
+# workspace 7
+assign [class="code-oss"] → number 7
+
+# workspace 8
+assign [class="Gimp"] → number 8
+assign [class="Inkscape"] → number 8
+assign [class="VirtualBox"] → number 8
+assign [class="Genymotion"] → number 8
+assign [class="Blender"] → number 8
+assign [class="kdenlive"] → number 8
+assign [class="obs"] → number 8
+
+####################
+#    system keybind   
+####################
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# don't change focus on mouse focus
+focus_follows_mouse no
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# split orientation(vertical | horizontal) toggle 
+bindsym $mod+semicolon split toggle
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# audio
+bindsym $mod+Ctrl+a exec terminal -e 'alsamixer'
+
+####################
+#    ROFI   
+####################
+# start program launcher
+bindsym $mod+d exec --no-startup-id rofi -show drun
+# show the active programs
+bindsym $mod+Shift+Return exec rofi -show window
+####################
+#    other apps   
+####################
+
+# start a terminal
+bindsym $mod+Return exec kitty
+
+# ksnip
+bindsym $mod+x exec ksnip 
+
+# ranger
+bindsym $mod+shift+j exec kitty -e ranger
+
+# brave
+bindsym $mod+shift+k exec brave
+
+############################
+# marks they are amazing
+############################
+# read 1 character and mark the current window with this character
+bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+
+# read 1 character and go to the window with the character
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+
+#####################
+# reload settings
+#####################
+
+# reload the configuration file
+bindsym $mod+shift+r reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+ctrl+r restart
+
+##############################
+# workspace related settings
+##############################
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+#navigate workspaces next / previous
+bindsym $mod+ctrl+l workspace next
+bindsym $mod+ctrl+h workspace prev
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+###################
+# borders settings
+###################
+# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+###################
+# appearance
+###################
+
+# You can also use any non-zero value if you'd like to have a border
+for_window [class=".*"] border pixel 0
+
+# Hide borders
+# hide_edge_borders none
+
+# change borders
+bindsym $mod+shift+n border none
+bindsym $mod+shift+b border pixel 2
+bindsym $mod+n border normal
+
+# Set inner/outer gaps
+gaps inner 10
+gaps outer -3
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+# smart_gaps on
+
+default_orientation horizontal
+workspace_layout default
+title_align center
+
+#||||||||||||||||||||||||||||||||||||||||||||||||
+#                       MODES
+#||||||||||||||||||||||||||||||||||||||||||||||||
+
+##########################
+# mode resize the window
+##########################
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+##########################
+# mode for kill windows
+##########################
+
+bindsym $mod+q mode "$kill_windows"
+set $kill_windows Kill Windows
+mode "$kill_windows" {
+    bindsym q kill
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+##########################
+# mode for window_movement
+##########################
+bindsym $mod+shift+semicolon mode "$window_movement"
+set $window_movement Move Windows using vim keybind's
+mode "$window_movement" {
+    # move focused window
+    bindsym h move left
+    bindsym j move down
+    bindsym k move up
+    bindsym l move right
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+##########################
+# mode for i3-gaps 
+##########################
+# Press $mod+Shift+g to enter the gap mode. 
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+####################
+#   power
+####################
+
+# Set shut down, restart and locking features
+# bindsym $mod+0 mode "$mode_system"
+# set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+# mode "$mode_system" {
+#     bindsym l exec --no-startup-id i3exit lock, mode "default"
+#     bindsym s exec --no-startup-id i3exit suspend, mode "default"
+#     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+#     bindsym e exec --no-startup-id i3exit logout, mode "default"
+#     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+#     bindsym r exec --no-startup-id i3exit reboot, mode "default"
+#     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+# 
+#     # exit system mode: "Enter" or "Escape"
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+# }
+
+bindsym $mod+0 exec i3exit lock
+
+###########
+# THEME 
+###########
+##############
+# Bars for i3 
+##############
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+# bar {
+#     status_command i3status
+#         colors {
+#             background $bg-color
+#                 separator #757575
+#                 #      border             background         text
+#                 focused_workspace  $bg-color          $bg-color          $text-color
+#                 inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#                 urgent_workspace   $urgent-bg-color   $urgent-bg-color   $inactive-text-color
+#         }
+#     position top
+#     font pango:MonoLisa Regular 9
+# }
+
+# bar {
+# 	font pango:DejaVu Sans Mono, Icons 12
+#       	position top
+#       	# status_command i3status
+#         status_command i3status-rs ~/.config/i3/i3-status-rust.toml
+# }
+
+
+set $bg-color 	         #232531
+set $inactive-bg-color   #373844
+set $text-color          #d3f1f0
+set $inactive-text-color #44475a
+set $urgent-bg-color     #ff5370
+set $unfocused-bg-color  #44475a
+set $focused-bg-color    #4FC1FF
+set $border              #abb2bf
+set $unfocused_border    #abb2bf
+client.background        $text-color
+
+# # class                 border           background         ext color            indicator        child_border
+# client.focused          $bg-color        $bg-color          $text-color          $urgent-bg-color $border
+# client.focused_inactive $bg-color        $bg-color          $text-color          $urgent-bg-color $unfocused_border
+# client.unfocused        $bg-color        $inactive-bg-color $inactive-text-color $urgent-bg-color $unfocused_border
+# client.urgent           $urgent-bg-color $urgent-bg-color   $text-color          $urgent-bg-color $urgent-bg-color
+# client.placeholder      $bg-color        $bg-color          $text-color          $urgent-bg-color $unfocused_border
+
+
+# after removing the title bars for tabbed
+# class                 border           background           ext color            indicator        child_border
+client.focused          $bg-color        $focused-bg-color    $text-color          $urgent-bg-color $border
+client.focused_inactive $bg-color        $bg-color            $text-color          $urgent-bg-color $unfocused_border
+client.unfocused        $bg-color        $unfocused-bg-color  $inactive-text-color $urgent-bg-color $unfocused_border
+client.urgent           $urgent-bg-color $urgent-bg-color     $text-color          $urgent-bg-color $urgent-bg-color
+client.placeholder      $bg-color        $bg-color            $text-color          $urgent-bg-color $unfocused_border
+# force_display_urgency_hint 1500 ms

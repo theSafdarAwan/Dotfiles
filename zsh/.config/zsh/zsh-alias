@@ -1,0 +1,22 @@
+alias ls="ls -l --color=auto"
+
+alias lss="exa --icons -l"
+alias ela="exa --icons -al"
+alias cat="bat"
+
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+
+alias .="cd .."
+alias 2.="cd ../.."
+alias 3.="cd ../../.."
+
+alias l.='ls -a | egrep "^\." --color=always'
+
+alias nf="neofetch --colors 3 9 8 2 7 6 --source $HOME/.config/neofetch/safdar.txt"
+
+# alias nvim="lvim"
+
+# alias clear="/bin/clear; neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/empty.txt | lolcat;"
+alias sid="neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/safdar_in_box.txt | lolcat"

@@ -1,0 +1,17 @@
+[user]
+	name = imSafdarAwan
+	email = imsafdarawan@gmail.com
+[core]
+	editor = nvim
+	autocrlf = input
+[color]
+	ui = true
+[alias]
+# 	lp = log --pretty=format:\"author > %Cred%an %Creset hash > %Cgreen%h %Creset tree hash > %Cgreen%t %Creset parent hash >%Cblue%p %Creset Date > %Cred%cd\"
+	lp = log --pretty=format:\"author > %Cred%an %Creset hash > %Cgreen%h %Creset tree hash > %Cgreen%t %Creset Date > %Cred%cd\"
+    ; la = log --oneline --all
+    ; cm = commit
+    ; ch = checkout
+    ; aa = add .
+    ; ra = restore .
+    ; p = push

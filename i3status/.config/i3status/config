@@ -1,0 +1,35 @@
+general {
+        colors = false
+        interval = 5
+}
+
+order += "wireless wlp3s0"
+order += "battery 0"
+order += "volume master"
+order += "cpu_temperature 0"
+order += "tztime local"
+
+wireless wlp3s0 {
+  format_up = "  %essid (%quality)"
+  format_down = "  NO CARRIER"
+}
+
+battery 0 {
+  format = "  %percentage"
+}
+
+cpu_temperature 0 {
+  format = " Temperature %degrees°C"
+}
+
+volume master {
+  format = " ♪ %volume"
+  format_muted = "Volume %volume"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}
+
+tztime local {
+  format = "  %Y-%m-%d  ⏱ %I:%M %a  %p "
+}

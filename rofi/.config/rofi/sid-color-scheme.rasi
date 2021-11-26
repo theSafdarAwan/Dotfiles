@@ -1,0 +1,20 @@
+* {
+    /* sid theme colour palette */
+    sid-0: #282A36;
+    sid-1: #44475a;
+    sid-2: #373844;
+    sid-3: #abb2bf;
+    sid-4: #d3f1f0;
+    sid-5: #0088cc;
+    sid-6: #0fcfff;
+    sid-7: #b389ef;
+    sid-8: #Fccf6C;
+    sid-9: #264f78;
+    sid-10: #FF79C6;
+    sid-11: #ec6b64;
+    sid-12: #FFFFA5;
+    sid-13: #4FC1FF;
+    sid-14: #71f094;
+    sid-15: #ff5979;
+    sid-16: #469fdb;
+}
