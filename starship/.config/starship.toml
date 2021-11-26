@@ -33,7 +33,7 @@ style = "bold red"
 # vicmd_symbol = "[❮](bold yellow)"
 success_symbol = "[↪](bold green)"
 error_symbol = "[↪](bold red)"
-vicmd_symbol = "[↩](bold red)"
+vicmd_symbol = "[↩](bold yellow)"
 
 [cmd_duration]
 format = 'in \[[⏱ $duration]($style)\]'
