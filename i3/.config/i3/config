@@ -144,9 +144,6 @@ bindsym $mod+x exec ksnip
 # ranger
 bindsym $mod+shift+j exec kitty -e ranger
 
-# brave
-bindsym $mod+shift+k exec brave
-
 ############################
 # marks they are amazing
 ############################
