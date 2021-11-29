@@ -16,13 +16,17 @@ set nowrap
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set hlsearch
+set ignorecase
+set smartcase
 set expandtab
 set noswapfile
 set undofile
 set wildmenu
 
-noremap <leader>ff :FZF<cr>
 vnoremap <c-[> <ESC>
+nnoremap <leader>ff :FZF<cr>
+nnoremap <leader>no :noh<cr>
 
 let g:fzf_colors =
             \ {
