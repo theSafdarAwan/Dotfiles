@@ -9,6 +9,7 @@ let mapleader = " "
 
 syntax on
 colorscheme OceanicNext
+set background=dark
 
 set number
 set relativenumber 
