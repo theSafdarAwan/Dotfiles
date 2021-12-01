@@ -2,7 +2,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-commentary'
 Plug 'https://github.com/rafi/awesome-vim-colorschemes'
-Plug  'https://github.com/mattn/emmet-vim'
+Plug 'https://github.com/mattn/emmet-vim'
+Plug 'tpope/vim-unimpaired'
 call plug#end()
 
 let mapleader = " "
