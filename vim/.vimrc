@@ -7,6 +7,10 @@ call plug#end()
 
 let mapleader = " "
 
+" Add new line above and below
+nnoremap [<leader> mzO<c-[>`z
+nnoremap ]<leader> mzo<c-[>`z
+
 syntax on
 colorscheme OceanicNext
 set background=dark
