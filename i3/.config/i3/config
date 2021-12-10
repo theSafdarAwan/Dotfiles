@@ -36,7 +36,7 @@ exec --no-startup-id numlockx off
 # for_window [class="Thunar"] move workspace $ws9
 
 exec --no-startup-id i4-msg 'workspace 2; exec kitty -e tmux new -s new'
-exec --no-startup-id i3-msg 'workspace 1; exec pcmanfm'
+exec --no-startup-id i3-msg 'workspace 1; exec caja'
 exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/kitty -e htop'
 
 # arbitrary command
@@ -142,7 +142,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+x exec ksnip 
 
 # ranger
-bindsym $mod+shift+j exec kitty -e ranger
+bindsym $mod+shift+j exec caja
 
 ############################
 # marks they are amazing
