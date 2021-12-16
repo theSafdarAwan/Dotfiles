@@ -72,7 +72,7 @@ assign [class="stacer"] → number 5
 assign [class="TIPP10"] → number 5
 
 # workspace 7
-assign [class="code-oss"] → number 7
+assign [class="VSCodium"] → number 7
 
 # workspace 8
 assign [class="Gimp"] → number 8
