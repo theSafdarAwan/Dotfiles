@@ -1,5 +1,5 @@
 # set the modifier key in my case i use alt 
-set $mod Mod4
+set $mod Mod1
 
 # Font for the title bar for windows
 font pango:Source Sans Pro 10
