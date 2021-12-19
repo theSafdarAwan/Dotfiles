@@ -65,6 +65,7 @@ assign [class="Brave"] → number 4
 assign [class="discord"] → number 4
 assign [class="qutebrowser"] → number 4
 assign [class="firefox"] → number 4
+assign [class="Google-chrome-beta"] → number 4
 
 # workspace 5
 assign [class="Nitrogen"] → number 5
