@@ -44,7 +44,7 @@ font-2 = siji:pixelsize=9;1
 font-3 = JetBrainsMono Nerd Font:style=regular:pixelsize=14;3
 
 modules-left = i3 slant-right-c date empty-space-d slant-right-d i3-msg
-modules-center = round-left-c filesystem round-right-c empty-space  round-left-c cpu round-right-c empty-space round-left-c temperature round-right-c  empty-space round-left-c xkeyboard  round-right-c
+modules-center = round-left-c gmail round-right-c empty-space round-left-c filesystem round-right-c empty-space round-left-c cpu round-right-c empty-space round-left-c polypomo round-right-c empty-space round-left-c temperature round-right-c  empty-space round-left-c xkeyboard  round-right-c empty-space qbittorrent
 modules-right = empty-space slant-left-d empty-space-d pulseaudio empty-space-d slant-left-c powermenu
 
 wm-restack = i3
@@ -367,3 +367,37 @@ menu-2-0 = power off
 menu-2-0-exec = i3exit shutdown
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+; and add a polypomo module
+[module/polypomo]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/polypomo
+tail = true
+
+format-background = #282A36
+
+label = %output%
+click-left = ~/.config/polybar/scripts/polypomo toggle
+click-right = ~/.config/polybar/scripts/polypomo  end
+click-middle = ~/.config/polybar/scripts/polypomo lock
+scroll-up = ~/.config/polybar/scripts/polypomo time +60
+scroll-down = ~/.config/polybar/scripts/polypomo time -60
+
+font-0 = fixed:pixelsize=10;1
+font-1 = Noto Emoji:scale=15:antialias=false;0
+
+[module/gmail]
+type = custom/script
+exec = ~/.config/polybar/gmail/launch.py
+tail = true
+click-left = xdg-open https://mail.google.com
+format-background = #282A36
+
+[module/qbittorrent]  
+type = custom/script  
+exec = ~/.config/polybar/scripts/qbittorrent.py
+format = %{F#282A36}%{F#fff}<label>%{F#282A36}
+label-background = #282A36
+;format-background = #282A36
+interval = 0.1
