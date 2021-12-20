@@ -399,5 +399,4 @@ type = custom/script
 exec = ~/.config/polybar/scripts/qbittorrent.py
 format = %{F#282A36}%{F#fff}<label>%{F#282A36}
 label-background = #282A36
-;format-background = #282A36
 interval = 0.1
