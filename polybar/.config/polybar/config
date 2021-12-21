@@ -44,7 +44,7 @@ font-2 = siji:pixelsize=9;1
 font-3 = JetBrainsMono Nerd Font:style=regular:pixelsize=14;3
 
 modules-left = i3 slant-right-c date empty-space-d slant-right-d i3-msg
-modules-center = info-softwarecounter round-left-c gmail round-right-c empty-space round-left-c filesystem round-right-c empty-space round-left-c cpu round-right-c empty-space round-left-c polypomo round-right-c empty-space round-left-c temperature round-right-c  empty-space round-left-c xkeyboard round-right-c empty-space empty-space round-left-c pacman-aur-symbol-trick updates-pacman-aurhelper round-right-c 
+modules-center = info-softwarecounter round-left-c gmail round-right-c empty-space round-left-c filesystem round-right-c empty-space round-left-c cpu round-right-c empty-space round-left-c polypomo round-right-c empty-space round-left-c temperature round-right-c  empty-space round-left-c xkeyboard round-right-c empty-space round-left-c pacman-aur-symbol-trick updates-pacman-aurhelper round-right-c 
 modules-right = empty-space slant-left-d empty-space-d pulseaudio empty-space-d slant-left-c powermenu
 
 wm-restack = i3
