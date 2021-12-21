@@ -404,4 +404,4 @@ type = custom/script
 exec = ~/.config/polybar/scripts/pacman-aur.sh
 format = <label>
 format-background = #282A36
-interval = 10
+interval = 1000
