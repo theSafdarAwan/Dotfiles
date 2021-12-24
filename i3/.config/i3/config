@@ -65,7 +65,7 @@ assign [class="Brave"] → number 4
 assign [class="discord"] → number 4
 assign [class="qutebrowser"] → number 4
 assign [class="firefox"] → number 4
-assign [class="Google-chrome-beta"] → number 4
+assign [class="google-chrome-beta"] → number 4
 
 # workspace 5
 assign [class="Nitrogen"] → number 5
@@ -238,7 +238,7 @@ bindsym $mod+shift+b border pixel 2
 bindsym $mod+n border normal
 
 # Set inner/outer gaps
-gaps inner 10
+gaps inner 8
 gaps outer -3
 
 # Smart gaps (gaps used if only more than one container on the workspace)
