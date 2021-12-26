@@ -1,6 +1,8 @@
 # bindkey -e will be emacs mode
 bindkey -v
 export KEYTIMEOUT=1
+# ZVM_CURSOR_STYLE_ENABLED=false
+ZVM_INSERT_MODE_CURSOR=true
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
