@@ -17,9 +17,7 @@ alias l.='ls -a | egrep "^\." --color=always'
 alias nf="neofetch --colors 3 9 8 2 7 6 --source $HOME/.config/neofetch/safdar.txt"
 
 # tmux
-# alias ats="tmux attach -t"
-# alias ns="tmux new -s"
-# alias tls="tmux ls"
+alias att="tmux attach -t"
 
 # alias nvim="lvim"
 
