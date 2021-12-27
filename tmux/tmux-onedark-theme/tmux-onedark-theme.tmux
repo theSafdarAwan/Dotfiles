@@ -9,17 +9,17 @@ onedark_green="#71f094"
 onedark_visual_grey="#373844"
 onedark_comment_grey="#5a5c68"
 
-get() {
-   local option=$1
-   local default_value=$2
-   local option_value="$(tmux show-option -gqv "$option")"
-
-   if [ -z "$option_value" ]; then
-      echo "$default_value"
-   else
-      echo "$option_value"
-   fi
-}
+# get() {
+#    local option=$1
+#    local default_value=$2
+#    local option_value="$(tmux show-option -gqv "$option")"
+#
+#    if [ -z "$option_value" ]; then
+#       echo "$default_value"
+#    else
+#       echo "$option_value"
+#    fi
+# }
 
 set() {
    local option=$1
@@ -59,7 +59,7 @@ setw "window-status-activity-attr" "none"
 
 setw "window-status-separator" ""
 
-set "window-style" "fg=$onedark_comment_grey"
+set "window-style" "fg=$onedark_white"
 set "window-active-style" "fg=$onedark_white"
 
 set "pane-border-fg" "$onedark_white"
