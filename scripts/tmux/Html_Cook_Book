@@ -7,4 +7,3 @@ tmux send-keys -t 'web dev' 'live-server Html\ Cook\ Books' C-m
 tmux split-window -v -p 30 -t 'web dev'
 tmux send-keys -t 'web dev' ls C-m
 tmux select-window -t 'web dev':1
-tmux attach -t 'web dev'
