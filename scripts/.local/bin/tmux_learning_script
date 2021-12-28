@@ -1,0 +1,21 @@
+cd
+tmux new -s 'tmux' -n testing -d
+tmux split-window -v -t 'tmux'
+tmux split-window -h -t 'tmux'
+
+tmux new-window -t 'tmux' -n 'NOTES'
+tmux new-window -t 'tmux' -n 'vimming'
+tmux new-window -t 'tmux' -n 'scripting'
+
+tmux select-window -t 'tmux':2
+tmux send-keys -t 'tmux' 'cd ~/NOTES/tmux' C-m
+tmux send-keys -t 'tmux' 'clear' C-m
+
+tmux select-window -t 'tmux':3
+tmux send-keys -t 'tmux' 'nvim ~/.tmux.conf' C-m
+
+tmux select-window -t 'tmux':4
+tmux send-keys -t 'tmux' 'cd ~/.dXDG/scripts/.local/bin' C-m
+tmux send-keys -t 'tmux' 'clear' C-m
+
+tmux select-window -t 'tmux':4
