@@ -1,7 +1,7 @@
 cd
 tmux new -s 'tmux' -n testing -d
 tmux split-window -v -t 'tmux'
-tmux split-window -h -t 'tmux'
+tmux split-window -h -p 70 -t 'tmux'
 
 tmux select-pane -t 'tmux':1.2
 tmux clock-mode
