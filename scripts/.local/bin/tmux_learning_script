@@ -17,5 +17,6 @@ tmux send-keys -t 'tmux' 'nvim ~/.tmux.conf' C-m
 tmux select-window -t 'tmux':4
 tmux send-keys -t 'tmux' 'cd ~/.dXDG/scripts/.local/bin' C-m
 tmux send-keys -t 'tmux' 'clear' C-m
+tmux send-keys -t 'tmux' 'ls' C-m
 
 tmux select-window -t 'tmux':4
