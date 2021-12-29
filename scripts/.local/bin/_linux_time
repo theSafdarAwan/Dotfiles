@@ -1,0 +1,25 @@
+cd
+tmux new -s 'linux' -n normal -d
+tmux split-window -v -p 25 -t 'linux'
+tmux split-window -h -p 75 -t 'linux'
+
+tmux select-pane -t 'linux':1.1
+tmux send-keys -t 'linux' 'nf' C-m
+tmux select-pane -t 'linux':1.2
+tmux clock-mode
+tmux select-pane -t 'linux':1.3
+
+tmux new-window -t 'linux' -n 'NEOVIM'
+tmux new-window -t 'linux' -n 'DIR'
+
+tmux select-window -t 'linux':2
+tmux send-keys -t 'linux' 'cd ~/.config/nvim' C-m
+tmux send-keys -t 'linux' 'clear' C-m
+tmux send-keys -t 'linux' 'lss' C-m
+
+tmux select-window -t 'linux':3
+tmux send-keys -t 'linux' 'cd /' C-m
+tmux send-keys -t 'linux' 'clear' C-m
+tmux send-keys -t 'linux' 'lss' C-m
+
+tmux select-window -t 'linux':1
