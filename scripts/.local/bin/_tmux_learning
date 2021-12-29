@@ -1,7 +1,7 @@
 cd
 tmux new -s 'tmux' -n testing -d
-tmux split-window -v -p 25 -t 'tmux'
-tmux split-window -h -p 75 -t 'tmux'
+tmux split-window -v -p 30 -t 'tmux'
+tmux split-window -h -p 70 -t 'tmux'
 
 tmux select-pane -t 'tmux':1.1
 tmux send-keys -t 'tmux' 'nf' C-m
