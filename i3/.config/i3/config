@@ -72,6 +72,7 @@ assign [class="google-chrome-beta"] → number 4
 assign [class="Nitrogen"] → number 5
 assign [class="stacer"] → number 5
 assign [class="TIPP10"] → number 5
+assign [class="Gcolor2"] → number 5
 
 # workspace 7
 assign [class="VSCodium"] → number 7
