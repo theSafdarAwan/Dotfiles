@@ -6,8 +6,8 @@ killall -q polybar
 # polybar-msg cmd quit
 
 # Launch bar1 and bar2
-echo "---" | tee -a /tmp/sid.log /tmp/sid.log
-polybar sid 2>&1 | tee -a /tmp/sid.log & disown
+echo "---" | tee -a /tmp/sid.log /tmp/sid_1.log
+polybar sid_1 2>&1 | tee -a /tmp/sid_1.log & disown
 polybar bottom 2>&1 | tee -a /tmp/polybar2.log & disown
 
 

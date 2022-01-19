@@ -15,7 +15,7 @@ alert = #be5046
 ;                       bar
 ;#####################################################
 
-[bar/sid]
+[bar/sid_1]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 25
@@ -43,9 +43,9 @@ font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
 font-2 = siji:pixelsize=9;1
 font-3 = JetBrainsMono Nerd Font:style=regular:pixelsize=14;3
 
-modules-left = i3 slant-right-c date empty-space-d slant-right-d i3-msg
-modules-center = info-softwarecounter round-left-c gmail round-right-c empty-space round-left-c filesystem round-right-c empty-space round-left-c cpu round-right-c empty-space round-left-c polypomo round-right-c empty-space round-left-c temperature round-right-c  empty-space round-left-c xkeyboard round-right-c empty-space round-left-c pacman-aur-symbol-trick updates-pacman-aurhelper round-right-c 
-modules-right = empty-space slant-left-d empty-space-d pulseaudio empty-space-d slant-left-c powermenu
+modules-left = i3-bar_1 slant-right-bar_1-c date-bar_1 empty-space-bar_1-d slant-right-bar_1-d i3-msg
+modules-center = info-softwarecounter round-left-bar_1-c gmail-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c filesystem-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c cpu-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c polypomo-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c temperature-bar_1 round-right-bar_1-c  empty-space-bar_1 round-left-bar_1-c xkeyboard-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c pacman-aur-symbol-trick-bar_1 updates-pacman-aurhelper-bar_1 round-right-bar_1-c 
+modules-right = empty-space-bar_1 slant-left-bar_1-d empty-space-bar_1-d pulseaudio-bar_1 empty-space-bar_1-d slant-left-bar_1-c powermenu-bar_1
 
 wm-restack = i3
 
@@ -64,7 +64,7 @@ cursor-scroll = ns-resize
 ;                       i3
 ;#####################################################
 
-[module/i3]
+[module/i3-bar_1]
 type = internal/i3
 format = <label-state><label-mode>
 index-sort = true
@@ -113,91 +113,91 @@ ws-icon-7 = 9;%{F#71f094}
 ;              custom modules for appearence
 ;#####################################################
 
-[module/empty-space]
+[module/empty-space-bar_1]
 type = custom/text
 content = "  "
 
-[module/empty-space-b]
+[module/empty-space-bar_1-b]
 type = custom/text
 content = "  "
 content-background = #232531
 
-[module/empty-space-d]
+[module/empty-space-bar_1-d]
 type = custom/text
 content = "  "
 content-background = #abb2bf
 
-[module/round-left]
+[module/round-left-bar_1]
 type = custom/text
 content = 
 content-foreground = #232531
 
-[module/round-right]
+[module/round-right-bar_1]
 type = custom/text
 content = 
 content-foreground = #232531
 
-[module/round-left-c]
+[module/round-left-bar_1-c]
 type = custom/text
 content = 
 content-foreground = #282A36
 
-[module/round-right-c]
+[module/round-right-bar_1-c]
 type = custom/text
 content = 
 content-foreground = #282A36
 
-[module/roundd-left]
+[module/roundd-left-bar_1]
 type = custom/text
 content = 
 content-foreground = #ec6b64 
 
-[module/roundd-right]
+[module/roundd-right-bar_1]
 type = custom/text
 content = 
 content-foreground = #ec6b64
 
-[module/slant-left]
+[module/slant-left-bar_1]
 type = custom/text
 content = 
 content-foreground = #232531
 
-[module/slant-left-c]
+[module/slant-left-bar_1-c]
 type = custom/text
 content = 
 content-foreground = #232531
 content-background = #abb2bf
 
-[module/slant-left-d]
+[module/slant-left-bar_1-d]
 type = custom/text
 content = %{F#abb2bf}
 
-[module/slant-right]
+[module/slant-right-bar_1]
 type = custom/text
 content = 
 content-foreground = #232531
 
-[module/slant-right-c]
+[module/slant-right-bar_1-c]
 type = custom/text
 content = 
 content-foreground = #232531
 content-background = #abb2bf
 
-[module/slant-right-d]
+[module/slant-right-bar_1-d]
 type = custom/text
 content = %{F#abb2bf}
 
-[module/slantt-left]
+[module/slantt-left-bar_1]
 type = custom/text
 content = 
 content-foreground = #232531
 
-[module/slantt-right]
+[module/slantt-right-bar_1]
 type = custom/text
 content = 
 content-foreground = #232531
 
-[module/pacman-aur-symbol-trick]
+[module/pacman-aur-symbol-trick-bar_1]
 type = custom/text
 content = 
 content-background = #282A36
@@ -205,7 +205,7 @@ content-background = #282A36
 ;#####################################################
 ;                   keyboard
 ;#####################################################
-[module/xkeyboard]
+[module/xkeyboard-bar_1]
 type = internal/xkeyboard
 
 blacklist-0 = num lock
@@ -220,7 +220,7 @@ indicator-icon-2 = num lock;-NL;+NL
 ;                   filesystem
 ;#####################################################
 
-[module/filesystem]
+[module/filesystem-bar_1]
 type = internal/fs
 interval = 25
 mount-0 = /
@@ -230,7 +230,7 @@ label-mounted = %{B#282A36}%{F#71f094} %{F#fff}%percentage_used%%
 ;                   xbacklight
 ;#####################################################
 
-[module/xbacklight]
+[module/xbacklight-bar_1]
 type = internal/xbacklight
 format = <label> <bar>
 label = BL
@@ -245,15 +245,18 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
+;#####################################################
+;                   xbacklight
+;#####################################################
 [module/backlight-acpi]
-inherit = module/xbacklight
+inherit = module/xbacklight-bar_1
 type = internal/backlight
 card = intel_backlight
 
 ;#####################################################
 ;                   cpu
 ;#####################################################
-[module/cpu]
+[module/cpu-bar_1]
 type = internal/cpu
 interval = 2
 ; format-prefix = %{B#232531}%{F#0fcfff} 
@@ -274,7 +277,7 @@ ramp-load-7 = %{F#f00000} 
 ;#####################################################
 ;                   memory
 ;#####################################################
-[module/memory]
+[module/memory-bar_1]
 type = internal/memory
 interval = 2
 format-prefix = " "
@@ -285,7 +288,7 @@ label = %gb_used%
 ;#####################################################
 ;                   date
 ;#####################################################
-[module/date]
+[module/date-bar_1]
 type = internal/date
 interval = 5
 format-background = #abb2bf
@@ -302,7 +305,7 @@ label = %{F#232531}%date% %{F#232531}%time%
 ;#####################################################
 ;                   pulseaudio
 ;#####################################################
-[module/pulseaudio]
+[module/pulseaudio-bar_1]
 type = internal/pulseaudio
 format-volume = %{B#abb2bf}<label-volume>
 label-volume = %{F#232531}  %percentage%%
@@ -328,7 +331,7 @@ label-muted = %{B#abb2bf}%{F#232531} %{F#ec6b64} muted
 ;#####################################################
 ;                   temperature
 ;#####################################################
-[module/temperature]
+[module/temperature-bar_1]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
@@ -346,7 +349,7 @@ ramp-foreground = ${colors.foreground-alt}
 ;#####################################################
 ;                   powermenu
 ;#####################################################
-[module/powermenu]
+[module/powermenu-bar_1]
 type = custom/menu
 format-background = #232531
 format-foreground = #DE8C92
@@ -374,7 +377,11 @@ menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
 ; and add a polypomo module
-[module/polypomo]
+
+;#####################################################
+;                   powermenu
+;#####################################################
+[module/polypomo-bar_1]
 type = custom/script
 
 exec = ~/.config/polybar/scripts/polypomo
@@ -392,14 +399,20 @@ scroll-down = ~/.config/polybar/scripts/polypomo time -60
 font-0 = fixed:pixelsize=10;1
 font-1 = Noto Emoji:scale=15:antialias=false;0
 
-[module/gmail]
+;#####################################################
+;                   powermenu
+;#####################################################
+[module/gmail-bar_1]
 type = custom/script
 exec = ~/.config/polybar/gmail/launch.py
 tail = true
 click-left = xdg-open https://mail.google.com
 format-background = #282A36
 
-[module/updates-pacman-aurhelper]
+;#####################################################
+;                   powermenu
+;#####################################################
+[module/updates-pacman-aurhelper-bar_1]
 type = custom/script
 exec = ~/.config/polybar/scripts/pacman-aur.sh
 format = <label>
