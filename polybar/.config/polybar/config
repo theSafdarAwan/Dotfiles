@@ -1,7 +1,7 @@
 ;#####################################################
 ;                       colors
 ;#####################################################
-[colors]
+[colors-bar_1]
 background = #00000000
 ; background = #232531
 background-alt = #444
@@ -23,8 +23,8 @@ height = 25
 ; offset-y = 1%
 radius = 0.0
 fixed-center = false
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${colors-bar_1.background}
+foreground = ${colors-bar_1.foreground}
 
 line-size = 2
 line-color = #ff5979
@@ -96,7 +96,7 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %icon%
-label-urgent-background = ${colors.alert}
+label-urgent-background = ${colors-bar_1.alert}
 label-urgent-padding = 2
 
 ws-icon-0 = 1;%{F#E5C07B}
@@ -243,7 +243,7 @@ bar-fill-font = 2
 bar-fill-foreground = #b389ef
 bar-empty = ─
 bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+bar-empty-foreground = ${colors-bar_1.foreground-alt}
 
 ;#####################################################
 ;                   xbacklight
@@ -261,7 +261,7 @@ type = internal/cpu
 interval = 2
 ; format-prefix = %{B#232531}%{F#0fcfff} 
 format = %{B#282A36}<ramp-load>%{F#fff} <label>
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors-bar_1.foreground-alt}
 format-nderline = #ff5979
 label = %percentage:2%%
 ; Spacing between individual per-core ramps
@@ -281,7 +281,7 @@ ramp-load-7 = %{F#f00000} 
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors-bar_1.foreground-alt}
 ; format-underline = #8BE9FD
 label = %gb_used%
 
@@ -298,7 +298,7 @@ format-background = #abb2bf
 time = %I:%M %p
 time-alt = %A │ %d-%m-%Y
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors-bar_1.foreground-alt}
 ; format-underline = #71f094 
 label = %{F#232531}%date% %{F#232531}%time%
 
@@ -326,7 +326,7 @@ label-muted = %{B#abb2bf}%{F#232531} %{F#ec6b64} muted
 ; bar-volume-fill-font = 2
 ; bar-volume-empty = ━
 ; bar-volume-empty-font = 2
-; bar-volume-empty-foreground = ${colors.foreground-alt}
+; bar-volume-empty-foreground = ${colors_bar_1.foreground-alt}
 
 ;#####################################################
 ;                   temperature
@@ -344,7 +344,7 @@ ramp-0 = %{F#71f094} 
     ramp-1 = %{F#71f094} 
 ramp-2 = %{F#ffcc66} 
 ramp-3 = %{F#f00000} 
-ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = ${colors-bar_1.foreground-alt}
 
 ;#####################################################
 ;                   powermenu
@@ -362,7 +362,7 @@ label-open-foreground = #ec6b64
 label-close =  cancel
 label-close-foreground = #ec6b64
 label-separator =   │  
-label-separator-foreground = ${colors.foreground}
+label-separator-foreground = ${colors-bar_1.foreground}
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
