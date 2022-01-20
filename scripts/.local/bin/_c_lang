@@ -1,64 +1,29 @@
-#!/bin/zsh
+cd ~/Desktop/learning/c_lang
+tmux new -s 'c_lang' -n normal -d
+tmux split-window -v -p 30 -t 'c_lang'
+tmux split-window -h -p 70 -t 'c_lang'
 
-# Clear rbenv variables before starting tmux
-unset RBENV_VERSION
-unset RBENV_DIR
+tmux select-pane -t 'c_lang':1.1
+tmux send-keys -t 'c_lang' 'nf' C-m
+tmux select-pane -t 'c_lang':1.2
+tmux clock-mode
+tmux select-pane -t 'c_lang':1.3
 
-tmux start-server;
+tmux new-window -t 'c_lang' -n 'Editor'
+tmux new-window -t 'c_lang' -n 'Compiler'
+tmux new-window -t 'c_lang' -n 'Executor'
 
-cd /home/safdar/Desktop/learning/c_lang
+tmux select-window -t 'c_lang':2
+tmux send-keys -t 'c_lang' 'lss' C-m
+tmux send-keys -t 'c_lang' 'clear' C-m
+tmux send-keys -t 'c_lang' 'nvim main.c' C-m
 
-# Run on_project_start command.
+tmux select-window -t 'c_lang':3
+tmux send-keys -t 'c_lang' 'clear' C-m
+tmux send-keys -t 'c_lang' 'lss' C-m
 
+tmux select-window -t 'c_lang':4
+tmux send-keys -t 'c_lang' 'clear' C-m
+tmux send-keys -t 'c_lang' 'lss' C-m
 
-
-  # Run pre command.
-  
-  
-  # Run on_project_first_start command.
-  
-
-  # Create the session and the first window. Manually switch to root
-  # directory if required to support tmux < 1.9
-  TMUX= tmux new-session -d -s c_lang -n editor
-  tmux send-keys -t c_lang:1 cd\ /home/safdar/Desktop/learning/c_lang C-m
-
-
-  # Create other windows.
-  tmux new-window -c /home/safdar/Desktop/learning/c_lang -t c_lang:2 -n compiling
-  tmux new-window -c /home/safdar/Desktop/learning/c_lang -t c_lang:3 -n testing
-
-
-  # Window "editor"
-  tmux send-keys -t c_lang:1.1 nvim C-m
-
-  tmux splitw -c /home/safdar/Desktop/learning/c_lang -t c_lang:1
-  tmux select-layout -t c_lang:1 tiled
-  tmux send-keys -t c_lang:1.2 ls C-m
-
-  tmux select-layout -t c_lang:1 tiled
-
-  tmux select-layout -t c_lang:1 main-horizontal
-  tmux select-pane -t c_lang:1.1
-
-
-  # Window "compiling"
-  tmux send-keys -t c_lang:2 gcc\ main.c C-m
-
-
-  # Window "testing"
-  tmux send-keys -t c_lang:3 ./a.out C-m
-
-
-  tmux select-window -t c_lang:1
-  tmux select-pane -t c_lang:1.1
-
-  if [ -z "$TMUX" ]; then
-    tmux -u attach-session -t c_lang
-  else
-    tmux -u switch-client -t c_lang
-  fi
-
-
-    
-# Run on_project_exit command.
+tmux select-window -t 'c_lang':2
