@@ -19,13 +19,13 @@
     background-color: @background;
     border-color: @bordercolor;
     padding: 0;
-	location: south;
-	anchor: south;
-	height: 15%;
-	width: 30%;
+	location: center;
+	anchor: center;
+	height: 25%;
+	width: 35%;
 	orientation: vertical;
 	children: [mainbox];
-	border: 3px 2px 0px 3px;
+	border: 3px 2px 3px 3px;
 }
 #mainbox {
     border:  0;
