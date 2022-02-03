@@ -57,6 +57,7 @@ assign [class="Parole"] → number 2
 assign [class="Shotwell"] → number 2
 assign [class="okular"] → number 2
 assign [class="calibre"] → number 2
+assign [class="Viewnior"] → number 2
 
 # workspace 3
 # assign [class="kitty"] → number 3
