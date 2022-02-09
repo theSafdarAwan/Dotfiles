@@ -82,6 +82,7 @@ assign [class="VSCodium"] → number 7
 assign [class="Gimp"] → number 8
 assign [class="Inkscape"] → number 8
 assign [class="VirtualBox"] → number 8
+assign [class="figma-linux"] → number 8
 assign [class="Genymotion"] → number 8
 assign [class="Blender"] → number 8
 assign [class="kdenlive"] → number 8

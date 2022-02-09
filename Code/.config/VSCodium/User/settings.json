@@ -306,7 +306,6 @@
     //////////////////
     "tabnine.experimentalAutoImports": true,
     "workbench.sideBar.location": "right",
-    "extensions.autoUpdate": false,
     /* Search (Fuzzy Finder) */
     "search.mode": "reuseEditor",
     "search.collapseResults": "alwaysCollapse",
@@ -318,5 +317,6 @@
     "breadcrumbs.enabled": false,
     "workbench.activityBar.visible": false,
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Dracula"
+    "workbench.colorTheme": "Dracula",
+    "vsicons.dontShowNewVersionMessage": true
 }
