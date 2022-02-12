@@ -2,8 +2,8 @@
 ;                       colors
 ;#####################################################
 [colors-bar_1]
-background = #00000000
-; background = #232531
+; background = #00000000
+background = #232531
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #bbbbbb
@@ -29,7 +29,7 @@ foreground = ${colors-bar_1.foreground}
 line-size = 2
 line-color = #ff5979
 
-border-size = 5
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -140,12 +140,12 @@ content-foreground = #232531
 [module/round-left-bar_1-c]
 type = custom/text
 content = 
-content-foreground = #282A36
+content-foreground = #2F3043
 
 [module/round-right-bar_1-c]
 type = custom/text
 content = 
-content-foreground = #282A36
+content-foreground = #2F3043
 
 [module/roundd-left-bar_1]
 type = custom/text
@@ -200,7 +200,7 @@ content-foreground = #232531
 [module/pacman-aur-symbol-trick-bar_1]
 type = custom/text
 content = 
-content-background = #282A36
+content-background = #2F3043
 
 ;#####################################################
 ;                   keyboard
@@ -210,7 +210,7 @@ type = internal/xkeyboard
 
 blacklist-0 = num lock
 blacklist-1 = scroll lock
-format = %{B#282A36}%{F#ffd3d9} %{F#fff} <label-layout>%{B#282A36}%{F#ec6b64} <label-indicator> 
+format = %{B#2F3043}%{F#ffd3d9} %{F#fff} <label-layout>%{B#2F3043}%{F#ec6b64} <label-indicator> 
 
 indicator-icon-0 = caps lock;-CL;+CL
 indicator-icon-1 = scroll lock;;+SL
@@ -224,7 +224,7 @@ indicator-icon-2 = num lock;-NL;+NL
 type = internal/fs
 interval = 25
 mount-0 = /
-label-mounted = %{B#282A36}%{F#71f094} %{F#fff}%percentage_used%%
+label-mounted = %{B#2F3043}%{F#71f094} %{F#fff}%percentage_used%%
 
 ;#####################################################
 ;                   xbacklight
@@ -260,7 +260,7 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 ; format-prefix = %{B#232531}%{F#0fcfff} 
-format = %{B#282A36}<ramp-load>%{F#fff} <label>
+format = %{B#2F3043}<ramp-load>%{F#fff} <label>
 format-prefix-foreground = ${colors-bar_1.foreground-alt}
 format-nderline = #ff5979
 label = %percentage:2%%
@@ -335,8 +335,8 @@ label-muted = %{B#abb2bf}%{F#232531} %{F#ec6b64} muted
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
-format = %{B#282A36}<ramp> <label>
-format-warn = %{B#282A36}<ramp> <label-warn>
+format = %{B#2F3043}<ramp> <label>
+format-warn = %{B#2F3043}<ramp> <label-warn>
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = #dfdfdf
@@ -387,7 +387,7 @@ type = custom/script
 exec = ~/.config/polybar/scripts/polypomo
 tail = true
 
-format-background = #282A36
+format-background = #2F3043
 
 label = %output%
 click-left = ~/.config/polybar/scripts/polypomo toggle
@@ -407,7 +407,7 @@ type = custom/script
 exec = ~/.config/polybar/gmail/launch.py
 tail = true
 click-left = xdg-open https://mail.google.com
-format-background = #282A36
+format-background = #2F3043
 
 ;#####################################################
 ;                   powermenu
@@ -416,5 +416,5 @@ format-background = #282A36
 type = custom/script
 exec = ~/.config/polybar/scripts/pacman-aur.sh
 format = <label>
-format-background = #282A36
+format-background = #2F3043
 interval = 1000
