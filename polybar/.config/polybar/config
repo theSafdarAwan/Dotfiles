@@ -38,10 +38,10 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = fixed:pixelsize=9;3
+font-0 = fixed:pixelsize=9;2
 font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
 font-2 = siji:pixelsize=9;1
-font-3 = JetBrainsMono Nerd Font:style=regular:pixelsize=14;3
+font-3 = JetBrainsMono Nerd Font:style=regular:pixelsize=14;2
 
 modules-left = i3-bar_1 slant-right-bar_1-c date-bar_1 empty-space-bar_1-d slant-right-bar_1-d i3-msg
 modules-center = info-softwarecounter round-left-bar_1-c gmail-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c filesystem-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c cpu-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c polypomo-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c temperature-bar_1 round-right-bar_1-c  empty-space-bar_1 round-left-bar_1-c xkeyboard-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c pacman-aur-symbol-trick-bar_1 updates-pacman-aurhelper-bar_1 round-right-bar_1-c 
