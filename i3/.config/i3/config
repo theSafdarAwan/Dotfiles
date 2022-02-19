@@ -226,14 +226,14 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 ###################
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+# smart_borders on
 
 ###################
 # appearance
 ###################
 
 # You can also use any non-zero value if you'd like to have a border
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 2
 
 # Hide borders
 # hide_edge_borders none
@@ -421,7 +421,7 @@ client.background        $text-color
 
 # after removing the title bars for tabbed
 # class                 border           background           ext color            indicator        child_border
-client.focused          $bg-color        $focused-bg-color    $text-color          $urgent-bg-color $border
+client.focused          $bg-color        $focused-bg-color    $text-color          $border          $unfocused_border
 client.focused_inactive $bg-color        $bg-color            $text-color          $urgent-bg-color $unfocused_border
 client.unfocused        $bg-color        $unfocused-bg-color  $inactive-text-color $urgent-bg-color $unfocused_border
 client.urgent           $urgent-bg-color $urgent-bg-color     $text-color          $urgent-bg-color $urgent-bg-color
