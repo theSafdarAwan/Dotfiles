@@ -17,7 +17,7 @@
 
 #window {
     background-color: @background;
-    border-color: @bordercolor;
+    border-color: @sid-3;
     padding: 0;
 	location: center;
 	anchor: center;
@@ -25,7 +25,7 @@
 	width: 35%;
 	orientation: vertical;
 	children: [mainbox];
-	border: 3px 2px 3px 3px;
+	border: 2px 4px 2px 2px;
 }
 #mainbox {
     border:  0;
@@ -37,7 +37,7 @@
 #listview {
     fixed-height: 0;
     border:       3px 0px 0px dash;
-    border-color: @sid-1;
+    border-color: @sid-3;
     spacing:      0px ;
     scrollbar:    false;
     padding:      2px 0px 0px ;
