@@ -1,4 +1,5 @@
 cd ~/Desktop/learning/cs50\ Computer\ Science
 tmux new -s 'cs50' -n vimming -d
 
+tmux send-keys -t 'cs50' 'clear' C-m
 tmux send-keys -t 'cs50' 'lss' C-m
