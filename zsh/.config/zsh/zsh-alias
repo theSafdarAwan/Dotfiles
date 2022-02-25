@@ -19,6 +19,8 @@ alias nf="neofetch --colors 3 9 8 2 7 6 --source $HOME/.config/neofetch/safdar.t
 # tmux
 alias att="tmux attach -t"
 
+# stardict dictionary
+alias mean="sdcv"
 # alias nvim="lvim"
 
 # alias clear="/bin/clear; neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/empty.txt | lolcat;"
