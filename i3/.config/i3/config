@@ -76,6 +76,7 @@ assign [class="stacer"] → number 5
 assign [class="TIPP10"] → number 5
 assign [class="Gcolor2"] → number 5
 assign [class="Start.tcl"] → number 5
+assign [class="Stardict"] → number 5
 
 # workspace 7
 assign [class="VSCodium"] → number 7
