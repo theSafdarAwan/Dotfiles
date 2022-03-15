@@ -6,7 +6,7 @@ zplug Aloxaf/fzf-tab
 
 zplug "zsh-users/zsh-autosuggestions"
 
-zplug "zsh-users/zsh-syntax-highlighting"
+# zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug "jeffreytse/zsh-vi-mode"
 

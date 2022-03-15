@@ -38,6 +38,7 @@ exec --no-startup-id numlockx off
 exec --no-startup-id i4-msg 'workspace 2; exec kitty -e tmux new -s new'
 exec --no-startup-id i3-msg 'workspace 1; exec caja'
 exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/kitty -e htop'
+exec --no-startup-id i3-msg 'workspace 5; exec stardict'
 
 # arbitrary command
 for_window [class="ksnip"] floating enable
