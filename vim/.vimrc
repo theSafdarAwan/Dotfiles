@@ -29,6 +29,8 @@ set noswapfile
 set undofile
 set wildmenu
 
+" set completeopt = "menuone,noselect"
+
 vnoremap <c-[> <ESC>
 nnoremap <leader>ff :FZF<cr>
 nnoremap <leader>no :noh<cr>
