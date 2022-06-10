@@ -35,10 +35,10 @@ exec --no-startup-id numlockx off
 # exec --no-startup-id thunar 
 # for_window [class="Thunar"] move workspace $ws9
 
-exec --no-startup-id i4-msg 'workspace 2; exec kitty -e tmux new -s new'
-exec --no-startup-id i3-msg 'workspace 1; exec caja'
-exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/kitty -e htop'
-exec --no-startup-id i3-msg 'workspace 5; exec stardict'
+# exec --no-startup-id i3-msg 'workspace 1; exec dolphin'
+# exec --no-startup-id i4-msg 'workspace 2; exec kitty -e tmux new -s new'
+# exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/kitty -e htop'
+# exec --no-startup-id i3-msg 'workspace 5; exec stardict'
 
 # arbitrary command
 for_window [class="ksnip"] floating enable
@@ -49,7 +49,7 @@ for_window [class="xdman-Main"] floating enable
 #    forece open programs on a specific workspace
 ##################################################
 # workspace 1
-assign [class="Pcmanfm"] → number 1
+assign [class="dolphin"] → number 1
 
 # workspace 2
 assign [class="vlc"] → number 2
@@ -79,6 +79,7 @@ assign [class="Gcolor2"] → number 5
 assign [class="Start.tcl"] → number 5
 assign [class="Stardict"] → number 5
 assign [class="notion-app"] → number 5
+assign [class="googledocs-nativefier-e89b69"] → number 5
 
 # workspace 7
 assign [class="VSCodium"] → number 7
@@ -152,7 +153,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+x exec ksnip 
 
 # ranger
-bindsym $mod+shift+j exec caja
+bindsym $mod+shift+j exec dolphin
 
 ############################
 # marks they are amazing
