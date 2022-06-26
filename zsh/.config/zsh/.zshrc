@@ -1,24 +1,10 @@
 export ZDOTDIR=$HOME/.config/zsh
+
 # fm6000 -c random -g 15
 # fm6000 -dog -c random -g 15
 # colorscript.sh -r
 
 eval "$(starship init zsh)"
-
-# zsh-autopair
-if [[ ! -d ~/zsh-plugins/.zsh-autopair ]]; then
-  git clone https://github.com/hlissner/zsh-autopair ~/zsh-plugins/.zsh-autopair
-fi
-
-source ~/zsh-plugins/.zsh-autopair/autopair.zsh
-autopair-init
-
-# zsh-z
-if [[ ! -d ~/zsh-plugins/.zsh-z ]]; then
-  git clone https://github.com/agkozak/.zsh-z.git
-fi
-#
-source ~/zsh-plugins/.zsh-z/zsh-z.plugin.zsh
 
 # # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # # Initialization code that may require console input (password prompts, [y/n]
@@ -30,12 +16,15 @@ source ~/zsh-plugins/.zsh-z/zsh-z.plugin.zsh
 # # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 # [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+source "$ZDOTDIR/zsh-antigen"
+#>>>>>>>> This is a custom prompt but i use starship
 # source "$ZDOTDIR/zsh-prompt"
+#
 source "$ZDOTDIR/zsh-settings"
 source "$ZDOTDIR/zsh-alias"
 source "$ZDOTDIR/zsh-path"
 # source "$ZDOTDIR/zsh-insulter"
-# source "$ZDOTDIR/zsh-fzf-tab"
+source "$ZDOTDIR/zsh-fzf-tab"
 source "$ZDOTDIR/zsh-vi-mode"
 source "$ZDOTDIR/zsh-keybinds"
 source "$ZDOTDIR/zsh-dracula"
@@ -56,7 +45,3 @@ command_not_found_handler () {
 }
 
 # neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/safdar_in_box.txt | lolcat
-
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-alias luamake=~/safdar-local/luamake

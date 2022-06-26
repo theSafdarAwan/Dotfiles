@@ -467,6 +467,9 @@ schemes:
 # *tomorrow-night
 colors: *dracula
 
+# import:
+#   - /home/safdarawan/.config/alacritty/alacritty-master/dracula.yml
+
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
