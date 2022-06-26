@@ -8,7 +8,6 @@ zplug "zsh-users/zsh-autosuggestions"
 
 zplug "zsh-users/zsh-syntax-highlighting"
 
-zplug "jeffreytse/zsh-vi-mode"
 
 zplug "hlissner/zsh-autopair", defer:2
 

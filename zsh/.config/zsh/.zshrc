@@ -5,6 +5,21 @@ export ZDOTDIR=$HOME/.config/zsh
 
 eval "$(starship init zsh)"
 
+# zsh-autopair
+if [[ ! -d ~/zsh-plugins/.zsh-autopair ]]; then
+  git clone https://github.com/hlissner/zsh-autopair ~/zsh-plugins/.zsh-autopair
+fi
+
+source ~/zsh-plugins/.zsh-autopair/autopair.zsh
+autopair-init
+
+# zsh-z
+if [[ ! -d ~/zsh-plugins/.zsh-z ]]; then
+  git clone https://github.com/agkozak/.zsh-z.git
+fi
+#
+source ~/zsh-plugins/.zsh-z/zsh-z.plugin.zsh
+
 # # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # # Initialization code that may require console input (password prompts, [y/n]
 # # confirmations, etc.) must go above this block; everything else may go below.
@@ -20,8 +35,7 @@ source "$ZDOTDIR/zsh-settings"
 source "$ZDOTDIR/zsh-alias"
 source "$ZDOTDIR/zsh-path"
 # source "$ZDOTDIR/zsh-insulter"
-source "$ZDOTDIR/zsh-zplug"
-source "$ZDOTDIR/zsh-fzf-tab"
+# source "$ZDOTDIR/zsh-fzf-tab"
 source "$ZDOTDIR/zsh-vi-mode"
 source "$ZDOTDIR/zsh-keybinds"
 source "$ZDOTDIR/zsh-dracula"
@@ -44,3 +58,5 @@ command_not_found_handler () {
 # neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/safdar_in_box.txt | lolcat
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias luamake=~/safdar-local/luamake

@@ -17,7 +17,7 @@ bindkey '^e' edit-command-line
 # Environment variables set everywhere
 export EDITOR="nvim"
 export TERMINAL="kitty"
-export BROWSER="brave"
+export BROWSER="firefox"
 
 # "bat" as manpager
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"

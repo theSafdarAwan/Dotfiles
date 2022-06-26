@@ -49,7 +49,7 @@ for_window [class="xdman-Main"] floating enable
 #    forece open programs on a specific workspace
 ##################################################
 # workspace 1
-assign [class="dolphin"] → number 1
+assign [class="Pcmanfm"] → number 1
 
 # workspace 2
 assign [class="vlc"] → number 2
@@ -68,7 +68,10 @@ assign [class="Brave"] → number 4
 assign [class="discord"] → number 4
 assign [class="qutebrowser"] → number 4
 assign [class="qBittorrent"] → number 4
+
 assign [class="firefox"] → number 4
+assign [class="Navigator"] → number 4
+
 assign [class="Google-chrome-beta"] → number 4
 
 # workspace 5
@@ -153,7 +156,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+x exec ksnip 
 
 # ranger
-bindsym $mod+shift+j exec dolphin
+bindsym $mod+shift+j exec pcmanfm
 
 ############################
 # marks they are amazing
