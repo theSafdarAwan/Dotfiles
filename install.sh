@@ -56,6 +56,15 @@
 # 50. obs-studio
 # 51. tipp10
 # 52. vlc
+#>>>>>>>>>>>> Thumbnail Utilitie's
+# 53. ffmpegthumbnailer
+# 54. poppler-glib
+# 55. tumbler
+# 56. freetype2
+# 57. libgsf
+# 58. totem
+# 59. evince
+# 60. gnome-epub-thumbnailer 
 
 
 ##################### installed through yay
@@ -73,6 +82,13 @@
 # 12. google-docs-nativefier
 # 13. htop-vim
 # 14. tmuxinator
+
+#>>>>>>>>>>>> Thumbnail Utilitie's
+# 15. raw-thumbnailer
+# 16. f3d
+# 17. folderpreview
+# 18. mcomix
+
 
 
 # Installing nvim language servers
