@@ -7,3 +7,4 @@ bindkey -M menuselect '^[[Z' vi-up-line-or-history
 bindkey -v '^?' backward-delete-char
 bindkey '^j' autosuggest-accept
 bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
