@@ -65,6 +65,7 @@
 # 58. totem
 # 59. evince
 # 60. gnome-epub-thumbnailer 
+# WARN: you have to install the linux[x]-virtualbox-host-modules with respect to your kernal version
 # 61. linux517-virtualbox-host-modules
 # 62. virtualbox-host-modules-arch
 
