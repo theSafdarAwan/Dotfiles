@@ -65,6 +65,8 @@
 # 58. totem
 # 59. evince
 # 60. gnome-epub-thumbnailer 
+# 61. linux517-virtualbox-host-modules
+# 62. virtualbox-host-modules-arch
 
 
 ##################### installed through yay
@@ -131,3 +133,7 @@ COMMENT
 #>>>>>>>>>>>>>>>> Install zsh-antigen
 # mkdir ~/zsh-plugins
 # curl -L git.io/antigen > ~/zsh-plugins/antigen.zsh
+
+#>>>>>>>>>>> Change the default browser to terminal browser you chose in you .rc for gui applications
+# xdg-mime default browser.desktop x-scheme-handler/http
+# xdg-mime default browser.desktop x-scheme-handler/https
