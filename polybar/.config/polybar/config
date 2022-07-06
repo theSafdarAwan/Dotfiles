@@ -99,15 +99,15 @@ label-urgent = %icon%
 label-urgent-background = ${colors-bar_1.alert}
 label-urgent-padding = 2
 
-ws-icon-0 = 1;%{F#E5C07B}
-ws-icon-1 = 2;%{F#81A1C1}
-ws-icon-2 = 3;%{F#0fcfff}
-ws-icon-3 = 4;%{F#ec6b64}
-ws-icon-4 = 5;%{F#AfcE8C}
+ws-icon-0 = 1;%{F#ec6b64}
+ws-icon-1 = 2;%{F#0fcfff}
+ws-icon-2 = 3;%{F#81A1C1}
+ws-icon-3 = 4;%{F#AfcE8C}
+ws-icon-4 = 5;%{F#71f094}
 ws-icon-5 = 7;%{F#bbbbbb}
 ws-icon-6 = 8;%{F#D19A66}
 ; ws-icon-6 = 8;%{F#D19A66}
-ws-icon-7 = 9;%{F#71f094}
+ws-icon-7 = 9;%{F#E5C07B}
 
 ;#####################################################
 ;              custom modules for appearence
