@@ -24,6 +24,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec --no-startup-id nitrogen --restore; sleep 1;
 exec --no-startup-id  picom --experimental-backends
+exec --no-startup-id  redshift
 exec --no-startup-id numlockx off
 
 # exec --no-startup-id pcmanfm
@@ -57,6 +58,7 @@ assign [class="mpv"] → number 2
 assign [class="Parole"] → number 2
 assign [class="Shotwell"] → number 2
 assign [class="okular"] → number 2
+assign [class="Evince"] → number 2
 assign [class="calibre"] → number 2
 assign [class="Viewnior"] → number 2
 
@@ -96,6 +98,7 @@ assign [class="Genymotion"] → number 8
 assign [class="Blender"] → number 8
 assign [class="kdenlive"] → number 8
 assign [class="obs"] → number 8
+assign [class="draw.io"] → number 8
 
 ####################
 #    system keybind   

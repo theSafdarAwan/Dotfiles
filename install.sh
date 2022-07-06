@@ -68,7 +68,7 @@
 # WARN: you have to install the linux[x]-virtualbox-host-modules with respect to your kernal version
 # 61. linux517-virtualbox-host-modules
 # 62. virtualbox-host-modules-arch
-
+# 63. redshift
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
@@ -91,7 +91,7 @@
 # 16. f3d
 # 17. folderpreview
 # 18. mcomix
-
+# 19. pureref
 
 
 # Installing nvim language servers
@@ -138,3 +138,6 @@ COMMENT
 #>>>>>>>>>>> Change the default browser to terminal browser you chose in you .rc for gui applications
 # xdg-mime default browser.desktop x-scheme-handler/http
 # xdg-mime default browser.desktop x-scheme-handler/https
+
+#>>>>>>>>>>> Enable redshift
+# systemctl --user enable redshift.service --now
