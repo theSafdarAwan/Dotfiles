@@ -70,6 +70,7 @@
 # 62. virtualbox-host-modules-arch
 # 63. redshift
 # 64. ansible
+# 65. feh
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
