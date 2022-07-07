@@ -69,6 +69,7 @@
 # 61. linux517-virtualbox-host-modules
 # 62. virtualbox-host-modules-arch
 # 63. redshift
+# 64. ansible
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
