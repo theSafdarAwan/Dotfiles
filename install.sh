@@ -44,33 +44,30 @@
 # 41. blender
 # 42. viewnior
 # 43. virtualbox
-
-# TODO: have to do the 44 one
-# 44. linux419-virtualbox-host-modules
-
-# 45. neofetch
-# 46. bat
-# 47. darktable
-# 48. kdenlive
-# 49. lazygit
-# 50. obs-studio
-# 51. tipp10
-# 52. vlc
-#>>>>>>>>>>>> Thumbnail Utilitie's
-# 53. ffmpegthumbnailer
-# 54. poppler-glib
-# 55. tumbler
-# 56. freetype2
-# 57. libgsf
-# 58. totem
-# 59. evince
-# 60. gnome-epub-thumbnailer 
 # WARN: you have to install the linux[x]-virtualbox-host-modules with respect to your kernal version
-# 61. linux517-virtualbox-host-modules
-# 62. virtualbox-host-modules-arch
-# 63. redshift
-# 64. ansible
-# 65. feh
+# 44. linux517-virtualbox-host-modules
+# 45. virtualbox-host-modules-arch
+
+# 46. neofetch
+# 47. bat
+# 48. darktable
+# 49. kdenlive
+# 50. lazygit
+# 51. obs-studio
+# 52. tipp10
+# 53. vlc
+#>>>>>>>>>>>> Thumbnail Utilitie's
+# 54. ffmpegthumbnailer
+# 55. poppler-glib
+# 56. tumbler
+# 57. freetype2
+# 58. libgsf
+# 59. totem
+# 60. evince
+# 61. gnome-epub-thumbnailer 
+# 62. redshift
+# 63. ansible
+# 64. feh
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
