@@ -43,6 +43,7 @@ exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec kitty -e tmux new -s new'
 exec --no-startup-id i3-msg 'workspace 4; exec notion-app'
 exec --no-startup-id i3-msg 'workspace 4; exec stardict'
+exec --no-startup-id i3-msg 'workspace 2; exec alacritty -e htop'
 exec --no-startup-id i3-msg 'workspace 9; exec pcmanfm'
 
 # arbitrary command
@@ -53,8 +54,6 @@ for_window [class="xdman-Main"] floating enable
 ##################################################
 #    forece open programs on a specific workspace
 ##################################################
-
-workspace_layout tabbed
 
 # workspace 1
 assign [class="Brave"] → number 1
@@ -89,6 +88,9 @@ assign [class="Start.tcl"] → number 4
 assign [class="Stardict"] → number 4
 assign [class="notion-app"] → number 4
 assign [class="googledocs-nativefier-e89b69"] → number 4
+
+# workspace 5
+assign [class="Alacritty"] → number 5
 
 # workspace 7
 assign [class="VSCodium"] → number 7
@@ -267,7 +269,7 @@ gaps outer -3
 # smart_gaps on
 
 default_orientation horizontal
-workspace_layout default
+workspace_layout tabbed
 title_align center
 
 #||||||||||||||||||||||||||||||||||||||||||||||||
