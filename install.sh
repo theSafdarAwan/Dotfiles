@@ -142,3 +142,6 @@ COMMENT
 
 #>>>>>>>>>>> Enable redshift
 # systemctl --user enable redshift.service --now
+
+#>>>>>>>>>>>>>>>>> Polybar extra modules
+# pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
