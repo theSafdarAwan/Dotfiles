@@ -269,7 +269,7 @@ gaps outer -3
 # smart_gaps on
 
 default_orientation horizontal
-workspace_layout tabbed
+workspace_layout default
 title_align center
 
 #||||||||||||||||||||||||||||||||||||||||||||||||
