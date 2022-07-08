@@ -38,7 +38,6 @@
 # 34. python-pip
 # 36. stardict
 # 37. qbittorrent
-# 38. calibre
 # 39. gimp
 # 40. inkscape
 # 41. blender
@@ -63,11 +62,14 @@
 # 57. freetype2
 # 58. libgsf
 # 59. totem
-# 60. evince
-# 61. gnome-epub-thumbnailer 
-# 62. redshift
-# 63. ansible
-# 64. feh
+# 60. gnome-epub-thumbnailer 
+# 61. redshift
+# 62. ansible
+# 63. feh
+
+#>>>>>> Books readers
+# 64. evince
+# 65. foliate
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
