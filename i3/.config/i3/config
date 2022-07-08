@@ -38,10 +38,12 @@ exec --no-startup-id numlockx off
 # exec --no-startup-id thunar 
 # for_window [class="Thunar"] move workspace $ws9
 
-# exec --no-startup-id i3-msg 'workspace 1; exec dolphin'
-# exec --no-startup-id i4-msg 'workspace 2; exec kitty -e tmux new -s new'
-# exec --no-startup-id i3-msg 'workspace 9; exec /usr/bin/kitty -e htop'
-# exec --no-startup-id i3-msg 'workspace 5; exec stardict'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 2; exec kitty -e tmux new -s new'
+exec --no-startup-id i3-msg 'workspace 4; exec notion-app'
+exec --no-startup-id i3-msg 'workspace 4; exec stardict'
+exec --no-startup-id i3-msg 'workspace 9; exec pcmanfm'
 
 # arbitrary command
 for_window [class="ksnip"] floating enable
@@ -51,6 +53,8 @@ for_window [class="xdman-Main"] floating enable
 ##################################################
 #    forece open programs on a specific workspace
 ##################################################
+
+workspace_layout tabbed
 
 # workspace 1
 assign [class="Brave"] → number 1
@@ -161,7 +165,7 @@ bindsym $mod+Return exec kitty
 # ksnip
 bindsym $mod+x exec ksnip 
 
-# ranger
+# file manager
 bindsym $mod+shift+j exec pcmanfm
 
 ############################
@@ -232,7 +236,6 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
 
 ###################
 # borders settings
@@ -305,6 +308,8 @@ mode "$kill_windows" {
 # mode for window_movement
 ##########################
 bindsym $mod+shift+semicolon mode "$window_movement"
+
+bindsym $mod+shift+k mode "$window_movement"
 set $window_movement Move Windows using vim keybind's
 mode "$window_movement" {
     # move focused window
