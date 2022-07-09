@@ -18,7 +18,7 @@
 # 15. lolcat
 # 16. qutebrowser
 # 17. mpv
-# 18. xplr
+# 18. nnn
 # 19. clang
 # 20. ninja
 # 21. gparted
