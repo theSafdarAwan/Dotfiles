@@ -147,3 +147,6 @@ COMMENT
 
 #>>>>>>>>>>>>>>>>> Polybar extra modules
 # pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+
+#>>>>>>>>>>>>>>> Progress for copying and moving in terminal
+# curl https://raw.githubusercontent.com/jarun/advcpmv/master/install.sh --create-dirs -o ./advcpmv/install.sh && (cd advcpmv && sh install.sh)
