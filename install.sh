@@ -70,6 +70,7 @@
 #>>>>>> Books readers
 # 64. evince
 # 65. foliate
+# 66. imv
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
