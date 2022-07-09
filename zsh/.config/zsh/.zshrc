@@ -29,7 +29,6 @@ source "$ZDOTDIR/zsh-vi-mode"
 source "$ZDOTDIR/zsh-keybinds"
 source "$ZDOTDIR/zsh-dracula"
 source "$ZDOTDIR/zsh-syntax-highlighting-dracula.sh"
-source "$ZDOTDIR/zsh-trash.sh"
 
 command_not_found_handler () {
     local life_Warning=(
