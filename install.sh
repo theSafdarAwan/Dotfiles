@@ -71,6 +71,7 @@
 # 64. evince
 # 65. foliate
 # 66. imv
+# 67. ueberzug
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
