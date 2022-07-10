@@ -74,6 +74,7 @@
 
 # 66. imv
 # 67. ueberzug
+# 68. httrack
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
