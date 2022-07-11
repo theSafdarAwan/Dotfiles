@@ -24,11 +24,13 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # exec --no-startup-id nitrogen --restore; sleep 1;
 
-exec --no-startup-id feh --bg-fill ~/.dXDG/wallpaper/arch.png
+exec_always --no-startup-id feh --bg-fill ~/Dotfiles/wallpaper/arch.png
+exec_always --no-startup-id autotiling
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id redshift
-exec --no-startup-id numlockx off
-exec --no-startup-id autotiling
+
+exec_always --no-startup-id numlock off
+
 
 # exec --no-startup-id pcmanfm
 # for_window [class="pcmanfm"] move workspace $ws1
@@ -39,12 +41,11 @@ exec --no-startup-id autotiling
 # exec --no-startup-id thunar 
 # for_window [class="Thunar"] move workspace $ws9
 
-exec --no-startup-id i3-msg 'workspace 1; exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec kitty -e tmux new -s new'
-exec --no-startup-id i3-msg 'workspace 4; exec notion-app'
+# exec --no-startup-id i3-msg 'workspace 1; exec firefox'
+exec --no-startup-id i3-msg 'workspace 2; exec alacritty -e tmux new -s new'
+# exec --no-startup-id i3-msg 'workspace 4; exec notion-app'
 exec --no-startup-id i3-msg 'workspace 4; exec stardict'
-exec --no-startup-id i3-msg 'workspace 2; exec alacritty -e htop'
-exec --no-startup-id i3-msg 'workspace 9; exec pcmanfm'
+# exec --no-startup-id i3-msg 'workspace 9; exec pcmanfm'
 
 # arbitrary command
 for_window [class="ksnip"] floating enable
@@ -67,7 +68,7 @@ assign [class="Navigator"] → number 1
 assign [class="Google-chrome-beta"] → number 1
 
 # workspace 2
-assign [class="kitty"] → number 2
+assign [class="Alacritty"] → number 2
 
 # workspace 3
 assign [class="vlc"] → number 3
@@ -90,7 +91,7 @@ assign [class="notion-app"] → number 4
 assign [class="googledocs-nativefier-e89b69"] → number 4
 
 # workspace 5
-assign [class="Alacritty"] → number 5
+# assign [class="Alacritty"] → number 5
 
 # workspace 7
 assign [class="VSCodium"] → number 7
@@ -156,13 +157,13 @@ bindsym $mod+Ctrl+a exec terminal -e 'alsamixer'
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show drun
 # show the active programs
-bindsym $mod+Shift+Return exec rofi -show window
+bindsym $mod+Shift+Return exec rofi -show combi
 ####################
 #    other apps   
 ####################
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # ksnip
 bindsym $mod+x exec ksnip 

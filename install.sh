@@ -161,3 +161,6 @@ COMMENT
 
 #>>>>>>>>>>>>>>> Progress for copying and moving in terminal
 # curl https://raw.githubusercontent.com/jarun/advcpmv/master/install.sh --create-dirs -o ./advcpmv/install.sh && (cd advcpmv && sh install.sh)
+
+#>>>>>>>>>>>>> Setting up arch
+# sudo localectl set-locale LC_TIME=en_US.utf8

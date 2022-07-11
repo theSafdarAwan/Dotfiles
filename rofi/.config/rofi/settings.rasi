@@ -1,7 +1,8 @@
 configuration {
-    modi: [run,drun,window,ssh];
+    modi: [run,drun,window,ssh,combi];
     location: 6;
     display-drun: " ❯ ";
+    display-combi: " ❯ ";
     /* display-drun: ""; */
     display-run: " ❯ ";
     /* d */isplay-run: " 省 ";
@@ -9,7 +10,7 @@ configuration {
     display-ssh: " $";
     display-window: " 﩯 ";
 
-    /* show-icons: true; */
+    show-icons: true;
 
     ml-row-down: "ScrollDown";
     me-select-entry: "MousePrimary";
