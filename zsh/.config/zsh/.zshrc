@@ -16,6 +16,8 @@ eval "$(starship init zsh)"
 # # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 # [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+source "$ZDOTDIR/zsh-syntax-highlighting-dracula.sh"
+
 source "$ZDOTDIR/zsh-antigen"
 # >>>>>>>> This is a custom prompt but i use starship
 # source "$ZDOTDIR/zsh-prompt"
@@ -28,7 +30,6 @@ source "$ZDOTDIR/zsh-fzf-tab"
 source "$ZDOTDIR/zsh-vi-mode"
 source "$ZDOTDIR/zsh-keybinds"
 source "$ZDOTDIR/zsh-dracula"
-source "$ZDOTDIR/zsh-syntax-highlighting-dracula.sh"
 source "$ZDOTDIR/zsh-nnn"
 
 command_not_found_handler () {
