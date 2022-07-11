@@ -37,8 +37,12 @@ command_not_found_handler () {
         "
                       ¯\_(ツ)_/¯
         "
-        # hey! Mr. type things correctly life doesen't gives 
-        # you second chance but i am giving you. :)
+        "hey! Mr. type things correctly life doesen't gives
+        you second chance but i am giving you. :)"
+        "Are you even trying?!"
+        "Bad."
+        "Boooo!"
+        "Haha, n00b!"
     )
 
     printf "$(tput bold)$(tput setaf 1)$(shuf -n 1 -e "${life_Warning[@]}")$(tput sgr0)" | lolcat
