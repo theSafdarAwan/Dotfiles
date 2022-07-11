@@ -6,109 +6,14 @@ font pango:Source Sans Pro 10
  # Hide title bar for stacked/tabbed containers
 font pango:DejaVu Sans Mono 0
 
-####################
-#  startup porgrams
-####################
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --no-startup-id --no-startup-id i3exit lock, mode "default" --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
-# start the status bar
-# exec --no-startup-id polybar sid
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# exec --no-startup-id nitrogen --restore; sleep 1;
-
-exec_always --no-startup-id feh --bg-fill ~/Dotfiles/wallpaper/arch.png
-exec_always --no-startup-id autotiling
-exec --no-startup-id picom --experimental-backends
-exec --no-startup-id redshift
-
-exec_always --no-startup-id numlock off
-
-
-# exec --no-startup-id pcmanfm
-# for_window [class="pcmanfm"] move workspace $ws1
-
-# exec --no-startup-id kitty 
-# for_window [class="kitty"] move workspace $ws2
-
-# exec --no-startup-id thunar 
-# for_window [class="Thunar"] move workspace $ws9
-
-# exec --no-startup-id i3-msg 'workspace 1; exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec alacritty -e tmux new -s new'
-# exec --no-startup-id i3-msg 'workspace 4; exec notion-app'
-exec --no-startup-id i3-msg 'workspace 4; exec stardict'
-# exec --no-startup-id i3-msg 'workspace 9; exec pcmanfm'
+include ~/.config/i3/modules/startup.conf
+include ~/.config/i3/modules/workspace_assignment.conf
+include ~/.config/i3/modules/theme.conf
 
 # arbitrary command
 for_window [class="ksnip"] floating enable
 for_window [class="Gpick"] floating enable
 for_window [class="xdman-Main"] floating enable
-
-##################################################
-#    forece open programs on a specific workspace
-##################################################
-
-# workspace 1
-assign [class="Brave"] → number 1
-assign [class="discord"] → number 1
-assign [class="qutebrowser"] → number 1
-assign [class="qBittorrent"] → number 1
-
-assign [class="firefox"] → number 1
-assign [class="Navigator"] → number 1
-
-assign [class="Google-chrome-beta"] → number 1
-
-# workspace 2
-assign [class="Alacritty"] → number 2
-
-# workspace 3
-assign [class="vlc"] → number 3
-assign [class="mpv"] → number 3
-assign [class="Parole"] → number 3
-assign [class="Shotwell"] → number 3
-assign [class="okular"] → number 3
-assign [class="Evince"] → number 3
-assign [class="calibre"] → number 3
-assign [class="Viewnior"] → number 3
-
-# workspace 4
-assign [class="Nitrogen"] → number 4
-assign [class="stacer"] → number 4
-assign [class="TIPP10"] → number 4
-assign [class="Gcolor2"] → number 4
-assign [class="Start.tcl"] → number 4
-assign [class="Stardict"] → number 4
-assign [class="notion-app"] → number 4
-assign [class="googledocs-nativefier-e89b69"] → number 4
-
-# workspace 5
-# assign [class="Alacritty"] → number 5
-
-# workspace 7
-assign [class="VSCodium"] → number 7
-
-# workspace 8
-assign [class="Gimp"] → number 8
-assign [class="Inkscape"] → number 8
-assign [class="VirtualBox"] → number 8
-assign [class="figma-linux"] → number 8
-assign [class="Genymotion"] → number 8
-assign [class="Blender"] → number 8
-assign [class="kdenlive"] → number 8
-assign [class="obs"] → number 8
-assign [class="draw.io"] → number 8
-
-# workspace 9
-assign [class="Pcmanfm"] → number 9
 
 ####################
 #    system keybind   
@@ -389,62 +294,3 @@ mode "$mode_gaps_outer" {
 # }
 
 bindsym $mod+0 exec i3exit lock
-
-###########
-# THEME 
-###########
-##############
-# Bars for i3 
-##############
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#     status_command i3status
-#         colors {
-#             background $bg-color
-#                 separator #757575
-#                 #      border             background         text
-#                 focused_workspace  $bg-color          $bg-color          $text-color
-#                 inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-#                 urgent_workspace   $urgent-bg-color   $urgent-bg-color   $inactive-text-color
-#         }
-#     position top
-#     font pango:MonoLisa Regular 9
-# }
-
-# bar {
-# 	font pango:DejaVu Sans Mono, Icons 12
-#       	position top
-#       	# status_command i3status
-#         status_command i3status-rs ~/.config/i3/i3-status-rust.toml
-# }
-
-
-set $bg-color 	         #232531
-set $inactive-bg-color   #373844
-set $text-color          #d3f1f0
-set $inactive-text-color #44475a
-set $urgent-bg-color     #ff5370
-set $unfocused-bg-color  #44475a
-set $focused-bg-color    #4FC1FF
-set $border              #abb2bf
-set $unfocused_border    #abb2bf
-client.background        $text-color
-
-# # class                 border           background         ext color            indicator        child_border
-# client.focused          $bg-color        $bg-color          $text-color          $urgent-bg-color $border
-# client.focused_inactive $bg-color        $bg-color          $text-color          $urgent-bg-color $unfocused_border
-# client.unfocused        $bg-color        $inactive-bg-color $inactive-text-color $urgent-bg-color $unfocused_border
-# client.urgent           $urgent-bg-color $urgent-bg-color   $text-color          $urgent-bg-color $urgent-bg-color
-# client.placeholder      $bg-color        $bg-color          $text-color          $urgent-bg-color $unfocused_border
-
-
-# after removing the title bars for tabbed
-# class                 border           background           ext color            indicator        child_border
-client.focused          $bg-color        $focused-bg-color    $text-color          $border          $unfocused_border
-client.focused_inactive $bg-color        $bg-color            $text-color          $urgent-bg-color $unfocused_border
-client.unfocused        $bg-color        $unfocused-bg-color  $inactive-text-color $urgent-bg-color $unfocused_border
-client.urgent           $urgent-bg-color $urgent-bg-color     $text-color          $urgent-bg-color $urgent-bg-color
-client.placeholder      $bg-color        $bg-color            $text-color          $urgent-bg-color $unfocused_border
-# force_display_urgency_hint 1500 ms
