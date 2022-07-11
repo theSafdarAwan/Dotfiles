@@ -39,13 +39,13 @@
     border:       3px 0px 0px dash;
     border-color: @sid-3;
     spacing:      0px ;
-    scrollbar:    false;
+    scrollbar:    true;
     padding:      2px 0px 0px ;
 }
 #scrollbar {
     foreground: @sid-8;
     background-color: @sid-0;
-    handle-color: @sid-6;
+    handle-color: @sid-17;
     border-color: red;
 }
 #element {
