@@ -48,3 +48,4 @@ command_not_found_handler () {
 }
 
 # neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/safdar_in_box.txt | lolcat
+freshfetch

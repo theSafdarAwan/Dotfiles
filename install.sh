@@ -47,7 +47,7 @@
 # 44. linux517-virtualbox-host-modules
 # 45. virtualbox-host-modules-arch
 
-# 46. neofetch
+# 46. dust
 # 47. bat
 # 48. darktable
 # 49. kdenlive
@@ -76,6 +76,9 @@
 # 67. ueberzug
 # 68. httrack
 
+#>>>>>> Games
+# 69. supertuxkart
+
 ##################### installed through yay
 # 1. neovim-nightly-bin
 # 2. notion-app
@@ -97,7 +100,11 @@
 # 16. f3d
 # 17. folderpreview
 # 18. mcomix
+
 # 19. pureref
+# 20. dupeguru
+# 21. bleachbit
+# 22. freshfetch-git
 
 
 # Installing nvim language servers
