@@ -28,6 +28,7 @@ exec --no-startup-id feh --bg-fill ~/.dXDG/wallpaper/arch.png
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id redshift
 exec --no-startup-id numlockx off
+exec --no-startup-id autotiling
 
 # exec --no-startup-id pcmanfm
 # for_window [class="pcmanfm"] move workspace $ws1
@@ -261,7 +262,7 @@ bindsym $mod+shift+b border pixel 2
 bindsym $mod+n border normal
 
 # Set inner/outer gaps
-gaps inner 6
+gaps inner 8
 gaps outer -3
 
 # Smart gaps (gaps used if only more than one container on the workspace)
