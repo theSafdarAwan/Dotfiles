@@ -111,21 +111,19 @@
 # Installing nvim language servers
 ##################### lua
 # clone project
-<< 'COMMENT' 
-mkdir ~/safdar-local
-cd ~/safdar-local
-
-git clone  --depth=1 https://github.com/sumneko/lua-language-server
-cd lua-language-server
-git submodule update --depth 1 --init --recursive 
-
-cd 3rd/luamake
-./compile/install.sh
-cd ../..
-./3rd/luamake/luamake rebuild
-
-./bin/lua-language-server
-COMMENT
+# mkdir ~/safdar-local
+# cd ~/safdar-local
+#
+# git clone  --depth=1 https://github.com/sumneko/lua-language-server
+# cd lua-language-server
+# git submodule update --depth 1 --init --recursive 
+#
+# cd 3rd/luamake
+# ./compile/install.sh
+# cd ../..
+# ./3rd/luamake/luamake rebuild
+#
+# ./bin/lua-language-server
 
 ########### Cargo
 # cargo install stylua
