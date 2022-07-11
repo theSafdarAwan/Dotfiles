@@ -252,7 +252,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 ###################
 
 # You can also use any non-zero value if you'd like to have a border
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 0
 
 # Hide borders
 # hide_edge_borders none
