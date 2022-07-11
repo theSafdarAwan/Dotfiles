@@ -39,7 +39,6 @@ exec --no-startup-id numlockx off
 # for_window [class="Thunar"] move workspace $ws9
 
 exec --no-startup-id i3-msg 'workspace 1; exec firefox'
-exec --no-startup-id i3-msg 'workspace 1; exec firefox'
 exec --no-startup-id i3-msg 'workspace 2; exec kitty -e tmux new -s new'
 exec --no-startup-id i3-msg 'workspace 4; exec notion-app'
 exec --no-startup-id i3-msg 'workspace 4; exec stardict'

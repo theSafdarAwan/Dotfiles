@@ -105,6 +105,7 @@
 # 20. dupeguru
 # 21. bleachbit
 # 22. freshfetch-git
+# 23. autotiling-git
 
 
 # Installing nvim language servers
