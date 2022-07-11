@@ -274,7 +274,7 @@ schemes:
       cyan:    '#569CD6'
       white:   '#abb2bf'
     bright:
-      black:   '#636571'
+      black:   '#2b2d39'
       red:     '#ff5370'
       green:   '#71f094'
       yellow:  '#FFFFA5'
