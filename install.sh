@@ -18,7 +18,7 @@
 # 15. lolcat
 # 16. qutebrowser
 # 17. mpv
-# 18. nnn
+# 18. fd
 # 19. clang
 # 20. ninja
 # 21. gparted
@@ -106,6 +106,7 @@
 # 21. bleachbit
 # 22. freshfetch-git
 # 23. autotiling-git
+# 24. nnn-nerd
 
 
 # Installing nvim language servers
