@@ -7,3 +7,7 @@ $rg -l0 pattern
 $fzf -m | tr '\n' '\0'
 bin
 bin
+$fzf -m | tr '\n' '\0'
+$fd
+$fd nvim
+$rg -l0 nvim
