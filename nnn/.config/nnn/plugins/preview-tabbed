@@ -47,9 +47,9 @@
 # Author: Léo Villeveygoux
 
 
-XDOTOOL_TIMEOUT=2
-PAGER=${PAGER:-"vim -R"}
-NUKE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins/nuke"
+XDOTOOL_TIMEOUT=1
+PAGER=${PAGER:-"/bin/less"}
+NUKE="/bin/less"
 
 
 if type xterm >/dev/null 2>&1 ; then
