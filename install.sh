@@ -76,13 +76,10 @@
 # 67. ueberzug
 # 68. httrack
 
-#>>>>>> Games
-# 69. supertuxkart
-
-# 70. sxiv
-# 71. xterm
-# 72. zathura
-# 73. zathura-pdf-mupdf
+# 69. sxiv
+# 70. xterm
+# 71. zathura
+# 72. zathura-pdf-mupdf
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
