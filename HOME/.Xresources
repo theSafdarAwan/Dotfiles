@@ -1,0 +1,72 @@
+! urxvt
+URxvt*buffered: true
+URxvt*cursorBlink: true
+URxvt*underlineColor: yellow
+URxvt.font: xft:Source Code Pro:pixelsize=14,xft:DejaVuSansMono Nerd Font:size=8
+fc-list ':charset=f1c5'
+fc-match -s ':charset=f1c5'
+URxvt*depth: 32
+URxvt*borderless: 1
+URxvt*scrollBar: false
+URxvt*loginShell: true
+Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
+URxvt*saveLines: 5000
+URxvt*termName: kitty
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 1
+
+#define S_base03        #282A36
+#define S_base02        #569CD6
+#define S_base01        #586e75
+#define S_base00        #d3f1f0
+#define S_base0         #b389ef
+#define S_base1         #c882e7
+#define S_base2         #abb2bf
+#define S_base3         #cbcbcb
+#define S_yellow        #Fccf6C
+#define S_orange        #DE8C92
+#define S_red           #ff5370
+#define S_magenta       #FF79C6
+#define S_violet        #6c71c4
+#define S_blue          #4FC1FF
+#define S_cyan          #8BE9FD
+#define S_green         #71f094
+
+*background:            S_base03
+*foreground:            S_base00
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
+
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+
+!! green dark/light
+*color2:                S_green
+*color10:               S_base01
+
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
+
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_base0
+
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3
