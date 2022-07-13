@@ -1,8 +1,8 @@
 [global]
     enable_posix_regex = true
     
-    width = 200
-    height = 300
+    width = 600
+    height = 500
 
     notification_limit = 3
     origin = bottom-right
@@ -195,17 +195,17 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#282a36"
     foreground = "#6272a4"
-    timeout = 10
+    timeout = 100
 
 [urgency_normal]
     background = "#282A36"
     foreground = "#50fa7b"
-    timeout = 10
+    timeout = 200
 
 [urgency_critical]
     background = "#282A36"
     foreground = "#Fccf6C"
-    timeout = 0
+    timeout = 300
 
 
 # Every section that isn't one of the above is interpreted as a rules to

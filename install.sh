@@ -81,6 +81,13 @@
 # 71. zathura
 # 72. zathura-pdf-mupdf
 
+# Games
+# 73. supertuxkart
+# 74. minetest
+# 75. openttd
+# 76. warsow
+# 77. 0ad
+
 ##################### installed through yay
 # 1. neovim-nightly-bin
 # 2. notion-app
@@ -110,6 +117,12 @@
 # 23. autotiling-git
 # 24. nnn-nerd
 # 25. tabbed-git
+
+# 26. marktext-bin
+
+#>>>>>>>>> Snaps
+# 1. xonotic
+
 
 
 # Installing nvim language servers
@@ -166,3 +179,11 @@
 
 #>>>>>>>>>>>>> Setting up arch
 # sudo localectl set-locale LC_TIME=en_US.utf8
+
+#>>>>>>>>>>>>> Install snap
+# git clone https://aur.archlinux.org/snapd.git
+# cd snapd
+# makepkg -si
+
+# sudo systemctl enable --now snapd.socket
+# sudo ln -s /var/lib/snapd/snap /snap
