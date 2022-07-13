@@ -72,12 +72,17 @@
 # 64. evince
 # 65. foliate
 
-# 66. imv
+# 66. sxiv
 # 67. ueberzug
 # 68. httrack
 
 #>>>>>> Games
 # 69. supertuxkart
+
+# 70. sxiv
+# 71. xterm
+# 72. zathura
+# 73. zathura-pdf-mupdf
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
@@ -107,6 +112,7 @@
 # 22. freshfetch-git
 # 23. autotiling-git
 # 24. nnn-nerd
+# 25. tabbed-git
 
 
 # Installing nvim language servers

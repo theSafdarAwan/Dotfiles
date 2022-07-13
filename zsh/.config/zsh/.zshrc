@@ -31,6 +31,7 @@ source "$ZDOTDIR/zsh-vi-mode"
 source "$ZDOTDIR/zsh-keybinds"
 source "$ZDOTDIR/zsh-dracula"
 source "$ZDOTDIR/zsh-nnn"
+# source "$ZDOTDIR/zsh-nnn-preview"
 
 command_not_found_handler () {
     local life_Warning=(
