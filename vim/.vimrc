@@ -1,3 +1,10 @@
+highlight Cursor guifg=white guibg=yellow
+highlight iCursor guifg=white guibg=#b8bb26
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
+
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'https://github.com/rafi/awesome-vim-colorschemes'
