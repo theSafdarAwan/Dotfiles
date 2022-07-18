@@ -1,5 +1,6 @@
 highlight Cursor guifg=white guibg=yellow
 highlight iCursor guifg=white guibg=#b8bb26
+
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
@@ -58,3 +59,21 @@ let g:fzf_colors =
             \ 'spinner': ['fg', 'Label'],
             \ 'header':  ['fg', 'Comment'] 
             \}
+
+" cursor shape setting
+let &t_SI = "\<esc>[5 q"
+let &t_SR = "\<esc>[1 q"
+let &t_EI = "\<esc>[1 q"
+set ttimeout
+set ttimeoutlen=1
+set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set ttyfast
+set number
+
+" Optionally reset the cursor on start:
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[1 q"
+autocmd VimEnter * redraw!
+autocmd VimEnter * execute "normal \<C-G>"
+augroup END

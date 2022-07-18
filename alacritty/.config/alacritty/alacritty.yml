@@ -512,9 +512,23 @@ window.opacity: 1.0
 # Allow terminal applications to change Alacritty's window title.
 #dynamic_title: true
 
-#cursor:
-  # Cursor style
-  #
+cursor:
+  # Values for `shape`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Beam
+  vi_mode_style: Block
+  # Values for `blinking`:
+  #   - Never: Prevent the cursor from ever blinking
+  #   - Off: Disable blinking by default
+  #   - On: Enable blinking by default
+  #   - Always: Force the cursor to always blink
+  blinking: Off
+  unfocused_hollow: true
+
+
+  
   # Values for `style`:
   #   - ▇ Block
   #   - _ Underline

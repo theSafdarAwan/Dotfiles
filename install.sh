@@ -88,6 +88,8 @@
 # 76. warsow
 # 77. 0ad
 
+# 78. obsidian
+
 ##################### installed through yay
 # 1. neovim-nightly-bin
 # 2. notion-app
