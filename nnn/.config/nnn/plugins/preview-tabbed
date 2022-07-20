@@ -47,8 +47,10 @@
 # Author: Léo Villeveygoux
 
 
+# XDOTOOL_TIMEOUT=0.1
 XDOTOOL_TIMEOUT=1
 PAGER=${PAGER:-"/bin/less"}
+NEOVIM=${PAGER:-"/sbin/nvim"}
 NUKE="/bin/less"
 
 
@@ -158,6 +160,13 @@ previewer_loop () {
                     sxiv -ae "$XID" "$FILE" &
                 elif type nsxiv >/dev/null 2>&1 ; then
                     nsxiv -ae "$XID" "$FILE" &
+                else
+                    term_nuke "$XID" "$FILE"
+                fi
+                ;;
+            application/epub+zip)
+                if type zathura >/dev/null 2>&1 ; then
+                    zathura -e "$XID" "$FILE" &
                 else
                     term_nuke "$XID" "$FILE"
                 fi
