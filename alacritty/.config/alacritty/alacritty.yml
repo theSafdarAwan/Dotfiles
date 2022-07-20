@@ -243,11 +243,11 @@ schemes:
       background: '#282A36'
       foreground: '#d3f1f0'
     cursor:
-      text: CellBackground
-      cursor: CellForeground
+      text: '#44475a'
+      cursor: '#cbcbcb'
     vi_mode_cursor:
-      text: CellBackground
-      cursor: CellForeground
+      text: '#44475a'
+      cursor: '#cbcbcb'
     search:
       matches:
         foreground: '#303341'
