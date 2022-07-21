@@ -1,1 +1,1 @@
-<a src="https://github.com/TheSafdarAwan/wallpapers">Other wallpapers</a>
+[Other wallpapers](https://github.com/TheSafdarAwan/wallpapers)
