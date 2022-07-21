@@ -78,8 +78,8 @@ set "@prefix_highlight_bg" "$onedark_green"
 set "@prefix_highlight_copy_mode_attr" "fg=$onedark_black,bg=$onedark_green"
 set "@prefix_highlight_output_prefix" "  "
 
-set "status-right" "#[fg=$onedark_red]#{continuum_status}                                         #[fg=$onedark_white,bg=$onedark_black2,nobold,nounderscore,noitalics]#[fg=$onedark_black,bg=$onedark_white,bold] %d-%m-%Y #[fg=$onedark_black,bg=$onedark_white]#[fg=$onedark_red,bg=$onedark_black] %A"
-set "status-left" "#[fg=$onedark_red,bg=$onedark_black,bold] #S #{prefix_highlight}#[fg=$onedark_black,bg=$onedark_white] #[fg=$onedark_black,bg=$onedark_white]#I #[fg=$onedark_white,bg=$onedark_black2]"
+set "status-right" "#[fg=$onedark_white,bg=$onedark_black2,nobold,nounderscore,noitalics]#[fg=$onedark_black,bg=$onedark_white,bold] %d-%m-%Y #[fg=$onedark_black,bg=$onedark_white]#[fg=$onedark_red,bg=$onedark_black] %A"
+set "status-left" "#[fg=$onedark_red,bg=$onedark_black,bold] #S #{prefix_highlight}#[fg=$onedark_black,bg=$onedark_white] #[fg=$onedark_black,bg=$onedark_white]#{continuum_status} #[fg=$onedark_white,bg=$onedark_black2]"
 
 set "window-status-format" "#[fg=$onedark_white] #I:#W "
 set "window-status-current-format" "#[fg=$onedark_yellow,nobold] #I:#W*"
