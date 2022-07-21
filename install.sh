@@ -89,6 +89,7 @@
 # 77. 0ad
 
 # 78. obsidian
+# 79. wmctrl
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
@@ -189,3 +190,6 @@
 
 # sudo systemctl enable --now snapd.socket
 # sudo ln -s /var/lib/snapd/snap /snap
+
+#>>>>>>>>> Install the tmux plugin manager
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
