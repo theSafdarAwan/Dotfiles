@@ -11,6 +11,7 @@ Plug 'tpope/vim-commentary'
 Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'https://github.com/mattn/emmet-vim'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 let mapleader = " "
@@ -18,6 +19,9 @@ let mapleader = " "
 " Add new line above and below
 nnoremap [<leader> mzO<c-[>`z
 nnoremap ]<leader> mzo<c-[>`z
+
+nnoremap <C-[> :nohl<CR>
+nnoremap <leader>so :so %<CR>
 
 syntax on
 colorscheme OceanicNext
