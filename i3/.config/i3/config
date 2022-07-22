@@ -18,6 +18,7 @@ for_window [class="xdman-Main"] floating enable
 ####################
 #    system keybind   
 ####################
+bindsym $mod+w exec ~/bin/set_wallpapers
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed

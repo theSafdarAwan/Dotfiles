@@ -90,6 +90,7 @@
 
 # 78. obsidian
 # 79. wmctrl
+# 80. youtube-dl
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
