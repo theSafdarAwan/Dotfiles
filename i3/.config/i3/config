@@ -63,7 +63,7 @@ bindsym $mod+Ctrl+a exec terminal -e 'alsamixer'
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show drun
 # show the active programs
-bindsym $mod+Shift+Return exec rofi -show combi
+bindsym $mod+Shift+Return exec kitty
 ####################
 #    other apps   
 ####################
