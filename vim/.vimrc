@@ -12,6 +12,7 @@ Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'https://github.com/mattn/emmet-vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-obsession'
 call plug#end()
 
 let mapleader = " "
@@ -22,6 +23,10 @@ nnoremap ]<leader> mzo<c-[>`z
 
 nnoremap <C-[> :nohl<CR>
 nnoremap <leader>so :so %<CR>
+
+" Obsession plugin setting
+nnoremap ZZ :Obsession \| wa \| qa<cr>
+autocmd VimEnter * Obsession
 
 syntax on
 colorscheme OceanicNext
