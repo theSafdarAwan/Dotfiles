@@ -195,3 +195,8 @@
 
 #>>>>>>>>> Install the tmux plugin manager
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+#>>>>>>> how to start the tmux after bootup just install all the plugins for tmux then
+# reload the tmux for sourcing the config file it will create a file in the .config/systemd/user/ called 
+# tmux.service copy it to /etc/systemd/system then execute this command
+# sudo systemctl enable --now tmux.service

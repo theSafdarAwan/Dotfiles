@@ -25,7 +25,8 @@ nnoremap <C-[> :nohl<CR>
 nnoremap <leader>so :so %<CR>
 
 " Obsession plugin setting
-nnoremap ZZ :Obsession \| wa \| qa<cr>
+nnoremap ZZ :wa \| qa<cr>
+nnoremap <leader>S :Obsession!<cr>
 autocmd VimEnter * Obsession
 
 syntax on
