@@ -17,18 +17,6 @@ call plug#end()
 
 let mapleader = " "
 
-" Add new line above and below
-nnoremap [<leader> mzO<c-[>`z
-nnoremap ]<leader> mzo<c-[>`z
-
-nnoremap <C-[> :nohl<CR>
-nnoremap <leader>so :so %<CR>
-
-" Obsession plugin setting
-nnoremap ZZ :wa \| qa<cr>
-nnoremap <leader>S :Obsession!<cr>
-autocmd VimEnter * Obsession
-
 syntax on
 colorscheme OceanicNext
 set background=dark
@@ -48,10 +36,6 @@ set undofile
 set wildmenu
 
 " set completeopt = "menuone,noselect"
-
-vnoremap <c-[> <ESC>
-nnoremap <leader>ff :FZF<cr>
-nnoremap <leader>no :noh<cr>
 
 let g:fzf_colors =
             \ {
@@ -87,3 +71,96 @@ autocmd VimEnter * silent !echo -ne "\e[1 q"
 autocmd VimEnter * redraw!
 autocmd VimEnter * execute "normal \<C-G>"
 augroup END
+
+" Add new line above and below
+nnoremap [<leader> mzO<c-[>`z
+nnoremap ]<leader> mzo<c-[>`z
+
+nnoremap <leader>ff :FZF<cr>
+cmap w!! w !sudo tee > /dev/null %
+
+vnoremap <c-[> <ESC>
+nnoremap <C-[> :nohl<CR>
+nnoremap <leader>so :so %<CR>
+
+" Obsession plugin setting
+nnoremap ZZ :wa \| qa<cr>
+nnoremap <leader>S :Obsession!<cr>
+
+" Center the next searched item
+nnoremap n nzz
+nnoremap N Nzz
+
+" copy the whole line after the cursor
+nnoremap Y y$
+vnoremap Y y$
+
+" Wrap around the selection
+vnoremap <leader>" <esc>`>a"<esc>`<i"<esc>
+vnoremap <leader>' <esc>`>a'<esc>`<i'<esc>
+vnoremap <leader>` <esc>`>a`<esc>`<i`<esc>
+vnoremap <leader>[ <esc>`>a]<esc>`<i[<esc>
+vnoremap <leader>{ <esc>`>a}<esc>`<i{<esc>
+vnoremap <leader>( <esc>`>a)<esc>`<i(<esc>
+vnoremap <leader>* <esc>`>a*<esc>`<i*<esc>
+
+" Remap of the century
+nnoremap cn *``cgn
+nnoremap cN *``cgN
+
+" Paste onto the selection and don't copy the selection to the reg
+vnoremap <leader>p "_dp
+
+" undo break start new change points NOTE: it works only with ! , ` . =
+inoremap ! !<c-g>u
+inoremap ` `<c-g>u
+inoremap . .<c-g>u
+inoremap , ,<c-g>u
+inoremap = =<c-g>u
+
+" Move Lines up and down
+vnoremap <C-j> :m '>+1<cr>gv=gv
+vnoremap <C-k> :m '<-2<cr>gv=gv
+
+nnoremap <leader>R :set relativenumber! \| redraw<cr>
+
+" Add new line above and below
+nnoremap [<leader> mzO<c-[>`z
+nnoremap ]<leader> mzo<c-[>`z
+
+" Copy to the system clipboard
+vnoremap <leader>y "+y
+nnoremap <leader>Y mzgg"+yG zz`z
+
+" Paster From the system clipboard
+nnoremap <leader>p "+p
+" Paste onto the selection and don't copy the selection to the reg
+vnoremap <leader>p _dp
+
+" Yank the whole line after the cursor
+nnoremap Y y$
+
+" Indentation
+vnoremap < <gv
+vnoremap > >gv
+
+" Resize the buffer window
+nnoremap <leader>= :vertical resize +5<cr>
+nnoremap <leader>- :vertical resize -5<cr>
+nnoremap <leader>rp :resize 100<cr><c-l>
+
+" indent the whole document
+nnoremap <leader>I mzggVG=`z<c-l>
+
+" buffers mappings
+nnoremap <TAB> :bnext<cr>
+nnoremap <S-TAB> :bprevious<cr>
+nnoremap <leader>X :bdelte!<cr>
+nnoremap <leader>C :close<cr>
+
+" Spell checking
+" Pressing ,ss will toggle and untoggle spell checking
+nnoremap <leader>ss :set spell!<cr>
+
+" Netrw
+nnoremap <leader>vex :Vexplore<cr><c-w>L :vertical resize 30<cr>

@@ -123,6 +123,8 @@
 # 25. tabbed-git
 
 # 26. marktext-bin
+# 27. peazip-gtk2-bin
+# 27. kmonad-git
 
 #>>>>>>>>> Snaps
 # 1. xonotic

@@ -1,0 +1,14 @@
+[Unit]
+Description=Lacuh Kmonad
+
+[Service]
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/home/safdarawan/bin/start_kbd.sh
+
+Restart=on-failure
+RestartSec=2
+KillMode=process
+
+[Install]
+WantedBy=default.target
