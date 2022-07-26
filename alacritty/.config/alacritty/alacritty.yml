@@ -244,7 +244,7 @@ schemes:
       foreground: '#d3f1f0'
     cursor:
       text: '#44475a'
-      cursor: '#cbcbcb'
+      cursor: '#71f094'
     vi_mode_cursor:
       text: '#44475a'
       cursor: '#cbcbcb'
