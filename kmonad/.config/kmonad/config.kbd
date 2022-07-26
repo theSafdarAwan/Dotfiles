@@ -58,11 +58,6 @@ us_ansi_100%
   _    _    _              _              _    _    _    _
 )
 |#
-;;>>>>>>>>>>>>>>>>>>>>>>>>> alias <<<<<<<<<<<<<<<<<<<<<<<<
-
-(defalias
-    i31 (around (sticky-key 500 ralt) (sticky-key 500 rctl)))
-
 ;;>>>>>>>>>>>>>>>>>>>>>>>>> layers <<<<<<<<<<<<<<<<<<<<<<<<
 ;; new layer
 (deflayer qwerty
@@ -80,15 +75,15 @@ us_ansi_100%
   tab  XX   XX   XX   XX   XX   XX   pgup XX   XX   XX   XX   XX   XX  
   XX   XX   XX   pgdn XX   XX   left down up   rght XX   XX   ret
   lsft XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  lctl XX   @mo1           spc            @qwe XX   XX   XX
+  lctl XX   lalt           spc            @qwe @vim XX   XX
 )
 
 (deflayer vimii
   XX   1    2    3    4    5    6    7    8    9    0    XX   XX   bspc
   tab  XX   XX   XX   XX   XX   XX   pgup XX   XX   XX   XX   XX   XX  
   XX   XX   XX   pgdn XX   XX   left down up   rght XX   XX   ret
-  lsft XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  lctl @qwe lalt           spc            @qwe XX   XX   XX
+  lsft XX   XX   XX   XX   XX   XX   XX   XX   XX   /    XX
+  lctl @qwe lalt           spc            @qwe @vim XX   XX
 )
 
 (defalias 
