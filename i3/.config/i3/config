@@ -43,7 +43,7 @@ floating_modifier $mod
 bindsym $mod+f fullscreen toggle
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -55,27 +55,23 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # audio
-bindsym $mod+Ctrl+a exec terminal -e 'alsamixer'
+bindsym $mod+Ctrl+a exec alacritty -e 'alsamixer'
 
 ####################
 #    ROFI   
 ####################
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show drun
-# show the active programs
-bindsym $mod+Shift+Return exec kitty
 ####################
 #    other apps   
 ####################
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec kitty
 
 # ksnip
 bindsym $mod+x exec ksnip 
-
-# file manager
-bindsym $mod+shift+j exec pcmanfm
 
 ############################
 # marks they are amazing
@@ -91,10 +87,10 @@ bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 #####################
 
 # reload the configuration file
-bindsym $mod+shift+r reload
+bindsym $mod+shift+r restart
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+ctrl+r restart
+bindsym $mod+ctrl+r reload
 
 ##############################
 # workspace related settings
@@ -200,37 +196,27 @@ mode "resize" {
 }
 
 ##########################
-# mode for kill windows
-##########################
-
-bindsym $mod+q mode "$kill_windows"
-set $kill_windows Kill Windows
-mode "$kill_windows" {
-    bindsym q kill
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-##########################
 # mode for window_movement
 ##########################
 bindsym $mod+shift+semicolon mode "$window_movement"
 
-bindsym $mod+shift+k mode "$window_movement"
-set $window_movement Move Windows using vim keybind's
-mode "$window_movement" {
-    # move focused window
-    bindsym h move left
-    bindsym j move down
-    bindsym k move up
-    bindsym l move right
+# bindsym $mod+shift+k mode "$window_movement"
+# set $window_movement Move Windows using vim keybind's
+# mode "$window_movement" {
+#     # move focused window
+#     bindsym h 
+#     bindsym j move down
+#     bindsym k move up
+#     bindsym l move right
 
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
+#     # exit system mode: "Enter" or "Escape"
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+# }
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 ##########################
 # mode for i3-gaps 
