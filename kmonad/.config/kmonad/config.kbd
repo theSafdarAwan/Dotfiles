@@ -32,7 +32,7 @@
   lctl lmet lalt           spc            @qwe rmet XX   XX
 )
 
-(deflayer nvim_in_browser
+(deflayer disalbe_ctrl_key_for_browser
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
@@ -42,5 +42,5 @@
 
 (defalias 
     qwe (layer-switch qwerty)
-    nvb (layer-switch nvim_in_browser)
+    nvb (layer-switch disalbe_ctrl_key_for_browser)
     utl (layer-switch utilize))
