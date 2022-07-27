@@ -1,4 +1,4 @@
-# Dracula Theme (for zsh-syntax-highlighting)
+#Dracula Theme (for zsh-syntax-highlighting)
 #
 # https://github.com/zenorocha/dracula-theme
 #
@@ -10,7 +10,7 @@
 # @author George Pickering <@bigpick>
 # @author Zeno Rocha <hi@zenorocha.com>
 # Paste this files contents inside your ~/.zshrc before you activate zsh-syntax-highlighting
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main cursor)
+# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main cursor)
 typeset -gA ZSH_HIGHLIGHT_STYLES
 # Default groupings per, https://spec.draculatheme.com, try to logically separate
 # possible ZSH_HIGHLIGHT_STYLES settings accordingly...?
