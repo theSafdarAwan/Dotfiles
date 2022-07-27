@@ -92,6 +92,7 @@
 # 79. wmctrl
 # 80. youtube-dl
 # 81. cmatrix
+# 82. links
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
@@ -126,6 +127,7 @@
 # 26. marktext-bin
 # 27. peazip-gtk2-bin
 # 27. kmonad-git
+# 28. todoist
 
 #>>>>>>>>> Snaps
 # 1. xonotic
