@@ -1,13 +1,10 @@
 (defcfg
-  ;; For Linux
   input  (device-file "/dev/input/by-id/usb-Dell_Dell_USB_Keyboard_Hub-event-kbd")
   output (uinput-sink "My KMonad output"
     "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
   cmp-seq ralt 
   cmp-seq-delay 5
-
   fallthrough true
-
   allow-cmd false
 )
 
@@ -24,12 +21,12 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            @vim rmet cmp  rctl
+  lctl lmet lalt           spc            @utl rmet cmp  rctl
 )
 
-(deflayer vim
+(deflayer utilize
   XX   1    2    3    4    5    6    7    8    9    0    XX   XX   bspc
-  tab  XX   XX   XX   XX   XX   XX   pgup XX   XX   XX   XX   XX   XX  
+  tab  home XX   esc  XX   XX   XX   pgup XX   XX   end  XX   XX   XX  
   XX   XX   XX   pgdn XX   XX   left down up   rght XX   XX   ret
   lsft XX   del  XX   XX   XX   XX   XX   XX   XX   /    XX
   lctl @qwe lalt           spc            @qwe rmet XX   XX
@@ -37,4 +34,4 @@
 
 (defalias 
     qwe (layer-switch qwerty)
-    vim (layer-switch vim))
+    utl (layer-switch utilize))

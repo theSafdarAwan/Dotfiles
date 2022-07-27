@@ -92,7 +92,7 @@
     # for longer than idle_threshold seconds.
     # Set to 0 to disable.
     # default 120
-    idle_threshold = 120
+    idle_threshold = 0
    
     # Which monitor should the notifications be displayed on.
     monitor = 0
