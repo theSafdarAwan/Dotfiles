@@ -21,7 +21,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            @utl rmet cmp  rctl
+  lctl lmet lalt           spc            @utl @nvb cmp  rctl
 )
 
 (deflayer utilize
@@ -29,9 +29,18 @@
   tab  home XX   esc  XX   XX   XX   pgup XX   XX   end  XX   XX   XX  
   XX   XX   XX   pgdn XX   XX   left down up   rght XX   XX   ret
   lsft XX   del  XX   XX   XX   XX   XX   XX   XX   /    XX
-  lctl @qwe lalt           spc            @qwe rmet XX   XX
+  lctl lmet lalt           spc            @qwe rmet XX   XX
+)
+
+(deflayer nvim_in_browser
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  XX   lmet lalt           spc            @qwe rmet cmp  rctl
 )
 
 (defalias 
     qwe (layer-switch qwerty)
+    nvb (layer-switch nvim_in_browser)
     utl (layer-switch utilize))
