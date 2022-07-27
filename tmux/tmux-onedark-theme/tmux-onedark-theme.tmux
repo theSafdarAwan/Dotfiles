@@ -58,6 +58,7 @@ setw "window-status-activity-fg" "$onedark_black"
 setw "window-status-activity-attr" "none"
 
 setw "window-status-separator" ""
+set "?window_zoomed_flag" "$onedark_yellow"
 
 set "window-style" "fg=$onedark_white"
 set "window-active-style" "fg=$onedark_white"
@@ -82,4 +83,4 @@ set "status-right" "#[fg=$onedark_white,bg=$onedark_black2,nobold,nounderscore,n
 set "status-left" "#[fg=$onedark_red,bg=$onedark_black,bold] #S #{prefix_highlight}#[fg=$onedark_black,bg=$onedark_white] #[fg=$onedark_black,bg=$onedark_white]#I #[fg=$onedark_white,bg=$onedark_black2]"
 
 set "window-status-format" "#[fg=$onedark_white] #I:#W "
-set "window-status-current-format" "#[fg=$onedark_yellow,nobold] #I:#W*"
+set "window-status-current-format" "#[fg=$onedark_yellow,nobold]#{?window_zoomed_flag,#[fg=$onedark_red],} #I:#W*"
