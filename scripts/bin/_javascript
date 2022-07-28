@@ -1,9 +1,0 @@
-cd ~/Desktop/learning/Javascript
-tmux new -s 'javascript' -n vimming -d
-tmux send-keys -t 'javascript' 'nvim index.html' C-m
-tmux new-window -t 'javascript' -n 'node'
-tmux send-keys -t 'javascript' 'cd ../' C-m
-tmux send-keys -t 'javascript' 'live-server Javascript' C-m
-tmux split-window -v -p 30 -t 'javascript'
-tmux send-keys -t 'javascript' lss C-m
-tmux select-window -t 'javascript':1

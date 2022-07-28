@@ -1,9 +1,0 @@
-cd ~/Desktop/learning/CSS\ Cook\ Books
-tmux new -s 'web dev' -n vimming -d
-tmux send-keys -t 'web dev' 'nvim index.html' C-m
-tmux new-window -t 'web dev' -n 'node'
-tmux send-keys -t 'web dev' 'cd ../' C-m
-tmux send-keys -t 'web dev' 'live-server CSS\ Cook\ Books' C-m
-tmux split-window -v -p 30 -t 'web dev'
-tmux send-keys -t 'web dev' ls C-m
-tmux select-window -t 'web dev':1
