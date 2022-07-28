@@ -1,30 +1,4 @@
 #!/bin/bash
-pidof -x feh-wallpaper_changer.sh | Xorg pkill
 
-time=5m
-dir=~/wallpapers
-
-cd $dir
-
-function comprobar() {
-num=1
-for x in *;
-do
-       let num=$num+1
-done
-}
-
-while [ 1 ]; do
-        comprobar
-	var_ran=$(($RANDOM%$num))
-        var_aum=1
-	for y in *; do
-		if [ "$var_ran" -eq "$var_aum" ]; then
-			feh --bg-fill $y
-			sleep $time
-			break
-		fi		
-		
-		let var_aum=$var_aum+1
-	done
-done
+ps -ef | grep feh-wallpaper_changer.sh | grep -v grep | awk '{print $2}' | xargs kill
+watch -n 600 feh --randomize --bg-fill ~/wallpapers/* > /dev/null
