@@ -1,4 +1,8 @@
 #!/bin/bash
+for pid in $(pidof -x feh-wallpaper_changer.sh); do
+        pid_of_script="$pid"
+        pkill $pid_of_script
+done
 
 time=5m
 dir=~/wallpapers
@@ -10,7 +14,6 @@ num=1
 for x in *;
 do
        let num=$num+1
-
 done
 }
 
