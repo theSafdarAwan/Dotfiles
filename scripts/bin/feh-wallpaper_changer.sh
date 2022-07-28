@@ -1,6 +1,6 @@
 #!/bin/bash
 
-time=60000000
+time=300 # in seconds
 dir=~/wallpapers
 
 cd $dir
