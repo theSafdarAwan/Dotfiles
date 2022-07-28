@@ -9,12 +9,12 @@
 
 if [ -n "$1" ]; then
 	if [ "$(file --mime-type "$1" | awk '{print $NF}' | awk -F '/' '{print $1}')" = "image" ]; then
-        if type nitrogen >/dev/null 2>&1; then
-	        nitrogen --set-zoom-fill --save "$1"
+        if type feh >/dev/null 2>&1; then
+	        feh --bg-fill  "$1"
         elif type wal >/dev/null 2>&1; then
 	        wal -i "$1"
         else
-            printf "nitrogen or pywal missing"
+            printf "feh or pywal missing"
             read -r _
         fi
 
