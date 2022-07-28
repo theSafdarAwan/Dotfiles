@@ -179,7 +179,7 @@ draw_bold_text_with_bright_colors: true
 # COLOR SCHEMES
 schemes:
   ### Atom One ###
-  sid: &sid
+  atom-one: &atom-one
     primary:
       background: '#1a1b26'
       foreground: '#abb2bf'
@@ -292,8 +292,8 @@ schemes:
       cyan:    '#59dffc'
       white:   '#e6e6d1'
 
-  ### Gruvbox dark ###
-  gruvbox-dark: &gruvbox-dark
+  ### Gruvbox ###
+  gruvbox: &gruvbox
     # Default colors
     primary:
       # hard contrast: background = '0x1d2021'
@@ -322,6 +322,39 @@ schemes:
       magenta: '0xd3869b'
       cyan:    '0x8ec07c'
       white:   '0xebdbb2'
+    
+  tokyonight-storm: &tokyonight-storm
+    # TokyoNight Alacritty Colors
+    # Default colors
+    primary:
+      background: '0x24283b'
+      foreground: '0xc0caf5'
+
+    # Normal colors
+    normal:
+      black:   '0x1D202F'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xa9b1d6'
+
+    # Bright colors
+    bright:
+      black:   '0x414868'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xbb9af7'
+      cyan:    '0x7dcfff'
+      white:   '0xc0caf5'
+
+    indexed_colors:
+      - { index: 16, color: '0xff9e64' }
+      - { index: 17, color: '0xdb4b4b' }
 
   ### Nord ###
   nord: &nord
@@ -352,119 +385,17 @@ schemes:
       cyan:    '0x8FBCBB'
       white:   '0xECEFF4'
 
-  ### Solarized Light ###
-  solarized-light: &solarized-light
-    # Default colors
-    primary:
-      background: '#fdf6e3' # base3
-      foreground: '#657b83' # base00
-
-    # Cursor colors
-    cursor:
-      text:   '#fdf6e3' # base3
-      cursor: '#657b83' # base00
-
-    # Normal colors
-    normal:
-      black:   '#073642' # base02
-      red:     '#dc322f' # red
-      green:   '#859900' # green
-      yellow:  '#b58900' # yellow
-      blue:    '#268bd2' # blue
-      magenta: '#d33682' # magenta
-      cyan:    '#2aa198' # cyan
-      white:   '#eee8d5' # base2
-
-    # Bright colors
-    bright:
-      black:   '#002b36' # base03
-      red:     '#cb4b16' # orange
-      green:   '#586e75' # base01
-      yellow:  '#657b83' # base00
-      blue:    '#839496' # base0
-      magenta: '#6c71c4' # violet
-      cyan:    '#93a1a1' # base1
-      white:   '#fdf6e3' # base3
-
-  ### Solarized Dark ###
-  solarized-dark: &solarized-dark
-    # Default colors
-    primary:
-      background: '#002b36' # base03
-      foreground: '#839496' # base0
-
-    # Cursor colors
-    cursor:
-      text:   '#002b36' # base03
-      cursor: '#839496' # base0
-
-    # Normal colors
-    normal:
-      black:   '#073642' # base02
-      red:     '#dc322f' # red
-      green:   '#859900' # green
-      yellow:  '#b58900' # yellow
-      blue:    '#268bd2' # blue
-      magenta: '#d33682' # magenta
-      cyan:    '#2aa198' # cyan
-      white:   '#eee8d5' # base2
-
-    # Bright colors
-    bright:
-      black:   '#002b36' # base03
-      red:     '#cb4b16' # orange
-      green:   '#586e75' # base01
-      yellow:  '#657b83' # base00
-      blue:    '#839496' # base0
-      magenta: '#6c71c4' # violet
-      cyan:    '#93a1a1' # base1
-      white:   '#fdf6e3' # base3
-
-  ### Tomorrow Night ###
-  tomorrow-night: &tomorrow-night
-     # Default colors
-    primary:
-      background: '0x1d1f21'
-      foreground: '0xc5c8c6'
-
-    # Colors the cursor will use if `custom_cursor_colors` is true
-    cursor:
-      text: '0x1d1f21'
-      cursor: '0xffffff'
-
-    # Normal colors
-    normal:
-      black:   '0x1d1f21'
-      red:     '0xcc6666'
-      green:   '0xb5bd68'
-      yellow:  '0xe6c547'
-      blue:    '0x81a2be'
-      magenta: '0xb294bb'
-      cyan:    '0x70c0ba'
-      white:   '0x373b41'
-
-    # Bright colors
-    bright:
-      black:   '0x666666'
-      red:     '0xff3334'
-      green:   '0x9ec400'
-      yellow:  '0xf0c674'
-      blue:    '0x81a2be'
-      magenta: '0xb77ee0'
-      cyan:    '0x54ced6'
-      white:   '0x282a2e'
 
 ######################################################################
 ## SET THEME: Choose ONE color scheme from those in the above list. ##
 ## ###################################################################
 # Available themes are:
+# *atom-one
 # *doom-one
 # *dracula
-# *gruvbox-dark
+# *gruvbox
 # *nord
-# *solarized-light
-# *solarized-dark
-# *tomorrow-night
+# *tokyonight-storm
 colors: *dracula
 
 # import:
