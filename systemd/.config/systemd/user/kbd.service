@@ -4,7 +4,7 @@ Description=Lacuh Kmonad
 [Service]
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/bin/kmonad /home/safdarawan/.config/kmonad/config.kbd
+ExecStart=/home/safdarawan/bin/kmonad.sh
 
 Restart=on-failure
 RestartSec=2
