@@ -1,10 +1,10 @@
 [Unit]
-Description=Lacuh Kmonad
+Description=Auto Wallpaper Changer
 
 [Service]
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/home/safdarawan/bin/kmonad.sh
+ExecStart=/home/safdarawan/bin/auto_change_wallpaper.sh
 
 Restart=on-failure
 RestartSec=2
