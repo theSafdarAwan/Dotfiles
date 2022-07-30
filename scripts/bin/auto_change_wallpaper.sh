@@ -4,5 +4,5 @@ dir="$HOME/Dotfiles/wallpaper"
 
 while true; do 
     feh --randomize --recursive --bg-fill $dir
-    sleep 10m
+    sleep 960
 done
