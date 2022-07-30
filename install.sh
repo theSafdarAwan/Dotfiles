@@ -93,6 +93,7 @@
 # 80. youtube-dl
 # 81. cmatrix
 # 82. links
+# 83. noto-fonts-emoji
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
@@ -206,3 +207,38 @@
 # reload the tmux for sourcing the config file it will create a file in the .config/systemd/user/ called 
 # tmux.service copy it to /etc/systemd/system then execute this command
 # sudo systemctl enable --now tmux.service
+
+#>>>>>>>>>>>>> Color full Emojis config
+# Put this in the /etc/fonts/local.conf
+# <?xml version="1.0"?>
+# <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+# <fontconfig>
+#  <alias>
+#    <family>sans-serif</family>
+#    <prefer>
+#      <family>Noto Sans</family>
+#      <family>Noto Color Emoji</family>
+#      <family>Noto Emoji</family>
+#      <family>DejaVu Sans</family>
+#    </prefer> 
+#  </alias>
+#
+#  <alias>
+#    <family>serif</family>
+#    <prefer>
+#      <family>Noto Serif</family>
+#      <family>Noto Color Emoji</family>
+#      <family>Noto Emoji</family>
+#      <family>DejaVu Serif</family>
+#    </prefer>
+#  </alias>
+#
+#  <alias>
+#   <family>monospace</family>
+#   <prefer>
+#     <family>Noto Mono</family>
+#     <family>Noto Color Emoji</family>
+#     <family>Noto Emoji</family>
+#    </prefer>
+#  </alias>
+# </fontconfig>
