@@ -155,6 +155,7 @@
 
 ########### Cargo
 # cargo install stylua
+# cargo install ttyper
 
 ########### luarocks
 # sudo luarocks install luacheck

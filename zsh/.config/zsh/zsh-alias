@@ -1,6 +1,6 @@
-alias ls="ls --color=auto"
+# alias ls="ls --color=auto"
 
-alias lss="exa --icons"
+alias ls="exa --icons"
 alias cat="bat"
 
 alias rm="rm -i"
