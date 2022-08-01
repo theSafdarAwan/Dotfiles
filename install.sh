@@ -94,6 +94,7 @@
 # 81. cmatrix
 # 82. links
 # 83. noto-fonts-emoji
+# 84. nitrogen
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
@@ -129,6 +130,9 @@
 # 27. peazip-gtk2-bin
 # 27. kmonad-git
 # 28. todoist
+# 29. dasht
+# 30. picom-ibhagwan-git
+# 30. vim-clipboard
 
 #>>>>>>>>> Snaps
 # 1. xonotic

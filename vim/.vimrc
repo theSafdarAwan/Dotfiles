@@ -11,6 +11,7 @@ set background=dark
 
 set number 
 set relativenumber 
+set clipboard+=unnamedplus
 
 set nowrap
 
@@ -27,7 +28,7 @@ set expandtab
 
 set noswapfile
 set undofile
-set undodir=~/.vim/undodir
+set undodir=~/.vim/vim_undodir
 
 set wildmenu
 
@@ -61,9 +62,9 @@ nnoremap <leader>ss :set spell!<cr>
 nnoremap <leader>vex :Explore<cr>
 
 " cursor shape setting
+let &t_EI = "\<esc>[1 q"
 let &t_SI = "\<esc>[5 q"
 let &t_SR = "\<esc>[1 q"
-let &t_EI = "\<esc>[1 q"
 
 autocmd InsertLeave * silent !echo -ne "\e[1 q"
 autocmd InsertLeave * redraw!

@@ -263,7 +263,7 @@ schemes:
       background: None
     selection:
       text: CellForeground
-      background: '#303341'
+      background: '#565761'
     normal:
       black:   '#232531'
       red:     '#ff5370'
