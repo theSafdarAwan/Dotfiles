@@ -95,6 +95,7 @@
 # 82. links
 # 83. noto-fonts-emoji
 # 84. nitrogen
+# 85. ardour
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
