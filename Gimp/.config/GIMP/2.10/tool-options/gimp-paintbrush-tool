@@ -1,0 +1,19 @@
+# GIMP gimp-paintbrush-tool options
+
+(brush "2. Hardness 025")
+(dynamics "Dynamics Off")
+(gradient "Custom")
+(palette "Color History")
+(brush-size 177)
+(brush-aspect-ratio 1.0000000000000044)
+(brush-angle 1)
+(brush-spacing 0.01)
+(brush-hardness 0.25)
+(brush-force 1)
+(brush-lock-to-view yes)
+(dynamics-expanded yes)
+(fade-repeat truncate)
+(fade-unit inches)
+(use-smoothing yes)
+
+# end of gimp-paintbrush-tool options

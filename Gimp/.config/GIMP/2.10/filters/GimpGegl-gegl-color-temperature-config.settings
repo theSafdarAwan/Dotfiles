@@ -1,0 +1,16 @@
+# settings
+
+(GimpGegl-gegl-color-temperature-config "2022-08-02 09:16:15"
+    (time 1659413775)
+    (original-temperature 6934.1999999999998)
+    (intended-temperature 6463.8000000000002))
+(GimpGegl-gegl-color-temperature-config "2022-08-02 09:12:51"
+    (time 1659413571)
+    (original-temperature 7513.1999999999998)
+    (intended-temperature 7078.8999999999996))
+(GimpGegl-gegl-color-temperature-config "2022-07-28 03:23:51"
+    (time 1658960631)
+    (original-temperature 5305.8999999999996)
+    (intended-temperature 7006.6000000000004))
+
+# end of settings
