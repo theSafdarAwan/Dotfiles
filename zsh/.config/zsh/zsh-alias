@@ -1,4 +1,4 @@
-# alias ls="ls --color=auto"
+alias lss="/bin/ls --color=auto"
 
 alias ls="exa --icons"
 alias cat="bat"
