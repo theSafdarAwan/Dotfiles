@@ -1,5 +1,11 @@
 # settings
 
+(GimpGegl-gegl-hue-chroma-config "2022-08-03 20:28:55"
+    (time 1659540535)
+    (gimp-mode merge)
+    (hue 0)
+    (chroma 0)
+    (lightness 31.18))
 (GimpGegl-gegl-hue-chroma-config "2022-08-03 18:02:02"
     (time 1659531722)
     (hue 0)
