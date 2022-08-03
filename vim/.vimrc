@@ -5,7 +5,6 @@ filetype plugin indent on
 set background=dark
 
 " colorscheme elflord
-" colorscheme  peachpuff
 " colorscheme shine
 " colorscheme zellner
 
@@ -71,3 +70,20 @@ autocmd InsertLeave * redraw!
 autocmd VimEnter * execute "normal \<C-G>"
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
+
+let g:fzf_colors =
+            \ {
+            \ 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Comment'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] 
+            \}
