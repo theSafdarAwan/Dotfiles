@@ -96,6 +96,8 @@
 # 83. noto-fonts-emoji
 # 84. nitrogen
 # 85. ardour
+# 86. audacity
+# 87. libreoffice
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
@@ -133,7 +135,10 @@
 # 28. todoist
 # 29. dasht
 # 30. picom-ibhagwan-git
-# 30. vim-clipboard
+# 31. vim-clipboard
+# 32. ttf-ms-fonts
+# 33. ttf-vista-fonts
+# 34. protonvpn
 
 #>>>>>>>>> Snaps
 # 1. xonotic
