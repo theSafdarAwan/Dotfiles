@@ -144,6 +144,7 @@
 #>>>>>>>>> Snaps
 # 1. xonotic
 # 2. todoist
+# 3. fortune-cm
 
 
 

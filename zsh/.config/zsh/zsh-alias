@@ -33,3 +33,4 @@ alias sid="neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.c
 
 alias cp="~/bin/advcp -g"
 alias mv="~/bin/advmv -g"
+alias clear="/bin/clear; fortune-cm.fortune"
