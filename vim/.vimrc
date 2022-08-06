@@ -90,4 +90,4 @@ let g:fzf_colors =
             \ 'spinner': ['fg', 'Label'],
             \ 'header':  ['fg', 'Comment'] 
             \}
-source .vim-theme.vim
+source /home/safdarawan/.vim_theme.vim
