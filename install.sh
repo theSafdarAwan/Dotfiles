@@ -98,6 +98,7 @@
 # 85. ardour
 # 86. audacity
 # 87. libreoffice
+# 88. wallutils
 
 ##################### installed through yay
 # 1. neovim-nightly-bin
