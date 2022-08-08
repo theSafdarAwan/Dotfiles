@@ -33,7 +33,7 @@
 (theme "System")
 (icon-theme "Color")
 (user-manual-online yes)
-(layer-add-mask-type black)
+(layer-add-mask-type selection)
 (fill-options
     (style solid)
     (antialias yes)

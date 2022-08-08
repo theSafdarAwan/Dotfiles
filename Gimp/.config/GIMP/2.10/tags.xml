@@ -949,7 +949,7 @@
   <resource identifier="${gimp_data_dir}/patterns/Wood/wood1.pat" checksum="0c055f250ddbccc1b32d05f8c0ad7012">
   </resource>
 
-  <resource identifier="gimp-gradient-custom" checksum="098adcd7cca9531bea64b85d7810ba82">
+  <resource identifier="gimp-gradient-custom" checksum="4a878c6cfae0b0e03c0834723daadf92">
   </resource>
 
   <resource identifier="gimp-gradient-fg-bg-rgb-hardedge" checksum="f3a21fae99695a8feac84cee0ddd716a">
@@ -1177,7 +1177,7 @@
   <resource identifier="${gimp_data_dir}/gradients/Yellow_Orange.ggr" checksum="428584726006e23e260baa2a7d79f295">
   </resource>
 
-  <resource identifier="gimp-palette-color-history" checksum="88e066553a3b17156ac531f301b86692">
+  <resource identifier="gimp-palette-color-history" checksum="ede92f6096d2196a22f77575d5147cc2">
   </resource>
 
   <resource identifier="${gimp_data_dir}/palettes/Bears.gpl" checksum="e82e818c20ac12bdd21049924ea2d1e7">
@@ -1543,6 +1543,45 @@
   <resource identifier="C059 Italic" checksum="(null)">
   </resource>
 
+  <resource identifier="Calibri" checksum="(null)">
+  </resource>
+
+  <resource identifier="Calibri Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Calibri Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Calibri Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Cambria" checksum="(null)">
+  </resource>
+
+  <resource identifier="Cambria Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Cambria Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Cambria Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Cambria Math" checksum="(null)">
+  </resource>
+
+  <resource identifier="Candara" checksum="(null)">
+  </resource>
+
+  <resource identifier="Candara Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Candara Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Candara Italic" checksum="(null)">
+  </resource>
+
   <resource identifier="Cantarell" checksum="(null)">
   </resource>
 
@@ -1589,6 +1628,42 @@
   </resource>
 
   <resource identifier="Comic Sans MS Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Consolas" checksum="(null)">
+  </resource>
+
+  <resource identifier="Consolas Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Consolas Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Consolas Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Constantia" checksum="(null)">
+  </resource>
+
+  <resource identifier="Constantia Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Constantia Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Constantia Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Corbel" checksum="(null)">
+  </resource>
+
+  <resource identifier="Corbel Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Corbel Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Corbel Italic" checksum="(null)">
   </resource>
 
   <resource identifier="Courier New" checksum="(null)">
@@ -2669,6 +2744,30 @@
   </resource>
 
   <resource identifier="LiterationSerif Nerd Font Mono Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Meiryo" checksum="(null)">
+  </resource>
+
+  <resource identifier="Meiryo Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Meiryo Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Meiryo Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Meiryo UI" checksum="(null)">
+  </resource>
+
+  <resource identifier="Meiryo UI Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Meiryo UI Bold Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="Meiryo UI Italic" checksum="(null)">
   </resource>
 
   <resource identifier="MesloLGLDZ Nerd Font" checksum="(null)">

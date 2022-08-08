@@ -2,6 +2,5 @@
 
 (palette "Color History")
 (font "Sans-serif")
-(box-mode fixed)
 
 # end of gimp-text-tool options

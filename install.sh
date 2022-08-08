@@ -1,120 +1,116 @@
 #!/bin/bash
 
 ##################### installed programs through pacman
-# 1. polybar
-# 2. kitty
-# 3. rofi
-# 4. firefox
-# 5. zsh
-# 6. starship
-# 7. pcmanfm
-# 8. git
-# 9. stow
-# 10. yay 
-# 11. pulseaudio
-# 12. fzf
-# 13. tmux
-# 14. exa
-# 15. lolcat
-# 16. qutebrowser
-# 17. mpv
-# 18. fd
-# 19. clang
-# 20. ninja
-# 21. gparted
-# 22. ripgrep
-# 23. cmake
-# 24. unzip
-# 25. zsh-syntax-highlighting
-# 26. rust
-# 27. luarocks
-# 28. discord
-# 29. ksnip
-# 30. nodejs
-# 31. npm
-# 32. rust-analyzer
-# 32. go
-# 33. python
-# 34. python-pip
-# 36. stardict
-# 37. qbittorrent
-# 39. gimp
-# 40. inkscape
-# 41. blender
-# 42. viewnior
-# 43. virtualbox
+# - polybar
+# - kitty
+# - rofi
+# - firefox
+# - zsh
+# - starship
+# - pcmanfm
+# - git
+# - stow
+# - yay 
+# - pulseaudio
+# - fzf
+# - tmux
+# - exa
+# - lolcat
+# - mpv
+# - fd
+# - clang
+# - ninja
+# - gparted
+# - ripgrep
+# - cmake
+# - unzip
+# - zsh-syntax-highlighting
+# - rust
+# - luarocks
+# - discord
+# - ksnip
+# - nodejs
+# - npm
+# - rust-analyzer
+# - go
+# - python
+# - python-pip
+# - stardict
+# - qbittorrent
+# - gimp
+# - inkscape
+# - blender
+# - viewnior
+# - virtualbox
 # WARN: you have to install the linux[x]-virtualbox-host-modules with respect to your kernal version
-# 44. linux517-virtualbox-host-modules
-# 45. virtualbox-host-modules-arch
+# - linux517-virtualbox-host-modules
+# - virtualbox-host-modules-arch
 
-# 46. dust
-# 47. bat
-# 48. darktable
-# 49. kdenlive
-# 50. lazygit
-# 51. obs-studio
-# 52. tipp10
-# 53. vlc
+# - dust
+# - bat
+# - darktable
+# - kdenlive
+# - lazygit
+# - obs-studio
+# - tipp10
+# - vlc
 #>>>>>>>>>>>> Thumbnail Utilitie's
-# 54. ffmpegthumbnailer
-# 55. poppler-glib
-# 56. tumbler
-# 57. freetype2
-# 58. libgsf
-# 59. totem
-# 60. gnome-epub-thumbnailer 
+# - ffmpegthumbnailer
+# - poppler-glib
+# - tumbler
+# - freetype2
+# - libgsf
+# - totem
+# - gnome-epub-thumbnailer 
 
-# 61. redshift
-# 62. ansible
-# 63. feh
+# - ansible
+# - redshift
+# - feh
 
 #>>>>>> Books readers
-# 64. evince
-# 65. foliate
+# - foliate
+# - evince
 
-# 66. sxiv
-# 67. ueberzug
-# 68. httrack
+# - sxiv
+# - ueberzug
+# - httrack
 
-# 69. sxiv
-# 70. xterm
-# 71. zathura
-# 72. zathura-pdf-mupdf
+# - sxiv
+# - xterm
+# - zathura
+# - zathura-pdf-mupdf
 
 # Games
-# 73. supertuxkart
-# 74. minetest
-# 75. openttd
-# 76. warsow
-# 77. 0ad
+# - supertuxkart
+# - minetest
+# - openttd
+# - warsow
+# - 0ad
 
-# 78. obsidian
-# 79. wmctrl
-# 80. youtube-dl
-# 81. cmatrix
-# 82. links
-# 83. noto-fonts-emoji
-# 84. nitrogen
-# 85. ardour
-# 86. audacity
-# 87. libreoffice
-# 88. wallutils
+# - obsidian
+# - wmctrl
+# - youtube-dl
+# - cmatrix
+# - links
+# - noto-fonts-emoji
+# - nitrogen
+# - ardour
+# - audacity
+# - libreoffice
+# - wallutils
+# - thunderbird
 
 ##################### installed through yay
-# 1. neovim-nightly-bin
-# 2. notion-app
-# 3. zsh-vi-mode
-# 4. nvim-packer-git
-# 5. google-chrome
-# 6. nerd-fonts-complete
-# 7. stacer
-# 8. stardict-wordnet
-# 9. figma-linux
-# 10. scid
-# 11. drawio-desktop
-# 12. google-docs-nativefier
-# 13. htop-vim
-# 14. tmuxinator
+# - neovim-nightly-bin
+# - zsh-vi-mode
+# - nvim-packer-git
+# - google-chrome
+# - stacer
+# - stardict-wordnet
+# - scid
+# - drawio-desktop
+# - htop-vim
+# - tmuxinator
 
 #>>>>>>>>>>>> Thumbnail Utilitie's
 # 15. raw-thumbnailer
@@ -122,29 +118,35 @@
 # 17. folderpreview
 # 18. mcomix
 
-# 19. pureref
-# 20. dupeguru
-# 21. bleachbit
-# 22. freshfetch-git
-# 23. autotiling-git
-# 24. nnn-nerd
-# 25. tabbed-git
+# - pureref
+# - dupeguru
+# - bleachbit
+# - freshfetch-git
+# - autotiling-git
+# - nnn-nerd
+# - tabbed-git
 
-# 26. marktext-bin
-# 27. peazip-gtk2-bin
-# 27. kmonad-git
-# 28. todoist
-# 29. dasht
-# 30. picom-ibhagwan-git
-# 31. vim-clipboard
-# 32. ttf-ms-fonts
-# 33. ttf-vista-fonts
-# 34. protonvpn
+# - marktext-bin
+# - peazip-gtk2-bin
+# - kmonad-git
+# - todoist
+# - dasht
+# - picom-ibhagwan-git
+
+# - vim-clipboard
+
+########################## Fonts
+# - ttf-ms-fonts
+# - ttf-vista-fonts
+# - nerd-fonts-complete
+
+# - protonvpn-cli
+# - powershell-bin
 
 #>>>>>>>>> Snaps
-# 1. xonotic
-# 2. todoist
-# 3. fortune-cm
+# - xonotic
+# - todoist
+# - fortune-cm
 
 
 

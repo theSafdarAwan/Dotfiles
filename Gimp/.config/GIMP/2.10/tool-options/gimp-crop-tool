@@ -1,7 +1,7 @@
 # GIMP gimp-crop-tool options
 
-(aspect-denominator 1400)
-(aspect-numerator 3531)
-(pattern "Parque #1")
+(aspect-denominator 6000)
+(aspect-numerator 4000)
+(pattern "Pine")
 
 # end of gimp-crop-tool options

@@ -14,7 +14,7 @@
             (visible yes))))
 (GimpToolGroup "tool group"
     (visible yes)
-    (active-tool "gimp-rect-select-tool")
+    (active-tool "gimp-ellipse-select-tool")
     (children
         (GimpToolInfo "gimp-rect-select-tool"
             (icon-name "gimp-tool-rect-select")
@@ -50,7 +50,7 @@
     (visible yes))
 (GimpToolGroup "tool group"
     (visible yes)
-    (active-tool "gimp-scale-tool")
+    (active-tool "gimp-unified-transform-tool")
     (children
         (GimpToolInfo "gimp-unified-transform-tool"
             (icon-name "gimp-tool-unified-transform")
@@ -133,7 +133,7 @@
             (visible yes))))
 (GimpToolGroup "tool group"
     (visible yes)
-    (active-tool "gimp-dodge-burn-tool")
+    (active-tool "gimp-smudge-tool")
     (children
         (GimpToolInfo "gimp-smudge-tool"
             (icon-name "gimp-tool-smudge")
@@ -152,7 +152,7 @@
     (visible yes))
 (GimpToolGroup "tool group"
     (visible yes)
-    (active-tool "gimp-color-picker-tool")
+    (active-tool "gimp-measure-tool")
     (children
         (GimpToolInfo "gimp-color-picker-tool"
             (icon-name "gimp-tool-color-picker")
