@@ -1,6 +1,6 @@
 #!/bin/bash
 
-##################### installed programs through pacman
+##################### install programs through pacman
 # - polybar
 # - kitty
 # - rofi
@@ -26,12 +26,12 @@
 # - unzip
 # - zsh-syntax-highlighting
 # - rust
+# - rust-analyzer
 # - luarocks
 # - discord
 # - ksnip
 # - nodejs
 # - npm
-# - rust-analyzer
 # - go
 # - python
 # - python-pip
@@ -42,6 +42,7 @@
 # - blender
 # - viewnior
 # - virtualbox
+
 # WARN: you have to install the linux[x]-virtualbox-host-modules with respect to your kernal version
 # - linux517-virtualbox-host-modules
 # - virtualbox-host-modules-arch
@@ -53,7 +54,6 @@
 # - lazygit
 # - obs-studio
 # - tipp10
-# - vlc
 #>>>>>>>>>>>> Thumbnail Utilitie's
 # - ffmpegthumbnailer
 # - poppler-glib
@@ -99,8 +99,10 @@
 # - libreoffice
 # - wallutils
 # - thunderbird
+# - clipgrab
+# - picom
 
-##################### installed through yay
+##################### install through yay
 # - neovim-nightly-bin
 # - zsh-vi-mode
 # - nvim-packer-git
@@ -113,10 +115,10 @@
 # - tmuxinator
 
 #>>>>>>>>>>>> Thumbnail Utilitie's
-# 15. raw-thumbnailer
-# 16. f3d
-# 17. folderpreview
-# 18. mcomix
+# - raw-thumbnailer
+# - f3d
+# - folderpreview
+# - mcomix
 
 # - pureref
 # - dupeguru
@@ -126,24 +128,22 @@
 # - nnn-nerd
 # - tabbed-git
 
-# - marktext-bin
 # - peazip-gtk2-bin
 # - kmonad-git
 # - todoist
 # - dasht
-# - picom-ibhagwan-git
 
 # - vim-clipboard
+
+# - protonvpn-cli
+# - powershell-bin
 
 ########################## Fonts
 # - ttf-ms-fonts
 # - ttf-vista-fonts
 # - nerd-fonts-complete
 
-# - protonvpn-cli
-# - powershell-bin
-
-#>>>>>>>>> Snaps
+####################### Install through Snaps
 # - xonotic
 # - todoist
 # - fortune-cm
@@ -152,7 +152,7 @@
 
 # Installing nvim language servers
 ##################### lua
-# clone project
+## clone project
 # mkdir ~/safdar-local
 # cd ~/safdar-local
 #
