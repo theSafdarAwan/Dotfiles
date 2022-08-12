@@ -6,11 +6,6 @@ filetype plugin indent on
 syntax on
 set background=dark
 
-" colorscheme elflord
-" colorscheme shine
-" colorscheme zellner
-" colorscheme synthwave84
-
 set number 
 set relativenumber 
 set clipboard+=unnamedplus
