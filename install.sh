@@ -100,7 +100,6 @@
 # - wallutils
 # - thunderbird
 # - clipgrab
-# - picom
 
 ##################### install through yay
 # - neovim-nightly-bin
@@ -127,6 +126,7 @@
 # - autotiling-git
 # - nnn-nerd
 # - tabbed-git
+# - picom-ibhagwan-git
 
 # - peazip-gtk2-bin
 # - kmonad-git
