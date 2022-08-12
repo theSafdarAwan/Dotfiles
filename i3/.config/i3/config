@@ -64,7 +64,6 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # start a terminal
 bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+Return exec kitty
 
 # ksnip
 bindsym $mod+x exec ksnip 
