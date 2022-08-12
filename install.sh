@@ -2,12 +2,12 @@
 
 ##################### install programs through pacman
 # - polybar
-# - kitty
+# - plasma-desktop
+# - dolphin
 # - rofi
 # - firefox
 # - zsh
 # - starship
-# - pcmanfm
 # - git
 # - stow
 # - yay 
@@ -72,7 +72,6 @@
 # - evince
 
 # - sxiv
-# - ueberzug
 # - httrack
 
 # - sxiv
@@ -89,7 +88,6 @@
 
 # - obsidian
 # - wmctrl
-# - youtube-dl
 # - cmatrix
 # - links
 # - noto-fonts-emoji
@@ -103,13 +101,13 @@
 
 ##################### install through yay
 # - neovim-nightly-bin
-# - zsh-vi-mode
 # - nvim-packer-git
+
+# - zsh-vi-mode
 # - google-chrome
 # - stacer
 # - stardict-wordnet
 # - scid
-# - drawio-desktop
 # - htop-vim
 # - tmuxinator
 
