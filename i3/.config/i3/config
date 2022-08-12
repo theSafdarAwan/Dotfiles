@@ -9,11 +9,7 @@ font pango:DejaVu Sans Mono 0
 include ~/.config/i3/modules/startup.conf
 include ~/.config/i3/modules/workspace_assignment.conf
 include ~/.config/i3/modules/theme.conf
-
-# arbitrary command
-for_window [class="ksnip"] floating enable
-for_window [class="Gpick"] floating enable
-for_window [class="xdman-Main"] floating enable
+include ~/.config/i3/modules/plasma.conf
 
 ####################
 #    system keybind   
