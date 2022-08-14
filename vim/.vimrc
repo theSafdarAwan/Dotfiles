@@ -58,6 +58,8 @@ vnoremap > >gv
 nnoremap <leader>ss :set spell!<cr>
 nnoremap <leader>vex :Explore<cr>
 
+nnoremap <leader>so :so %<cr>
+
 " cursor shape setting
 let &t_EI = "\<esc>[1 q"
 let &t_SI = "\<esc>[5 q"

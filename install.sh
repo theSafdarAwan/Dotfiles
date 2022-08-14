@@ -56,6 +56,8 @@
 # - tipp10
 #>>>>>>>>>>>> Thumbnail Utilitie's
 # - ffmpegthumbnailer
+# - ffmpegthumbs
+# - kdegraphics-thumbnailers
 # - poppler-glib
 # - tumbler
 # - freetype2
