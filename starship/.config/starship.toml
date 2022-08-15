@@ -36,7 +36,7 @@ error_symbol = "[↪](bold red)"
 vicmd_symbol = "[↩](bold yellow)"
 
 [cmd_duration]
-format = 'in \[[⏱ $duration]($style)\]'
+format = 'in \[[⏰$duration]($style)\]'
 
 [git_branch]
 format = "[\\($symbol$branch\\)]($style) "
@@ -54,12 +54,12 @@ bisect = "[♻️ BISECT](bold  green)"
 merge = "[🔀 MERGEING](bold  yellow)"
 
 [git_status]
-conflicted = "🏳"
+conflicted = "🚩"
 untracked = '[?\($count\)](red)'
 modified = '[!\($count\)](yellow)' 
 stashed = "🗃️"
 staged = '[+\($count\)](green)'
-deleted = "${count}🗑"
+deleted = "${count}🗑️"
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"

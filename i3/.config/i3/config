@@ -51,7 +51,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # audio
-bindsym $mod+Ctrl+a exec alacritty -e 'alsamixer'
+bindsym $mod+Ctrl+a exec wezterm start alsamixer
 
 ####################
 #    ROFI   
@@ -63,7 +63,11 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 ####################
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
+
+# polybar mappings for more focus
+bindsym $mod+Shift+Return exec pkill polybar
+bindsym $mod+Ctrl+Return exec polybar
 
 # ksnip
 bindsym $mod+x exec ksnip 

@@ -1,7 +1,8 @@
 let mapleader = " "
-execute pathogen#infect()
 
-filetype plugin indent on
+call plug#begin()
+Plug 'tpope/vim-obsession'
+call plug#end()
 
 syntax on
 set background=dark
