@@ -12,7 +12,7 @@ command_timeout = 700
 # Disable the blank line at the start of the prompt
 add_newline = false
 
-# TODO figure out how to create a function that will create a new line 
+# TODO: figure out how to create a function that will create a new line 
 # for the character only when there are three or more components are visible 
 # on the terminal
 
@@ -28,9 +28,12 @@ format = "\\[[$path]($style)[$lock_symbol]($lock_style)\\] "
 style = "bold red"
 
 [character]
-# success_symbol = "[❯](bold yellow) "
-# error_symbol = "[✗](bold red) "
+# success_symbol = "[❯](bold yellow)"
+# error_symbol = "[✗](bold red)"
 # vicmd_symbol = "[❮](bold yellow)"
+# success_symbol = "[[>](red)[>](yellow)[>](green)](bold green)"
+# error_symbol = "[[>](green)[>](yellow)[>](red)](bold red)"
+# vicmd_symbol = "[[>](red)[>](green)[>](yellow)](bold yellow)"
 success_symbol = "[↪](bold green)"
 error_symbol = "[↪](bold red)"
 vicmd_symbol = "[↩](bold yellow)"
