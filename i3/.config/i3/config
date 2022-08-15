@@ -1,5 +1,6 @@
 # set the modifier key in my case i use alt 
 set $mod Mod1
+set $win_key Mod4
 
 # Font for the title bar for windows
 font pango:Source Sans Pro 10
@@ -54,16 +55,14 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Ctrl+a exec wezterm start alsamixer
 
 ####################
-#    ROFI   
+#    other apps   
 ####################
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show drun
-####################
-#    other apps   
-####################
 
-# start a terminal
+# start a terminal or tmux session
 bindsym $mod+Return exec wezterm
+bindsym $mod+n exec wezterm start tmux new -A -s new
 
 # polybar mappings for more focus
 bindsym $mod+Shift+Return exec pkill polybar
@@ -86,10 +85,10 @@ bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 #####################
 
 # reload the configuration file
-bindsym $mod+shift+r restart
+bindsym $mod+ctrl+r restart
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+ctrl+r reload
+bindsym $mod+shift+r reload
 
 ##############################
 # workspace related settings
@@ -161,7 +160,6 @@ for_window [class=".*"] border pixel 0
 # change borders
 bindsym $mod+shift+n border none
 bindsym $mod+shift+b border pixel 2
-bindsym $mod+n border normal
 
 # Set inner/outer gaps
 gaps inner 8
@@ -212,10 +210,33 @@ bindsym $mod+shift+semicolon mode "$window_movement"
 #     bindsym Return mode "default"
 #     bindsym Escape mode "default"
 # }
+
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
+##########################
+# i3-gaps 
+##########################
+
+# # for current workspace
+# bindsym $mod+Shift+bracketleft gaps inner current plus 5
+# bindsym $mod+Shift+bracketright gaps inner current minus 5
+# bindsym $mod+shift+0 gaps inner current set 5
+# 
+# bindsym $win_key+Shift+bracketleft gaps inner all plus 5
+# bindsym $win_key+Shift+bracketright gaps inner all minus 5
+# bindsym $win_key+Shift+0 gaps inner all set 5
+# 
+# # for all workspaces
+# bindsym $mod+Ctrl+bracketleft gaps outer current plus 5
+# bindsym $mod+Ctrl+bracketright gaps outer current minus 5
+# bindsym $mod+Ctrl+0 gaps outer current set 0
+# 
+# bindsym $win_key+Ctrl+bracketleft gaps outer all plus 5
+# bindsym $win_key+Ctrl+bracketright gaps outer all minus 5
+# bindsym $win_key+Ctrl+0 gaps outer all set 0
 
 ##########################
 # mode for i3-gaps 
@@ -223,8 +244,7 @@ bindsym $mod+Shift+l move right
 # Press $mod+Shift+g to enter the gap mode. 
 
 set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_outer Outer Gaps: j|k|l (local), Shift + j|k|l (global) set $mode_gaps_inner Inner Gaps: j|k|l (local), Shift + j|k|l (global)
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
@@ -234,25 +254,26 @@ mode "$mode_gaps" {
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
+        bindsym j gaps inner current plus 5
+        bindsym k gaps inner current minus 5
+        bindsym l gaps inner current set 0
 
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
+        bindsym Shift+j gaps inner all plus 5
+        bindsym Shift+k gaps inner all minus 5
+        bindsym Shift+l gaps inner all set 0
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
 
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
+mode "$mode_gaps_outer" {
+        bindsym j gaps outer current plus 5
+        bindsym k gaps outer current minus 5
+        bindsym l gaps outer current set 0
+
+        bindsym Shift+j gaps outer all plus 5
+        bindsym Shift+k gaps outer all minus 5
+        bindsym Shift+l gaps outer all set 0
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
