@@ -41,6 +41,9 @@ set timeoutlen=1000 ttimeoutlen=0
 nnoremap n nzz
 nnoremap N Nzz
 
+" Obsession Plugin trick
+nnoremap ZZ :wa \| qa <cr>
+
 " undo break start new change points NOTE: it works only with ! , ` . =
 inoremap ! !<c-g>u
 inoremap ` `<c-g>u
