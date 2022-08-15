@@ -89,6 +89,7 @@
 # - 0ad
 
 # - obsidian
+# - qalculate-qt
 # - wmctrl
 # - cmatrix
 # - links
@@ -104,6 +105,7 @@
 ##################### install through yay
 # - neovim-nightly-bin
 # - nvim-packer-git
+# - wezterm
 
 # - zsh-vi-mode
 # - google-chrome

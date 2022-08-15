@@ -23,6 +23,7 @@ source "$ZDOTDIR/zsh-antigen"
 # source "$ZDOTDIR/zsh-prompt"
 #
 source "$ZDOTDIR/zsh-settings"
+source "$ZDOTDIR/zsh-default-programs"
 source "$ZDOTDIR/zsh-alias"
 source "$ZDOTDIR/zsh-path"
 # source "$ZDOTDIR/zsh-insulter"
