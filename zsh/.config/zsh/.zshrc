@@ -55,4 +55,5 @@ command_not_found_handler () {
 }
 
 # neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/safdar_in_box.txt | lolcat
+# TODO: write a function to check if other instance of the wezterm is active if so then don't execute the freshfetch
 freshfetch

@@ -244,7 +244,8 @@ bindsym $mod+Shift+l move right
 # Press $mod+Shift+g to enter the gap mode. 
 
 set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: j|k|l (local), Shift + j|k|l (global) set $mode_gaps_inner Inner Gaps: j|k|l (local), Shift + j|k|l (global)
+set $mode_gaps_outer Outer Gaps: j|k|l (local), Shift + j|k|l (global) 
+set $mode_gaps_inner Inner Gaps: j|k|l (local), Shift + j|k|l (global)
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
