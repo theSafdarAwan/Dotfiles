@@ -55,35 +55,36 @@ hotkey.key08 "Ctrl j" 0 0 jump_to_current_track
 hotkey.key09 "F1" 0 0 help
 hotkey.key10 "Delete" 1 0 remove_from_playlist
 hotkey.key11 "Ctrl w" 0 0 remove_current_playlist
-hotkey.key13 "Alt Return" 1 0 track_properties
-hotkey.key14 "Return" 0 0 play
-hotkey.key15 "Ctrl p" 0 0 toggle_pause
-hotkey.key16 "Alt 1" 0 0 playlist1
-hotkey.key17 "Alt 2" 0 0 playlist2
-hotkey.key18 "Alt 3" 0 0 playlist3
-hotkey.key19 "Alt 4" 0 0 playlist4
-hotkey.key20 "Alt 5" 0 0 playlist5
-hotkey.key21 "Alt 6" 0 0 playlist6
-hotkey.key22 "Alt 7" 0 0 playlist7
-hotkey.key23 "Alt 8" 0 0 playlist8
-hotkey.key24 "Alt 9" 0 0 playlist9
-hotkey.key25 "Alt 0" 0 0 playlist10
-hotkey.key26 z 0 0 prev
-hotkey.key27 x 0 0 play
-hotkey.key28 c 0 0 toggle_pause
-hotkey.key29 v 0 0 stop
-hotkey.key30 b 0 0 next
-hotkey.key31 n 0 0 playback_random
-hotkey.key32 "Ctrl k" 0 0 toggle_stop_after_album
+hotkey.key12 "Alt Return" 1 0 track_properties
+hotkey.key13 "Return" 0 0 play
+hotkey.key14 "Ctrl p" 0 0 toggle_pause
+hotkey.key15 "Alt 1" 0 0 playlist1
+hotkey.key16 "Alt 2" 0 0 playlist2
+hotkey.key17 "Alt 3" 0 0 playlist3
+hotkey.key18 "Alt 4" 0 0 playlist4
+hotkey.key19 "Alt 5" 0 0 playlist5
+hotkey.key20 "Alt 6" 0 0 playlist6
+hotkey.key21 "Alt 7" 0 0 playlist7
+hotkey.key22 "Alt 8" 0 0 playlist8
+hotkey.key23 "Alt 9" 0 0 playlist9
+hotkey.key24 "Alt 0" 0 0 playlist10
+hotkey.key25 "z" 0 0 prev
+hotkey.key26 "x" 0 0 play
+hotkey.key27 "c" 0 0 toggle_pause
+hotkey.key28 "v" 0 0 stop
+hotkey.key29 "b" 0 0 next
+hotkey.key30 "n" 0 0 playback_random
+hotkey.key31 "Ctrl k" 0 0 toggle_stop_after_album
+hotkey.key32 "Shift Ctrl o" 0 0 add_folders
 hotkeys_created 1
 logwindow.geometry.h 200
 logwindow.geometry.w 400
 logwindow.geometry.x 429
 logwindow.geometry.y 144
-mainwin.geometry.h 729
+mainwin.geometry.h 733
 mainwin.geometry.w 1014
 mainwin.geometry.x 5
-mainwin.geometry.y 34
+mainwin.geometry.y 30
 musical_spectrum.alignment 2
 musical_spectrum.amp_max 0
 musical_spectrum.amp_min -60
@@ -139,12 +140,12 @@ musical_spectrum.transpose 0
 musical_spectrum.window 1
 network.proxy.port 8080
 output_plugin pulseaudio
-playback.loop 2
-playback.volume.normalized 0.4393971
+playback.loop 1
+playback.volume.normalized 0.1749271
 playlist.current 2
 playlist.cursor.0 5
 playlist.cursor.1 0
-playlist.cursor.2 0
+playlist.cursor.2 -1
 playlist.scroll.0 0
 playlist.scroll.1 0
 playlist.scroll.2 0
@@ -152,15 +153,15 @@ playlist.scroll.cursorfollowplayback 1
 playlist.stop_after_current 0
 playlist.tab.00000 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
 playlist.tab.00001 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
-playlist.tab.00002 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
+playlist.tab.00002 Lover_s__
 prefwin.geometry.h 597
 prefwin.geometry.w 691
-prefwin.geometry.x 140
-prefwin.geometry.y 97
+prefwin.geometry.x 114
+prefwin.geometry.y 48
 resume.paused 0
 resume.playlist 2
 resume.position 0.0000000
-resume.track 54
+resume.track 2
 searchwin.geometry.h 150
 searchwin.geometry.w 450
 searchwin.geometry.x 289
@@ -236,35 +237,36 @@ hotkey.key08 "Ctrl j" 0 0 jump_to_current_track
 hotkey.key09 "F1" 0 0 help
 hotkey.key10 "Delete" 1 0 remove_from_playlist
 hotkey.key11 "Ctrl w" 0 0 remove_current_playlist
-hotkey.key13 "Alt Return" 1 0 track_properties
-hotkey.key14 "Return" 0 0 play
-hotkey.key15 "Ctrl p" 0 0 toggle_pause
-hotkey.key16 "Alt 1" 0 0 playlist1
-hotkey.key17 "Alt 2" 0 0 playlist2
-hotkey.key18 "Alt 3" 0 0 playlist3
-hotkey.key19 "Alt 4" 0 0 playlist4
-hotkey.key20 "Alt 5" 0 0 playlist5
-hotkey.key21 "Alt 6" 0 0 playlist6
-hotkey.key22 "Alt 7" 0 0 playlist7
-hotkey.key23 "Alt 8" 0 0 playlist8
-hotkey.key24 "Alt 9" 0 0 playlist9
-hotkey.key25 "Alt 0" 0 0 playlist10
-hotkey.key26 z 0 0 prev
-hotkey.key27 x 0 0 play
-hotkey.key28 c 0 0 toggle_pause
-hotkey.key29 v 0 0 stop
-hotkey.key30 b 0 0 next
-hotkey.key31 n 0 0 playback_random
-hotkey.key32 "Ctrl k" 0 0 toggle_stop_after_album
+hotkey.key12 "Alt Return" 1 0 track_properties
+hotkey.key13 "Return" 0 0 play
+hotkey.key14 "Ctrl p" 0 0 toggle_pause
+hotkey.key15 "Alt 1" 0 0 playlist1
+hotkey.key16 "Alt 2" 0 0 playlist2
+hotkey.key17 "Alt 3" 0 0 playlist3
+hotkey.key18 "Alt 4" 0 0 playlist4
+hotkey.key19 "Alt 5" 0 0 playlist5
+hotkey.key20 "Alt 6" 0 0 playlist6
+hotkey.key21 "Alt 7" 0 0 playlist7
+hotkey.key22 "Alt 8" 0 0 playlist8
+hotkey.key23 "Alt 9" 0 0 playlist9
+hotkey.key24 "Alt 0" 0 0 playlist10
+hotkey.key25 "z" 0 0 prev
+hotkey.key26 "x" 0 0 play
+hotkey.key27 "c" 0 0 toggle_pause
+hotkey.key28 "v" 0 0 stop
+hotkey.key29 "b" 0 0 next
+hotkey.key30 "n" 0 0 playback_random
+hotkey.key31 "Ctrl k" 0 0 toggle_stop_after_album
+hotkey.key32 "Shift Ctrl o" 0 0 add_folders
 hotkeys_created 1
 logwindow.geometry.h 200
 logwindow.geometry.w 400
 logwindow.geometry.x 429
 logwindow.geometry.y 144
-mainwin.geometry.h 729
+mainwin.geometry.h 733
 mainwin.geometry.w 1014
 mainwin.geometry.x 5
-mainwin.geometry.y 34
+mainwin.geometry.y 30
 musical_spectrum.alignment 2
 musical_spectrum.amp_max 0
 musical_spectrum.amp_min -60
@@ -320,12 +322,12 @@ musical_spectrum.transpose 0
 musical_spectrum.window 1
 network.proxy.port 8080
 output_plugin pulseaudio
-playback.loop 2
-playback.volume.normalized 0.4393971
+playback.loop 1
+playback.volume.normalized 0.1749271
 playlist.current 2
 playlist.cursor.0 5
 playlist.cursor.1 0
-playlist.cursor.2 0
+playlist.cursor.2 -1
 playlist.scroll.0 0
 playlist.scroll.1 0
 playlist.scroll.2 0
@@ -333,15 +335,15 @@ playlist.scroll.cursorfollowplayback 1
 playlist.stop_after_current 0
 playlist.tab.00000 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
 playlist.tab.00001 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
-playlist.tab.00002 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
+playlist.tab.00002 Lover_s__
 prefwin.geometry.h 597
 prefwin.geometry.w 691
-prefwin.geometry.x 140
-prefwin.geometry.y 97
+prefwin.geometry.x 114
+prefwin.geometry.y 48
 resume.paused 0
 resume.playlist 2
 resume.position 0.0000000
-resume.track 54
+resume.track 2
 searchwin.geometry.h 150
 searchwin.geometry.w 450
 searchwin.geometry.x 289
