@@ -26,6 +26,7 @@ alias vims="vim -S Session.vim"
 alias nvims="nvim -S Session.vim"
 
 alias todo="todoist-cli --color --project-namespace --indent"
+alias db="deadbeef"
 
 # alias clear="/bin/clear; neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/empty.txt | lolcat;"
 alias sid="neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/safdar_in_box.txt | lolcat"
