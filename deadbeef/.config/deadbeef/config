@@ -33,10 +33,10 @@ filebrowser.treelines 0
 filechooser.lastdir file:///home/safdarawan/Disk/Media/Music/Lover_s__
 gtkui.color.bar_background 10280 10794 13878
 gtkui.color.bar_foreground 57054 35980 37522
-gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"38","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"187","align":"0","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"157","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"52","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"33","align":"1","color_override":"0","color":"#ff000000"}]
+gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"38","align":"0","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"157","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"52","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"187","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"33","align":"1","color_override":"0","color":"#ff000000"}]
 gtkui.columns.search [{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"50","align":"1","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"}]
 gtkui.eq.visible 0
-gtkui.layout.1.9.0 {"type":"vbox","legacy_params":" expand=\"0 1\" fill=\"1 1\" homogeneous=0","children":[{"type":"hbox","legacy_params":" expand=\"0 1 0\" fill=\"1 1 1\" homogeneous=0","children":[{"type":"playtb"},{"type":"seekbar"},{"type":"volumebar","settings":{"scale":"db"}}]},{"type":"hsplitter","legacy_params":" locked=0 ratio=0.518738 pos=0 size2=0","children":[{"type":"playlist","legacy_params":" hideheaders=0 width=527"},{"type":"vsplitter","legacy_params":" locked=0 ratio=0.733746 pos=0 size2=0","children":[{"type":"coverart","settings":{"mode":"selected"}},{"type":"musical_spectrum"}]}]}]}
+gtkui.layout.1.9.0 {"type":"vbox","legacy_params":" expand=\"0 1\" fill=\"1 1\" homogeneous=0","children":[{"type":"hbox","legacy_params":" expand=\"0 1 0\" fill=\"1 1 1\" homogeneous=0","children":[{"type":"playtb"},{"type":"seekbar"},{"type":"volumebar","settings":{"scale":"db"}}]},{"type":"vsplitter","legacy_params":" locked=0 ratio=0.229102 pos=0 size2=0","children":[{"type":"musical_spectrum"},{"type":"hsplitter","legacy_params":" locked=0 ratio=0.511834 pos=0 size2=0","children":[{"type":"playlist","legacy_params":" hideheaders=0 width=519"},{"type":"coverart","settings":{"mode":"selected"}}]}]}]}
 gtkui.override_bar_colors 1
 gtkui.playlist.group_by_tf 
 gtkui.search.group_by_tf 
@@ -81,10 +81,10 @@ logwindow.geometry.h 200
 logwindow.geometry.w 400
 logwindow.geometry.x 429
 logwindow.geometry.y 144
-mainwin.geometry.h 733
+mainwin.geometry.h 729
 mainwin.geometry.w 1014
 mainwin.geometry.x 5
-mainwin.geometry.y 30
+mainwin.geometry.y 34
 musical_spectrum.alignment 2
 musical_spectrum.amp_max 0
 musical_spectrum.amp_min -60
@@ -108,7 +108,7 @@ musical_spectrum.color.vgrid 25443 25957 29041
 musical_spectrum.color.white_keys 14135 14392 17476
 musical_spectrum.draw_style 0
 musical_spectrum.enable_amp 0
-musical_spectrum.enable_bar_mode 0
+musical_spectrum.enable_bar_mode 1
 musical_spectrum.enable_black_keys 0
 musical_spectrum.enable_bottom_labels 1
 musical_spectrum.enable_hgrid 1
@@ -123,8 +123,8 @@ musical_spectrum.enable_vgrid 1
 musical_spectrum.enable_white_keys 1
 musical_spectrum.fft_size 8192
 musical_spectrum.fill_spectrum 1
-musical_spectrum.font Sans 7
-musical_spectrum.font_tooltip Sans 9
+musical_spectrum.font Sans 9
+musical_spectrum.font_tooltip Sans 12
 musical_spectrum.gaps 1
 musical_spectrum.gradient_orientation 0
 musical_spectrum.interpolate 1
@@ -141,11 +141,11 @@ musical_spectrum.window 1
 network.proxy.port 8080
 output_plugin pulseaudio
 playback.loop 1
-playback.volume.normalized 0.1749271
+playback.volume.normalized 0.2682696
 playlist.current 2
 playlist.cursor.0 5
 playlist.cursor.1 0
-playlist.cursor.2 -1
+playlist.cursor.2 2
 playlist.scroll.0 0
 playlist.scroll.1 0
 playlist.scroll.2 0
@@ -156,7 +156,7 @@ playlist.tab.00001 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
 playlist.tab.00002 Lover_s__
 prefwin.geometry.h 597
 prefwin.geometry.w 691
-prefwin.geometry.x 114
+prefwin.geometry.x 116
 prefwin.geometry.y 48
 resume.paused 0
 resume.playlist 2
@@ -215,10 +215,10 @@ filebrowser.treelines 0
 filechooser.lastdir file:///home/safdarawan/Disk/Media/Music/Lover_s__
 gtkui.color.bar_background 10280 10794 13878
 gtkui.color.bar_foreground 57054 35980 37522
-gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"38","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"187","align":"0","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"157","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"52","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"33","align":"1","color_override":"0","color":"#ff000000"}]
+gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"38","align":"0","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"157","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"52","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"187","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"33","align":"1","color_override":"0","color":"#ff000000"}]
 gtkui.columns.search [{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"50","align":"1","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"}]
 gtkui.eq.visible 0
-gtkui.layout.1.9.0 {"type":"vbox","legacy_params":" expand=\"0 1\" fill=\"1 1\" homogeneous=0","children":[{"type":"hbox","legacy_params":" expand=\"0 1 0\" fill=\"1 1 1\" homogeneous=0","children":[{"type":"playtb"},{"type":"seekbar"},{"type":"volumebar","settings":{"scale":"db"}}]},{"type":"hsplitter","legacy_params":" locked=0 ratio=0.518738 pos=0 size2=0","children":[{"type":"playlist","legacy_params":" hideheaders=0 width=527"},{"type":"vsplitter","legacy_params":" locked=0 ratio=0.733746 pos=0 size2=0","children":[{"type":"coverart","settings":{"mode":"selected"}},{"type":"musical_spectrum"}]}]}]}
+gtkui.layout.1.9.0 {"type":"vbox","legacy_params":" expand=\"0 1\" fill=\"1 1\" homogeneous=0","children":[{"type":"hbox","legacy_params":" expand=\"0 1 0\" fill=\"1 1 1\" homogeneous=0","children":[{"type":"playtb"},{"type":"seekbar"},{"type":"volumebar","settings":{"scale":"db"}}]},{"type":"vsplitter","legacy_params":" locked=0 ratio=0.229102 pos=0 size2=0","children":[{"type":"musical_spectrum"},{"type":"hsplitter","legacy_params":" locked=0 ratio=0.511834 pos=0 size2=0","children":[{"type":"playlist","legacy_params":" hideheaders=0 width=519"},{"type":"coverart","settings":{"mode":"selected"}}]}]}]}
 gtkui.override_bar_colors 1
 gtkui.playlist.group_by_tf 
 gtkui.search.group_by_tf 
@@ -263,10 +263,10 @@ logwindow.geometry.h 200
 logwindow.geometry.w 400
 logwindow.geometry.x 429
 logwindow.geometry.y 144
-mainwin.geometry.h 733
+mainwin.geometry.h 729
 mainwin.geometry.w 1014
 mainwin.geometry.x 5
-mainwin.geometry.y 30
+mainwin.geometry.y 34
 musical_spectrum.alignment 2
 musical_spectrum.amp_max 0
 musical_spectrum.amp_min -60
@@ -290,7 +290,7 @@ musical_spectrum.color.vgrid 25443 25957 29041
 musical_spectrum.color.white_keys 14135 14392 17476
 musical_spectrum.draw_style 0
 musical_spectrum.enable_amp 0
-musical_spectrum.enable_bar_mode 0
+musical_spectrum.enable_bar_mode 1
 musical_spectrum.enable_black_keys 0
 musical_spectrum.enable_bottom_labels 1
 musical_spectrum.enable_hgrid 1
@@ -305,8 +305,8 @@ musical_spectrum.enable_vgrid 1
 musical_spectrum.enable_white_keys 1
 musical_spectrum.fft_size 8192
 musical_spectrum.fill_spectrum 1
-musical_spectrum.font Sans 7
-musical_spectrum.font_tooltip Sans 9
+musical_spectrum.font Sans 9
+musical_spectrum.font_tooltip Sans 12
 musical_spectrum.gaps 1
 musical_spectrum.gradient_orientation 0
 musical_spectrum.interpolate 1
@@ -323,11 +323,11 @@ musical_spectrum.window 1
 network.proxy.port 8080
 output_plugin pulseaudio
 playback.loop 1
-playback.volume.normalized 0.1749271
+playback.volume.normalized 0.2682696
 playlist.current 2
 playlist.cursor.0 5
 playlist.cursor.1 0
-playlist.cursor.2 -1
+playlist.cursor.2 2
 playlist.scroll.0 0
 playlist.scroll.1 0
 playlist.scroll.2 0
@@ -338,7 +338,7 @@ playlist.tab.00001 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
 playlist.tab.00002 Lover_s__
 prefwin.geometry.h 597
 prefwin.geometry.w 691
-prefwin.geometry.x 114
+prefwin.geometry.x 116
 prefwin.geometry.y 48
 resume.paused 0
 resume.playlist 2
