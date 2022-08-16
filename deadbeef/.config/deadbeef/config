@@ -81,10 +81,10 @@ logwindow.geometry.h 200
 logwindow.geometry.w 400
 logwindow.geometry.x 429
 logwindow.geometry.y 144
-mainwin.geometry.h 729
+mainwin.geometry.h 733
 mainwin.geometry.w 1014
 mainwin.geometry.x 5
-mainwin.geometry.y 34
+mainwin.geometry.y 30
 musical_spectrum.alignment 2
 musical_spectrum.amp_max 0
 musical_spectrum.amp_min -60
@@ -148,7 +148,7 @@ playlist.cursor.1 0
 playlist.cursor.2 2
 playlist.scroll.0 0
 playlist.scroll.1 0
-playlist.scroll.2 0
+playlist.scroll.2 -2
 playlist.scroll.cursorfollowplayback 1
 playlist.stop_after_current 0
 playlist.tab.00000 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
@@ -161,7 +161,7 @@ prefwin.geometry.y 48
 resume.paused 0
 resume.playlist 2
 resume.position 0.0000000
-resume.track 2
+resume.track 3
 searchwin.geometry.h 150
 searchwin.geometry.w 450
 searchwin.geometry.x 289
@@ -263,10 +263,10 @@ logwindow.geometry.h 200
 logwindow.geometry.w 400
 logwindow.geometry.x 429
 logwindow.geometry.y 144
-mainwin.geometry.h 729
+mainwin.geometry.h 733
 mainwin.geometry.w 1014
 mainwin.geometry.x 5
-mainwin.geometry.y 34
+mainwin.geometry.y 30
 musical_spectrum.alignment 2
 musical_spectrum.amp_max 0
 musical_spectrum.amp_min -60
@@ -330,7 +330,7 @@ playlist.cursor.1 0
 playlist.cursor.2 2
 playlist.scroll.0 0
 playlist.scroll.1 0
-playlist.scroll.2 0
+playlist.scroll.2 -2
 playlist.scroll.cursorfollowplayback 1
 playlist.stop_after_current 0
 playlist.tab.00000 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
@@ -343,7 +343,7 @@ prefwin.geometry.y 48
 resume.paused 0
 resume.playlist 2
 resume.position 0.0000000
-resume.track 2
+resume.track 3
 searchwin.geometry.h 150
 searchwin.geometry.w 450
 searchwin.geometry.x 289
