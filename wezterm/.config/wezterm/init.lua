@@ -23,4 +23,5 @@ return {
 		top = 0,
 		bottom = 0,
 	},
+    check_for_updates = false,
 }
