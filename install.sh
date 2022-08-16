@@ -127,6 +127,7 @@
 # - freshfetch-git
 # - autotiling-git
 # - nnn-nerd
+# - tauon-music-box
 # - tabbed-git
 # - picom-ibhagwan-git
 
