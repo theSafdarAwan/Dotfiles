@@ -8,7 +8,7 @@ return {
 	use_fancy_tab_bar = false,
 	hide_tab_bar_if_only_one_tab = true,
 
-	window_background_opacity = 0.99,
+	window_background_opacity = 1.0,
 	audible_bell = "Disabled",
 
 	font_size = 11.0,
