@@ -3,6 +3,7 @@
 ##################### install programs through pacman
 # - polybar
 # - plasma-desktop
+# - plasma-browser-integration
 # - dolphin
 # - rofi
 # - firefox
@@ -101,6 +102,7 @@
 # - wallutils
 # - thunderbird
 # - clipgrab
+# - cool-retro-term
 
 ##################### install through yay
 # - neovim-nightly-bin
