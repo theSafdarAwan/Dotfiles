@@ -191,8 +191,8 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Tag's Name's
     -- local names = { "  ", "  ", "  ", "  ", "  ", " 🪢", "  ", "  ", "  "  }
-    -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
     local names = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+    -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
     local l = awful.layout.suit
     local layouts = { l.max, l.tile.top, l.max, l.max, l.max, l.max, l.spiral, l.max.fullscreen, l.max }
     awful.tag(names, s, layouts)
