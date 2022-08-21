@@ -195,8 +195,10 @@ awful.screen.connect_for_each_screen(function(s)
     -- set_wallpaper(s)
 
     -- Tag's Name's
-    local names = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
-    -- local names = { "  ", "  ", "  ", "  ", "  ", " 🪢", "  ", "  ", "  "  }
+    -- local names = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+    -- local names = {  "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", " ", "  "  }
+
+    local names = { "  ", " ", " ", " ", " ", " ", " ", " ", " "  }
     -- local names = { " " .. "" .. " " , " " .. "" .. " ", " " .. "" .. " ", " " .. "" .. " ", " " .. "" .. " ", " " .. "" .. " ", " " .. "" .. " ", " " .. "" .. " ", " " .. "" .. " " }
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
     local l = awful.layout.suit
@@ -565,18 +567,6 @@ awful.rules.rules = {
         },
         properties = { screen = 1, tag = "1" },
     },
-    {
-        rule = {
-            class = "Thunderbird",
-        },
-        properties = { screen = 1, tag = "1" },
-    },
-    {
-        rule = {
-            class = "discord",
-        },
-        properties = { screen = 1, tag = "1" },
-    },
     --> Tag 2
     {
         rule = {
@@ -663,6 +653,19 @@ awful.rules.rules = {
             class = "obsidian",
         },
         properties = { screen = 1, tag = "4" },
+    },
+    --> Tag 5
+    {
+        rule = {
+            class = "Thunderbird",
+        },
+        properties = { screen = 1, tag = "5" },
+    },
+    {
+        rule = {
+            class = "discord",
+        },
+        properties = { screen = 1, tag = "5" },
     },
     --> Tag 8
     {

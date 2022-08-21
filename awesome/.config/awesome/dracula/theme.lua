@@ -45,12 +45,12 @@ theme.border_marked = "#ec6b64"
 --theme.taglist_bg_focus = "#ff0000"
 
 --> Taglist
-theme.taglist_font = "siji Bold 12"
-theme.taglist_bg_focus = "#44475a"
+theme.taglist_font = "siji Italic 12"
+theme.taglist_bg_focus = "#282A36"
+theme.taglist_fg_focus = "#ec6b64"
 theme.taglist_fg_empty = "#44475a"
 theme.taglist_fg_urgent = "#ffffff"
 theme.taglist_fg_occupied = "#abb2bf"
-theme.taglist_fg_focus = "#abb2bf"
 theme.taglist_bg_urgent = "#F44747"
 
 --> Tasklist
@@ -84,8 +84,8 @@ theme.hotkeys_description_font = "siji Font"
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(5)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
+theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.bg_normal)
+theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.bg_normal)
 
 -- TODO: do some config for notification
 -- Variables set for theming notifications:

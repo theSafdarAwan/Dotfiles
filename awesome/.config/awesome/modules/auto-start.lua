@@ -16,5 +16,4 @@ run_once({
     "stardict",
     "nitrogen",
     "deadbeef",
-    "wezterm start tmux new -A",
 })
