@@ -47,7 +47,7 @@ theme.border_marked = "#ec6b64"
 --> Taglist
 theme.taglist_font = "siji Italic 12"
 theme.taglist_bg_focus = "#282A36"
-theme.taglist_fg_focus = "#ec6b64"
+theme.taglist_fg_focus = "#Fccf6C"
 theme.taglist_fg_empty = "#44475a"
 theme.taglist_fg_urgent = "#ffffff"
 theme.taglist_fg_occupied = "#abb2bf"
