@@ -6,6 +6,7 @@
 # - plasma-browser-integration
 # - dolphin
 # - rofi
+# - rofi-emoji
 # - firefox
 # - zsh
 # - starship
@@ -105,6 +106,7 @@
 # - cool-retro-term
 
 ##################### install through yay
+# - awesome-git
 # - neovim-nightly-bin
 # - nvim-packer-git
 # - wezterm

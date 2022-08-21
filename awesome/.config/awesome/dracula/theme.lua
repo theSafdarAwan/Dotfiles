@@ -11,7 +11,8 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font = "FiraCode Nerd Font 11"
+-- theme.font = "FiraCode Nerd Font Bold 10"
+theme.font = "siji Regular 10"
 
 theme.bg_normal = "#282A36"
 theme.bg_focus = "#44475a"
@@ -25,9 +26,9 @@ theme.fg_urgent = "#ffffff"
 theme.fg_minimize = "#DE8C92"
 
 theme.useless_gap = dpi(2)
-theme.border_width = dpi(1)
+theme.border_width = dpi(2)
 theme.border_normal = "#282A36"
-theme.border_focus = "#4FC1FF"
+theme.border_focus = "#44475a"
 theme.border_marked = "#ec6b64"
 
 -- There are other variable sets
@@ -43,12 +44,16 @@ theme.border_marked = "#ec6b64"
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
 
--- taglist_[bg|fg]_[focus|urgent|occupied|empty|volatile]
+--> Taglist
+theme.taglist_font = "siji Bold 12"
 theme.taglist_bg_focus = "#44475a"
--- theme.taglist_fg_occupied = "#4FC1FF"
 theme.taglist_fg_empty = "#44475a"
 theme.taglist_fg_urgent = "#ffffff"
+theme.taglist_fg_occupied = "#abb2bf"
+theme.taglist_fg_focus = "#abb2bf"
 theme.taglist_bg_urgent = "#F44747"
+
+--> Tasklist
 theme.tasklist_bg_focus = "#44475a"
 theme.tasklist_fg_focus = "#d3f1f0"
 theme.tasklist_fg_normal = "#abb0bf"
@@ -64,19 +69,21 @@ theme.tasklist_bg_urgent = "#F44747"
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 theme.hotkeys_fg = "#cbcbcb"
 theme.hotkeys_bg = "#282A36"
-theme.hotkeys_border_width = 1
+theme.hotkeys_border_width = dpi(1)
 theme.hotkeys_border_color = "#4FC1FF"
 -- theme.hotkeys_shape =
 theme.hotkeys_opacity = 0
 theme.hotkeys_modifiers_fg = "#Fccf6C"
 theme.hotkeys_label_bg = "#71f094"
 theme.hotkeys_label_fg = "#282A36"
-theme.hotkeys_group_margin = 3
-theme.hotkeys_font = "FiraCode Nerd Font 8"
-theme.hotkeys_description_font = "FiraCode Nerd Font"
+theme.hotkeys_group_margin = dpi(3)
+-- theme.hotkeys_font = "FiraCode Nerd Font Bold 8"
+-- theme.hotkeys_description_font = "FiraCode Nerd Font"
+theme.hotkeys_font = "siji Bold 9"
+theme.hotkeys_description_font = "siji Font"
 
 -- Generate taglist squares:
-local taglist_square_size = dpi(4)
+local taglist_square_size = dpi(5)
 theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
 
@@ -96,7 +103,7 @@ theme.menu_width = dpi(100)
 
 theme.menu_bg_focus = "#44475a"
 theme.menu_fg_focus = "#ffffff"
-theme.menu_border_color = "#4FC1FF"
+theme.menu_border_color = "#44475a"
 theme.menu_border_width = 0.5
 
 -- menu_[border_color|border_width]

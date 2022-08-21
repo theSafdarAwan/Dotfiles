@@ -36,7 +36,7 @@ gtkui.color.bar_foreground 57054 35980 37522
 gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"38","align":"0","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"157","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"52","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"187","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"33","align":"1","color_override":"0","color":"#ff000000"}]
 gtkui.columns.search [{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"50","align":"1","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"}]
 gtkui.eq.visible 0
-gtkui.layout.1.9.0 {"type":"vbox","legacy_params":" expand=\"0 1\" fill=\"1 1\" homogeneous=0","children":[{"type":"hbox","legacy_params":" expand=\"0 1 0\" fill=\"1 1 1\" homogeneous=0","children":[{"type":"playtb"},{"type":"seekbar"},{"type":"volumebar","settings":{"scale":"db"}}]},{"type":"vsplitter","legacy_params":" locked=0 ratio=0.229102 pos=0 size2=0","children":[{"type":"musical_spectrum"},{"type":"hsplitter","legacy_params":" locked=0 ratio=0.511834 pos=0 size2=0","children":[{"type":"playlist","legacy_params":" hideheaders=0 width=519"},{"type":"coverart","settings":{"mode":"selected"}}]}]}]}
+gtkui.layout.1.9.0 {"type":"vbox","legacy_params":" expand=\"0 1\" fill=\"1 1\" homogeneous=0","children":[{"type":"hbox","legacy_params":" expand=\"0 1 0\" fill=\"1 1 1\" homogeneous=0","children":[{"type":"playtb"},{"type":"seekbar"},{"type":"volumebar","settings":{"scale":"db"}}]},{"type":"vsplitter","legacy_params":" locked=0 ratio=0.229102 pos=0 size2=0","children":[{"type":"musical_spectrum"},{"type":"hsplitter","legacy_params":" locked=0 ratio=0.511834 pos=0 size2=0","children":[{"type":"playlist","legacy_params":" hideheaders=0 width=518"},{"type":"coverart","settings":{"mode":"selected"}}]}]}]}
 gtkui.override_bar_colors 1
 gtkui.playlist.group_by_tf 
 gtkui.search.group_by_tf 
@@ -81,10 +81,10 @@ logwindow.geometry.h 200
 logwindow.geometry.w 400
 logwindow.geometry.x 429
 logwindow.geometry.y 144
-mainwin.geometry.h 733
-mainwin.geometry.w 1014
-mainwin.geometry.x 5
-mainwin.geometry.y 30
+mainwin.geometry.h 727
+mainwin.geometry.w 1012
+mainwin.geometry.x 4
+mainwin.geometry.y 33
 musical_spectrum.alignment 2
 musical_spectrum.amp_max 0
 musical_spectrum.amp_min -60
@@ -145,10 +145,10 @@ playback.volume.normalized 0.2682696
 playlist.current 2
 playlist.cursor.0 5
 playlist.cursor.1 0
-playlist.cursor.2 2
+playlist.cursor.2 3
 playlist.scroll.0 0
 playlist.scroll.1 0
-playlist.scroll.2 -2
+playlist.scroll.2 -3
 playlist.scroll.cursorfollowplayback 1
 playlist.stop_after_current 0
 playlist.tab.00000 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
@@ -160,7 +160,7 @@ prefwin.geometry.x 116
 prefwin.geometry.y 48
 resume.paused 0
 resume.playlist 2
-resume.position 0.0000000
+resume.position 0.0464399
 resume.track 3
 searchwin.geometry.h 150
 searchwin.geometry.w 450
@@ -218,7 +218,7 @@ gtkui.color.bar_foreground 57054 35980 37522
 gtkui.columns.playlist [{"title":"♫","id":"1","format":"%playstatus%","sort_format":"","size":"38","align":"0","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"157","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"52","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"187","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"33","align":"1","color_override":"0","color":"#ff000000"}]
 gtkui.columns.search [{"title":"Artist / Album","id":"-1","format":"$if(%artist%,%artist%,Unknown Artist)[ - %album%]","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%tracknumber%","sort_format":"","size":"50","align":"1","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"150","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"50","align":"0","color_override":"0","color":"#ff000000"}]
 gtkui.eq.visible 0
-gtkui.layout.1.9.0 {"type":"vbox","legacy_params":" expand=\"0 1\" fill=\"1 1\" homogeneous=0","children":[{"type":"hbox","legacy_params":" expand=\"0 1 0\" fill=\"1 1 1\" homogeneous=0","children":[{"type":"playtb"},{"type":"seekbar"},{"type":"volumebar","settings":{"scale":"db"}}]},{"type":"vsplitter","legacy_params":" locked=0 ratio=0.229102 pos=0 size2=0","children":[{"type":"musical_spectrum"},{"type":"hsplitter","legacy_params":" locked=0 ratio=0.511834 pos=0 size2=0","children":[{"type":"playlist","legacy_params":" hideheaders=0 width=519"},{"type":"coverart","settings":{"mode":"selected"}}]}]}]}
+gtkui.layout.1.9.0 {"type":"vbox","legacy_params":" expand=\"0 1\" fill=\"1 1\" homogeneous=0","children":[{"type":"hbox","legacy_params":" expand=\"0 1 0\" fill=\"1 1 1\" homogeneous=0","children":[{"type":"playtb"},{"type":"seekbar"},{"type":"volumebar","settings":{"scale":"db"}}]},{"type":"vsplitter","legacy_params":" locked=0 ratio=0.229102 pos=0 size2=0","children":[{"type":"musical_spectrum"},{"type":"hsplitter","legacy_params":" locked=0 ratio=0.511834 pos=0 size2=0","children":[{"type":"playlist","legacy_params":" hideheaders=0 width=518"},{"type":"coverart","settings":{"mode":"selected"}}]}]}]}
 gtkui.override_bar_colors 1
 gtkui.playlist.group_by_tf 
 gtkui.search.group_by_tf 
@@ -263,10 +263,10 @@ logwindow.geometry.h 200
 logwindow.geometry.w 400
 logwindow.geometry.x 429
 logwindow.geometry.y 144
-mainwin.geometry.h 733
-mainwin.geometry.w 1014
-mainwin.geometry.x 5
-mainwin.geometry.y 30
+mainwin.geometry.h 727
+mainwin.geometry.w 1012
+mainwin.geometry.x 4
+mainwin.geometry.y 33
 musical_spectrum.alignment 2
 musical_spectrum.amp_max 0
 musical_spectrum.amp_min -60
@@ -327,10 +327,10 @@ playback.volume.normalized 0.2682696
 playlist.current 2
 playlist.cursor.0 5
 playlist.cursor.1 0
-playlist.cursor.2 2
+playlist.cursor.2 3
 playlist.scroll.0 0
 playlist.scroll.1 0
-playlist.scroll.2 -2
+playlist.scroll.2 -3
 playlist.scroll.cursorfollowplayback 1
 playlist.stop_after_current 0
 playlist.tab.00000 Keith Jarrett - J.S. Bach - The French Suites (1993) [2CD]
@@ -342,7 +342,7 @@ prefwin.geometry.x 116
 prefwin.geometry.y 48
 resume.paused 0
 resume.playlist 2
-resume.position 0.0000000
+resume.position 0.0464399
 resume.track 3
 searchwin.geometry.h 150
 searchwin.geometry.w 450

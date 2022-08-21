@@ -3,6 +3,7 @@ configuration {
     location: 6;
     display-drun: " ❯ ";
     display-combi: " ❯ ";
+    display-emoji: " ❯ ";
     /* display-drun: ""; */
     display-run: " ❯ ";
     /* d */isplay-run: " 省 ";
@@ -17,6 +18,6 @@ configuration {
     me-accept-entry: "MouseDPrimary";
     me-accept-custom: "Control+MouseDPrimary";
 
-    font: "MonoLisa 12";
+    font: "siji Regular 12";
 
 }
