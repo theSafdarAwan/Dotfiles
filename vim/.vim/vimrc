@@ -5,7 +5,6 @@ Plug 'tpope/vim-obsession'
 call plug#end()
 
 syntax on
-colorscheme vim_theme
 set background=dark
 
 set number 
@@ -107,3 +106,4 @@ let g:fzf_colors =
             \ 'spinner': ['fg', 'Label'],
             \ 'header':  ['fg', 'Comment'] 
             \}
+source ~/.vim/colors/vim_theme.vim
