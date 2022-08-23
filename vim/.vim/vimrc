@@ -5,6 +5,7 @@ Plug 'tpope/vim-obsession'
 call plug#end()
 
 syntax on
+colorscheme vim_theme
 set background=dark
 
 set number 
@@ -29,6 +30,7 @@ set undofile
 set undodir=~/.vim/vim_undodir
 
 set wildmenu
+set ruler
 
 set completeopt="menuone,noselect"
 
@@ -55,6 +57,9 @@ inoremap = =<c-g>u
 vnoremap <C-j> :m '>+1<cr>gv=gv
 vnoremap <C-k> :m '<-2<cr>gv=gv
 
+" Move to the next|previous capital word
+" TODO: work in progress lol
+
 " Indentation
 vnoremap < <gv
 vnoremap > >gv
@@ -72,6 +77,17 @@ let &t_SR = "\<esc>[1 q"
 autocmd InsertLeave * silent !echo -ne "\e[1 q"
 autocmd InsertLeave * redraw!
 autocmd VimEnter * execute "normal \<C-G>"
+
+function! HelpHelper()
+    set relativenumber
+    set number
+    hi link HelpBar Normal
+    hi link HelpStar Normal
+    " :h conceal|conceal
+    set conceallevel=0
+endfunction
+
+autocmd FileType help call HelpHelper()
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 
@@ -91,4 +107,3 @@ let g:fzf_colors =
             \ 'spinner': ['fg', 'Label'],
             \ 'header':  ['fg', 'Comment'] 
             \}
-source /home/safdarawan/.vim_theme.vim
