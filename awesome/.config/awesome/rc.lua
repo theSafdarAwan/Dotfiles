@@ -1,2 +1,2 @@
-require("modules.init")
+require("init")
 require("modules.auto-start")

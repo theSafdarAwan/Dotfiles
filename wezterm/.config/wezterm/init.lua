@@ -135,7 +135,7 @@ return {
         }, -- standard copy/paste bindings
         {
             key = "x",
-            mods = "CTRL",
+            mods = "CTRL|SHIFT",
             action = "ActivateCopyMode",
         },
         {
