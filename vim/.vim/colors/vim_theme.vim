@@ -155,7 +155,7 @@ if s:t_Co >= 256
   hi PmenuSbar ctermfg=NONE ctermbg=8 cterm=NONE
   hi PmenuSel ctermfg=7 ctermbg=14 cterm=NONE
   hi PmenuThumb ctermfg=NONE ctermbg=0 cterm=NONE
-  hi Search ctermbg=11 cterm=NONE
+  hi Search ctermbg=8 cterm=NONE
   hi SignColumn ctermfg=7 ctermbg=NONE cterm=NONE
   hi SignColumn ctermfg=7 ctermbg=NONE cterm=NONE
   hi SpecialKey ctermfg=7 ctermbg=0 cterm=NONE

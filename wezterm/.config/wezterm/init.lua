@@ -118,7 +118,7 @@ return {
             mods = "CTRL|SHIFT|ALT",
             action = wezterm.action({ AdjustPaneSize = { "Down", 1 } }),
         },
-        { -- browser-like bindings for tabbing
+        {
             key = "t",
             mods = "CTRL|SHIFT",
             action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),

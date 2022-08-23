@@ -17,7 +17,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-" set hlsearch
+set hlsearch
+set incsearch
+set nowrapscan
 
 set ignorecase
 set smartcase
@@ -66,6 +68,22 @@ vnoremap > >gv
 nnoremap <leader>ss :set spell!<cr>
 nnoremap <leader>vex :Explore<cr>
 
+" camelCase Movement
+" Use one of the following to define the camel characters.
+" Stop on capital letters.
+let g:camelchar = "A-Z"
+" Also stop on numbers.
+let g:camelchar = "A-Z0-9"
+" Include '.' for class member, ',' for separator, ';' end-statement,
+" and <[< bracket starts and "'` quotes.
+let g:camelchar = "A-Z0-9.,;:{([`'\""
+nnoremap <silent><leader>b :<C-u>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%^','bW')<CR>
+nnoremap <silent><leader>w :<C-u>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%$','W')<CR>
+inoremap <silent><leader>b <C-o>:call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%^','bW')<CR>
+inoremap <silent><leader>w <C-o>:call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%$','W')<CR>
+vnoremap <silent><leader>b :<C-U>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%^','bW')<CR>v`>o
+vnoremap <silent><leader>w <Esc>`>:<C-U>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:camelchar.']\@<=\)['.g:camelchar.']\<Bar>['.g:camelchar.']\ze\%([^'.g:camelchar.']\&\>\@!\)\<Bar>\%$','W')<CR>v`<o
+
 nnoremap <leader>so :so %<cr>
 
 " cursor shape setting
@@ -85,7 +103,6 @@ function! HelpHelper()
     " :h conceal|conceal
     set conceallevel=0
 endfunction
-
 autocmd FileType help call HelpHelper()
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
