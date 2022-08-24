@@ -480,6 +480,13 @@ root.keys(globalkeys)
 
 --> Rules
 -- Rules to apply to new clients (through the "manage" signal).
+function custom_focus_filter(c)
+	if global_focus_disable then
+		return nil
+	end
+	return awful.client.focus.filter(c)
+end
+
 awful.rules.rules = {
 	-- All clients will match this rule.
 	{
@@ -537,190 +544,58 @@ awful.rules.rules = {
 	{ rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
 	--> Tag 1
 	{
-		rule = {
-			class = "firefox",
+		rule_any = {
+			class = { "firefox", "firefox-nightly", "Google-chrome", "Google-chrome-unstable", "qBittorrent" },
 		},
-		properties = { screen = "VGA-1", taglist_names[1] },
-	},
-	{
-		rule = {
-			class = "firefox-nightly",
-		},
-		properties = { screen = "VGA-1", taglist_names[1] },
-	},
-	{
-		rule = {
-			class = "Google-chrome",
-		},
-		properties = { screen = "VGA-1", taglist_names[1] },
-	},
-	{
-		rule = {
-			class = "Google-chrome-unstable",
-		},
-		properties = { screen = "VGA-1", taglist_names[1] },
-	},
-	{
-		rule = {
-			class = "qBittorrent",
-		},
-		properties = { screen = "VGA-1", taglist_names[1] },
+		properties = { tag = taglist_names[1] },
 	},
 	--> Tag 2
 	{
 		rule = {
 			class = "org.wezfurlong.wezterm",
 		},
-		properties = { screen = "VGA-1", tag = taglist_names[2] },
+		properties = { screen = 1, tag = taglist_names[2] },
 	},
 	{
 		rule = {
 			class = "tabbed",
 		},
-		properties = { screen = "VGA-1", taglist_names[2] },
+		properties = { screen = 1, taglist_names[2], floating = true },
 	},
 	--> Tag 3
 	{
-		rule = {
-			class = "mpv",
+		rule_any = {
+			class = { "mpv", "Evince", "Com.github.johnfactotum.Foliate", "Deadbeef", "Peazip" },
 		},
-		properties = { screen = "VGA-1", taglist_names[3] },
-	},
-	{
-		rule = {
-			class = "Evince",
-		},
-		properties = { screen = "VGA-1", taglist_names[3] },
-	},
-	{
-		rule = {
-			class = "Com.github.johnfactotum.Foliate",
-		},
-		properties = { screen = "VGA-1", taglist_names[3] },
-	},
-	{
-		rule = {
-			class = "Deadbeef",
-		},
-		properties = { screen = "VGA-1", taglist_names[3] },
-	},
-	{
-		rule = {
-			class = "Peazip",
-		},
-		properties = { screen = "VGA-1", taglist_names[3] },
+		properties = { tag = taglist_names[3] },
 	},
 	--> Tag 4
 	{
-		rule = {
-			class = "Nitrogen",
+		rule_any = {
+			class = { "Nitrogen", "stacer", "TIPP10", "Gcolor2", "Todoist", "Stardict", "obsidian" },
 		},
-		properties = { screen = "VGA-1", taglist_names[4] },
-	},
-	{
-		rule = {
-			class = "stacer",
-		},
-		properties = { screen = "VGA-1", taglist_names[4] },
-	},
-	{
-		rule = {
-			class = "TIPP10",
-		},
-		properties = { screen = "VGA-1", taglist_names[4] },
-	},
-	{
-		rule = {
-			class = "Gcolor2",
-		},
-		properties = { screen = "VGA-1", taglist_names[4] },
-	},
-	{
-		rule = {
-			class = "Todoist",
-		},
-		properties = { screen = "VGA-1", taglist_names[4] },
-	},
-	{
-		rule = {
-			class = "Stardict",
-		},
-		properties = { screen = "VGA-1", taglist_names[4] },
-	},
-	{
-		rule = {
-			class = "obsidian",
-		},
-		properties = { screen = "VGA-1", taglist_names[4] },
+		properties = { screen = 1, tag = taglist_names[4] },
 	},
 	--> Tag 5
 	{
-		rule = {
-			class = "Thunderbird",
+		rule_any = {
+			class = { "Thunderbird", "discord" },
 		},
-		properties = { screen = "VGA-1", taglist_names[5] },
-	},
-	{
-		rule = {
-			class = "discord",
-		},
-		properties = { screen = "VGA-1", taglist_names[5] },
+		properties = { screen = 1, tag = taglist_names[5] },
 	},
 	--> Tag 8
 	{
-		rule = {
-			class = "obs",
+		rule_any = {
+			class = { "obs", "Blender", "figma-linux", "VirtualBox", "kdenlive", "Ardour", "Inkscape", "Gimp" },
 		},
-		properties = { screen = "VGA-1", taglist_names[8] },
-	},
-	{
-		rule = {
-			class = "Blender",
-		},
-		properties = { screen = "VGA-1", taglist_names[8] },
-	},
-	{
-		rule = {
-			class = "figma-linux",
-		},
-		properties = { screen = "VGA-1", taglist_names[8] },
-	},
-	{
-		rule = {
-			class = "VirtualBox",
-		},
-		properties = { screen = "VGA-1", taglist_names[8] },
-	},
-	{
-		rule = {
-			class = "kdenlive",
-		},
-		properties = { screen = "VGA-1", taglist_names[8] },
-	},
-	{
-		rule = {
-			class = "Ardour",
-		},
-		properties = { screen = "VGA-1", taglist_names[8] },
-	},
-	{
-		rule = {
-			class = "Inkscape",
-		},
-		properties = { screen = "VGA-1", taglist_names[8] },
-	},
-	{
-		rule = {
-			class = "Gimp",
-		},
-		properties = { screen = "VGA-1", taglist_names[8] },
+		properties = { screen = 1, tag = taglist_names[8] },
 	},
 	--> Tag 9
 	{
 		rule = {
 			class = "Pcmanfm",
 		},
-		properties = { screen = "VGA-1", taglist_names[9] },
+		properties = { screen = 1, tag = taglist_names[9] },
 	},
 }
 
