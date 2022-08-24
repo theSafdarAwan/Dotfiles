@@ -1,13 +1,16 @@
 #!/bin/bash
-onedark_black="#282A36"
-onedark_black2="#232531"
-onedark_blue="#61afef"
-onedark_yellow="#fccf6c"
-onedark_red="#ec6b64"
-onedark_white="#abb2bf"
-onedark_green="#71f094"
-onedark_visual_grey="#373844"
-onedark_comment_grey="#5a5c68"
+left_round_bar=
+right_round_bar=
+dracula_black="#282A36"
+dracula_black2="#232531"
+dracula_blue="#61afef"
+dracula_yellow="#fccf6c"
+dracula_red="#ec6b64"
+dracula_white="#abb2bf"
+dracula_green="#71f094"
+dracula_visual_grey="#373844"
+dracula_comment_grey="#5a5c68"
+dracula_round_bar_bg="#373844"
 
 # get() {
 #    local option=$1
@@ -40,47 +43,47 @@ set "status-left-length" "100"
 set "status-right-length" "100"
 set "status-right-attr" "none"
 
-set "message-fg" "$onedark_white"
-set "message-bg" "$onedark_black"
+set "message-fg" "$dracula_white"
+set "message-bg" "$dracula_black"
 
-set "message-command-fg" "$onedark_white"
-set "message-command-bg" "$onedark_black"
+set "message-command-fg" "$dracula_white"
+set "message-command-bg" "$dracula_black"
 
 set "status-attr" "none"
 set "status-left-attr" "none"
 
-setw "window-status-fg" "$onedark_black"
-setw "window-status-bg" "$onedark_black"
+setw "window-status-fg" "$dracula_black"
+setw "window-status-bg" "$dracula_black"
 setw "window-status-attr" "none"
 
-setw "window-status-activity-bg" "$onedark_black"
-setw "window-status-activity-fg" "$onedark_black"
+setw "window-status-activity-bg" "$dracula_black"
+setw "window-status-activity-fg" "$dracula_black"
 setw "window-status-activity-attr" "none"
 
 setw "window-status-separator" ""
-set "?window_zoomed_flag" "$onedark_yellow"
+set "?window_zoomed_flag" "$dracula_yellow"
 
-set "window-style" "fg=$onedark_white"
-set "window-active-style" "fg=$onedark_white"
+set "window-style" "fg=$dracula_white"
+set "window-active-style" "fg=$dracula_white"
 
-set "pane-border-fg" "$onedark_white"
-set "pane-border-bg" "$onedark_black"
-set "pane-active-border-fg" "$onedark_green"
-set "pane-active-border-bg" "$onedark_black"
+set "pane-border-fg" "$dracula_white"
+set "pane-border-bg" "$dracula_black"
+set "pane-active-border-fg" "$dracula_green"
+set "pane-active-border-bg" "$dracula_black"
 
-set "display-panes-active-colour" "$onedark_yellow"
-set "display-panes-colour" "$onedark_blue"
+set "display-panes-active-colour" "$dracula_yellow"
+set "display-panes-colour" "$dracula_blue"
 
-set "status-bg" "$onedark_black2"
-set "status-fg" "$onedark_white"
+set "status-bg" "$dracula_black2"
+set "status-fg" "$dracula_white"
 
-set "@prefix_highlight_fg" "$onedark_black"
-set "@prefix_highlight_bg" "$onedark_green"
-set "@prefix_highlight_copy_mode_attr" "fg=$onedark_black,bg=$onedark_green"
+set "@prefix_highlight_fg" "$dracula_black"
+set "@prefix_highlight_bg" "$dracula_green"
+set "@prefix_highlight_copy_mode_attr" "fg=$dracula_black,bg=$dracula_green"
 set "@prefix_highlight_output_prefix" "  "
 
-set "status-right" "#[fg=$onedark_white,bg=$onedark_black2,nobold,nounderscore,noitalics]#[fg=$onedark_black,bg=$onedark_white,bold] %d-%m-%Y #[fg=$onedark_black,bg=$onedark_white]#[fg=$onedark_red,bg=$onedark_black] %A"
-set "status-left" "#[fg=$onedark_red,bg=$onedark_black,bold] #S #{prefix_highlight}#[fg=$onedark_black,bg=$onedark_white] #[fg=$onedark_black,bg=$onedark_white]#I #[fg=$onedark_white,bg=$onedark_black2]"
+set "status-right" "#[fg=$dracula_white,bg=$dracula_black2,nobold,nounderscore,noitalics]#[fg=$dracula_black,bg=$dracula_white,bold] %d-%m-%Y #[fg=$dracula_black,bg=$dracula_white]#[fg=$dracula_red,bg=$dracula_black]%A"
+set "status-left" "#[fg=$dracula_red,bg=$dracula_black,bold] #S #{prefix_highlight}#[fg=$dracula_black,bg=$dracula_white] #[fg=$dracula_black,bg=$dracula_white]#I #[fg=$dracula_white,bg=$dracula_black2]"
 
-set "window-status-format" "#[fg=$onedark_white] #I:#W "
-set "window-status-current-format" "#[fg=$onedark_yellow,nobold]#{?window_zoomed_flag,#[fg=$onedark_red],} #I:#W*"
+set "window-status-format" "#[fg=$dracula_round_bar_bg] $left_round_bar#[fg=$dracula_white,bg=$dracula_round_bar_bg]#I:#W#[fg=$dracula_round_bar_bg,bg=$dracula_black]$right_round_bar"
+set "window-status-current-format" " #[fg=$dracula_round_bar_bg]$left_round_bar#[fg=$dracula_yellow,nobold,bg=$dracula_round_bar_bg]#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W*#[fg=$dracula_round_bar_bg,bg=$dracula_black]$right_round_bar"
