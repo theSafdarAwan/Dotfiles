@@ -2,7 +2,6 @@
 ;                       colors
 ;#####################################################
 [colors-bar_1]
-; background = #00000000
 background = #232531
 background-alt = #444
 foreground = #dfdfdf

@@ -537,187 +537,187 @@ awful.rules.rules = {
 		rule = {
 			class = "firefox",
 		},
-		properties = { screen = 1, tag = "1" },
+		properties = { screen = "VGA-1", tag = "1" },
 	},
 	{
 		rule = {
 			class = "firefox-nightly",
 		},
-		properties = { screen = 1, tag = "1" },
+		properties = { screen = "VGA-1", tag = "1" },
 	},
 	{
 		rule = {
 			class = "Google-chrome",
 		},
-		properties = { screen = 1, tag = "1" },
+		properties = { screen = "VGA-1", tag = "1" },
 	},
 	{
 		rule = {
 			class = "Google-chrome-unstable",
 		},
-		properties = { screen = 1, tag = "1" },
+		properties = { screen = "VGA-1", tag = "1" },
 	},
 	{
 		rule = {
 			class = "qBittorrent",
 		},
-		properties = { screen = 1, tag = "1" },
+		properties = { screen = "VGA-1", tag = "1" },
 	},
 	--> Tag 2
 	{
 		rule = {
 			class = "org.wezfurlong.wezterm",
 		},
-		properties = { screen = 1, tag = "2" },
+		properties = { screen = "VGA-1", tag = "2" },
 	},
 	{
 		rule = {
 			class = "tabbed",
 		},
-		properties = { screen = 1, tag = "2" },
+		properties = { screen = "VGA-1", tag = "2" },
 	},
 	--> Tag 3
 	{
 		rule = {
 			class = "mpv",
 		},
-		properties = { screen = 1, tag = "3" },
+		properties = { screen = "VGA-1", tag = "3" },
 	},
 	{
 		rule = {
 			class = "Evince",
 		},
-		properties = { screen = 1, tag = "3" },
+		properties = { screen = "VGA-1", tag = "3" },
 	},
 	{
 		rule = {
 			class = "Com.github.johnfactotum.Foliate",
 		},
-		properties = { screen = 1, tag = "3" },
+		properties = { screen = "VGA-1", tag = "3" },
 	},
 	{
 		rule = {
 			class = "Deadbeef",
 		},
-		properties = { screen = 1, tag = "3" },
+		properties = { screen = "VGA-1", tag = "3" },
 	},
 	{
 		rule = {
 			class = "Peazip",
 		},
-		properties = { screen = 1, tag = "3" },
+		properties = { screen = "VGA-1", tag = "3" },
 	},
 	--> Tag 4
 	{
 		rule = {
 			class = "Nitrogen",
 		},
-		properties = { screen = 1, tag = "4" },
+		properties = { screen = "VGA-1", tag = "4" },
 	},
 	{
 		rule = {
 			class = "stacer",
 		},
-		properties = { screen = 1, tag = "4" },
+		properties = { screen = "VGA-1", tag = "4" },
 	},
 	{
 		rule = {
 			class = "TIPP10",
 		},
-		properties = { screen = 1, tag = "4" },
+		properties = { screen = "VGA-1", tag = "4" },
 	},
 	{
 		rule = {
 			class = "Gcolor2",
 		},
-		properties = { screen = 1, tag = "4" },
+		properties = { screen = "VGA-1", tag = "4" },
 	},
 	{
 		rule = {
 			class = "Todoist",
 		},
-		properties = { screen = 1, tag = "4" },
+		properties = { screen = "VGA-1", tag = "4" },
 	},
 	{
 		rule = {
 			class = "Stardict",
 		},
-		properties = { screen = 1, tag = "4" },
+		properties = { screen = "VGA-1", tag = "4" },
 	},
 	{
 		rule = {
 			class = "obsidian",
 		},
-		properties = { screen = 1, tag = "4" },
+		properties = { screen = "VGA-1", tag = "4" },
 	},
 	--> Tag 5
 	{
 		rule = {
 			class = "Thunderbird",
 		},
-		properties = { screen = 1, tag = "5" },
+		properties = { screen = "VGA-1", tag = "5" },
 	},
 	{
 		rule = {
 			class = "discord",
 		},
-		properties = { screen = 1, tag = "5" },
+		properties = { screen = "VGA-1", tag = "5" },
 	},
 	--> Tag 8
 	{
 		rule = {
 			class = "obs",
 		},
-		properties = { screen = 1, tag = "8" },
+		properties = { screen = "VGA-1", tag = "8" },
 	},
 	{
 		rule = {
 			class = "Blender",
 		},
-		properties = { screen = 1, tag = "8" },
+		properties = { screen = "VGA-1", tag = "8" },
 	},
 	{
 		rule = {
 			class = "figma-linux",
 		},
-		properties = { screen = 1, tag = "8" },
+		properties = { screen = "VGA-1", tag = "8" },
 	},
 	{
 		rule = {
 			class = "VirtualBox",
 		},
-		properties = { screen = 1, tag = "8" },
+		properties = { screen = "VGA-1", tag = "8" },
 	},
 	{
 		rule = {
 			class = "kdenlive",
 		},
-		properties = { screen = 1, tag = "8" },
+		properties = { screen = "VGA-1", tag = "8" },
 	},
 	{
 		rule = {
 			class = "Ardour",
 		},
-		properties = { screen = 1, tag = "8" },
+		properties = { screen = "VGA-1", tag = "8" },
 	},
 	{
 		rule = {
 			class = "Inkscape",
 		},
-		properties = { screen = 1, tag = "8" },
+		properties = { screen = "VGA-1", tag = "8" },
 	},
 	{
 		rule = {
 			class = "Gimp",
 		},
-		properties = { screen = 1, tag = "8" },
+		properties = { screen = "VGA-1", tag = "8" },
 	},
 	--> Tag 9
 	{
 		rule = {
 			class = "Pcmanfm",
 		},
-		properties = { screen = 1, tag = "9" },
+		properties = { screen = "VGA-1", tag = "9" },
 	},
 }
 

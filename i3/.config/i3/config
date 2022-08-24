@@ -1,5 +1,5 @@
 # set the modifier key in my case i use alt 
-set $mod Mod1
+set $altkey Mod1
 set $win_key Mod4
 
 # Font for the title bar for windows
@@ -12,98 +12,99 @@ include ~/.config/i3/modules/workspace_assignment.conf
 include ~/.config/i3/modules/theme.conf
 include ~/.config/i3/modules/plasma.conf
 
-####################
+#>>>>>>>>>>>>>>>>>>>
 #    system keybind   
-####################
-bindsym $mod+w exec nitrogen
+#>>>>>>>>>>>>>>>>>>>
+bindsym $altkey+w exec nitrogen
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $altkey+s layout stacking
+bindsym $altkey+t layout tabbed
+bindsym $altkey+e layout toggle split
 
 # don't change focus on mouse focus
 focus_follows_mouse no
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $altkey+h focus left
+bindsym $altkey+j focus down
+bindsym $altkey+k focus up
+bindsym $altkey+l focus right
 
 # split orientation(vertical | horizontal) toggle 
-bindsym $mod+semicolon split toggle
+bindsym $altkey+semicolon split toggle
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Use Mouse+$altkey to drag floating windows to their wanted position
+floating_modifier $altkey
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $altkey+f fullscreen toggle
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $altkey+q kill
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $altkey+Shift+x exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $altkey+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $altkey+space focus mode_toggle
 
 # audio
-bindsym $mod+Ctrl+a exec wezterm start alsamixer
+bindsym $altkey+Ctrl+a exec wezterm start alsamixer
 
-####################
+#>>>>>>>>>>>>>>>>>>>
 #    other apps   
-####################
+#>>>>>>>>>>>>>>>>>>>
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $altkey+d exec --no-startup-id rofi -show drun
+bindsym $altkey+comma exec --no-startup-id rofi -show emoji
 
 # start a terminal or tmux session
-bindsym $mod+Return exec wezterm
-bindsym $mod+n exec wezterm start tmux new -A -s new
+bindsym $altkey+Return exec wezterm
+bindsym $altkey+n exec wezterm start tmux new -A -s new
 
 # polybar mappings for more focus
-bindsym $mod+Shift+Return exec pkill polybar
-bindsym $mod+Ctrl+Return exec polybar
+bindsym $altkey+Shift+Return exec pkill polybar
+bindsym $altkey+Ctrl+Return exec polybar
 
 # ksnip
-bindsym $mod+x exec ksnip 
+bindsym $altkey+x exec ksnip 
 
-############################
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # marks they are amazing
-############################
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # read 1 character and mark the current window with this character
-bindsym $mod+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+bindsym $altkey+m exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
 
 # read 1 character and go to the window with the character
-bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+bindsym $altkey+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
 
-#####################
+#>>>>>>>>>>>>>>>>>>>>
 # reload settings
-#####################
+#>>>>>>>>>>>>>>>>>>>>
 
 # reload the configuration file
-bindsym $mod+ctrl+r restart
+bindsym $altkey+ctrl+r restart
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+shift+r reload
+bindsym $altkey+shift+r reload
 
-##############################
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # workspace related settings
-##############################
+#>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $altkey+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+bindsym $altkey+minus scratchpad show
 
 #navigate workspaces next / previous
-bindsym $mod+ctrl+l workspace next
-bindsym $mod+ctrl+h workspace prev
+bindsym $altkey+ctrl+l workspace next
+bindsym $altkey+ctrl+h workspace prev
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -119,37 +120,37 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
+bindsym $altkey+1 workspace number $ws1
+bindsym $altkey+2 workspace number $ws2
+bindsym $altkey+3 workspace number $ws3
+bindsym $altkey+4 workspace number $ws4
+bindsym $altkey+5 workspace number $ws5
+bindsym $altkey+6 workspace number $ws6
+bindsym $altkey+7 workspace number $ws7
+bindsym $altkey+8 workspace number $ws8
+bindsym $altkey+9 workspace number $ws9
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $altkey+Shift+1 move container to workspace number $ws1
+bindsym $altkey+Shift+2 move container to workspace number $ws2
+bindsym $altkey+Shift+3 move container to workspace number $ws3
+bindsym $altkey+Shift+4 move container to workspace number $ws4
+bindsym $altkey+Shift+5 move container to workspace number $ws5
+bindsym $altkey+Shift+6 move container to workspace number $ws6
+bindsym $altkey+Shift+7 move container to workspace number $ws7
+bindsym $altkey+Shift+8 move container to workspace number $ws8
+bindsym $altkey+Shift+9 move container to workspace number $ws9
 
-###################
+#>>>>>>>>>>>>>>>>>>
 # borders settings
-###################
+#>>>>>>>>>>>>>>>>>>
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 # smart_borders on
 
-###################
+#>>>>>>>>>>>>>>>>>>
 # appearance
-###################
+#>>>>>>>>>>>>>>>>>>
 
 # You can also use any non-zero value if you'd like to have a border
 for_window [class=".*"] border pixel 0
@@ -158,8 +159,8 @@ for_window [class=".*"] border pixel 0
 # hide_edge_borders none
 
 # change borders
-bindsym $mod+shift+n border none
-bindsym $mod+shift+b border pixel 2
+bindsym $altkey+shift+n border none
+bindsym $altkey+shift+b border pixel 2
 
 # Set inner/outer gaps
 gaps inner 8
@@ -176,28 +177,28 @@ title_align center
 #                       MODES
 #||||||||||||||||||||||||||||||||||||||||||||||||
 
-##########################
+#>>>>>>>>>>>>>>>>>>>>>>>>>
 # mode resize the window
-##########################
-bindsym $mod+r mode "resize"
+#>>>>>>>>>>>>>>>>>>>>>>>>>
+bindsym $altkey+r mode "resize"
 mode "resize" {
         bindsym h resize shrink width 5 px or 5 ppt
         bindsym j resize grow height 5 px or 5 ppt
         bindsym k resize shrink height 5 px or 5 ppt
         bindsym l resize grow width 5 px or 5 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+        # back to normal: Enter or Escape or $altkey+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym $altkey+r mode "default"
 }
 
-##########################
+#>>>>>>>>>>>>>>>>>>>>>>>>>
 # mode for window_movement
-##########################
-bindsym $mod+shift+semicolon mode "$window_movement"
+#>>>>>>>>>>>>>>>>>>>>>>>>>
+bindsym $altkey+shift+semicolon mode "$window_movement"
 
-# bindsym $mod+shift+k mode "$window_movement"
+# bindsym $altkey+shift+k mode "$window_movement"
 # set $window_movement Move Windows using vim keybind's
 # mode "$window_movement" {
 #     # move focused window
@@ -211,50 +212,50 @@ bindsym $mod+shift+semicolon mode "$window_movement"
 #     bindsym Escape mode "default"
 # }
 
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $altkey+Shift+h move left
+bindsym $altkey+Shift+j move down
+bindsym $altkey+Shift+k move up
+bindsym $altkey+Shift+l move right
 
-##########################
+#>>>>>>>>>>>>>>>>>>>>>>>>>
 # i3-gaps 
-##########################
+#>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # # for current workspace
-# bindsym $mod+Shift+bracketleft gaps inner current plus 5
-# bindsym $mod+Shift+bracketright gaps inner current minus 5
-# bindsym $mod+shift+0 gaps inner current set 5
+# bindsym $altkey+Shift+bracketleft gaps inner current plus 5
+# bindsym $altkey+Shift+bracketright gaps inner current minus 5
+# bindsym $altkey+shift+0 gaps inner current set 5
 # 
 # bindsym $win_key+Shift+bracketleft gaps inner all plus 5
 # bindsym $win_key+Shift+bracketright gaps inner all minus 5
 # bindsym $win_key+Shift+0 gaps inner all set 5
 # 
 # # for all workspaces
-# bindsym $mod+Ctrl+bracketleft gaps outer current plus 5
-# bindsym $mod+Ctrl+bracketright gaps outer current minus 5
-# bindsym $mod+Ctrl+0 gaps outer current set 0
+# bindsym $altkey+Ctrl+bracketleft gaps outer current plus 5
+# bindsym $altkey+Ctrl+bracketright gaps outer current minus 5
+# bindsym $altkey+Ctrl+0 gaps outer current set 0
 # 
 # bindsym $win_key+Ctrl+bracketleft gaps outer all plus 5
 # bindsym $win_key+Ctrl+bracketright gaps outer all minus 5
 # bindsym $win_key+Ctrl+0 gaps outer all set 0
 
-##########################
+#>>>>>>>>>>>>>>>>>>>>>>>>>
 # mode for i3-gaps 
-##########################
-# Press $mod+Shift+g to enter the gap mode. 
+#>>>>>>>>>>>>>>>>>>>>>>>>>
+# Press $altkey+Shift+g to enter the gap mode. 
 
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: j|k|l (local), Shift + j|k|l (global) 
-set $mode_gaps_inner Inner Gaps: j|k|l (local), Shift + j|k|l (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
+set $altkeye_gaps Gaps: (o) outer, (i) inner
+set $altkeye_gaps_outer Outer Gaps: j|k|l (local), Shift + j|k|l (global) 
+set $altkeye_gaps_inner Inner Gaps: j|k|l (local), Shift + j|k|l (global)
+bindsym $altkey+Shift+g mode "$altkeye_gaps"
 
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
+mode "$altkeye_gaps" {
+        bindsym o      mode "$altkeye_gaps_outer"
+        bindsym i      mode "$altkeye_gaps_inner"
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-mode "$mode_gaps_inner" {
+mode "$altkeye_gaps_inner" {
         bindsym j gaps inner current plus 5
         bindsym k gaps inner current minus 5
         bindsym l gaps inner current set 0
@@ -267,7 +268,7 @@ mode "$mode_gaps_inner" {
         bindsym Escape mode "default"
 }
 
-mode "$mode_gaps_outer" {
+mode "$altkeye_gaps_outer" {
         bindsym j gaps outer current plus 5
         bindsym k gaps outer current minus 5
         bindsym l gaps outer current set 0
@@ -280,14 +281,14 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-####################
+#>>>>>>>>>>>>>>>>>>>
 #   power
-####################
+#>>>>>>>>>>>>>>>>>>>
 
 # Set shut down, restart and locking features
-# bindsym $mod+0 mode "$mode_system"
-# set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-# mode "$mode_system" {
+# bindsym $altkey+0 mode "$altkeye_system"
+# set $altkeye_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+# mode "$altkeye_system" {
 #     bindsym l exec --no-startup-id i3exit lock, mode "default"
 #     bindsym s exec --no-startup-id i3exit suspend, mode "default"
 #     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
@@ -301,4 +302,5 @@ mode "$mode_gaps_outer" {
 #     bindsym Escape mode "default"
 # }
 
-bindsym $mod+0 exec i3exit lock
+bindsym $altkey+0 exec i3exit lock
+bindsym $altkey+ctrl+Shift+x exec i3exit logout
