@@ -86,4 +86,4 @@ set "status-right" "#[fg=$dracula_white,bg=$dracula_black2,nobold,nounderscore,n
 set "status-left" "#[fg=$dracula_red,bg=$dracula_black,bold] #S #{prefix_highlight}#[fg=$dracula_black,bg=$dracula_white] #[fg=$dracula_black,bg=$dracula_white]#I #[fg=$dracula_white,bg=$dracula_black2]"
 
 set "window-status-format" "#[fg=$dracula_round_bar_bg] $left_round_bar#[fg=$dracula_white,bg=$dracula_round_bar_bg]#I:#W#[fg=$dracula_round_bar_bg,bg=$dracula_black]$right_round_bar"
-set "window-status-current-format" " #[fg=$dracula_round_bar_bg]$left_round_bar#[fg=$dracula_yellow,nobold,bg=$dracula_round_bar_bg]#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W*#[fg=$dracula_round_bar_bg,bg=$dracula_black]$right_round_bar"
+set "window-status-current-format" " #[fg=$dracula_round_bar_bg]$left_round_bar#[fg=$dracula_yellow,nobold,bg=$dracula_round_bar_bg]#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W#[fg=$dracula_round_bar_bg,bg=$dracula_black]$right_round_bar"

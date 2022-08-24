@@ -3,6 +3,7 @@ local root = root
 local globalkeys = globalkeys
 local awesome = awesome
 local client = client
+local screen = screen
 
 --> Install package's through luarocks if installed
 pcall(require, "luarocks.loader")
@@ -191,6 +192,8 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+local taglist_names = { "  ", " ", " ", " ", " ", " ", " ", " ", " " }
+
 awful.screen.connect_for_each_screen(function(s)
 	-- Wallpaper
 	-- set_wallpaper(s)
@@ -199,7 +202,7 @@ awful.screen.connect_for_each_screen(function(s)
 	-- local names = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 	-- local names = {  "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", " ", "  "  }
 
-	local names = { "  ", " ", " ", " ", " ", " ", " ", " ", " " }
+	local names = taglist_names
 	-- local names = { "  ", " ", " ", " ", " ", " ", " ", " ", " ", " "}
 	-- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 	local l = awful.layout.suit
@@ -537,187 +540,187 @@ awful.rules.rules = {
 		rule = {
 			class = "firefox",
 		},
-		properties = { screen = "VGA-1", tag = "1" },
+		properties = { screen = "VGA-1", taglist_names[1] },
 	},
 	{
 		rule = {
 			class = "firefox-nightly",
 		},
-		properties = { screen = "VGA-1", tag = "1" },
+		properties = { screen = "VGA-1", taglist_names[1] },
 	},
 	{
 		rule = {
 			class = "Google-chrome",
 		},
-		properties = { screen = "VGA-1", tag = "1" },
+		properties = { screen = "VGA-1", taglist_names[1] },
 	},
 	{
 		rule = {
 			class = "Google-chrome-unstable",
 		},
-		properties = { screen = "VGA-1", tag = "1" },
+		properties = { screen = "VGA-1", taglist_names[1] },
 	},
 	{
 		rule = {
 			class = "qBittorrent",
 		},
-		properties = { screen = "VGA-1", tag = "1" },
+		properties = { screen = "VGA-1", taglist_names[1] },
 	},
 	--> Tag 2
 	{
 		rule = {
 			class = "org.wezfurlong.wezterm",
 		},
-		properties = { screen = "VGA-1", tag = "2" },
+		properties = { screen = "VGA-1", tag = taglist_names[2] },
 	},
 	{
 		rule = {
 			class = "tabbed",
 		},
-		properties = { screen = "VGA-1", tag = "2" },
+		properties = { screen = "VGA-1", taglist_names[2] },
 	},
 	--> Tag 3
 	{
 		rule = {
 			class = "mpv",
 		},
-		properties = { screen = "VGA-1", tag = "3" },
+		properties = { screen = "VGA-1", taglist_names[3] },
 	},
 	{
 		rule = {
 			class = "Evince",
 		},
-		properties = { screen = "VGA-1", tag = "3" },
+		properties = { screen = "VGA-1", taglist_names[3] },
 	},
 	{
 		rule = {
 			class = "Com.github.johnfactotum.Foliate",
 		},
-		properties = { screen = "VGA-1", tag = "3" },
+		properties = { screen = "VGA-1", taglist_names[3] },
 	},
 	{
 		rule = {
 			class = "Deadbeef",
 		},
-		properties = { screen = "VGA-1", tag = "3" },
+		properties = { screen = "VGA-1", taglist_names[3] },
 	},
 	{
 		rule = {
 			class = "Peazip",
 		},
-		properties = { screen = "VGA-1", tag = "3" },
+		properties = { screen = "VGA-1", taglist_names[3] },
 	},
 	--> Tag 4
 	{
 		rule = {
 			class = "Nitrogen",
 		},
-		properties = { screen = "VGA-1", tag = "4" },
+		properties = { screen = "VGA-1", taglist_names[4] },
 	},
 	{
 		rule = {
 			class = "stacer",
 		},
-		properties = { screen = "VGA-1", tag = "4" },
+		properties = { screen = "VGA-1", taglist_names[4] },
 	},
 	{
 		rule = {
 			class = "TIPP10",
 		},
-		properties = { screen = "VGA-1", tag = "4" },
+		properties = { screen = "VGA-1", taglist_names[4] },
 	},
 	{
 		rule = {
 			class = "Gcolor2",
 		},
-		properties = { screen = "VGA-1", tag = "4" },
+		properties = { screen = "VGA-1", taglist_names[4] },
 	},
 	{
 		rule = {
 			class = "Todoist",
 		},
-		properties = { screen = "VGA-1", tag = "4" },
+		properties = { screen = "VGA-1", taglist_names[4] },
 	},
 	{
 		rule = {
 			class = "Stardict",
 		},
-		properties = { screen = "VGA-1", tag = "4" },
+		properties = { screen = "VGA-1", taglist_names[4] },
 	},
 	{
 		rule = {
 			class = "obsidian",
 		},
-		properties = { screen = "VGA-1", tag = "4" },
+		properties = { screen = "VGA-1", taglist_names[4] },
 	},
 	--> Tag 5
 	{
 		rule = {
 			class = "Thunderbird",
 		},
-		properties = { screen = "VGA-1", tag = "5" },
+		properties = { screen = "VGA-1", taglist_names[5] },
 	},
 	{
 		rule = {
 			class = "discord",
 		},
-		properties = { screen = "VGA-1", tag = "5" },
+		properties = { screen = "VGA-1", taglist_names[5] },
 	},
 	--> Tag 8
 	{
 		rule = {
 			class = "obs",
 		},
-		properties = { screen = "VGA-1", tag = "8" },
+		properties = { screen = "VGA-1", taglist_names[8] },
 	},
 	{
 		rule = {
 			class = "Blender",
 		},
-		properties = { screen = "VGA-1", tag = "8" },
+		properties = { screen = "VGA-1", taglist_names[8] },
 	},
 	{
 		rule = {
 			class = "figma-linux",
 		},
-		properties = { screen = "VGA-1", tag = "8" },
+		properties = { screen = "VGA-1", taglist_names[8] },
 	},
 	{
 		rule = {
 			class = "VirtualBox",
 		},
-		properties = { screen = "VGA-1", tag = "8" },
+		properties = { screen = "VGA-1", taglist_names[8] },
 	},
 	{
 		rule = {
 			class = "kdenlive",
 		},
-		properties = { screen = "VGA-1", tag = "8" },
+		properties = { screen = "VGA-1", taglist_names[8] },
 	},
 	{
 		rule = {
 			class = "Ardour",
 		},
-		properties = { screen = "VGA-1", tag = "8" },
+		properties = { screen = "VGA-1", taglist_names[8] },
 	},
 	{
 		rule = {
 			class = "Inkscape",
 		},
-		properties = { screen = "VGA-1", tag = "8" },
+		properties = { screen = "VGA-1", taglist_names[8] },
 	},
 	{
 		rule = {
 			class = "Gimp",
 		},
-		properties = { screen = "VGA-1", tag = "8" },
+		properties = { screen = "VGA-1", taglist_names[8] },
 	},
 	--> Tag 9
 	{
 		rule = {
 			class = "Pcmanfm",
 		},
-		properties = { screen = "VGA-1", tag = "9" },
+		properties = { screen = "VGA-1", taglist_names[9] },
 	},
 }
 
@@ -786,102 +789,3 @@ client.connect_signal("unfocus", function(c)
 end)
 
 beautiful.maximized_hide_border = true
-
-local awful = require("awful")
-local client = client
-local tag = tag
-local ipairs = ipairs
-
--- {{{ Remember client size when switching between floating and tiling.
-client.connect_signal("maximize", function(c)
-	-- max if
-	--- both are false
-	--- only one is true
-	local max_h = c.maximized_horizontal
-	local max_v = c.maximized_vertical
-	local max = (not max_h and not max_v) or not (max_h and max_v)
-	c.remember_geometry.maximized_manual = max
-	c.maximized_horizontal = max
-	c.maximized_vertical = max
-	c.maximized = max
-end)
-
-client.connect_signal("manage", function(c)
-	c.remember_geometry = {
-		floating_geometry = c:geometry(),
-		maximized_manual = false,
-		maximized_horizontal = c.maximized_horizontal,
-		maximized_vertical = c.maximized_vertical,
-	}
-end)
-
-client.connect_signal("unmanage", function(c)
-	c.remember_geometry = nil
-end)
-
-client.connect_signal("property::floating", function(c)
-	if c.floating and c.remember_geometry then
-		c:geometry(c.remember_geometry.floating_geometry)
-	end
-end)
-
-tag.connect_signal("property::layout", function(t)
-	if t.layout == awful.layout.suit.floating then
-		for k, c in ipairs(t:clients()) do
-			c:geometry(c.remember_geometry.floating_geometry)
-		end
-	end
-end)
-
-client.connect_signal("request::geometry", function(c, context)
-	if context == "mouse.resize" and not c.fullscreen then
-		c.maximized_horizontal = false
-		c.maximized_vertical = false
-	end
-end)
-
-client.connect_signal("property::geometry", function(c)
-	local is_floating = c.floating or (c.first_tag and c.first_tag.layout == awful.layout.suit.floating)
-	if c.remember_geometry and is_floating and not c.fullscreen and not c.minimized then
-		-- if client is almost maximized then set it to maximized.
-		-- if client was maximized before allow to go back to normal view.
-		cgeometry = c:geometry()
-		sgeometry = c.screen.workarea
-		c.remember_geometry.floating_geometry = cgeometry
-		if not c.maximized_horizontal then
-			diffWidth = sgeometry.width - cgeometry.width - c.border_width
-			xpos = sgeometry.x - cgeometry.x
-			if not c.remember_geometry.maximized_horizontal and diffWidth == 0 and xpos == 0 then
-				c.remember_geometry.maximized_horizontal = true
-				c.maximized_horizontal = true
-			else
-				c.remember_geometry.maximized_horizontal = false
-			end
-		end
-		if not c.maximized_vertical then
-			diffHeight = sgeometry.height - cgeometry.height - c.border_width
-			ypos = sgeometry.y - cgeometry.y
-			if not c.remember_geometry.maximized_vertical and diffHeight == 0 and ypos == 0 then
-				c.remember_geometry.maximized_vertical = true
-				c.maximized_vertical = true
-			else
-				c.remember_geometry.maximized_vertical = false
-			end
-		end
-	end
-end)
-
-client.connect_signal("property::fullscreen", function(c)
-	if c.floating and not c.fullscreen then
-		c:geometry(c.remember_geometry.floating_geometry)
-		if c.remember_geometry.maximized_manual then
-			c.maximized_horizontal = true
-			c.maximized_vertical = true
-		end
-	end
-end)
--- }}}
-
-awful.key({ modkey }, "Up", function(c)
-	c:emit_signal("maximize")
-end)
