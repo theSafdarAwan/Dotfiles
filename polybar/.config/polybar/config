@@ -2,7 +2,7 @@
 ;                       colors
 ;#####################################################
 [colors-bar_1]
-background = #232531
+background = #1C1D26
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #bbbbbb
@@ -15,7 +15,7 @@ alert = #be5046
 ;#####################################################
 
 [bar/sid_1]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:VGA-1}
 width = 100%
 height = 25
 ; offset-x = 1%
@@ -42,11 +42,21 @@ font-1 = unifont:fontformat=truetype:size=9:antialias=false;0
 font-2 = siji:pixelsize=9;1
 font-3 = JetBrainsMono Nerd Font:style=regular:pixelsize=14;2
 
-modules-left = i3-bar_1 slant-right-bar_1-c date-bar_1 empty-space-bar_1-d slant-right-bar_1-d i3-msg
-modules-center = info-softwarecounter round-left-bar_1-c filesystem-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c cpu-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c polypomo-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c temperature-bar_1 round-right-bar_1-c  empty-space-bar_1 round-left-bar_1-c xkeyboard-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c pacman-aur-symbol-trick-bar_1 updates-pacman-aurhelper-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c gmail-bar_1 round-right-bar_1-c
+modules-left = i3-bar_1 slant-right-bar_1-c date-bar_1 empty-space-bar_1-d slant-right-bar_1-d i3-msg 
+modules-center = network info-softwarecounter round-left-bar_1-c filesystem-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c cpu-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c polypomo-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c temperature-bar_1 round-right-bar_1-c  empty-space-bar_1 round-left-bar_1-c xkeyboard-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c pacman-aur-symbol-trick-bar_1 updates-pacman-aurhelper-bar_1 round-right-bar_1-c empty-space-bar_1 round-left-bar_1-c gmail-bar_1 round-right-bar_1-c
 modules-right = empty-space-bar_1 slant-left-bar_1-d empty-space-bar_1-d pulseaudio-bar_1 empty-space-bar_1-d slant-left-bar_1-c powermenu-bar_1
 
 wm-restack = i3
+
+tray-position = none
+tray-detached = false
+tray-maxsize = 16
+tray-transparent = false
+tray-background = ${color.bground}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+tray-scale = 1.0
 
 ;override-redirect = true
 
@@ -98,15 +108,16 @@ label-urgent = %icon%
 label-urgent-background = ${colors-bar_1.alert}
 label-urgent-padding = 2
 
-ws-icon-0 = 1;%{F#ec6b64}
+; ws-icon-0 = 1;%{F#ec6b64}
+ws-icon-0 = 1;%{F#ec6b64}
 ws-icon-1 = 2;%{F#0fcfff}
 ws-icon-2 = 3;%{F#81A1C1}
 ws-icon-3 = 4;%{F#AfcE8C}
 ws-icon-4 = 5;%{F#71f094}
-ws-icon-5 = 7;%{F#bbbbbb}
-ws-icon-6 = 8;%{F#D19A66}
-; ws-icon-6 = 8;%{F#D19A66}
-ws-icon-7 = 9;%{F#E5C07B}
+ws-icon-5 = 6;%{F#f00000}
+ws-icon-6 = 7;%{F#bbbbbb}
+ws-icon-7 = 8;%{F#D19A66}
+ws-icon-8 = 9;%{F#E5C07B}
 
 ;#####################################################
 ;              custom modules for appearence
@@ -139,12 +150,12 @@ content-foreground = #232531
 [module/round-left-bar_1-c]
 type = custom/text
 content = 
-content-foreground = #2F3043
+content-foreground = #232531
 
 [module/round-right-bar_1-c]
 type = custom/text
 content = 
-content-foreground = #2F3043
+content-foreground = #232531
 
 [module/roundd-left-bar_1]
 type = custom/text
@@ -199,7 +210,7 @@ content-foreground = #232531
 [module/pacman-aur-symbol-trick-bar_1]
 type = custom/text
 content = 
-content-background = #2F3043
+content-background = #232531
 
 ;#####################################################
 ;                   keyboard
@@ -209,7 +220,7 @@ type = internal/xkeyboard
 
 blacklist-0 = num lock
 blacklist-1 = scroll lock
-format = %{B#2F3043}%{F#ffd3d9} %{F#fff} <label-layout>%{B#2F3043}%{F#ec6b64} <label-indicator> 
+format = %{B#232531}%{F#ffd3d9} %{F#fff} <label-layout>%{B#232531}%{F#ec6b64} <label-indicator> 
 
 indicator-icon-0 = caps lock;-CL;+CL
 indicator-icon-1 = scroll lock;;+SL
@@ -223,7 +234,7 @@ indicator-icon-2 = num lock;-NL;+NL
 type = internal/fs
 interval = 25
 mount-0 = /
-label-mounted = %{B#2F3043}%{F#71f094} %{F#fff}%percentage_used%%
+label-mounted = %{B#232531}%{F#71f094} %{F#fff}%percentage_used%%
 
 ;#####################################################
 ;                   xbacklight
@@ -259,7 +270,7 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 ; format-prefix = %{B#232531}%{F#0fcfff} 
-format = %{B#2F3043}<ramp-load>%{F#fff} <label>
+format = %{B#232531}<ramp-load>%{F#fff} <label>
 format-prefix-foreground = ${colors-bar_1.foreground-alt}
 format-nderline = #ff5979
 label = %percentage:2%%
@@ -334,8 +345,8 @@ label-muted = %{B#abb2bf}%{F#232531} %{F#ec6b64} muted
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
-format = %{B#2F3043}<ramp> <label>
-format-warn = %{B#2F3043}<ramp> <label-warn>
+format = %{B#232531}<ramp> <label>
+format-warn = %{B#232531}<ramp> <label-warn>
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = #dfdfdf
@@ -386,7 +397,7 @@ type = custom/script
 exec = ~/.config/polybar/scripts/polypomo
 tail = true
 
-format-background = #2F3043
+format-background = #232531
 
 label = %output%
 click-left = ~/.config/polybar/scripts/polypomo toggle
@@ -406,7 +417,7 @@ type = custom/script
 exec = ~/.config/polybar/gmail/launch.py
 tail = true
 click-left = xdg-open https://mail.google.com
-format-background = #2F3043
+format-background = #232531
 
 ;#####################################################
 ;                   powermenu
@@ -415,5 +426,5 @@ format-background = #2F3043
 type = custom/script
 exec = ~/.config/polybar/scripts/pacman-aur.sh
 format = <label>
-format-background = #2F3043
+format-background = #232531
 interval = 1000

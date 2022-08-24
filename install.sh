@@ -113,6 +113,7 @@
 
 # - zsh-vi-mode
 # - google-chrome
+# - giara-git
 # - stacer
 # - stardict-wordnet
 # - scid
