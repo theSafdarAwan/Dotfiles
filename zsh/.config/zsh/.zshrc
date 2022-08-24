@@ -57,3 +57,54 @@ command_not_found_handler () {
 # neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/safdar_in_box.txt | lolcat
 # TODO: write a function to check if other instance of the wezterm is active if so then don't execute the freshfetch
 freshfetch
+
+
+# function precmd() {
+#     if [ -z "$NEW_LINE_BEFORE_PROMPT" ]; then
+#         NEW_LINE_BEFORE_PROMPT=1
+#     elif [ "$NEW_LINE_BEFORE_PROMPT" -eq 1 ]; then
+#         echo "\n"
+#     fi
+#     print -Pn "\e]0;zsh %(1j,%j job%(2j|s|); ,)%2~\a"
+# }
+# 
+# function preexec {
+#     printf "\033]0;%s\a" "$1"
+# }
+# 
+# autoload -Uz vcs_info
+# precmd_vcs_info() { vcs_info }
+# precmd_functions+=( precmd_vcs_info )
+# setopt prompt_subst
+# zstyle ':vcs_info:git:*' formats '%b'
+# zstyle ':vcs_info:*' enable git
+# 
+# function () {
+#     if [[ $EUID == 0 ]]; then
+#         local SUFFIX='%(?,%F{yellow},%F{red})%n%f:'
+#     else
+#         local SUFFIX='%(?,%F{yellow},%F{red})>%f'
+#     fi
+# 
+#     PS1="%B${SUFFIX}%b "
+#     if [[ -n $TMUX ]]; then
+#         export RPS1="%F{green}\$vcs_info_msg_0_%f %B%(?..%{%F{red}%}(%?%)%{%f%})"
+#     else
+#         export RPS1="%F{green}\$vcs_info_msg_0_%f %B%(?..%{%F{red}%}(%?%)%{%f%}) %b%F{12}%2~%f"
+#     fi
+# }
+# export SPROMPT="zsh: correct %F{red}'%R'%f to %F{green}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
+# 
+# function zle-keymap-select {
+# case $KEYMAP in
+#     vicmd) echo -ne '\e[2 q';;
+#     viins|main) echo -ne '\e[6 q';;
+# esac
+# }
+# zle -N zle-keymap-select
+# 
+# _fix_cursor() {
+#     echo -ne '\e[6 q'
+# }
+# 
+# precmd_functions+=(_fix_cursor)
