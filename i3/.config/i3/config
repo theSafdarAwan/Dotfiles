@@ -173,6 +173,14 @@ default_orientation horizontal
 workspace_layout default
 title_align center
 
+#||||||||||||||||||||||||||||||||||||||||||||||
+#               Resizing
+#||||||||||||||||||||||||||||||||||||||||||||||
+bindsym $altkey+shift+h resize shrink width 5 px or 5 ppt
+bindsym $altkey+shift+j resize grow height 5 px or 5 ppt
+bindsym $altkey+shift+k resize shrink height 5 px or 5 ppt
+bindsym $altkey+shift+l resize grow width 5 px or 5 ppt
+
 #||||||||||||||||||||||||||||||||||||||||||||||||
 #                       MODES
 #||||||||||||||||||||||||||||||||||||||||||||||||
@@ -212,10 +220,10 @@ bindsym $altkey+shift+semicolon mode "$window_movement"
 #     bindsym Escape mode "default"
 # }
 
-bindsym $altkey+Shift+h move left
-bindsym $altkey+Shift+j move down
-bindsym $altkey+Shift+k move up
-bindsym $altkey+Shift+l move right
+bindsym $altkey+Ctrl+Shift+h move left
+bindsym $altkey+Ctrl+Shift+j move down
+bindsym $altkey+Ctrl+Shift+k move up
+bindsym $altkey+Ctrl+Shift+l move right
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>
 # i3-gaps 
