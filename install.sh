@@ -142,6 +142,7 @@
 # - peazip-gtk2-bin
 # - kmonad-git
 # - todoist
+# - anki
 # - dasht
 
 # - vim-clipboard
