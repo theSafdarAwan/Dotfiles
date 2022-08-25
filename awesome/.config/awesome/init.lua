@@ -571,7 +571,7 @@ awful.rules.rules = {
 	--> Tag 4
 	{
 		rule_any = {
-			class = { "TIPP10", "Todoist", "Stardict", "obsidian" },
+			class = { "TIPP10", "Todoist", "Stardict", "obsidian", "Anki" },
 		},
 		properties = { screen = 1, tag = taglist_names[4] },
 	},
