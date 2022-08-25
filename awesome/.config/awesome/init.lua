@@ -571,7 +571,7 @@ awful.rules.rules = {
 	--> Tag 4
 	{
 		rule_any = {
-			class = { "Nitrogen", "stacer", "TIPP10", "Gcolor2", "Todoist", "Stardict", "obsidian" },
+			class = { "TIPP10", "Todoist", "Stardict", "obsidian" },
 		},
 		properties = { screen = 1, tag = taglist_names[4] },
 	},
@@ -580,7 +580,7 @@ awful.rules.rules = {
 		rule_any = {
 			class = { "Nitrogen", "stacer", "BleachBit" },
 		},
-		properties = { screen = 1, tag = taglist_names[4] },
+		properties = { screen = 1, tag = taglist_names[5] },
 	},
 	--> Tag 7
 	{
@@ -592,7 +592,17 @@ awful.rules.rules = {
 	--> Tag 8
 	{
 		rule_any = {
-			class = { "obs", "Blender", "figma-linux", "VirtualBox", "kdenlive", "Ardour", "Inkscape", "Gimp" },
+			class = {
+				"obs",
+				"Gcolor2",
+				"Blender",
+				"figma-linux",
+				"VirtualBox",
+				"kdenlive",
+				"Ardour",
+				"Inkscape",
+				"Gimp",
+			},
 		},
 		properties = { screen = 1, tag = taglist_names[8] },
 	},
