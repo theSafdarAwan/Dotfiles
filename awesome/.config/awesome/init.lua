@@ -192,7 +192,7 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
-local taglist_names = { "  ", " ", " ", " ", " ", " ", " ", " ", " " }
+local taglist_names = { "  ", " ", " ", " ", " ", " ", " ", " ", " " }
 
 awful.screen.connect_for_each_screen(function(s)
 	-- Wallpaper
@@ -203,7 +203,6 @@ awful.screen.connect_for_each_screen(function(s)
 	-- local names = {  "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", " ", "  "  }
 
 	local names = taglist_names
-	-- local names = { "  ", " ", " ", " ", " ", " ", " ", " ", " ", " "}
 	-- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 	local l = awful.layout.suit
 	local layouts = { l.max, l.tile.top, l.max, l.max, l.max, l.max, l.spiral, l.max.fullscreen, l.max }
@@ -579,9 +578,16 @@ awful.rules.rules = {
 	--> Tag 5
 	{
 		rule_any = {
-			class = { "Thunderbird", "discord" },
+			class = { "Nitrogen", "stacer", "BleachBit" },
 		},
-		properties = { screen = 1, tag = taglist_names[5] },
+		properties = { screen = 1, tag = taglist_names[4] },
+	},
+	--> Tag 7
+	{
+		rule_any = {
+			class = { "Thunderbird", "discord", "org.gabmus.giara" },
+		},
+		properties = { screen = 1, tag = taglist_names[7] },
 	},
 	--> Tag 8
 	{
