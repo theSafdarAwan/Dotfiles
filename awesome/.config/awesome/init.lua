@@ -550,12 +550,12 @@ awful.rules.rules = {
 		properties = { tag = taglist_names[1] },
 	},
 	--> Tag 2
-	{
-		rule = {
-			class = "org.wezfurlong.wezterm",
-		},
-		properties = { screen = 1, tag = taglist_names[2] },
-	},
+	-- {
+	-- 	rule = {
+	-- 		class = "org.wezfurlong.wezterm",
+	-- 	},
+	-- 	properties = { screen = 1, tag = taglist_names[2] },
+	-- },
 	{
 		rule = {
 			class = "tabbed",

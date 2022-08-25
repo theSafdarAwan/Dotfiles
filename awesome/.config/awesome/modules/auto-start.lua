@@ -15,5 +15,5 @@ run_once({
     "nitrogen --restore",
     "stardict",
     "nitrogen",
-    "deadbeef",
+--    "deadbeef",
 })

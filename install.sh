@@ -19,6 +19,9 @@
 # - exa
 # - lolcat
 # - mpv
+# - mpd 
+# - ncmpcpp
+# - mpc
 # - fd
 # - clang
 # - ninja
