@@ -1,6 +1,4 @@
 #!/bin/bash
-left_round_bar=
-right_round_bar=
 dracula_black="#282A36"
 dracula_black2="#232531"
 dracula_blue="#61afef"
@@ -10,7 +8,6 @@ dracula_white="#abb2bf"
 dracula_green="#71f094"
 dracula_visual_grey="#373844"
 dracula_comment_grey="#5a5c68"
-dracula_round_bar_bg="#373844"
 
 # get() {
 #    local option=$1
@@ -82,8 +79,8 @@ set "@prefix_highlight_bg" "$dracula_green"
 set "@prefix_highlight_copy_mode_attr" "fg=$dracula_black,bg=$dracula_green"
 set "@prefix_highlight_output_prefix" "  "
 
-set "status-right" "#[fg=$dracula_white,bg=$dracula_black2,nobold,nounderscore,noitalics]#[fg=$dracula_black,bg=$dracula_white,bold] %d-%m-%Y #[fg=$dracula_black,bg=$dracula_white]#[fg=$dracula_red,bg=$dracula_black]%A"
+set "status-right" "#[fg=$dracula_white,bg=$dracula_black2,nobold,nounderscore,noitalics]#[fg=$dracula_black,bg=$dracula_white,bold] %d-%m-%Y #[fg=$dracula_black,bg=$dracula_white]#[fg=$dracula_red,bg=$dracula_black] %A"
 set "status-left" "#[fg=$dracula_red,bg=$dracula_black,bold] #S #{prefix_highlight}#[fg=$dracula_black,bg=$dracula_white] #[fg=$dracula_black,bg=$dracula_white]#I #[fg=$dracula_white,bg=$dracula_black2]"
 
-set "window-status-format" "#[fg=$dracula_round_bar_bg] $left_round_bar#[fg=$dracula_white,bg=$dracula_round_bar_bg]#I:#W#[fg=$dracula_round_bar_bg,bg=$dracula_black]$right_round_bar"
-set "window-status-current-format" " #[fg=$dracula_round_bar_bg]$left_round_bar#[fg=$dracula_yellow,nobold,bg=$dracula_round_bar_bg]#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W#[fg=$dracula_round_bar_bg,bg=$dracula_black]$right_round_bar"
+set "window-status-format" "#[fg=$dracula_white] #I:#W "
+set "window-status-current-format" "#[fg=$dracula_yellow,nobold]#{?window_zoomed_flag,#[fg=$dracula_red],} #I:#W*"
