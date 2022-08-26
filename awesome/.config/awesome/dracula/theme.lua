@@ -51,14 +51,15 @@ theme.taglist_fg_focus = "#Fccf6C"
 theme.taglist_fg_empty = "#44475a"
 theme.taglist_fg_urgent = "#ffffff"
 theme.taglist_fg_occupied = "#abb2bf"
-theme.taglist_bg_urgent = "#F44747"
+theme.taglist_bg_urgent = "#282A36"
+theme.taglist_fg_urgent = "#F44747"
 
 --> Tasklist
 theme.tasklist_bg_focus = "#282A36"
 theme.tasklist_fg_focus = "#Fccf6C"
 theme.tasklist_fg_normal = "#abb0bf"
-theme.tasklist_fg_urgent = "#ffffff"
-theme.tasklist_bg_urgent = "#F44747"
+theme.tasklist_fg_urgent = "#F44747"
+theme.tasklist_bg_urgent = "#282A36"
 
 -- theme.prompt_font = "FiraCode Nerd Font 30"
 -- theme.prompt_fg = "#f00000"
