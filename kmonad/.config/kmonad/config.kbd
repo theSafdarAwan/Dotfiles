@@ -19,28 +19,28 @@
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  @utl a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            @utl @nvb cmp  rctl
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
 )
 
 (deflayer utilize
-  XX   1    2    3    4    5    6    7    8    9    0    XX   XX   bspc
-  tab  home XX   esc  XX   XX   XX   pgup @qwe XX   end  XX   XX   XX  
-  XX   XX   XX   pgdn XX   XX   left down up   rght XX   XX   ret
-  lsft XX   del  XX   XX   XX   XX   XX   XX   XX   /    XX
-  lctl lmet lalt           spc            @qwe rmet XX   XX
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  XX   XX   XX   esc  XX   XX   XX   pgup XX   XX   XX   XX   XX   XX  
+  @qwe home XX   pgdn XX   end  left down up   rght XX   XX   ret
+  XX   XX   del  XX   XX   XX   XX   XX   XX   XX   XX   XX
+  lctl XX   XX             XX        XX   XX   XX   XX
 )
 
 (deflayer disalbe_ctrl_key_for_browser
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  @qwe a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  XX   lmet lalt           spc            @qwe rmet cmp  rctl
-)
+  XX   lmet lalt           spc            ralt rmet cmp  rctl)
 
 (defalias 
     qwe (layer-switch qwerty)
-    nvb (layer-switch disalbe_ctrl_key_for_browser)
-    utl (layer-switch utilize))
+;;  nvb (multi-tap 1000 caps (layer-switch disalbe_ctrl_key_for_browser))
+    utl (multi-tap 1000 caps (layer-switch utilize))
+    )

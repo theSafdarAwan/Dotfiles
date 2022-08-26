@@ -8,3 +8,5 @@ bindkey -v '^?' backward-delete-char
 bindkey '^j' autosuggest-accept
 bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
