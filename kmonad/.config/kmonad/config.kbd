@@ -21,7 +21,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @utl a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet cmp  rctl
+  lctl lmet lalt           spc            @utt rmet cmp  rctl
 )
 
 (deflayer utilize
@@ -43,4 +43,5 @@
     qwe (layer-switch qwerty)
 ;;  nvb (multi-tap 1000 caps (layer-switch disalbe_ctrl_key_for_browser))
     utl (multi-tap 1000 caps (layer-switch utilize))
+    utt (layer-toggle utilize)
     )
