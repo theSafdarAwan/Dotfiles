@@ -54,8 +54,8 @@ theme.taglist_fg_occupied = "#abb2bf"
 theme.taglist_bg_urgent = "#F44747"
 
 --> Tasklist
-theme.tasklist_bg_focus = "#44475a"
-theme.tasklist_fg_focus = "#d3f1f0"
+theme.tasklist_bg_focus = "#282A36"
+theme.tasklist_fg_focus = "#Fccf6C"
 theme.tasklist_fg_normal = "#abb0bf"
 theme.tasklist_fg_urgent = "#ffffff"
 theme.tasklist_bg_urgent = "#F44747"
