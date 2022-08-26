@@ -236,11 +236,11 @@ awful.screen.connect_for_each_screen(function(s)
 
 	-- Create a tasklist widget
 	-- Create the wibox
-	s.mytasklist = awful.widget.tasklist({
-		screen = s,
-		filter = awful.widget.tasklist.filter.currenttags,
-		buttons = tasklist_buttons,
-	})
+	-- s.mytasklist = awful.widget.tasklist({
+	-- 	screen = s,
+	-- 	filter = awful.widget.tasklist.filter.currenttags,
+	-- 	buttons = tasklist_buttons,
+	-- })
 
 	s.mywibox = awful.wibar({ position = "top", screen = s })
 
@@ -680,3 +680,6 @@ client.connect_signal("unfocus", function(c)
 end)
 
 beautiful.maximized_hide_border = true
+beautiful.tasklist_align = "right"
+beautiful.tasklist_disable_task_name = true
+beautiful.tasklist_disable_icon = true
