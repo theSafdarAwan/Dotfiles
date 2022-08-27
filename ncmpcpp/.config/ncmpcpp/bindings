@@ -80,7 +80,7 @@ def_key "delete"
 # def_key "right"
 #     volume_up
 
-def_key "+"
+def_key "="
     volume_up
 
 # def_key "left"
@@ -137,7 +137,7 @@ def_key "7"
 def_key "8"
     show_visualizer
 
-def_key "="
+def_key "backspace"
     show_clock
 
 def_key "@"

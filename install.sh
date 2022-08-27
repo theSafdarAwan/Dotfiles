@@ -74,6 +74,8 @@
 # - redshift
 # - feh
 
+# - sndio
+
 #>>>>>> Books readers
 # - foliate
 # - evince
@@ -128,6 +130,8 @@
 # - f3d
 # - folderpreview
 # - mcomix
+
+# - cava
 
 # - pureref
 # - dupeguru

@@ -17,14 +17,6 @@ mpd_crossfade_time = 5
 #|||||||||||||||||||||||||||||||||||||||||||||
 #            music visualizer
 #|||||||||||||||||||||||||||||||||||||||||||||
-audio_output {
-       type            "fifo"
-       name            "Visualizer feed"
-       path            "/tmp/mpd.fifo"
-       # format          "44100:16:1"
-       format          "44100:16:2"
-}
-
 visualizer_data_source = /tmp/mpd.fifo
 visualizer_output_name = Visualizer feed
 visualizer_in_stereo = yes
@@ -53,7 +45,7 @@ system_encoding = "UTF-8"
 #               delays
 #|||||||||||||||||||||||||||||||||||||||||||||
 playlist_disable_highlight_delay = 5
-message_delay_time = 5
+message_delay_time = 1
 
 #|||||||||||||||||||||||||||||||||||||||||||||
 #               song format
@@ -131,11 +123,11 @@ alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
 
 alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
 
-current_item_prefix = $/r$(red)$b
+current_item_prefix = $(9)$r
 
-current_item_suffix = $/r$(blue)
+current_item_suffix = $/r$(9)
 
-current_item_inactive_column_prefix = $(white)$r
+current_item_inactive_column_prefix = $(white)$(blue)
 
 current_item_inactive_column_suffix = $/r$(end)
 
@@ -190,7 +182,7 @@ browser_sort_format = {%a - }{%t}|{%f} {%l}
 ##   available.
 ##
 #
-song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (30)[]{t|f:Title} (20)[cyan]{a} (6f)[9]{NE} (20)[cyan]{b} (7f)[9]{l}
 
 ##### various settings #####
 #
@@ -209,7 +201,7 @@ execute_on_song_change = "notify-send Next Song"
 #execute_on_player_state_change = ""
 #
 #playlist_show_mpd_host = no
-#
+
 #playlist_show_remaining_time = no
 #
 #playlist_shorten_total_times = no
@@ -219,16 +211,16 @@ execute_on_song_change = "notify-send Next Song"
 ##
 ## Note: Possible display modes: classic, columns.
 ##
-#playlist_display_mode = columns
-#
-#browser_display_mode = classic
-#
-#search_engine_display_mode = classic
-#
-#playlist_editor_display_mode = classic
-#
-#discard_colors_if_item_is_selected = yes
-#
+playlist_display_mode = columns
+
+browser_display_mode = columns
+
+search_engine_display_mode = classic
+
+playlist_editor_display_mode = classic
+
+discard_colors_if_item_is_selected = yes
+
 #show_duplicate_tags = yes
 #
 #incremental_seeking = yes
@@ -246,6 +238,7 @@ volume_change_step = 5
 ## part of progressbar.
 ##
 progressbar_look = ...
+# progressbar_look = ━━━
 #
 ## Available values: database, playlist.
 ##
@@ -253,8 +246,8 @@ progressbar_look = ...
 #
 ## Available values: classic, alternative.
 ##
-#user_interface = classic
-#
+user_interface = classic
+
 #data_fetching_delay = yes
 #
 ## Available values: artist, album_artist, date, genre, composer, performer.
@@ -271,32 +264,32 @@ progressbar_look = ...
 #
 #default_tag_editor_pattern = %n - %t
 #
-#header_visibility = yes
-#
-#statusbar_visibility = yes
-#
+header_visibility = yes
+
+statusbar_visibility = yes
+
 ## Show the "Connected to ..." message on startup
-#connected_message_on_startup = yes
-#
-#titles_visibility = yes
-#
-#header_text_scrolling = yes
-#
-#cyclic_scrolling = no
-#
-#lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
-#
-#follow_now_playing_lyrics = no
-#
-#fetch_lyrics_for_current_song_in_background = no
-#
-#store_lyrics_in_song_dir = no
-#
-#generate_win32_compatible_filenames = yes
-#
-#allow_for_physical_item_deletion = no
-#
-##
+connected_message_on_startup = yes
+
+titles_visibility = yes
+
+header_text_scrolling = yes
+
+cyclic_scrolling = no
+
+lyrics_fetchers = azlyrics, genius, musixmatch, sing365, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, zeneszoveg, internet
+
+follow_now_playing_lyrics = no
+
+fetch_lyrics_for_current_song_in_background = no
+
+store_lyrics_in_song_dir = no
+
+generate_win32_compatible_filenames = no
+
+allow_for_physical_item_deletion = no
+
+
 ## Note: If you set this variable, ncmpcpp will try to get info from last.fm in
 ## language you set and if it fails, it will fall back to english. Otherwise it
 ## will use english the first time.
@@ -338,19 +331,19 @@ startup_screen = playlist
 ## Default width of locked screen (in %).  Acceptable values are from 20 to 80.
 ##
 #
-#locked_screen_width_part = 50
-#
-#ask_for_locked_screen_width_part = yes
-#
-#jump_to_now_playing_song_at_start = yes
-#
-#ask_before_clearing_playlists = yes
-#
-#clock_display_seconds = no
-#
-#display_volume_level = yes
-#
-#display_bitrate = no
+locked_screen_width_part = 30
+
+ask_for_locked_screen_width_part = yes
+
+jump_to_now_playing_song_at_start = yes
+
+ask_before_clearing_playlists = yes
+
+clock_display_seconds = yes
+
+display_volume_level = yes
+
+display_bitrate = yes
 #
 #display_remaining_time = no
 #
@@ -455,7 +448,7 @@ state_flags_color = red
 
 main_window_color = yellow
 
-color1 = white
+color1 = blue
 
 color2 = red
 
@@ -467,7 +460,7 @@ statusbar_color = 9
 
 statusbar_time_color = 180:r
 
-player_state_color = 180
+player_state_color = 180:r
 
 alternative_ui_separator_color = green
 
