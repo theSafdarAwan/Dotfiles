@@ -1,173 +1,63 @@
-##############################################################
-## This is an example configuration file. Copy it to        ##
-## $XDG_CONFIG_HOME/ncmpcpp/config or $HOME/.ncmpcpp/config ##
-## and set up your preferences.                             ##
-##############################################################
-#
-##### directories ######
-##
-## Directory for storing ncmpcpp related files.  Changing it is useful if you
-## want to store everything somewhere else and provide command line setting for
-## alternative location to config file which defines that while launching
-## ncmpcpp.
-##
-#
-#ncmpcpp_directory = ~/.config/ncmpcpp
-#
-##
-## Directory for storing downloaded lyrics. It defaults to ~/.lyrics since other
-## MPD clients (eg. ncmpc) also use that location.
-##
-#
-#lyrics_directory = ~/.lyrics
-#
-##### connection settings #####
-#
-#mpd_host = localhost
-#
-#mpd_port = 6600
-#
-#mpd_connection_timeout = 5
-#
-## Needed for tag editor and file operations to work.
-##
-#mpd_music_dir = ~/music
-#
-#mpd_crossfade_time = 5
-#
-# Exclude pattern for random song action
-# http://www.boost.org/doc/libs/1_46_1/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
-#random_exclude_pattern = "^(temp|midi_songs).*"
-#
-##### music visualizer #####
-##
-## In order to make music visualizer work with MPD you need to use the fifo
-## output. Its format parameter has to be set to 44100:16:1 for mono
-## visualization or 44100:16:2 for stereo visualization. As an example here is
-## the relevant section for mpd.conf:
-##
-## audio_output {
-##        type            "fifo"
-##        name            "Visualizer feed"
-##        path            "/tmp/mpd.fifo"
-##        format          "44100:16:2"
-## }
-##
-## If the visualization on occasion diverges from the audio output, please set
-## 'buffer_time' parameter of your audio output in mpd.conf to '100000' (100ms)
-## or less to prevent that from happening.
-##
-## Note: If you're using Mopidy, an address of a udpsink gstreamer's output is
-## also accepted. For example, the following section in mopidy.conf:
-##
-## [audio]
-## output = tee name=t ! queue ! autoaudiosink t.
-##        ! queue ! audio/x-raw,rate=44100,channels=2,format=S16LE
-##        ! udpsink host=localhost port=5555
-##
-## will make localhost:5555 available as a source of data for the stereo
-## visualizer.
-##
-#
-#visualizer_data_source = /tmp/mpd.fifo
-#
-##
-## Note: Below parameter is needed for ncmpcpp to determine which output
-## provides data for visualizer and reset it at the beginning of visualization
-## to synchronize with audio.
-##
-#
-#visualizer_output_name = Visualizer feed
-#
-##
-## If you set format to 44100:16:2, make it 'yes'.
-##
-#visualizer_in_stereo = yes
-#
-##
-## Note: set below to >=10 only if you have synchronization issues with
-## visualization and audio.
-##
-#
-#visualizer_sync_interval = 0
-#
-##
-## Note: To enable spectrum frequency visualization you need to compile ncmpcpp
-## with fftw3 support.
-##
-#
-## Available values: spectrum, wave, wave_filled, ellipse.
-##
-#visualizer_type = spectrum
-#
-#visualizer_fps = 60
-#
-#visualizer_autoscale = no
-#
-#visualizer_look = ●▮
-#
-#visualizer_color = blue, cyan, green, yellow, magenta, red
-#
-## Alternative subset of 256 colors for terminals that support it.
-##
-#visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
-#
-##
-## Note: The next few visualization options apply to the spectrum visualizer.
-##
-#
-## Use unicode block characters for a smoother, more continuous look.
-## This will override the visualizer_look option. With transparent terminals
-## and visualizer_in_stereo set, artifacts may be visible on the bottom half of
-## the visualization.
-#
-#visualizer_spectrum_smooth_look = yes
-#
-## A value between 1 and 5 inclusive. Specifying a larger value makes the
-## visualizer look at a larger slice of time, which results in less jumpy
-## visualizer output.
-#
-#visualizer_spectrum_dft_size = 2
-#
-#visualizer_spectrum_gain = 10
-#
-## Left-most frequency of visualizer in Hz, must be less than HZ MAX
-#
-#visualizer_spectrum_hz_min = 20
-#
-## Right-most frequency of visualizer in Hz, must be greater than HZ MIN
-#
-#visualizer_spectrum_hz_max = 20000
-#
-##### system encoding #####
-##
-## ncmpcpp should detect your charset encoding but if it failed to do so, you
-## can specify charset encoding you are using here.
-##
-## Note: You can see whether your ncmpcpp build supports charset detection by
-## checking output of `ncmpcpp --version`.
-##
-## Note: Since MPD uses UTF-8 by default, setting this option makes sense only
-## if your encoding is different.
-##
-#
-#system_encoding = ""
-#
-##### delays #####
-#
-## Time of inactivity (in seconds) after playlist highlighting will be disabled
-## (0 = always on).
-##
-#playlist_disable_highlight_delay = 5
-#
-## Defines how long messages are supposed to be visible.
-##
-#message_delay_time = 5
-#
-##### song format #####
-##
-## For a song format you can use:
-##
+#|||||||||||||||||||||||||||||||||||||||||||||
+#               directories
+#|||||||||||||||||||||||||||||||||||||||||||||
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.lyrics
+
+#|||||||||||||||||||||||||||||||||||||||||||||
+#            Connection Settings
+#|||||||||||||||||||||||||||||||||||||||||||||
+mpd_host = localhost
+mpd_port = 6600
+mpd_connection_timeout = 5
+mpd_music_dir = ~/Disk/Media/Music/
+
+mpd_crossfade_time = 5
+
+#|||||||||||||||||||||||||||||||||||||||||||||
+#            music visualizer
+#|||||||||||||||||||||||||||||||||||||||||||||
+audio_output {
+       type            "fifo"
+       name            "Visualizer feed"
+       path            "/tmp/mpd.fifo"
+       # format          "44100:16:1"
+       format          "44100:16:2"
+}
+
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = Visualizer feed
+visualizer_in_stereo = yes
+visualizer_sync_interval = 0
+visualizer_type = spectrum
+
+visualizer_fps = 60
+
+visualizer_autoscale = no
+
+visualizer_look = ●▮
+
+visualizer_color = blue, cyan, green, yellow, magenta, red
+
+visualizer_spectrum_smooth_look = yes
+visualizer_spectrum_dft_size = 2
+visualizer_spectrum_gain = 10
+visualizer_spectrum_hz_min = 20
+visualizer_spectrum_hz_max = 20000
+#|||||||||||||||||||||||||||||||||||||||||||||
+#               system encoding
+#|||||||||||||||||||||||||||||||||||||||||||||
+system_encoding = "UTF-8"
+
+#|||||||||||||||||||||||||||||||||||||||||||||
+#               delays
+#|||||||||||||||||||||||||||||||||||||||||||||
+playlist_disable_highlight_delay = 5
+message_delay_time = 5
+
+#|||||||||||||||||||||||||||||||||||||||||||||
+#               song format
+#|||||||||||||||||||||||||||||||||||||||||||||
 ## %l - length
 ## %f - filename
 ## %D - directory
@@ -231,51 +121,40 @@
 ## Note: colors can be nested.
 ##
 #
-#song_list_format = {%a - }{%t}|{$8%f$9}$R{$3%l$9}
-#
-#song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
-#
-#song_library_format = {%n - }{%t}|{%f}
-#
-#alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
-#
-#alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
-#
-#current_item_prefix = $(yellow)$r
-#
-#current_item_suffix = $/r$(end)
-#
-#current_item_inactive_column_prefix = $(white)$r
-#
-#current_item_inactive_column_suffix = $/r$(end)
-#
-#now_playing_prefix = $b
-#
-#now_playing_suffix = $/b
-#
-#browser_playlist_prefix = "$2playlist$9 "
-#
-#selected_item_prefix = $6
-#
-#selected_item_suffix = $9
-#
-#modified_item_prefix = $3> $9
-#
-##
-## Note: attributes are not supported for the following variables.
-##
-#song_window_title_format = {%a - }{%t}|{%f}
-##
-## Note: Below variables are used for sorting songs in browser.  The sort mode
-## determines how songs are sorted, and can be used in combination with a sort
-## format to specify a custom sorting format.  Available values for
-## browser_sort_mode are "type", "name", "mtime", "format" and "none".
-##
-#
-#browser_sort_mode = type
-#
-#browser_sort_format = {%a - }{%t}|{%f} {%l}
-#
+song_list_format = {%a - }{%t}|{$8%f$9}$R{$3%l$9}
+
+song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
+
+song_library_format = {%n - }{%t}|{%f}
+
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+
+alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
+
+current_item_prefix = $(yellow)$r
+
+current_item_suffix = $/r$(end)
+
+current_item_inactive_column_prefix = $(white)$r
+
+current_item_inactive_column_suffix = $/r$(end)
+
+now_playing_prefix = $b
+
+now_playing_suffix = $/b
+
+browser_playlist_prefix = "$2playlist$9 "
+
+selected_item_prefix = $6
+
+selected_item_suffix = $9
+
+modified_item_prefix = $3> $9
+song_window_title_format = {%a - }{%t}|{%f}
+
+browser_sort_mode = name
+browser_sort_format = {%a - }{%t}|{%f} {%l}
+
 ##### columns settings #####
 ##
 ## syntax of song columns list format is "column column etc."
@@ -311,15 +190,15 @@
 ##   available.
 ##
 #
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
-#
+song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+
 ##### various settings #####
 #
 ##
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = ""
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -467,13 +346,13 @@
 #
 #ask_before_clearing_playlists = yes
 #
-clock_display_seconds = yes
+#clock_display_seconds = no
 #
-display_volume_level = yes
+#display_volume_level = yes
 #
 #display_bitrate = no
 #
-display_remaining_time = no
+#display_remaining_time = no
 #
 ## Available values: none, basic, extended, perl.
 ##
@@ -566,9 +445,9 @@ display_remaining_time = no
 #
 #empty_tag_color = cyan
 #
-header_window_color = blue
+#header_window_color = default
 #
-volume_color = red
+#volume_color = default
 #
 #state_line_color = default
 #
@@ -580,7 +459,7 @@ volume_color = red
 #
 #color2 = green
 #
-progressbar_color = yellow:b
+#progressbar_color = black:b
 #
 #progressbar_elapsed_color = green:b
 #
