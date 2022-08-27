@@ -167,7 +167,7 @@ local tasklist_buttons = gears.table.join(
 		end
 	end),
 	awful.button({}, 3, function()
-		awful.menu.client_list({ theme = { width = 250 } })
+		awful.menu.client_list({ theme = { width = 350 } })
 	end),
 	awful.button({}, 4, function()
 		awful.client.focus.byidx(1)
@@ -236,11 +236,11 @@ awful.screen.connect_for_each_screen(function(s)
 
 	-- Create a tasklist widget
 	-- Create the wibox
-	-- s.mytasklist = awful.widget.tasklist({
-	-- 	screen = s,
-	-- 	filter = awful.widget.tasklist.filter.currenttags,
-	-- 	buttons = tasklist_buttons,
-	-- })
+	s.mytasklist = awful.widget.tasklist({
+		screen = s,
+		filter = awful.widget.tasklist.filter.currenttags,
+		buttons = tasklist_buttons,
+	})
 
 	s.mywibox = awful.wibar({ position = "top", screen = s })
 
@@ -680,6 +680,6 @@ client.connect_signal("unfocus", function(c)
 end)
 
 beautiful.maximized_hide_border = true
-beautiful.tasklist_align = "right"
-beautiful.tasklist_disable_task_name = true
-beautiful.tasklist_disable_icon = true
+beautiful.tasklist_align = "left"
+beautiful.tasklist_disable_task_name = false
+beautiful.tasklist_disable_icon = false

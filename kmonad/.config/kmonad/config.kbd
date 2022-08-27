@@ -29,7 +29,7 @@
   XX   XX   XX   esc  XX   XX   XX   pgup XX   XX   XX   XX   XX   XX  
   @qwe home XX   pgdn XX   end  left down up   rght XX   XX   ret
   XX   XX   del  XX   XX   XX   XX   XX   XX   XX   XX   XX
-  lctl XX   lalt                XX        XX   XX   XX   XX
+  cmp  XX   lalt                XX        XX   XX   XX   XX
 )
 
 (deflayer disalbe_ctrl_key_for_browser
