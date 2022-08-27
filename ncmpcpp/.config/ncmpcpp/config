@@ -37,7 +37,7 @@ visualizer_autoscale = no
 
 visualizer_look = ●▮
 
-visualizer_color = blue, cyan, green, yellow, magenta, red
+visualizer_color = red, cyan, green, yellow, magenta, blue
 
 visualizer_spectrum_smooth_look = yes
 visualizer_spectrum_dft_size = 2
@@ -131,9 +131,9 @@ alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
 
 alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
 
-current_item_prefix = $(yellow)$r
+current_item_prefix = $/r$(red)$b
 
-current_item_suffix = $/r$(end)
+current_item_suffix = $/r$(blue)
 
 current_item_inactive_column_prefix = $(white)$r
 
@@ -145,7 +145,7 @@ now_playing_suffix = $/b
 
 browser_playlist_prefix = "$2playlist$9 "
 
-selected_item_prefix = $6
+selected_item_prefix = $9
 
 selected_item_suffix = $9
 
@@ -198,7 +198,7 @@ song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-execute_on_song_change = ""
+execute_on_song_change = "notify-send Next Song"
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -233,9 +233,9 @@ execute_on_song_change = ""
 #
 #incremental_seeking = yes
 #
-#seek_time = 1
+seek_time = 3
 #
-#volume_change_step = 2
+volume_change_step = 5
 #
 #autocenter_mode = no
 #
@@ -245,7 +245,7 @@ execute_on_song_change = ""
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-#progressbar_look = =>
+progressbar_look = ...
 #
 ## Available values: database, playlist.
 ##
@@ -324,7 +324,7 @@ execute_on_song_change = ""
 ##
 ## Note: You can define startup screen by choosing screen from the list above.
 ##
-#startup_screen = playlist
+startup_screen = playlist
 #
 ##
 ## Note: You can define startup slave screen by choosing screen from the list
@@ -441,37 +441,36 @@ execute_on_song_change = ""
 ## are used there is a possibility that you'll be able to use only colors with
 ## transparent background.
 #
-#colors_enabled = yes
-#
-#empty_tag_color = cyan
-#
-#header_window_color = default
-#
-#volume_color = default
-#
-#state_line_color = default
-#
-#state_flags_color = default:b
-#
-#main_window_color = yellow
-#
-#color1 = white
-#
-#color2 = green
-#
-#progressbar_color = black:b
-#
-#progressbar_elapsed_color = green:b
-#
-#statusbar_color = default
-#
-#statusbar_time_color = default:b
-#
-#player_state_color = default:b
-#
-#alternative_ui_separator_color = black:b
-#
-#window_border_color = green
-#
-#active_window_border = red
-#
+colors_enabled = yes
+
+empty_tag_color = green
+
+header_window_color = 9
+
+volume_color = cyan:r
+
+state_line_color = yellow
+
+state_flags_color = red
+
+main_window_color = yellow
+
+color1 = white
+
+color2 = red
+
+progressbar_color = 9
+
+progressbar_elapsed_color = green
+
+statusbar_color = 9
+
+statusbar_time_color = 180:r
+
+player_state_color = 180
+
+alternative_ui_separator_color = green
+
+window_border_color = green
+
+active_window_border = red

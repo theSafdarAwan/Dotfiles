@@ -70,10 +70,10 @@ def_key "delete"
 
 def_key "delete"
     delete_browser_items
-#
+
 # def_key "delete"
-#  delete_stored_playlist
-#
+#     delete_stored_playlist
+
 # def_key "right"
 #     slave_screen
 
@@ -115,38 +115,38 @@ def_key "1"
 def_key "1"
     change_browse_mode
 
-# def_key "3"
-#     show_search_engine
-# def_key "3"
-#     reset_search_engine
+def_key "3"
+    show_search_engine
+def_key "3"
+    reset_search_engine
 
-# def_key "4"
-#     show_media_library
-# def_key "4"
-#     toggle_media_library_columns_mode
+def_key "4"
+    show_media_library
+def_key "4"
+    toggle_media_library_columns_mode
 
-# def_key "5"
-#     show_playlist_editor
-#
-# def_key "6"
-#  show_tag_editor
-#
-# def_key "7"
-#  show_outputs
-#
-# def_key "8"
-#  show_visualizer
-#
-# def_key "="
-#  show_clock
-#
-# def_key "@"
-#  show_server_info
-#
-# def_key "s"
-#  stop
-#
-def_key "P"
+def_key "5"
+    show_playlist_editor
+
+def_key "6"
+    show_tag_editor
+
+def_key "7"
+    show_outputs
+
+def_key "8"
+    show_visualizer
+
+def_key "="
+    show_clock
+
+def_key "@"
+    show_server_info
+
+def_key "s"
+    stop
+
+def_key "p"
     pause
 
 def_key ">"
@@ -167,7 +167,7 @@ def_key "-"
 # def_key "backspace"
 #     replay_song
 
-def_key "P"
+def_key "p"
     play
 
 def_key "."
@@ -176,8 +176,8 @@ def_key "."
 def_key ","
     seek_backward
 
-# def_key "r"
-#     toggle_repeat
+def_key "r"
+    toggle_repeat
 
 def_key "z"
     toggle_random
@@ -191,7 +191,7 @@ def_key "f"
 def_key "t"
     toggle_single
 
-def_key "ctrl-c"
+def_key "C"
     toggle_consume
 
 # def_key "Y"
@@ -245,10 +245,10 @@ def_key "/"
 def_key "?"
     find_item_backward
 
-def_key "n"
+def_key "N"
     next_found_item
 
-def_key "p"
+def_key "P"
     previous_found_item
 
 def_key "w"
@@ -297,8 +297,8 @@ def_key "l"
 # def_key "B"
 #     select_album
 
-# def_key "a"
-#     add_selected_items
+def_key "a"
+    add_selected_items
 
 def_key "ctrl-delete"
     clear_playlist
@@ -325,10 +325,10 @@ def_key "J"
 def_key "m"
     move_selected_items_to
 
-# def_key "A"
-#     add
+def_key "A"
+    add
 
-def_key "ctrl-n"
+def_key "ctrl-c"
     save_playlist
 
 def_key "o"
