@@ -138,7 +138,7 @@ now_playing_suffix = $/b
 
 browser_playlist_prefix = "$2playlist$9 "
 
-selected_item_prefix = $9
+selected_item_prefix = $(green)
 
 selected_item_suffix = $9
 
@@ -183,7 +183,7 @@ browser_sort_format = {%a - }{%t}|{%f} {%l}
 ##   available.
 ##
 #
-song_columns_list_format = (30)[]{t|f:Title} (20)[cyan]{a} (6f)[9]{NE} (20)[cyan]{b} (7f)[9]{l}
+song_columns_list_format = (30)[]{t|f:Title} (20)[180]{a} (6f)[9]{NE} (20)[180]{b} (7f)[9]{l}
 
 ##### various settings #####
 #
@@ -441,7 +441,7 @@ empty_tag_color = green
 
 header_window_color = 9
 
-volume_color = cyan:r
+volume_color = 250
 
 state_line_color = 9
 
@@ -459,9 +459,9 @@ progressbar_elapsed_color = green
 
 statusbar_color = 9
 
-statusbar_time_color = 180:r
+statusbar_time_color = 180
 
-player_state_color = 180:r
+player_state_color = 180
 
 alternative_ui_separator_color = green
 
