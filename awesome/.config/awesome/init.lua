@@ -278,7 +278,7 @@ globalkeys = gears.table.join(
 	awful.key({ altkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 	awful.key({ altkey, "Control" }, "h", awful.tag.viewprev, { description = "view previous", group = "tag" }),
 	awful.key({ altkey, "Control" }, "l", awful.tag.viewnext, { description = "view next", group = "tag" }),
-	awful.key({ altkey }, "e", awful.tag.history.restore, { description = "go back", group = "tag" }),
+	awful.key({ altkey }, ",", awful.tag.history.restore, { description = "go back", group = "tag" }),
 
 	awful.key({ altkey }, "j", function()
 		awful.client.focus.byidx(1)
