@@ -55,16 +55,16 @@ sleep_timer = 0
 # For alsa 'source' will be the capture device.
 # For fifo 'source' will be the path to fifo-file.
 # For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where 'AA:BB:CC:DD:EE:FF' will be squeezelite's MAC address
-; method = pulse
-; source = auto
+method = pulse
+source = auto
 
 ; method = alsa
 ; source = hw:Loopback,1
 
-method = fifo
-source = /tmp/mpd.fifo
-sample_rate = 44100
-sample_bits = 16
+; method = fifo
+; source = /tmp/mpd.fifo
+; sample_rate = 44100
+; sample_bits = 16
 
 ; method = shmem
 ; source = /squeezelite-AA:BB:CC:DD:EE:FF
