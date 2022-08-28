@@ -23,7 +23,7 @@ visualizer_in_stereo = no
 visualizer_sync_interval = 0
 visualizer_type = wave_filled
 
-visualizer_fps = 60
+visualizer_fps = 130
 
 visualizer_autoscale = yes
 
