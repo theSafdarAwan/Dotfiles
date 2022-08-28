@@ -46,7 +46,7 @@ system_encoding = "UTF-8"
 #               delays
 #|||||||||||||||||||||||||||||||||||||||||||||
 playlist_disable_highlight_delay = 5
-message_delay_time = 1
+message_delay_time = 5
 
 #|||||||||||||||||||||||||||||||||||||||||||||
 #               song format
@@ -126,7 +126,7 @@ alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%
 
 current_item_prefix = $(9)$r
 
-current_item_suffix = $/r$(9)
+current_item_suffix = $/r$(end)
 
 current_item_inactive_column_prefix = $(white)$(blue)
 
@@ -443,11 +443,11 @@ header_window_color = 9
 
 volume_color = cyan:r
 
-state_line_color = yellow
+state_line_color = 9
 
 state_flags_color = red
 
-main_window_color = yellow
+main_window_color = 9
 
 color1 = blue
 

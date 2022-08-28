@@ -42,8 +42,8 @@ def_key "g"
 def_key "G"
     move_end
 
-# def_key "insert"
-#  select_item
+def_key "space"
+ select_item
 
 def_key "enter"
     enter_directory
