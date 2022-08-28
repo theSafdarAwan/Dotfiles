@@ -24,7 +24,7 @@ dracula_comment_grey="#5a5c68"
 set() {
    local option=$1
    local value=$2
-   tmux set-option -gq "$option" "$value"
+   tmux set-option -g "$option" "$value"
 }
 
 setw() {
@@ -45,6 +45,9 @@ set "message-bg" "$dracula_black"
 
 set "message-command-fg" "$dracula_white"
 set "message-command-bg" "$dracula_black"
+
+set "message-style " "fg=$dracula_comment_grey"
+set "message-style " "bg=$dracula_green"
 
 set "status-attr" "none"
 set "status-left-attr" "none"
