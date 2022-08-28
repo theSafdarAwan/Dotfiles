@@ -318,7 +318,7 @@ allow_for_physical_item_deletion = no
 ##
 ## Note: You can define startup screen by choosing screen from the list above.
 ##
-startup_screen = visualizer
+startup_screen = playlist
 #
 ##
 ## Note: You can define startup slave screen by choosing screen from the list
