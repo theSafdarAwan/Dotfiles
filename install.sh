@@ -123,7 +123,6 @@
 # - stardict-wordnet
 # - scid
 # - htop-vim
-# - tmuxinator
 
 #>>>>>>>>>>>> Thumbnail Utilitie's
 # - raw-thumbnailer
