@@ -46,8 +46,7 @@ set "message-bg" "$dracula_black"
 set "message-command-fg" "$dracula_white"
 set "message-command-bg" "$dracula_black"
 
-set "message-style " "fg=$dracula_comment_grey"
-set "message-style " "bg=$dracula_green"
+set "message-style " "fg=$dracula_white,bg=$dracula_red"
 
 set "status-attr" "none"
 set "status-left-attr" "none"
