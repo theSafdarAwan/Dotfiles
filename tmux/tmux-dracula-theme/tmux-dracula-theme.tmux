@@ -1,6 +1,6 @@
 #!/bin/bash
-dracula_black="#282A36"
-dracula_black2="#232531"
+dracula_black="#1C1D26"
+dracula_black2="#282A36"
 dracula_blue="#61afef"
 dracula_yellow="#fccf6c"
 dracula_red="#ec6b64"

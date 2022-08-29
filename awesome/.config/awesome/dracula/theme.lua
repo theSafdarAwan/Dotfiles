@@ -4,6 +4,7 @@
 
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
+local beautiful = require("beautiful")
 local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
@@ -14,8 +15,8 @@ local theme = {}
 -- theme.font = "FiraCode Nerd Font Bold 10"
 theme.font = "siji Regular 10"
 
-theme.bg_normal = "#282A36"
-theme.bg_focus = "#44475a"
+theme.bg_normal = "#1C1D26"
+theme.bg_focus = beautiful.bg_normal
 theme.bg_urgent = "#F44747"
 theme.bg_minimize = theme.fg_normal
 theme.bg_systray = theme.fg_normal
@@ -27,8 +28,8 @@ theme.fg_minimize = "#DE8C92"
 
 theme.useless_gap = dpi(2)
 theme.border_width = dpi(2)
-theme.border_normal = "#282A36"
-theme.border_focus = "#44475a"
+theme.border_normal = beautiful.bg_normal
+theme.border_focus = "#282A36"
 theme.border_marked = "#ec6b64"
 
 -- There are other variable sets
@@ -46,20 +47,20 @@ theme.border_marked = "#ec6b64"
 
 --> Taglist
 theme.taglist_font = "siji Italic 12"
-theme.taglist_bg_focus = "#282A36"
+theme.taglist_bg_focus = beautiful.bg_normal
 theme.taglist_fg_focus = "#Fccf6C"
 theme.taglist_fg_empty = "#44475a"
 theme.taglist_fg_urgent = "#ffffff"
 theme.taglist_fg_occupied = "#abb2bf"
-theme.taglist_bg_urgent = "#282A36"
+theme.taglist_bg_urgent = beautiful.bg_normal
 theme.taglist_fg_urgent = "#F44747"
 
 --> Tasklist
-theme.tasklist_bg_focus = "#282A36"
+theme.tasklist_bg_focus = beautiful.bg_normal
 theme.tasklist_fg_focus = "#Fccf6C"
 theme.tasklist_fg_normal = "#abb0bf"
 theme.tasklist_fg_urgent = "#F44747"
-theme.tasklist_bg_urgent = "#282A36"
+theme.tasklist_bg_urgent = beautiful.bg_normal
 
 -- theme.prompt_font = "FiraCode Nerd Font 30"
 -- theme.prompt_fg = "#f00000"
@@ -69,14 +70,14 @@ theme.tasklist_bg_urgent = "#282A36"
 
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 theme.hotkeys_fg = "#cbcbcb"
-theme.hotkeys_bg = "#282A36"
+theme.hotkeys_bg = beautiful.bg_normal
 theme.hotkeys_border_width = dpi(1)
 theme.hotkeys_border_color = "#4FC1FF"
 -- theme.hotkeys_shape =
 theme.hotkeys_opacity = 0
 theme.hotkeys_modifiers_fg = "#Fccf6C"
 theme.hotkeys_label_bg = "#71f094"
-theme.hotkeys_label_fg = "#282A36"
+theme.hotkeys_label_fg = beautiful.bg_normal
 theme.hotkeys_group_margin = dpi(3)
 -- theme.hotkeys_font = "FiraCode Nerd Font Bold 8"
 -- theme.hotkeys_description_font = "FiraCode Nerd Font"

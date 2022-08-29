@@ -441,7 +441,7 @@ empty_tag_color = green
 
 header_window_color = 9
 
-volume_color = 250
+volume_color = green
 
 state_line_color = 9
 

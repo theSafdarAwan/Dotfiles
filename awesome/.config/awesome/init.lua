@@ -122,7 +122,7 @@ local mymainmenu = awful.menu({
 	},
 })
 
-local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
+-- local mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -240,6 +240,18 @@ awful.screen.connect_for_each_screen(function(s)
 		screen = s,
 		filter = awful.widget.tasklist.filter.currenttags,
 		buttons = tasklist_buttons,
+		styles = {
+			align = "center",
+		},
+		layout = {
+
+			spacing = 5,
+
+			-- max_widget_size = awful.screen.focused().workarea.width * 0.12,
+			max_widget_size = 30,
+
+			layout = wibox.layout.flex.horizontal,
+		},
 	})
 
 	s.mywibox = awful.wibar({ position = "top", screen = s })
@@ -249,7 +261,7 @@ awful.screen.connect_for_each_screen(function(s)
 		layout = wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
-			mylauncher,
+			-- mylauncher,
 			s.mytaglist,
 			s.mypromptbox,
 		},
@@ -501,6 +513,7 @@ awful.rules.rules = {
 			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
 		},
 	},
+	{ rule = { instance = "scratch" }, properties = { floating = true } },
 
 	-- Floating clients.
 	{
@@ -649,7 +662,7 @@ client.connect_signal("request::titlebars", function(c)
 		},
 		{ -- Middle
 			{ -- Title
-				align = "center",
+				align = "left",
 				widget = awful.titlebar.widget.titlewidget(c),
 			},
 			buttons = buttons,
@@ -681,5 +694,5 @@ end)
 
 beautiful.maximized_hide_border = true
 beautiful.tasklist_align = "left"
-beautiful.tasklist_disable_task_name = false
+beautiful.tasklist_disable_task_name = true
 beautiful.tasklist_disable_icon = false
