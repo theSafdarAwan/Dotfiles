@@ -50,9 +50,8 @@ theme.taglist_font = "siji Italic 12"
 theme.taglist_bg_focus = beautiful.bg_normal
 theme.taglist_fg_focus = "#Fccf6C"
 theme.taglist_fg_empty = "#44475a"
-theme.taglist_fg_urgent = "#ffffff"
 theme.taglist_fg_occupied = "#abb2bf"
-theme.taglist_bg_urgent = beautiful.bg_normal
+theme.taglist_bg_urgent = "#1C1D26"
 theme.taglist_fg_urgent = "#F44747"
 
 --> Tasklist
