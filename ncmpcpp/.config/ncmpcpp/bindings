@@ -32,9 +32,9 @@ def_key "ctrl-shift-k"
 def_key "ctrl-shift-j"
     scroll_down_artist
 
-def_key "U"
+def_key "ctrl-u"
     page_up
-def_key "D"
+def_key "ctrl-d"
     page_down
 
 def_key "g"
@@ -245,10 +245,10 @@ def_key "/"
 def_key "?"
     find_item_backward
 
-def_key "N"
+def_key "n"
     next_found_item
 
-def_key "P"
+def_key "N"
     previous_found_item
 
 def_key "w"
