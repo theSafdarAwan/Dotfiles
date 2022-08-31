@@ -21,7 +21,7 @@ set hlsearch
 set incsearch
 set nowrapscan
 
-set ignorecase
+" set ignorecase
 set smartcase
 
 set expandtab
