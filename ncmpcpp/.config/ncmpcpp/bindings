@@ -43,7 +43,8 @@ def_key "G"
     move_end
 
 def_key "space"
- select_item
+    select_item
+    scroll_down
 
 def_key "enter"
     enter_directory

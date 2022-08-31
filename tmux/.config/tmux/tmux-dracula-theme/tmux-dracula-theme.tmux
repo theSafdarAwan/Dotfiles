@@ -8,7 +8,6 @@ dracula_white="#abb2bf"
 dracula_green="#71f094"
 dracula_visual_grey="#373844"
 dracula_comment_grey="#5a5c68"
-
 # get() {
 #    local option=$1
 #    local default_value=$2
@@ -32,6 +31,8 @@ setw() {
    local value=$2
    tmux set-window-option -gq "$option" "$value"
 }
+
+set "mode-style" "bg=$dracula_comment_grey,fg=$dracula_white"
 
 set "status" "on"
 set "status-justify" "left"
