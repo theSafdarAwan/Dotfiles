@@ -139,7 +139,7 @@ return {
             action = "ActivateCopyMode",
         },
         {
-            key = "v",
+            key = "p",
             mods = "CTRL|SHIFT",
             action = wezterm.action({ PasteFrom = "Clipboard" }),
         },
