@@ -77,5 +77,5 @@ set "@prefix_highlight_output_prefix" "  "
 set "status-right" "#[fg=$dracula_white,bg=$dracula_black2,nobold,nounderscore,noitalics]#[fg=$dracula_black,bg=$dracula_white,bold] %d-%m-%Y #[fg=$dracula_black,bg=$dracula_white]#[fg=$dracula_red,bg=$dracula_black] %A"
 set "status-left" "#[fg=$dracula_red,bg=$dracula_black,bold] #S #{prefix_highlight}#[fg=$dracula_black,bg=$dracula_white] #[fg=$dracula_black,bg=$dracula_white]#I #[fg=$dracula_white,bg=$dracula_black2]"
 
-set "window-status-format" " #[fg=$dracula_white]#I:#W#(printf '%%s\n' '#F' | sed 's/-/^/')"
+set "window-status-format" " #[fg=$dracula_white]#I:#W#(printf '%%s\n' '#F' | sed 's/-/!/')"
 set "window-status-current-format" " #[fg=$dracula_yellow,nobold]#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W*"
