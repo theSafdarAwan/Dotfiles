@@ -1,7 +1,7 @@
 (defcfg
   input  (device-file "/dev/input/by-id/usb-Dell_Dell_USB_Keyboard_Hub-event-kbd")
   output (uinput-sink "My KMonad output"
-    "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
+  "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
   cmp-seq ralt 
   cmp-seq-delay 5
   fallthrough true
@@ -37,11 +37,12 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @qwe a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  XX   lmet lalt           spc            ralt rmet cmp  rctl)
+  XX   lmet lalt           spc            ralt rmet cmp  rctl
+)
 
 (defalias 
     qwe (layer-switch qwerty)
 ;;  nvb (multi-tap 1000 caps (layer-switch disalbe_ctrl_key_for_browser))
     utl (multi-tap 1000 caps (layer-switch utilize))
     utt (layer-toggle utilize)
-    )
+)
