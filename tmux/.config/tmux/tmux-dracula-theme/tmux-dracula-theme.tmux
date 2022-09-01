@@ -8,6 +8,7 @@ dracula_white="#abb2bf"
 dracula_green="#71f094"
 dracula_visual_grey="#373844"
 dracula_comment_grey="#5a5c68"
+dracula_gray_shade="#808080"
 # get() {
 #    local option=$1
 #    local default_value=$2
@@ -75,7 +76,7 @@ set "@prefix_highlight_copy_mode_attr" "fg=$dracula_black,bg=$dracula_green"
 set "@prefix_highlight_output_prefix" "  "
 
 set "status-right" " #[fg=$dracula_white,bg=$dracula_black2,]#[fg=$dracula_black,bg=$dracula_white,bold] %d-%m-%Y #[fg=$dracula_black,bg=$dracula_white]#[fg=$dracula_red,bg=$dracula_black] %A"
-set "status-left" "#[fg=$dracula_red,bg=$dracula_black,bold] #S #[fg=$dracula_black,bg=$dracula_white] #[fg=$dracula_comment_grey] #{?client_prefix,#[fg=$dracula_black],}⌨ #[fg=$dracula_white,bg=$dracula_black2]"
+set "status-left" "#[fg=$dracula_red,bg=$dracula_black,bold] #S #[fg=$dracula_black,bg=$dracula_white]#[fg=$dracula_gray_shade] #{?client_prefix,#[fg=$dracula_black2],} #[fg=$dracula_white,bg=$dracula_black2]"
 
 set "window-status-format" " #[fg=$dracula_white]#I:#W#(printf '%%s\n' '#F' | sed 's/-/!/')"
 set "window-status-current-format" " #[fg=$dracula_yellow,nobold]#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W*"
