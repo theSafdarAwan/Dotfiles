@@ -1,5 +1,5 @@
 (defcfg
-  input  (device-file "/dev/input/by-id/usb-Dell_Dell_USB_Keyboard_Hub-event-kbd")
+  input  (device-file "/dev/input/by-id/usb-413c_Dell_KB216_Wired_Keyboard-event-kbd")
   output (uinput-sink "My KMonad output"
   "/run/current-system/sw/bin/sleep 1 && /run/current-system/sw/bin/setxkbmap -option compose:ralt")
   cmp-seq ralt 
