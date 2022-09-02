@@ -70,13 +70,26 @@ set "display-panes-colour" "$dracula_blue"
 
 set "status-style" "fg=$dracula_comment_grey,bg=$dracula_black2"
 
+#>>>>>>> tmux-badges
+set "@badge_node" "node"
+# set "@badge_node_fg"  "$dracula_white"
+# set "@badge_node_bg"  "$dracula_black2"
+set "@badge_node_fmt" "#(node --version | cut -f 1 -d \" \")"
+# set "@badge_node_secondary_fg" "$dracula_white"
+# set "@badge_node_secondary_bg" "$dracula_black2"
+
+set "@badge_awesome" "awesome"
+set "@badge_awesome_fmt" "true"
+#|||||||||||||||||
+# status bar
+#|||||||||||||||||
+
 set "@prefix_highlight_fg" "$dracula_black"
 set "@prefix_highlight_bg" "$dracula_green"
 set "@prefix_highlight_copy_mode_attr" "fg=$dracula_black,bg=$dracula_green"
 set "@prefix_highlight_output_prefix" "  "
 
-set "status-right" " #[fg=$dracula_white,bg=$dracula_black2,]#[fg=$dracula_black,bg=$dracula_white,bold] %d-%m-%Y #[fg=$dracula_black,bg=$dracula_white]#[fg=$dracula_red,bg=$dracula_black] %A"
-set "status-left" "#[fg=$dracula_red,bg=$dracula_black,bold] #S #[fg=$dracula_black,bg=$dracula_white]#[fg=$dracula_gray_shade] #{?client_prefix,#[fg=$dracula_black2],} #[fg=$dracula_white,bg=$dracula_black2]"
-
-set "window-status-format" " #[fg=$dracula_white]#I:#W#(printf '%%s\n' '#F' | sed 's/-/!/')"
-set "window-status-current-format" " #[fg=$dracula_yellow,nobold]#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W*"
+set "status-right" " #{badge_node}:#{badge_nod_fmt}"
+# set "status-right" " #{badge_node,}:#{badge_nod_fmt,} #[fg=$dracula_white,bg=$dracula_black2,]#[fg=$dracula_black,bg=$dracula_white,bold] %d-%m-%Y #[fg=$dracula_black,bg=$dracula_white]#[fg=$dracula_red,bg=$dracula_black] %A"
+# set "status-left" "#[fg=$dracula_red,bg=$dracula_black,bold] #S #[fg=$dracula_black,bg=$dracula_white]#[fg=$bg_red] #{s/root//:client_key_table} #[fg=$dracula_white,bg=$dracula_black2]" set "window-status-format" " #[fg=$dracula_white]#I:#W#(printf '%%s\n' '#F' | sed 's/-/!/')"
+# set "window-status-current-format" " #[fg=$dracula_yellow,nobold]#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W*"
