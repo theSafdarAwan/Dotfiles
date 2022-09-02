@@ -9,17 +9,17 @@ dracula_green="#71f094"
 dracula_visual_grey="#373844"
 dracula_comment_grey="#5a5c68"
 dracula_gray_shade="#808080"
-# get() {
-#    local option=$1
-#    local default_value=$2
-#    local option_value="$(tmux show-option -gqv "$option")"
-#
-#    if [ -z "$option_value" ]; then
-#       echo "$default_value"
-#    else
-#       echo "$option_value"
-#    fi
-# }
+get() {
+   local option=$1
+   local default_value=$2
+   local option_value="$(tmux show-option -gqv "$option")"
+
+   if [ -z "$option_value" ]; then
+      echo "$default_value"
+   else
+      echo "$option_value"
+   fi
+}
 
 set() {
    local option=$1
@@ -70,26 +70,42 @@ set "display-panes-colour" "$dracula_blue"
 
 set "status-style" "fg=$dracula_comment_grey,bg=$dracula_black2"
 
-#>>>>>>> tmux-badges
-set "@badge_node" "node"
-# set "@badge_node_fg"  "$dracula_white"
-# set "@badge_node_bg"  "$dracula_black2"
-set "@badge_node_fmt" "#(node --version | cut -f 1 -d \" \")"
-# set "@badge_node_secondary_fg" "$dracula_white"
-# set "@badge_node_secondary_bg" "$dracula_black2"
-
-set "@badge_awesome" "awesome"
-set "@badge_awesome_fmt" "true"
 #|||||||||||||||||
 # status bar
 #|||||||||||||||||
+#>>> color's combination's
+color_wb="#[fg=$dracula_white,bg=$dracula_black2,]"
+color_wb2="#[fg=$dracula_white,bg=$dracula_black2,]"
+color_bw="#[fg=$dracula_black,bg=$dracula_white,]"
+color_bw2="#[fg=$dracula_black2,bg=$dracula_white,]"
+color_yb2="#[fg=$dracula_yellow,bg=$dracula_black2]"
+color_rb="#[fg=$dracula_red,bg=$dracula_black,]"
+#>>> icon's
+lf_icon=" #[fg=$dracula_white,bg=$dracula_black2]${color_wb}"
+rf_icon=" #[fg=$dracula_white,bg=$dracula_black2]${color_wb}"
+lf_icon_black=" #[fg=$dracula_black,bg=$dracula_white]${color_wb}"
+rf_icon_black=" #[fg=$dracula_white,bg=$dracula_black]${color_wb}"
+hrf_icon_black=" #[fg=$dracula_black]${color_wb}"
+hrf_icon_white=" #[fg=$dracula_white]${color_wb}"
+lrf_icon_black=" #[fg=$dracula_black]${color_wb}"
+lrf_icon_white=" #[fg=$dracula_white]${color_wb}"
+space_white="#[bg=$dracula_white] "
+space_black2="#[bg=$dracula_black2] "
+space_black="#[bg=$dracula_black] "
 
-set "@prefix_highlight_fg" "$dracula_black"
-set "@prefix_highlight_bg" "$dracula_green"
-set "@prefix_highlight_copy_mode_attr" "fg=$dracula_black,bg=$dracula_green"
-set "@prefix_highlight_output_prefix" "  "
+#>>> modules name's variables < for modularity convenience 
+node_version="$(node --version | cut -f 1 -d ' ')"
+node="#[fg=$dracula_blue] node#[fg=$dracula_comment_grey]:#[fg=$dracula_gray_shade]$node_version${color_wb}"
+pane_list_names="${color_wb} #I:#W"
+last_pane_indicator="#(printf '%%s\n' '#F' | sed 's/-/!/')"
+zoomed_pane_indication=" ${color_yb2}#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W*${color_wb}"
+prefix_indicator="${color_bw} #{s/root//:client_key_table}${color_bw}"
+date="${color_bw}#[bold]%d-%m-%Y"
+day="${color_rb}#[bold] %A "
+session_name="${color_rb}#[bold] #S${lf_icon_black}"
 
-set "status-right" " #{badge_node}:#{badge_nod_fmt}"
-# set "status-right" " #{badge_node,}:#{badge_nod_fmt,} #[fg=$dracula_white,bg=$dracula_black2,]#[fg=$dracula_black,bg=$dracula_white,bold] %d-%m-%Y #[fg=$dracula_black,bg=$dracula_white]#[fg=$dracula_red,bg=$dracula_black] %A"
-# set "status-left" "#[fg=$dracula_red,bg=$dracula_black,bold] #S #[fg=$dracula_black,bg=$dracula_white]#[fg=$bg_red] #{s/root//:client_key_table} #[fg=$dracula_white,bg=$dracula_black2]" set "window-status-format" " #[fg=$dracula_white]#I:#W#(printf '%%s\n' '#F' | sed 's/-/!/')"
-# set "window-status-current-format" " #[fg=$dracula_yellow,nobold]#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W*"
+#>>> status bar position's
+set "status-right" "${node}${color_wb}${rf_icon}${space_white}${date} ${hrf_icon_black}${day}"
+set "status-left" "${session_name}${prefix_indicator}${lf_icon}" 
+set "window-status-format" "${pane_list_names}${last_pane_indicator}"
+set "window-status-current-format" "${zoomed_pane_indication}"
