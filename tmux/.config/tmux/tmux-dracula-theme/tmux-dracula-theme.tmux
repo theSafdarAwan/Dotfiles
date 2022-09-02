@@ -74,12 +74,15 @@ set "status-style" "fg=$dracula_comment_grey,bg=$dracula_black2"
 # status bar
 #|||||||||||||||||
 #>>> color's combination's
-color_wb="#[fg=$dracula_white,bg=$dracula_black2,]"
+color_wb="#[fg=$dracula_white,bg=$dracula_black,]"
 color_wb2="#[fg=$dracula_white,bg=$dracula_black2,]"
 color_bw="#[fg=$dracula_black,bg=$dracula_white,]"
 color_bw2="#[fg=$dracula_black2,bg=$dracula_white,]"
 color_yb2="#[fg=$dracula_yellow,bg=$dracula_black2]"
+color_yb="#[fg=$dracula_yellow,bg=$dracula_black]"
 color_rb="#[fg=$dracula_red,bg=$dracula_black,]"
+color_bg="#[fg=$dracula_comment_grey,bg=$dracula_black,]"
+color_bg2="#[fg=$dracula_comment_grey,bg=$dracula_black2,]"
 #>>> icon's
 lf_icon=" #[fg=$dracula_white,bg=$dracula_black2]${color_wb}"
 rf_icon=" #[fg=$dracula_white,bg=$dracula_black2]${color_wb}"
@@ -95,17 +98,17 @@ space_black="#[bg=$dracula_black] "
 
 #>>> modules name's variables < for modularity convenience 
 node_version="$(node --version | cut -f 1 -d ' ')"
-node="#[fg=$dracula_blue] node#[fg=$dracula_comment_grey]:#[fg=$dracula_gray_shade]$node_version${color_wb}"
-pane_list_names="${color_wb} #I:#W"
+node="#[fg=$dracula_blue] node${color_bg2}:${color_bg2}$node_version${color_wb}" pane_list_names="${color_wb2} #I:#W"
 last_pane_indicator="#(printf '%%s\n' '#F' | sed 's/-/!/')"
 zoomed_pane_indication=" ${color_yb2}#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W*${color_wb}"
 prefix_indicator="${color_bw} #{s/root//:client_key_table}${color_bw}"
 date="${color_bw}#[bold]%d-%m-%Y"
-day="${color_rb}#[bold] %A "
-session_name="${color_rb}#[bold] #S${lf_icon_black}"
+day="${color_rb}#[bold] %A"
+session_list="$(tmux ls | wc --lines)"
+session_list_and_name="${color_wb} ${session_list}${color_bg}:${color_yb}#S${lf_icon_black}"
 
 #>>> status bar position's
-set "status-right" "${node}${color_wb}${rf_icon}${space_white}${date} ${hrf_icon_black}${day}"
-set "status-left" "${session_name}${prefix_indicator}${lf_icon}" 
+set "status-right" "${node}${color_wb2}${rf_icon}${space_white}${date} ${hrf_icon_black}${day}"
+set "status-left" "${session_list_and_name}${prefix_indicator}${lf_icon}" 
 set "window-status-format" "${pane_list_names}${last_pane_indicator}"
 set "window-status-current-format" "${zoomed_pane_indication}"
