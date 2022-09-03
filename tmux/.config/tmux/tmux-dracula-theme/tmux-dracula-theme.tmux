@@ -81,6 +81,7 @@ color_bw2="#[fg=$dracula_black2,bg=$dracula_white,]"
 color_yb2="#[fg=$dracula_yellow,bg=$dracula_black2]"
 color_yb="#[fg=$dracula_yellow,bg=$dracula_black]"
 color_rb="#[fg=$dracula_red,bg=$dracula_black,]"
+color_bb="#[fg=$dracula_blue,bg=$dracula_black,]"
 color_bg="#[fg=$dracula_comment_grey,bg=$dracula_black,]"
 color_bg2="#[fg=$dracula_comment_grey,bg=$dracula_black2,]"
 #>>> icon's
