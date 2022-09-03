@@ -105,8 +105,9 @@ zoomed_pane_indication=" ${color_yb2}#{?window_zoomed_flag,#[fg=$dracula_red],}#
 prefix_indicator="${color_bw} #{s/root//:client_key_table}${color_bw}"
 date="${color_bw}#[bold]%d-%m-%Y"
 day="${color_rb}#[bold] %A"
-session_list="$(tmux ls | wc --lines)"
-session_list_and_name="${color_bb} ${session_list}${color_bg}:${color_yb}#S${lf_icon_black}"
+# session_list="$(tmux ls | wc --lines)"
+# session_list_and_name="${color_bb} ${session_list}${color_bg}:${color_yb}#S${lf_icon_black}"
+session_list_and_name="${color_bb} ${color_yb}#S${lf_icon_black}"
 
 #>>> status bar position's
 set "status-right" "${node}${color_wb2}${rf_icon}${space_white}${date} ${hrf_icon_black}${day}"
