@@ -35,3 +35,5 @@ alias sid="neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.c
 alias cp="~/bin/advcp -g"
 alias mv="~/bin/advmv -g"
 alias c="/bin/clear; fortune-cm.fortune"
+
+alias cava="TERM=st-256color cava"
