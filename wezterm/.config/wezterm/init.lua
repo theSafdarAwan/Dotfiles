@@ -133,15 +133,15 @@ return {
 			mods = "CTRL|SHIFT",
 			action = wezterm.action({ ActivateTabRelative = -1 }),
 		},
-		{ -- standard copy/paste bindings
+		{
 			key = "j",
 			mods = "CTRL|ALT",
-			action = wezterm.action({ ScrollByPage = 1 }),
+			action = wezterm.action({ ScrollByPage = 0.3 }),
 		},
-		{ -- standard copy/paste bindings
+		{
 			key = "k",
 			mods = "CTRL|ALT",
-			action = wezterm.action({ ScrollByPage = -1 }),
+			action = wezterm.action({ ScrollByPage = -0.3 }),
 		},
 		{
 			key = "x",
