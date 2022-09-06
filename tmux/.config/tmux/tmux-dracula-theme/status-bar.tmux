@@ -12,7 +12,7 @@ dracula_gray_shade="#808080"
 get() {
    local option=$1
    local default_value=$2
-   local option_value="$(tmux show-option -gqv "$option")"
+   local option_value="$(tmux show-option -gv "$option")"
 
    if [ -z "$option_value" ]; then
       echo "$default_value"
@@ -30,46 +30,8 @@ set() {
 setw() {
    local option=$1
    local value=$2
-   tmux set-window-option -gq "$option" "$value"
+   tmux set-window-option -g "$option" "$value"
 }
-
-set "mode-style" "bg=$dracula_comment_grey,fg=$dracula_white"
-
-set "status" "on"
-set "status-justify" "left"
-
-set "status-left-length" "100"
-set "status-right-length" "100"
-set "status-right-attr" "none"
-
-set "message-command-style" "fg=$dracula_white,bg=$dracula_black"
-
-set "message-style" "fg=$dracula_white,bg=$dracula_comment_grey"
-
-set "status-attr" "none"
-set "status-left-attr" "none"
-
-setw "window-status-fg" "$dracula_black"
-setw "window-status-bg" "$dracula_black"
-setw "window-status-attr" "none"
-
-setw "window-status-activity-bg" "$dracula_black"
-setw "window-status-activity-fg" "$dracula_black"
-setw "window-status-activity-attr" "none"
-
-setw "window-status-separator" " |"
-
-set "window-style" "fg=$dracula_white"
-set "window-active-style" "fg=$dracula_white"
-
-set "pane-border-style" "fg=$dracula_visual_grey,bg=$dracula_black"
-set "pane-active-border-style" "fg=$dracula_comment_grey,bg=$dracula_black"
-
-set "display-panes-active-colour" "$dracula_yellow"
-set "display-panes-colour" "$dracula_blue"
-
-set "status-style" "fg=$dracula_comment_grey,bg=$dracula_black2"
-
 #|||||||||||||||||
 # status bar
 #|||||||||||||||||
@@ -105,9 +67,8 @@ zoomed_pane_indication=" ${color_yb2}#{?window_zoomed_flag,#[fg=$dracula_red],}#
 prefix_indicator="${color_bw} #{s/root//:client_key_table}${color_bw}"
 date="${color_bw}#[bold]%d-%m-%Y"
 day="${color_rb}#[bold] %A"
-# session_list="$(tmux ls | wc --lines)"
-# session_list_and_name="${color_bb} ${session_list}${color_bg}:${color_yb}#S${lf_icon_black}"
-session_list_and_name="${color_bb} ${color_yb}#S${lf_icon_black}"
+session_list="$(tmux ls | wc --lines)"
+session_list_and_name="${color_bb} ${session_list}${color_bg}:${color_yb}#S${lf_icon_black}"
 
 #>>> status bar position's
 set "status-right" "${node}${color_wb2}${rf_icon}${space_white}${date} ${hrf_icon_black}${day}"
