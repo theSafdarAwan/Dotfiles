@@ -62,7 +62,7 @@ space_black="#[bg=$dracula_black] "
 #>>> modules name's variables < for modularity convenience 
 node_version="$(node --version | cut -f 1 -d ' ')"
 node="#[fg=$dracula_blue] node${color_bg2}:${color_bg2}$node_version${color_wb}"
-pane_list_names="${color_wb2} #I:#W"
+window_list_names="${color_wb2} #I:#W"
 last_pane_indicator="#(printf '%%s\n' '#F' | sed 's/-/!/')"
 zoomed_pane_indication=" ${color_yb2}#{?window_zoomed_flag,#[fg=$dracula_red],}#I:#W*${color_wb}"
 prefix_indicator="${color_bw} #{s/root//:client_key_table}${color_bw}"
@@ -76,5 +76,5 @@ session_list_and_name="${color_rb}${session_list}${color_bb}${color_bg}(${color_
 #>>> status bar position's
 set "status-right" "${node}${color_wb2}${rf_icon}${space_white}${date} ${hrf_icon_black}${day}"
 set "status-left" "${session_list_and_name}${prefix_indicator}${lf_icon}" 
-set "window-status-format" "${pane_list_names}${last_pane_indicator}"
+set "window-status-format" "${window_list_names}${last_pane_indicator}"
 set "window-status-current-format" "${zoomed_pane_indication}"
