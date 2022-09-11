@@ -84,10 +84,10 @@ vnoremap <silent><leader>w <Esc>`>:<C-U>call search('\C\<\<Bar>\%(^\<Bar>[^'.g:c
 
 nnoremap <leader>so :so %<cr>
 
-" cursor shape setting
-let &t_EI = "\<esc>[1 q"
-let &t_SI = "\<esc>[5 q"
-let &t_SR = "\<esc>[1 q"
+" " cursor shape setting
+" let &t_EI = "\<esc>[1 q"
+" let &t_SI = "\<esc>[5 q"
+" let &t_SR = "\<esc>[1 q"
 
 autocmd InsertLeave * silent !echo -ne "\e[1 q"
 autocmd InsertLeave * redraw!
