@@ -32,8 +32,8 @@ alias db="deadbeef"
 alias sid="neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/safdar_in_box.txt | lolcat"
 # alias clear=" /bin/clear; freshfetch"
 
-alias cp="~/bin/advcp -g"
-alias mv="~/bin/advmv -g"
+# alias cp="~/bin/advcp -g"
+# alias mv="~/bin/advmv -g"
 alias c="/bin/clear; fortune-cm.fortune"
 
 alias cava="TERM=st-256color cava"
