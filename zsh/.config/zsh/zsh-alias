@@ -30,7 +30,7 @@ alias db="deadbeef"
 
 # alias clear="/bin/clear; neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/empty.txt | lolcat;"
 alias sid="neofetch --config $HOME/.config/neofetch/sterm.conf --source $HOME/.config/neofetch/safdar_in_box.txt | lolcat"
-# alias clear=" /bin/clear; freshfetch"
+alias clear=" /bin/clear; macchina"
 
 # alias cp="~/bin/advcp -g"
 # alias mv="~/bin/advmv -g"

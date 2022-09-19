@@ -10,7 +10,7 @@ scan_timeout = 1000
 command_timeout = 700
 
 # Disable the blank line at the start of the prompt
-add_newline = false
+add_newline = true
 
 # TODO: figure out how to create a function that will create a new line 
 # for the character only when there are three or more components are visible 
