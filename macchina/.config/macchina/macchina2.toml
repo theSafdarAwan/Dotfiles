@@ -20,7 +20,7 @@ physical_cores = true
 theme = "sid2"
 
 show = [
-#   "Host",
+    "Host",
 #   "Machine",
 #   "Kernel",
 #   "Distribution",
