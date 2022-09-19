@@ -89,6 +89,12 @@ nnoremap <leader>so :so %<cr>
 " let &t_SI = "\<esc>[5 q"
 " let &t_SR = "\<esc>[1 q"
 
+" create new terminals then hide & unhide them
+tnoremap <silent> <C-[> <C-\><C-n>
+nnoremap <silent> <C-t> :execute 'terminal'<CR><C-w>J
+nnoremap <silent> <leader><C-t> :unhide<CR><C-w>ja
+tnoremap <silent> <C-t> <C-\><C-n>:hide<CR>
+
 autocmd InsertLeave * silent !echo -ne "\e[1 q"
 autocmd InsertLeave * redraw!
 autocmd VimEnter * execute "normal \<C-G>"
@@ -102,6 +108,9 @@ function! HelpHelper()
     set conceallevel=0
 endfunction
 autocmd FileType help call HelpHelper()
+
+" Damian Conway
+call matchadd('ColorColumn', '\%80v') " for a moment be quite because now i am using linters
 
 hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
 

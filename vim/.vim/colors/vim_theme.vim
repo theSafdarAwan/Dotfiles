@@ -138,8 +138,7 @@ if s:t_Co >= 256
   if !has('patch-8.0.0616') " Fix for Vim bug
     set background=dark
   endif
-  hi ColorColumn ctermfg=NONE ctermbg=0 cterm=NONE
-  hi Cursor ctermbg=fg cterm=NONE
+  hi ColorColumn ctermfg=NONE ctermbg=8 cterm=NONE " jsfkdl jlkdfja lksfjldka jlsdfjl ksafjdl hi Cursor ctermbg=fg cterm=NONE
   hi CursorColumn ctermfg=NONE ctermbg=0 cterm=NONE
   hi CursorLine ctermfg=NONE ctermbg=0 cterm=NONE
   hi CursorLineNr ctermfg=7 ctermbg=0 cterm=NONE
