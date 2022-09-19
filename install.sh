@@ -135,7 +135,7 @@
 # - pureref
 # - dupeguru
 # - bleachbit
-# - freshfetch-git
+# - macchina
 # - autotiling-git
 # - nnn-nerd
 # - deadbeef

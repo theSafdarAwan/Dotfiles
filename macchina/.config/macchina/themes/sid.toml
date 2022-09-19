@@ -2,9 +2,9 @@ spacing         = 1
 padding         = 0
 hide_ascii      = false
 # prefer_small_ascii = true
-separator       = " "
-key_color       = "#71f094"
-separator_color = "#Fccf6C"
+separator       = "-" 
+key_color       = "#Fccf6C"
+separator_color = "#71f094"
 
 [custom_ascii]
 color           = "#ff5370"
@@ -26,7 +26,6 @@ visible         = false
 # title           = " Safdar Awan "
 border          = "rounded"
 visible         = true
-border_color    = "Red"
 
 [box.inner_margin]
 x               = 1
@@ -41,19 +40,18 @@ pool            = "base"
 de              = "DE"
 resolution      = "Resolution"
 distro          = "Distro"
-kernel          = "Kernel"
-shell           = "Shell"
-packages        = "Packages"
+kernel          = "  "
+shell           = " $ "
+packages        = "  "
 host            = "Host"
 battery         = "Battery"
-os              = "OS"
+os              = "  "
 wm              = "WM"
-terminal        = "Terminal"
-memory          = "Memory"
+terminal        = "  "
+memory          = "  "
 machine         = "Machine"
 local_ip        = "Local IP"
 backlight       = "Brightness"
-cpu             = "CPU"
+cpu             = "  "
 cpu_load        = "CPU Load"
-uptime          = "Uptime"
-
+uptime          = " 神"
