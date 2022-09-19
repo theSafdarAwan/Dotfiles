@@ -1,0 +1,55 @@
+spacing         = 1
+padding         = 0
+hide_ascii      = true
+# prefer_small_ascii = true
+separator       = "-" 
+key_color       = "#Fccf6C"
+separator_color = "#71f094"
+
+[custom_ascii]
+color           = "#ff5370"
+path            = "~/.config/macchina/ascii/tux"
+
+[palette]
+type            = "Light"
+glyph           = " "
+visible         = false
+
+[bar]
+glyph           = "ߋ"
+symbol_open     = '['
+symbol_close    = ']'
+hide_delimiters = true
+visible         = false
+
+[box]
+visible         = true
+
+[box.inner_margin]
+x               = 1
+y               = 0
+
+[randomize]
+key_color       = false
+separator_color = false
+pool            = "base"
+
+[keys]
+de              = "DE"
+resolution      = "Resolution"
+distro          = "Distro"
+kernel          = "  "
+shell           = " $ "
+packages        = "  "
+host            = "Host"
+battery         = "Battery"
+os              = "  "
+wm              = "WM"
+terminal        = "  "
+memory          = "  "
+machine         = "Machine"
+local_ip        = "Local IP"
+backlight       = "Brightness"
+cpu             = "  "
+cpu_load        = "CPU Load"
+uptime          = " 神"
