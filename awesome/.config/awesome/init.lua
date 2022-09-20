@@ -606,7 +606,7 @@ awful.rules.rules = {
 	{
 		rule_any = {
 			class = {
-				"obs",
+				"^obs$",
 				"Gcolor2",
 				"Blender",
 				"figma-linux",
