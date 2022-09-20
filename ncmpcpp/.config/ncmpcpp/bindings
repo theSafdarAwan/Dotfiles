@@ -150,10 +150,10 @@ def_key "s"
 def_key "p"
     pause
 
-def_key ">"
+def_key "]"
     next
 
-def_key "<"
+def_key "["
     previous
 
 # def_key "ctrl-h"
