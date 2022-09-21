@@ -1,5 +1,5 @@
 # Specifies the network interface to use for the LocalIP readout
-interface = "enp0s29u1u8"
+interface = "en01"
 
 # Lengthen uptime output
 long_uptime = true
@@ -30,7 +30,7 @@ show = [
 #   "Resolution",
 #   "Backlight",
 #   "Packages",
-    "LocalIP",
+#   "LocalIP",
 #   "Terminal",
 #   "Shell",
     "Uptime",
