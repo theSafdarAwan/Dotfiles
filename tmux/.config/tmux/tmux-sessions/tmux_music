@@ -15,7 +15,7 @@ sleep 1 && tmux send-keys -t $session_name:$ncmpcpp_window.2 "cava" Enter
 
 tmux new-window -t 8 -n $mpc_window -c $root_dir
 
-if [[ $1=="-d" ]]; then
+if [ $# -eq 0 ]; then
    echo "$session_name session has been created " 
 else
    tmux attach -t $session_name:$ncmpcpp_window.1

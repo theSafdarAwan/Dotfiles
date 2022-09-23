@@ -1,0 +1,27 @@
+#!/bin/bash
+
+session_name="Linux"
+root_dir=~/
+
+host_window="host"
+ssh_window="ssh"
+docs_window="docs"
+
+tmux new-session -s $session_name -c $root_dir -n $host_window -d
+tmux move-window -s $session_name:$host_window -t $session_name:9
+
+tmux new-window -n $ssh_window -t 8 -c $root_dir
+sleep 1 && \
+    tmux send-keys -t $session_name:$ssh_window.1 \
+    "ssh safdar-server@192.168.56.101" Enter
+
+tmux new-window -n $docs_window -t 7 -c $root_dir
+sleep 1 && \
+    tmux send-keys -t $session_name:$docs_window.1 \
+    "man man" Enter
+
+if [ $# -eq 0 ]; then
+    tmux attach -t $session_name:$ssh_window.1
+else
+    echo "$session_name session has been created " 
+fi
