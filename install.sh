@@ -116,7 +116,6 @@
 # - neovim-nightly-bin
 # - nvim-packer-git
 # - wezterm
-# - tmuxinator
 
 # - zsh-vi-mode
 # - google-chrome
