@@ -10,11 +10,13 @@ tmux new -s $name -n $editor_window_name -c $root_dir -d
 
 tmux move-window -t C:8 -s C:$editor_window_name
 
+sleep 1 && tmux send-keys -t C:$editor_window_name.1 "nvim main.c" Enter
+
 tmux new-window -n $doc_window_name -t C:7 -c $root_dir
 
 tmux new-window -n $dir_window_name -t C:9 -c $root_dir
 
-sleep 1 && tmux send-keys -t C:$dir_window_name.1 "./compile.sh" Enter
+sleep 1 && tmux send-keys -t C:$dir_window_name.1 "compile_c" Enter
 
 # attach to the session
 tmux attach -t $name:$editor_window_name
