@@ -59,6 +59,7 @@
 # - lazygit
 # - obs-studio
 # - tipp10
+# - texlive-core
 #>>>>>>>>>>>> Thumbnail Utilitie's
 # - ffmpegthumbnailer
 # - ffmpegthumbs
@@ -115,6 +116,7 @@
 # - neovim-nightly-bin
 # - nvim-packer-git
 # - wezterm
+# - tmuxinator
 
 # - zsh-vi-mode
 # - google-chrome
