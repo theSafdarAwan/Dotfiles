@@ -1,0 +1,22 @@
+#!/bin/bash
+
+session_name="music"
+root_dir=~/
+
+ncmpcpp_window="ncmpcpp"
+mpc_window="mpc"
+
+tmux new-session -s $session_name -n $ncmpcpp_window -c $root_dir -d
+tmux move-window -t $session_name:9 -s $session_name:$ncmpcpp_window
+tmux split-window -v -t $session_name:$ncmpcpp_window.1
+
+sleep 1 && tmux send-keys -t $session_name:$ncmpcpp_window.1 "ncmpcpp" Enter
+sleep 1 && tmux send-keys -t $session_name:$ncmpcpp_window.2 "cava" Enter
+
+tmux new-window -t 8 -n $mpc_window -c $root_dir
+
+if [[ $1=="-d" ]]; then
+   echo "$session_name session has been created " 
+else
+   tmux attach -t $session_name:$ncmpcpp_window.1
+fi

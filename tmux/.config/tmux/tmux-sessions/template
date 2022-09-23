@@ -1,0 +1,24 @@
+#!/bin/bash
+
+session_name="template"
+root_dir=~/
+
+first_window_name="foo"
+second_window_name="bar"
+
+tmux new-session -s $session_name -c $root_dir -n $first_window_name -d
+tmux move-window -s $session_name:$first_window_name -t $session_name:9
+sleep 1 && \
+    tmux send-keys -t $session_name:$first_window_name.1 \
+    "echo Hello, World!" Enter
+
+tmux new-window -n $second_window_name -t 8 -c $root_dir
+sleep 1 && \
+    tmux send-keys -t $session_name:$second_window_name.1 \
+    "echo Hello, World!" Enter
+
+if [[ $1=="-d" ]]; then
+   echo "$session_name session has been created " 
+else
+   tmux attach -t $session_name:$first_window_name.1
+fi
