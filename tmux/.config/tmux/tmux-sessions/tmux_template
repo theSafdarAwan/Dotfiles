@@ -1,10 +1,14 @@
 #!/bin/bash
 
+# ->
 session_name="template"
 root_dir=~/
+# <-
 
+# ->
 editor_window_name="ed"
 dir_window_name="dir"
+# <-
 
 #||||||||||||||||||
 # session creation
@@ -17,19 +21,25 @@ tmux new-session -s $session_name -c $root_dir -n $editor_window_name -d
 # window management
 #||||||||||||||||||
 #>>>
+
+# -> window 8
 # move the window to the 8 index
 tmux move-window -s $session_name:$editor_window_name -t $session_name:8
 # send instructions to the 8 index window
 sleep 1 && \
     tmux send-keys -t $session_name:$editor_window_name.1 \
     "echo Hello, World!" Enter
+# <-
 
+# ->
 # create window on index 9
 tmux new-window -n $dir_window_name -t 9 -c $root_dir
 # send instructions to window index 9
 sleep 1 && \
     tmux send-keys -t $session_name:$dir_window_name.1 \
     "echo Hello, World!" Enter
+# <-
+
 #<<<
 
 #|||||||||||||||||| 
