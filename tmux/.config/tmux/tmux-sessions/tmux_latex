@@ -1,0 +1,30 @@
+#!/bin/bash
+
+session_name="Latex"
+root_dir=~/safdar-local/learning/latex
+
+editor_window_name="ed"
+dir_viewer="dir"
+
+#>>>
+tmux new-session -s $session_name -c $root_dir -n $editor_window_name -d
+tmux move-window -s $session_name:$editor_window_name -t $session_name:8
+sleep 1 && \
+    tmux send-keys -t $session_name:$editor_window_name.1 \
+    "nvim ." Enter
+#<<<
+
+#>>>
+tmux new-window -n $dir_viewer -t 9 -c $root_dir
+sleep 1 && \
+    tmux send-keys -t $session_name:$dir_viewer.1 \
+    "ls -1" Enter
+#<<<
+
+#>>>
+if [ $# -eq 0 ]; then
+    tmux attach -t $session_name:$editor_window_name.1
+else
+   echo "$session_name session has been created " 
+fi
+#<<<

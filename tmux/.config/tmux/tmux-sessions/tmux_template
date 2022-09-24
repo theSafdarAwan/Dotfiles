@@ -3,22 +3,42 @@
 session_name="template"
 root_dir=~/
 
-first_window_name="foo"
-second_window_name="bar"
+editor_window_name="ed"
+dir_window_name="dir"
 
-tmux new-session -s $session_name -c $root_dir -n $first_window_name -d
-tmux move-window -s $session_name:$first_window_name -t $session_name:9
+#||||||||||||||||||
+# session creation
+#||||||||||||||||||
+#>>>
+tmux new-session -s $session_name -c $root_dir -n $editor_window_name -d
+#<<<
+
+#||||||||||||||||||
+# window management
+#||||||||||||||||||
+#>>>
+# move the window to the 8 index
+tmux move-window -s $session_name:$editor_window_name -t $session_name:8
+# send instructions to the 8 index window
 sleep 1 && \
-    tmux send-keys -t $session_name:$first_window_name.1 \
+    tmux send-keys -t $session_name:$editor_window_name.1 \
     "echo Hello, World!" Enter
 
-tmux new-window -n $second_window_name -t 8 -c $root_dir
+# create window on index 9
+tmux new-window -n $dir_window_name -t 9 -c $root_dir
+# send instructions to window index 9
 sleep 1 && \
-    tmux send-keys -t $session_name:$second_window_name.1 \
+    tmux send-keys -t $session_name:$dir_window_name.1 \
     "echo Hello, World!" Enter
+#<<<
 
+#|||||||||||||||||| 
+# session attaching
+#||||||||||||||||||
+#>>>
 if [ $# -eq 0 ]; then
-   echo "$session_name session has been created " 
+    tmux attach -t $session_name:$editor_window_name.1
 else
-   tmux attach -t $session_name:$first_window_name.1
+    echo "$session_name session has been created " 
 fi
+#<<<

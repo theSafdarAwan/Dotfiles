@@ -22,7 +22,7 @@ tmux new-window -n $notes_window_name -t $session_name:1 -c $notes_c_dir
 sleep 1 && tmux send-keys -t $session_name:$notes_window_name.1 "nvim ." Enter
 
 if [ $# -eq 0 ]; then
-   echo "$session_name session has been created " 
-else
     tmux attach -t $session_name:$editor_window_name
+else
+    echo "$session_name session has been created " 
 fi
