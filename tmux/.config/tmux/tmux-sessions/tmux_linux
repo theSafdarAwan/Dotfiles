@@ -1,37 +1,48 @@
 #!/bin/bash
 
+# -> Bootstrapping
 #>>>
 session_name="Linux"
 root_dir=~/
+notes_dir=~/safdar-local/NOTES/IT/Linux/
 
 host_window="host"
 ssh_window="ssh"
-docs_window="docs"
+notes_window="notes"
 #<<<
+# <- end
 
+# -> session creation and window index 9 host
 #>>>
 tmux new-session -s $session_name -c $root_dir -n $host_window -d
 tmux move-window -s $session_name:$host_window -t $session_name:9
 #<<<
+# <- end
 
+# -> window index 8 ssh window
 #>>>
 tmux new-window -n $ssh_window -t 8 -c $root_dir
 sleep 1 && \
     tmux send-keys -t $session_name:$ssh_window.1 \
     "ssh safdar-server@192.168.56.101" Enter
 #<<<
+# <- end
 
+# -> window index 1 notes window
 #>>>
-tmux new-window -n $docs_window -t 7 -c $root_dir
+tmux new-window -n $notes_window -t 1 -c $notes_dir
 sleep 1 && \
-    tmux send-keys -t $session_name:$docs_window.1 \
-    "man man" Enter
+    tmux send-keys -t $session_name:$notes_window.1 \
+    "ls -1" Enter
 #<<<
+# <- end
 
+# -> finish
 #>>>
 if [ $# -eq 0 ]; then
-    tmux attach -t $session_name:$ssh_window.1
+    tmux attach -t $session_name:$ssh_window
 else
     echo "$session_name session has been created " 
 fi
 #<<<
+# <- end
