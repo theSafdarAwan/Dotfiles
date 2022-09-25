@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# >>>
 # ->
 session_name="template"
 root_dir=~/
@@ -9,6 +10,7 @@ root_dir=~/
 editor_window_name="ed"
 dir_window_name="dir"
 # <-
+# <<<
 
 #||||||||||||||||||
 # session creation
