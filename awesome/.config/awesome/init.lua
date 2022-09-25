@@ -530,6 +530,7 @@ awful.rules.rules = {
 				"ksnip",
 				-- "tabbed",
 				"Kruler",
+				"Anki",
 				"MessageWin", -- kalarm.
 				"Sxiv",
 				"Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
