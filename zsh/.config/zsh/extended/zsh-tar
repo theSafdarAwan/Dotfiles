@@ -1,0 +1,2 @@
+export TAR_OPTIONS="--absolute-names" 
+# export TAR_OPTIONS="--verbose --verbose --absolute-names" 

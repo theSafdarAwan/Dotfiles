@@ -19,7 +19,8 @@ eval "$(starship init zsh)"
 source "$ZDOTDIR/zsh-syntax-highlighting-dracula.sh"
 
 source "$ZDOTDIR/zsh-antigen"
-# >>>>>>>> This is a custom prompt but i use starship
+
+# -> This is a custom prompt but i use starship
 # source "$ZDOTDIR/zsh-prompt"
 #
 source "$ZDOTDIR/zsh-settings"
@@ -31,8 +32,9 @@ source "$ZDOTDIR/zsh-fzf-tab"
 source "$ZDOTDIR/zsh-vi-mode"
 source "$ZDOTDIR/zsh-keybinds"
 source "$ZDOTDIR/zsh-dracula"
-source "$ZDOTDIR/zsh-nnn"
-# source "$ZDOTDIR/zsh-nnn-preview"
+source "$ZDOTDIR/extended/zsh-nnn"
+# source "$ZDOTDIR/extended/zsh-nnn-preview"
+source "$ZDOTDIR/extended/zsh-tar"
 
 command_not_found_handler () {
     local life_Warning=(
