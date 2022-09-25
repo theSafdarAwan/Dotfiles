@@ -3,6 +3,10 @@
 #|||||||||||||||||||||||||||||||||||||||||||||
 ## The following actions are not bound to any key/command:
 ## mouse_event
+def_key ">"
+    dummy
+def_key "<"
+    dummy
 
 def_key "ctrl-l"
     load
