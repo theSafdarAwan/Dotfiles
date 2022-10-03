@@ -569,16 +569,10 @@ awful.rules.rules = {
 	-- 	},
 	-- 	properties = { screen = 1, tag = taglist_names[2] },
 	-- },
-	{
-		rule = {
-			class = "tabbed",
-		},
-		properties = { screen = 1, taglist_names[2], floating = true },
-	},
 	--> Tag 3
 	{
 		rule_any = {
-			class = { "mpv", "Evince", "Com.github.johnfactotum.Foliate", "Deadbeef", "Peazip" },
+			class = { "mpv", "Evince", "tabbed", "Com.github.johnfactotum.Foliate", "Deadbeef", "Peazip" },
 		},
 		properties = { tag = taglist_names[3] },
 	},

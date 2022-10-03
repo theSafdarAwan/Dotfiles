@@ -6,7 +6,7 @@ notes_dir=~/safdar-local/NOTES/IT/latex/
 
 editor_window_name="ed"
 dir_window_name="dir"
-notes_window_name="dir"
+notes_window_name="notes"
 
 #{{{
 tmux new-session -s $session_name -c $root_dir -n $editor_window_name -d
@@ -27,7 +27,7 @@ sleep 1 && \
 tmux new-window -n $notes_window_name -t 1 -c $notes_dir
 sleep 1 && \
     tmux send-keys -t $session_name:$notes_window_name.1 \
-    "ls -1" Enter
+    "nvim ." Enter
 #}}}
 
 #{{{
