@@ -124,6 +124,7 @@
 # - stardict-wordnet
 # - scid
 # - htop-vim
+# - btop
 
 #>>>>>>>>>>>> Thumbnail Utilitie's
 # - raw-thumbnailer
