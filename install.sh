@@ -198,6 +198,7 @@
 # sudo npm i -g vscode-langservers-extracted
 # sudo npm i -g bash-language-server
 # sudo npm i -g live-server
+# sudo npm install -g prettier_d_slim
 
 ############ pip
 # pip install pyright
