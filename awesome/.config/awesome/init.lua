@@ -527,6 +527,7 @@ awful.rules.rules = {
 				"Arandr",
 				"Blueman-manager",
 				"Gpick",
+                "thunderbird*",
 				"ksnip",
 				-- "tabbed",
 				"Kruler",
@@ -593,7 +594,7 @@ awful.rules.rules = {
 	--> Tag 7
 	{
 		rule_any = {
-			class = { "Thunderbird", "discord", "org.gabmus.giara" },
+			class = { "thunderbird", "discord", "org.gabmus.giara" },
 		},
 		properties = { screen = 1, tag = taglist_names[7] },
 	},
