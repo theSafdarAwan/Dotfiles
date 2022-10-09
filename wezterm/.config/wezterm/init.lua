@@ -37,10 +37,11 @@ return {
 			intensity = "Bold",
 			font = font_with_fallback(font_name, { italic = true, bold = true }),
 		},
-		{
-			intensity = "Bold",
-			font = font_with_fallback(font_name, { bold = true }),
-		},
+        {
+            italic = false,
+            intensity = "Normal",
+            font = font_with_fallback(font_name , { bold = false, italic = false })
+        },
 	},
 
 	-- default_cursor_style = "BlinkingUnderline",
