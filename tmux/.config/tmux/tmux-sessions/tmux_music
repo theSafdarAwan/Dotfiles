@@ -14,6 +14,8 @@ sleep 1 && tmux send-keys -t $session_name:$ncmpcpp_window.1 "ncmpcpp" Enter
 sleep 1 && tmux send-keys -t $session_name:$ncmpcpp_window.2 "cava" Enter
 
 tmux new-window -t 8 -n $mpc_window -c $root_dir
+tmux select-window -t $session_name:$ncmpcpp_window
+tmux select-pane -t $session_name:$ncmpcpp_window.1
 
 if [ $# -eq 0 ]; then
    tmux attach -t $session_name:$ncmpcpp_window.1
