@@ -234,12 +234,12 @@
 # sudo ln -s /var/lib/snapd/snap /snap
 
 #>>>>>>>>> Install the tmux plugin manager
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
-#>>>>>>> how to start the tmux after bootup just install all the plugins for tmux then
-# reload the tmux for sourcing the config file it will create a file in the .config/systemd/user/ called 
-# tmux.service copy it to /etc/systemd/system then execute this command
-# sudo systemctl enable --now tmux.service
+#>>>>>>>>> Install c libraries
+# git clone https://github.com/zoelabbb/conio.h.git
+# cd conio.h
+# sudo make install
 
 #>>>>>>>>>>>>> Color full Emojis config
 # Put this in the /etc/fonts/local.conf
