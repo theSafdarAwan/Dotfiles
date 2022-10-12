@@ -1,4 +1,4 @@
-source /home/safdarawan/zsh-plugins/antigen.zsh
+source /home/safdar/zsh-plugins/antigen.zsh
 
 antigen bundle Aloxaf/fzf-tab
 
