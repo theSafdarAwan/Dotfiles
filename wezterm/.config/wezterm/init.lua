@@ -30,7 +30,7 @@ return {
 	font_rules = {
 		{
 			italic = true,
-			font = font_with_fallback(font_name, { italic = true }),
+			font = font_with_fallback("Hack Nerd Font", { italic = true }),
 		},
 		{
 			italic = true,
@@ -40,7 +40,7 @@ return {
         {
             italic = false,
             intensity = "Normal",
-            font = font_with_fallback(font_name , { bold = false, italic = false })
+            font = font_with_fallback(font_name , { weight = "Regular", italic = false })
         },
 	},
 
