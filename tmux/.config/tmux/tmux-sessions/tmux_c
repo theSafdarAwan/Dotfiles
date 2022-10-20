@@ -7,7 +7,7 @@ editor_window_name="ed"
 dir_window_name="dir"
 doc_window_name="doc"
 notes_window_name="NOTES"
-notes_c_dir=~/safdar-local/NOTES/IT/C_lang
+notes_c_dir=~/safdar-local/NOTES/IT/C_lang/JennysLectures/norg
 
 tmux new -s $session_name -n $editor_window_name -c $root_dir -d
 tmux move-window -t $session_name:8 -s $session_name:$editor_window_name

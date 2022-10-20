@@ -24,7 +24,7 @@ tmux move-window -s $session_name:$host_window -t $session_name:9
 tmux new-window -n $ssh_window -t 8 -c $root_dir
 sleep 1 && \
     tmux send-keys -t $session_name:$ssh_window.1 \
-    "ssh safdar-server@192.168.56.101" Enter
+    "ssh safdar@192.168.56.102" Enter
 #}}}
 # <- end
 
