@@ -15,6 +15,7 @@ URxvt*termName: kitty
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: firefox
 URxvt.matcher.button: 1
+xterm*font: xft:Fira Code Nerd Font:pixelsize=15,xft:DejaVuSansMono Nerd Font:size=8
 
 #define S_base03        #282A36
 #define S_base02        #569CD6

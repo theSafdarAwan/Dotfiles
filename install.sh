@@ -48,10 +48,6 @@
 # - viewnior
 # - virtualbox
 
-# WARN: you have to install the linux[x]-virtualbox-host-modules with respect to your kernal version
-# - linux517-virtualbox-host-modules
-# - virtualbox-host-modules-arch
-
 # - dust
 # - bat
 # - darktable
@@ -125,6 +121,7 @@
 # - scid
 # - htop-vim
 # - btop
+# - weechat-git
 
 #>>>>>>>>>>>> Thumbnail Utilitie's
 # - raw-thumbnailer
@@ -199,6 +196,8 @@
 # sudo npm i -g bash-language-server
 # sudo npm i -g live-server
 # sudo npm install -g prettier_d_slim
+# sudo npm install -g eslint_d
+# sudo npm install -g stylelint
 
 ############ pip
 # pip install pyright

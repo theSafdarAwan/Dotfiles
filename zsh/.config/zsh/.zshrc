@@ -111,3 +111,5 @@ macchina
 # }
 # 
 # precmd_functions+=(_fix_cursor)
+
+alias luamake=/home/safdar/safdar-local/lua-language-server/3rd/luamake/luamake
