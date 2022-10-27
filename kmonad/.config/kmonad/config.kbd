@@ -6,9 +6,7 @@
   cmp-seq-delay 5
   fallthrough true
   allow-cmd false
-)
-
-(defsrc
+) (defsrc
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
@@ -25,11 +23,19 @@
 )
 
 (deflayer utilize
-  XX   1    2    3    4    5    6    7    8    9    0    -    =    XX
+  @t   1    2    3    4    5    6    7    8    9    0    -    =    XX
   XX   XX   XX   esc  XX   XX   XX   pgup XX   XX   XX   XX   XX   XX  
   @qwe home XX   pgdn XX   end  left down up   rght XX   XX   ret
   XX   XX   del  XX   XX   XX   XX   XX   XX   XX   XX   XX
   lctl XX   lalt                cmp        XX   XX   XX   XX
+)
+
+(deflayer typing
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    XX
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @qwe a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            @utt rmet cmp  rctl
 )
 
 (deflayer disalbe_ctrl_key_for_browser
@@ -45,4 +51,5 @@
 ;;  nvb (multi-tap 1000 caps (layer-switch disalbe_ctrl_key_for_browser))
     utl (multi-tap 1000 caps (layer-switch utilize))
     utt (layer-toggle utilize)
+    t   (layer-switch typing)
 )

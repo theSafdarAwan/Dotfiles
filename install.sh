@@ -19,11 +19,13 @@
 # - exa
 # - lolcat
 # - mpv
+# - imv
 # - mpd 
 # - ncmpcpp
 # - mpc
 # - fd
 # - clang
+# - nasm
 # - ninja
 # - gparted
 # - ripgrep

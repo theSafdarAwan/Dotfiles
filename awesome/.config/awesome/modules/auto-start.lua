@@ -16,7 +16,4 @@ run_once({
     "stardict",
     "nitrogen",
 --    "deadbeef",
-    --    Mount disks NOTE: not a good way but it works
-    "mount /dev/sdb2 ~/Disks/UI",
-    "mount /dev/sdc1 ~/Disks/500GB",
 })

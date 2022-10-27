@@ -1,0 +1,28 @@
+#!/bin/bash
+
+session_name="asm"
+root_dir=~/safdar-local/learning/asm
+
+editor_window_name="ed"
+dir_window_name="dir"
+doc_window_name="doc"
+notes_window_name="NOTES"
+notes_c_dir=~/safdar-local/NOTES/IT/assembly-lang/
+
+tmux new -s $session_name -n $editor_window_name -c $root_dir -d
+tmux move-window -t $session_name:8 -s $session_name:$editor_window_name
+sleep 1 && tmux send-keys -t $session_name:$editor_window_name.1 "nvim ." Enter
+
+tmux new-window -n $doc_window_name -t $session_name:7 -c $root_dir
+
+tmux new-window -n $dir_window_name -t $session_name:9 -c $root_dir
+sleep 1 && tmux send-keys -t $session_name:$dir_window_name.1 "ls" Enter
+
+tmux new-window -n $notes_window_name -t $session_name:1 -c $notes_c_dir
+sleep 1 && tmux send-keys -t $session_name:$notes_window_name.1 "nvim ." Enter
+
+if [ $# -eq 0 ]; then
+    tmux attach -t $session_name:$editor_window_name
+else
+    echo "$session_name session has been created " 
+fi
