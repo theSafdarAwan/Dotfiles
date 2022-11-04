@@ -20,6 +20,7 @@
 # - lolcat
 # - mpv
 # - imv
+# - viewnior
 # - mpd 
 # - ncmpcpp
 # - mpc
@@ -114,6 +115,7 @@
 # - neovim-nightly-bin
 # - nvim-packer-git
 # - wezterm
+# - klavaro-svn
 
 # - zsh-vi-mode
 # - google-chrome
@@ -199,7 +201,9 @@
 # sudo npm i -g live-server
 # sudo npm install -g prettier_d_slim
 # sudo npm install -g eslint_d
+# sudo npm install -g stylelint-lsp
 # sudo npm install -g stylelint
+# sudo npm install -g emmet-ls
 
 ############ pip
 # pip install pyright
