@@ -74,7 +74,7 @@ session_id="#{s/\\$//:session_id}"
 session_list_and_name="${color_rb}${session_list}${color_bb}${color_bg}(${color_bb}${session_id}${color_bg}:${color_yb}#S${color_bg})${lf_icon_black}"
 
 #>>> status bar position's
-set "status-right" "${node}${color_wb2}${rf_icon}${space_white}${date} ${hrf_icon_black}${day}"
+set "status-right" "${color_wb2}${rf_icon}${space_white}${date} ${hrf_icon_black}${day}"
 set "status-left" "${session_list_and_name}${prefix_indicator}${lf_icon}" 
 set "window-status-format" "${window_list_names}${last_pane_indicator}"
 set "window-status-current-format" "${zoomed_pane_indication}"

@@ -2,6 +2,7 @@ let mapleader = " "
 
 call plug#begin()
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 syntax on
