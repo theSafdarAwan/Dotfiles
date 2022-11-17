@@ -1,9 +1,9 @@
 local wezterm = require("wezterm")
 local dracula = require("dracula")
 
-local hack_nerd_font = "Hack Nerd Font"
-local fira_code_nerd_font = "FiraCode Nerd Font"
-local default_font_name = fira_code_nerd_font
+local italic_font = "Victor Mono Nerd Font"
+local normal_font = "FiraCode Nerd Font"
+local default_font_name = normal_font
 local function font_with_fallback(name, params)
     local names = { name, "Apple Color Emoji", "azuki_font" }
     return wezterm.font_with_fallback(names, params)
@@ -31,12 +31,12 @@ return {
     font_rules = {
         {
             italic = true,
-            font = font_with_fallback(hack_nerd_font, { italic = true }),
+            font = font_with_fallback(italic_font, { italic = true }),
         },
         {
             italic = true,
             intensity = "Bold",
-            font = font_with_fallback(default_font_name, { italic = true, bold = true }),
+            font = font_with_fallback(italic_font, { italic = true, bold = true }),
         },
         {
             italic = false,
