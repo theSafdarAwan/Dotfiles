@@ -12,6 +12,8 @@
 # - starship
 # - git
 # - stow
+# - alacritty
+# - kitty
 # - yay 
 # - pulseaudio
 # - fzf

@@ -20,7 +20,10 @@ return {
     hide_tab_bar_if_only_one_tab = true,
     show_tab_index_in_tab_bar = false,
     inactive_pane_hsb = { saturation = 1.0, brightness = 0.8 },
-    window_frame = { active_titlebar_bg = "#090909", font = font_with_fallback(default_font_name, { bold = true }) },
+    window_frame = {
+        active_titlebar_bg = "#090909",
+        font = font_with_fallback(default_font_name, { bold = true }),
+    },
 
     window_background_opacity = 1.0,
     audible_bell = "Disabled",
@@ -36,12 +39,18 @@ return {
         {
             italic = true,
             intensity = "Bold",
-            font = font_with_fallback(italic_font, { italic = true, bold = true }),
+            font = font_with_fallback(
+                italic_font,
+                { italic = true, bold = true }
+            ),
         },
         {
             italic = false,
             intensity = "Normal",
-            font = font_with_fallback(default_font_name, { weight = "Regular", italic = false }),
+            font = font_with_fallback(
+                default_font_name,
+                { weight = "Regular", italic = false }
+            ),
         },
     },
 
