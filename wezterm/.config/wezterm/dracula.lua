@@ -2,7 +2,8 @@ return {
     -- The default text color
     foreground = "#f8f8f2",
     -- The default background color
-    background = "#1C1D26",
+    -- background = "#1C1D26",
+    background = "#0F111A",
 
     -- Overrides the cell background color when the current cell is occupied by the
     -- cursor and the cursor style is set to Block
@@ -25,8 +26,26 @@ return {
     -- The color of the split lines between panes
     split = "#6272a4",
 
-    ansi = {"#21222C", "#FF5555", "#50FA7B", "#F1FA8C", "#BD93F9", "#FF79C6", "#8BE9FD", "#F8F8F2"},
-    brights = {"#6272A4", "#FF6E6E", "#69FF94", "#FFFFA5", "#D6ACFF", "#FF92DF", "#A4FFFF", "#FFFFFF"},
+    ansi = {
+        "#21222C",
+        "#FF5555",
+        "#50FA7B",
+        "#F1FA8C",
+        "#BD93F9",
+        "#FF79C6",
+        "#8BE9FD",
+        "#F8F8F2",
+    },
+    brights = {
+        "#6272A4",
+        "#FF6E6E",
+        "#69FF94",
+        "#FFFFA5",
+        "#D6ACFF",
+        "#FF92DF",
+        "#A4FFFF",
+        "#FFFFFF",
+    },
 
     -- Since: nightly builds only
     -- When the IME, a dead key or a leader key are being processed and are effectively
@@ -62,13 +81,13 @@ return {
 
             -- Specify whether you want the text to be rendered with strikethrough (true)
             -- or not for this tab.  The default is false.
-            strikethrough = false
+            strikethrough = false,
         },
 
         -- Inactive tabs are the tabs that do not have focus
         inactive_tab = {
             bg_color = "#282a36",
-            fg_color = "#f8f8f2"
+            fg_color = "#f8f8f2",
 
             -- The same options that were listed under the `active_tab` section above
             -- can also be used for `inactive_tab`.
@@ -79,7 +98,7 @@ return {
         inactive_tab_hover = {
             bg_color = "#6272a4",
             fg_color = "#f8f8f2",
-            italic = true
+            italic = true,
 
             -- The same options that were listed under the `active_tab` section above
             -- can also be used for `inactive_tab_hover`.
@@ -88,7 +107,7 @@ return {
         -- The new tab button that let you create new tabs
         new_tab = {
             bg_color = "#282a36",
-            fg_color = "#f8f8f2"
+            fg_color = "#f8f8f2",
 
             -- The same options that were listed under the `active_tab` section above
             -- can also be used for `new_tab`.
@@ -99,10 +118,10 @@ return {
         new_tab_hover = {
             bg_color = "#ff79c6",
             fg_color = "#f8f8f2",
-            italic = true
+            italic = true,
 
             -- The same options that were listed under the `active_tab` section above
             -- can also be used for `new_tab_hover`.
-        }
-    }
+        },
+    },
 }
