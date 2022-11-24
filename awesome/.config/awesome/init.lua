@@ -641,7 +641,7 @@ awful.rules.rules = {
         rule_any = { type = { "normal", "dialog" } },
         properties = {
             titlebars_enabled = false,
-            floating = true, --[[ remove this floating property when you get a new monitor ]]
+            floating = false, --[[ remove this floating property when you get a new monitor ]]
         },
     },
     --> Tag 1
