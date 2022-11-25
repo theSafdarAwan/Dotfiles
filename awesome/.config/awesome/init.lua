@@ -208,7 +208,7 @@ awful.screen.connect_for_each_screen(function(s)
     local l = awful.layout.suit
     local layouts = {
         l.max,
-        l.tile.top,
+        l.magnifier,
         l.max,
         l.max,
         l.max,
