@@ -1,4 +1,4 @@
-column_width = 81
+column_width = 120
 line_endings = "Unix"
 indent_type = "Tabs"
 quote_style = "ForceDouble"
