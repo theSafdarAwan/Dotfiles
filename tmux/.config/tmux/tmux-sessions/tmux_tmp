@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# {{{
+# ->
+session_name="tmp"
+root_dir=~/
+# <-
+
+# ->
+nvim_conf="conf"
+plugins_dir="start"
+file_explorer="nnn"
+# <-
+# }}}
+
+#||||||||||||||||||
+# session creation
+#||||||||||||||||||
+#{{{
+tmux new-session -s $session_name -c $root_dir -n $nvim_conf -d
+#}}}
+
+#||||||||||||||||||
+# window management
+#||||||||||||||||||
+#{{{
+
+# ->
+# create window on index 7
+tmux new-window -n $file_explorer -t 7 -c $root_dir
+# send instructions to window index 7
+sleep 1 && \
+    tmux send-keys -t $session_name:$file_explorer.1 \
+    "nnn" Enter # z is a zsh plugin
+# <-
+
+# ->
+# create window on index 8
+tmux new-window -n $plugins_dir -t 8 -c $root_dir
+# send instructions to window index 9
+sleep 1 && \
+    tmux send-keys -t $session_name:$plugins_dir.1 \
+    "z start" Enter # z is a zsh plugin
+# <-
+
+# -> window 8
+# move the window to the 9 index
+tmux move-window -s $session_name:$nvim_conf -t $session_name:9
+# send instructions to the 9 index window
+sleep 1 && \
+    tmux send-keys -t $session_name:$nvim_conf.1 \
+    "z nvim" Enter # z is a zsh plugin
+# <-
+
+#}}}
+
+#|||||||||||||||||| 
+# session attaching
+#||||||||||||||||||
+#{{{
+if [ $# -eq 0 ]; then
+    tmux attach -t $session_name:$nvim_conf.1
+else
+    echo "$session_name session has been created " 
+fi
+#}}}

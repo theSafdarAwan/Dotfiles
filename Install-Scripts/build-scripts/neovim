@@ -6,8 +6,7 @@ if [ -d ~/.local/temp/builds/neovim/ ]; then
     cd ~/.local/temp/builds/neovim
 
     # ask before pulling the changes from github
-    echo "Do you want to pull the changes from Github(yes/no): "
-    read pullAnswer
+    read -p "Do you want to pull the changes from Github(yes/no): " pullAnswer 
     if [[ $pullAnswer == "yes" || $pullAnswer == "y" || $pullAnswer == "ye" ]]; then
         git pull
     fi
@@ -22,8 +21,7 @@ else
 fi
 
 # ask the user for input whether to build the neovim or not
-echo "Build the neovim(yes/no): " 
-read answer
+read -p "Build the neovim(yes/no): " answer
 
 # checking for the use answer to be yes or not if y|ye|yes then make otherwise
 # exit
@@ -38,8 +36,7 @@ else
 fi
 
 # ask user input to move nvim binary to /usr/bin
-echo "Do you want to move the nvim binary to /usr/bin(yes/no): "
-read moveNvimBin
+read -p "Do you want to move the nvim binary to /usr/bin(yes/no): " moveNvimBin
 
 if [[ $moveNvimBin == "yes" || $moveNvimBin == "y" || $moveNvimBin == "ye" ]]; then
     sudo mv ~/.local/temp/builds/neovim/build/bin/nvim /usr/bin/
