@@ -220,6 +220,9 @@
 # cargo install stylua
 # cargo install ttyper
 
+########## go
+# go install golang.org/x/tools/gopls@latest
+
 ########### luarocks
 # sudo luarocks install luacheck
 

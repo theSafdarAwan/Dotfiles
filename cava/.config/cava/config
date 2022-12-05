@@ -141,7 +141,7 @@ source = auto
 ; foreground = default
 
 # SDL only support hex code colors, these are the default:
-background = '#1C1D26'
+background = '#0F111A'
 # foreground = '#33cccc'
 
 
