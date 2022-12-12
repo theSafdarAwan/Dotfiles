@@ -2,6 +2,6 @@ column_width = 120
 line_endings = "Unix"
 indent_type = "Tabs"
 quote_style = "ForceDouble"
-indent_width = 4
+indent_width = 8
 call_parentheses = "Always"
 collapse_simple_statement = "Never" # Never, FunctionOnly, ConditionalOnly, or Always

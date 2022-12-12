@@ -4,7 +4,11 @@ export ZDOTDIR=$HOME/.config/zsh
 # fm6000 -dog -c random -g 15
 # colorscript.sh -r
 
+# starship
 eval "$(starship init zsh)"
+
+# zoxide
+eval "$(zoxide init zsh)"
 
 # # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # # Initialization code that may require console input (password prompts, [y/n]
@@ -35,6 +39,7 @@ source "$ZDOTDIR/zsh-dracula"
 source "$ZDOTDIR/extended/zsh-nnn"
 # source "$ZDOTDIR/extended/zsh-nnn-preview"
 source "$ZDOTDIR/extended/zsh-tar"
+source "$ZDOTDIR/extended/zsh-export"
 
 command_not_found_handler () {
     local life_Warning=(

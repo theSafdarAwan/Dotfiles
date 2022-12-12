@@ -106,7 +106,7 @@
     // Prettier
     "prettier.printWidth": 200,
     "prettier.arrowParens": "avoid",
-    "prettier.singleQuote": true,
+    "prettier.singleQuote": false,
     "prettier.tabWidth": 4,
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -121,7 +121,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     // Eslint
     "eslint.format.enable": true,
@@ -317,6 +317,6 @@
     "breadcrumbs.enabled": false,
     "workbench.activityBar.visible": false,
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Palenight Operator",
     "vsicons.dontShowNewVersionMessage": true
 }

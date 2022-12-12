@@ -1,0 +1,11 @@
+{
+    "editorconfig": false,
+    "singleQuote": true,
+    "printWidth": 81,
+    "tabWidth": 4,
+    "semi": true,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+    "useTabs": false
+}

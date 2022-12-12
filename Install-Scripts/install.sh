@@ -35,6 +35,7 @@
 # - cmake
 # - unzip
 # - zsh-syntax-highlighting
+# - zoxide
 # - rust
 # - rust-analyzer
 # - luarocks
@@ -115,7 +116,6 @@
 ##################### install through yay
 # - awesome-git
 # - neovim-nightly-bin
-# - nvim-packer-git
 # - wezterm
 # - klavaro-svn
 
