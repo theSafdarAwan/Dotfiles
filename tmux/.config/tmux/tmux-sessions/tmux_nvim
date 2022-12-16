@@ -1,0 +1,58 @@
+#!/bin/bash
+
+session_name="neovim dev"
+root_dir=~/.config/nvim
+root_dir2=~/.local/share/nvim/site/pack/packer/start
+
+win_9="conf"
+win_8="start"
+win_7="nnn"
+win_1="test conf"
+win_2="test start"
+
+
+#--------------------------------------------------------------------#
+#                          Session Creation                          #
+#--------------------------------------------------------------------#
+
+tmux new-session -s $session_name -c $root_dir -n $win_9 -d
+
+#--------------------------------------------------------------------#
+#                         Window Management                          #
+#--------------------------------------------------------------------#
+
+# -> window 9
+# move the window to the 9 index
+tmux move-window -s $session_name:$win_9 -t $session_name:9
+# send instructions to the 8 index window
+sleep 1 && \
+    tmux send-keys -t $session_name:$win_9.1 \
+    "nvim init.lua" Enter
+
+# -> window 8
+tmux new-window -n $win_8 -t 8 -c $root_dir2
+sleep 1 && \
+    tmux send-keys -t $session_name:$win_8.1 \
+    "nvim" Enter
+
+# -> window 7
+tmux new-window -n $win_7 -t 7 -c $root_dir
+sleep 1 && \
+    tmux send-keys -t $session_name:$win_7.1 \
+    "nnn" Enter
+
+# -> window 1
+tmux new-window -n $win_1 -t 1 -c $root_dir
+sleep 1 && \
+    tmux send-keys -t $session_name:$win_1.1 \
+    "nvim init.lua" Enter
+
+#--------------------------------------------------------------------#
+#                         Session Attaching                          #
+#--------------------------------------------------------------------#
+
+if [ $# -eq 0 ]; then
+    tmux attach -t $session_name:$win_9.1
+else
+    echo "$session_name session has been created " 
+fi

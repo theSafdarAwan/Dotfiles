@@ -1,1 +1,4 @@
-mpv/.config/mpv/watch_later
+./mpv/.config/mpv/watch_later
+./nnn/.config/nnn/finderbms
+./nnn/.config/nnn/mounts
+./nnn/.config/nnn/.selection
