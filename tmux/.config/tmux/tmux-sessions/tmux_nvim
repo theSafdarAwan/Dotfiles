@@ -1,14 +1,14 @@
 #!/bin/bash
 
-session_name="neovim dev"
+session_name="neovim_dev"
 root_dir=~/.config/nvim
 root_dir2=~/.local/share/nvim/site/pack/packer/start
 
-win_9="conf"
+win_9="config"
 win_8="start"
 win_7="nnn"
-win_1="test conf"
-win_2="test start"
+win_1="test_config"
+win_2="test_start"
 
 
 #--------------------------------------------------------------------#
@@ -31,9 +31,6 @@ sleep 1 && \
 
 # -> window 8
 tmux new-window -n $win_8 -t 8 -c $root_dir2
-sleep 1 && \
-    tmux send-keys -t $session_name:$win_8.1 \
-    "nvim" Enter
 
 # -> window 7
 tmux new-window -n $win_7 -t 7 -c $root_dir
@@ -46,6 +43,9 @@ tmux new-window -n $win_1 -t 1 -c $root_dir
 sleep 1 && \
     tmux send-keys -t $session_name:$win_1.1 \
     "nvim init.lua" Enter
+
+# -> window 2
+tmux new-window -n $win_2 -t 2 -c $root_dir
 
 #--------------------------------------------------------------------#
 #                         Session Attaching                          #
