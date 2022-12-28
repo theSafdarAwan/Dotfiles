@@ -53,6 +53,7 @@
 # - blender
 # - viewnior
 # - virtualbox
+# - keepassxc
 
 # - dust
 # - bat
