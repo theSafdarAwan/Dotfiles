@@ -169,54 +169,6 @@
 # - todoist
 # - fortune-cm
 
-
-
-# Installing nvim language servers
-##################### lua
-## clone project
-# mkdir ~/safdar-local
-# cd ~/safdar-local
-#
-# git clone  --depth=1 https://github.com/sumneko/lua-language-server
-# cd lua-language-server
-# git submodule update --depth 1 --init --recursive 
-#
-# cd 3rd/luamake
-# ./compile/install.sh
-# cd ../..
-# ./3rd/luamake/luamake rebuild
-#
-# ./bin/lua-language-server
-
-# neovim dap
-
-#>>>>> nodejs
-# mkdir -p ~/safdar-local/debuggers/
-# git clone https://github.com/microsoft/vscode-node-debug2.git ~/safdar-local/debuggers/
-# cd ~/safdar-local/debuggers/vscode-node-debug2*/
-# npm install
-# NODE_OPTIONS=--no-experimental-fetch npm run build
-
-
-#>>>> chrome
-# cd ~/safdar-local/debuggers/
-# git clone https://github.com/Microsoft/vscode-chrome-debug
-# cd ~/safdar-local/debuggers/vscode-chrome-debug
-# npm install
-# npm run build
-
-
-#>>>>> firefox
-# cd ~/safdar-local/debuggers/
-# git clone https://github.com/firefox-devtools/vscode-firefox-debug.git
-# cd ~/safdar-local/debuggers/vscode-firefox-debug/
-# npm install
-# npm run build
-
-
-
-
-
 ########### Cargo
 # cargo install stylua
 # cargo install ttyper
@@ -228,17 +180,8 @@
 # sudo luarocks install luacheck
 
 ############ npm
-# sudo npm install -g vim-language-server
-# sudo npm install -g @tailwindcss/language-server
-# sudo npm install -g typescript typescript-language-server
-# sudo npm i -g vscode-langservers-extracted
-# sudo npm i -g bash-language-server
 # sudo npm i -g live-server
-# sudo npm install -g prettier_d_slim
-# sudo npm install -g eslint_d
-# sudo npm install -g stylelint-lsp
-# sudo npm install -g stylelint
-# sudo npm install -g emmet-ls
+# sudo npm i -g htmlhint
 
 ############ pip
 # pip install pyright
