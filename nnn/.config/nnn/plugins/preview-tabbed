@@ -47,7 +47,8 @@
 # Author: Léo Villeveygoux
 
 
-XDOTOOL_TIMEOUT=1
+XDOTOOL_TIMEOUT=0.1
+# XDOTOOL_TIMEOUT=1
 PAGER=${PAGER:-"/bin/less"}
 NEOVIM=${PAGER:-"/sbin/nvim"}
 NUKE="/bin/less"
