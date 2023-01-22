@@ -6,7 +6,6 @@ root_dir2=~/.local/share/nvim/site/pack/packer/start
 
 win_9="config"
 win_8="start"
-win_7="nnn"
 
 #--------------------------------------------------------------------#
 #                          Session Creation                          #
@@ -28,12 +27,6 @@ sleep 1 && \
 
 # -> window 8
 tmux new-window -n $win_8 -t 8 -c $root_dir2
-
-# -> window 7
-tmux new-window -n $win_7 -t 7 -c $root_dir
-sleep 1 && \
-    tmux send-keys -t $session_name:$win_7.1 \
-    "nnn ~/" Enter
 
 #--------------------------------------------------------------------#
 #                         Session Attaching                          #
