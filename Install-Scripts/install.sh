@@ -172,12 +172,14 @@
 ########### Cargo
 # cargo install stylua
 # cargo install ttyper
+# cargo install tree-sitter-cli
 
 ########## go
 # go install golang.org/x/tools/gopls@latest
 
 ########### luarocks
 # sudo luarocks install luacheck
+# sudo luarocks --global install LuaDoc
 
 ############ npm
 # sudo npm i -g live-server
