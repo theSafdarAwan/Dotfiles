@@ -1,1 +1,1 @@
-export BROWSER=/bin/firefox-nightly
+export BROWSER=/bin/firefox

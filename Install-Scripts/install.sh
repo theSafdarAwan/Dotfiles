@@ -36,6 +36,7 @@
 # - unzip
 # - zsh-syntax-highlighting
 # - zoxide
+# - clisp
 # - rust
 # - rust-analyzer
 # - luarocks
@@ -170,12 +171,18 @@
 # - fortune-cm
 
 ########### Cargo
-# cargo install stylua
-# cargo install ttyper
-# cargo install tree-sitter-cli
+# sudo cargo install stylua
+# sudo cargo install ttyper
+# sudo cargo install tree-sitter-cli
+# sudo cargo install deno --locked
 
 ########## go
 # go install golang.org/x/tools/gopls@latest
+### install github cli
+# git clone https://github.com/cli/cli.git gh-cli
+# cd gh-cli
+# sudo make install
+# sudo mv bin/gh /bin/
 
 ########### luarocks
 # sudo luarocks install luacheck
@@ -184,6 +191,7 @@
 ############ npm
 # sudo npm i -g live-server
 # sudo npm i -g htmlhint
+# sudo npm i -g eslint
 
 ############ pip
 # pip install pyright
