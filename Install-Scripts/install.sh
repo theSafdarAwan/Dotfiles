@@ -56,6 +56,8 @@
 # - virtualbox
 # - keepassxc
 
+# screenkey
+
 # - dust
 # - bat
 # - darktable
@@ -130,6 +132,8 @@
 # - htop-vim
 # - btop
 # - weechat-git
+
+# slop
 
 #>>>>>>>>>>>> Thumbnail Utilitie's
 # - raw-thumbnailer
