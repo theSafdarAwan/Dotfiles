@@ -122,6 +122,7 @@
 # - neovim-nightly-bin
 # - wezterm
 # - klavaro-svn
+# ldoc
 
 # - zsh-vi-mode
 # - google-chrome
