@@ -180,6 +180,7 @@
 # sudo cargo install ttyper
 # sudo cargo install tree-sitter-cli
 # sudo cargo install deno --locked
+# cargo install --git https://github.com/loichyan/nerdfix
 
 ########## go
 # go install golang.org/x/tools/gopls@latest

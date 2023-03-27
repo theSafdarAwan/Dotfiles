@@ -2,10 +2,10 @@
 
 session_name="neovim_dev"
 root_dir=~/.config/nvim
-root_dir2=~/.local/share/nvim/site/pack/packer/start
+root_dir2=~/.local/share/nvim/lazy/
 
 win_9="config"
-win_8="start"
+win_8="plugins"
 
 #--------------------------------------------------------------------#
 #                          Session Creation                          #

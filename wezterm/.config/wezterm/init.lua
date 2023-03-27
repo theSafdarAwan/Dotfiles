@@ -50,7 +50,7 @@ return {
 
 	-- default_cursor_style = "BlinkingUnderline",
 	cursor_blink_rate = 0,
-	line_height = 1,
+	line_height = 1.0,
 
 	window_padding = {
 		left = 0,

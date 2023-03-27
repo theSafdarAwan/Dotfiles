@@ -1,5 +1,3 @@
-alias ldoc="lua ~/safdar-local/lua/LDoc/ldoc.lua $*"
-
 alias lss="/bin/ls --color=auto"
 
 alias ls="exa --icons"
