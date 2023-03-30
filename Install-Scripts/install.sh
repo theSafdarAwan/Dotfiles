@@ -55,6 +55,7 @@
 # - viewnior
 # - virtualbox
 # - keepassxc
+# - figlet
 
 # screenkey
 
@@ -239,6 +240,10 @@
 # git clone https://github.com/zoelabbb/conio.h.git
 # cd conio.h
 # sudo make install
+
+#>>>>>> install figlet fonts
+# git clone https://github.com/xero/figlet-fonts.git
+# sudo cp  figlet-fonts/* /usr/share/figlet/fonts/
 
 #>>>>>>>>>>>>> Color full Emojis config
 # Put this in the /etc/fonts/local.conf
