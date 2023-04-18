@@ -1,5 +1,7 @@
 alias lss="/bin/ls --color=auto"
 
+alias gVim="nvim"
+
 alias ls="exa --icons"
 alias cat="bat"
 

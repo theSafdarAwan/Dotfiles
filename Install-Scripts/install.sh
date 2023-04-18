@@ -18,6 +18,7 @@
 # - pulseaudio
 # - fzf
 # - tmux
+# - zellij
 # - exa
 # - lolcat
 # - mpv
@@ -199,6 +200,7 @@
 # sudo npm i -g live-server
 # sudo npm i -g htmlhint
 # sudo npm i -g eslint
+# sudo npm i -g stylelint
 
 ############ pip
 # pip install pyright
