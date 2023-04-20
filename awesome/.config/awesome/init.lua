@@ -297,26 +297,26 @@ end)
 
 --> Key bindings
 globalkeys = gears.table.join(
-	awful.key({ altkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
+	awful.key({ altkey, "Ctrl" }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 	awful.key({ altkey, "Control" }, "h", awful.tag.viewprev, { description = "view previous", group = "tag" }),
 	awful.key({ altkey, "Control" }, "l", awful.tag.viewnext, { description = "view next", group = "tag" }),
 	awful.key({ altkey }, ",", awful.tag.history.restore, { description = "go back", group = "tag" }),
 
-	awful.key({ altkey }, "j", function()
+	awful.key({ altkey, "Shift" }, "j", function()
 		awful.client.focus.byidx(1)
 	end, { description = "focus next by index", group = "client" }),
-	awful.key({ altkey }, "k", function()
+	awful.key({ altkey, "Shift" }, "k", function()
 		awful.client.focus.byidx(-1)
 	end, { description = "focus previous by index", group = "client" }),
-	awful.key({ altkey }, "w", function()
-		mymainmenu:show()
-	end, { description = "show main menu", group = "awesome" }),
+	-- awful.key({ altkey }, "w", function()
+	-- 	mymainmenu:show()
+	-- end, { description = "show main menu", group = "awesome" }),
 
 	--> Layout manipulation
-	awful.key({ altkey, "Shift" }, "j", function()
+	awful.key({ altkey, "Ctrl", "Shift" }, "j", function()
 		awful.client.swap.byidx(1)
 	end, { description = "swap with next client by index", group = "client" }),
-	awful.key({ altkey, "Shift" }, "k", function()
+	awful.key({ altkey, "Ctrl", "Shift" }, "k", function()
 		awful.client.swap.byidx(-1)
 	end, { description = "swap with previous client by index", group = "client" }),
 	--[[awful.key({ modkey, "Ctrol" }, "j", function()
@@ -325,12 +325,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Control" }, "k", function()
         awful.screen.focus_relative(-1)
     end, { description = "focus the previous screen", group = "screen" }), --]]
-	awful.key(
-		{ altkey },
-		"u",
-		awful.client.urgent.jumpto,
-		{ description = "jump to urgent client", group = "client" }
-	),
+	awful.key({ altkey }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
 	awful.key({ altkey }, "Tab", function()
 		awful.client.focus.history.previous()
 		if client.focus then
@@ -342,42 +337,37 @@ globalkeys = gears.table.join(
 	awful.key({ altkey }, "Return", function()
 		awful.spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
-	awful.key({ altkey }, "r", function()
-		awful.spawn(rofi)
-	end, { description = "Luach Rofi", group = "launcher" }),
+	-- awful.key({ altkey }, "r", function()
+	-- 	awful.spawn(rofi)
+	-- end, { description = "Luach Rofi", group = "launcher" }),
 	awful.key({ altkey }, ".", function()
 		awful.spawn(rofi_emoji)
 	end, { description = "Luach Rofi Emoji Picker", group = "launcher" }),
 	awful.key({ altkey, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
-	awful.key(
-		{ altkey, "Control", "Shift" },
-		"x",
-		awesome.quit,
-		{ description = "quit awesome", group = "awesome" }
-	),
+	awful.key({ altkey, "Control", "Shift" }, "x", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
 	awful.key({ altkey, "Control" }, "a", function()
 		awful.spawn(terminal .. " start " .. "alsamixer")
 	end, { description = "Alsa audio controller", group = "launcher" }),
 
-	awful.key({ altkey }, "l", function()
-		awful.tag.incmwfact(0.01)
-	end, { description = "increase master width factor", group = "layout" }),
-	awful.key({ altkey }, "h", function()
-		awful.tag.incmwfact(-0.01)
-	end, { description = "decrease master width factor", group = "layout" }),
-	awful.key({ altkey, "Shift" }, "h", function()
-		awful.tag.incnmaster(1, nil, true)
-	end, {
-		description = "increase the number of master clients",
-		group = "layout",
-	}),
-	awful.key({ altkey, "Shift" }, "l", function()
-		awful.tag.incnmaster(-1, nil, true)
-	end, {
-		description = "decrease the number of master clients",
-		group = "layout",
-	}),
+	-- awful.key({ altkey, "Shift" }, "l", function()
+	-- 	awful.tag.incmwfact(0.01)
+	-- end, { description = "increase master width factor", group = "layout" }),
+	-- awful.key({ altkey }, "h", function()
+	-- 	awful.tag.incmwfact(-0.01)
+	-- end, { description = "decrease master width factor", group = "layout" }),
+	-- awful.key({ altkey, "Shift" }, "h", function()
+	-- 	awful.tag.incnmaster(1, nil, true)
+	-- end, {
+	-- 	description = "increase the number of master clients",
+	-- 	group = "layout",
+	-- }),
+	-- awful.key({ altkey, "Shift" }, "l", function()
+	-- 	awful.tag.incnmaster(-1, nil, true)
+	-- end, {
+	-- 	description = "decrease the number of master clients",
+	-- 	group = "layout",
+	-- }),
 	awful.key({ altkey, "Control" }, "h", function()
 		awful.tag.incncol(1, nil, true)
 	end, { description = "increase the number of columns", group = "layout" }),
@@ -405,12 +395,12 @@ globalkeys = gears.table.join(
 	-- end, { description = "run prompt", group = "launcher" }),
 	awful.key({ altkey }, "d", function()
 		awful.spawn(dmenu)
-	end, { description = "Run dmenu", group = "launcher" }),
+	end, { description = "Run dmenu", group = "launcher" })
 
 	-- Menubar
-	awful.key({ altkey }, "p", function()
-		menubar.show()
-	end, { description = "show the menubar", group = "launcher" })
+	-- awful.key({ altkey }, "p", function()
+	-- 	menubar.show()
+	-- end, { description = "show the menubar", group = "launcher" })
 )
 
 local clientkeys = gears.table.join(
@@ -430,18 +420,18 @@ local clientkeys = gears.table.join(
 	awful.key({ altkey, "Control" }, "Return", function(c)
 		c:swap(awful.client.getmaster())
 	end, { description = "move to master", group = "client" }),
-	awful.key({ altkey }, "o", function(c)
-		c:move_to_screen()
-	end, { description = "move to screen", group = "client" }),
-	awful.key({ altkey }, "t", function(c)
-		c.ontop = not c.ontop
-	end, { description = "toggle keep on top", group = "client" }),
-	awful.key({ altkey }, "n", function(c)
-		-- The client currently has the input focus, so it cannot be
-		-- minimized, since minimized clients can't have the focus.
-		c.minimized = true
-	end, { description = "minimize", group = "client" }),
-	awful.key({ altkey }, "m", function(c)
+	-- awful.key({ altkey }, "o", function(c)
+	-- 	c:move_to_screen()
+	-- end, { description = "move to screen", group = "client" }),
+	-- awful.key({ altkey }, "t", function(c)
+	-- 	c.ontop = not c.ontop
+	-- end, { description = "toggle keep on top", group = "client" }),
+	-- awful.key({ altkey }, "n", function(c)
+	-- The client currently has the input focus, so it cannot be
+	-- minimized, since minimized clients can't have the focus.
+	-- 	c.minimized = true
+	-- end, { description = "minimize", group = "client" }),
+	awful.key({ altkey, "Ctrl" }, "m", function(c)
 		c.maximized = not c.maximized
 		c:raise()
 	end, { description = "(un)maximize", group = "client" }),

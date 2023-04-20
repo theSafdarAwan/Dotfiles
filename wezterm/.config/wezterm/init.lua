@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local dracula = require("dracula")
+local tokyonight_storm = require("fused-tokyonight-storm")
 
 local italic_font = "Victor Mono Nerd Font"
 local normal_font = "FiraCode Nerd Font"
@@ -10,7 +10,7 @@ local function font_with_fallback(name, params)
 end
 
 return {
-	colors = dracula,
+	colors = tokyonight_storm,
 
 	front_end = "OpenGL",
 	enable_wayland = false,

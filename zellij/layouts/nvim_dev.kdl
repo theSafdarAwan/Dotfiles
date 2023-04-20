@@ -1,0 +1,16 @@
+layout {
+	// status bar at the bottom
+	pane size=1 borderless=true {
+		plugin location="zellij:compact-bar";
+	}
+	pane split_direction="vertical" {
+		pane command="nvim" {
+			// TODO: ???
+			args "~/.config/nvim/"
+		}
+		pane split_direction="horizontal" {
+			pane
+			pane
+		}
+	}
+}

@@ -1,0 +1,18 @@
+themes {
+	fused-tokyonight-storm {
+		// fg "#a9b1d6"
+		fg "#7aa2f7"
+		bg "#21273A"
+		// red "#db4b4b"
+		red "#21273A"
+		// green "#9ece6a"
+		green "#FFB86C"
+		yellow "#FFB86C"
+		blue "#7aa2f7"
+		magenta "#bb9af7"
+		orange "#ff9e64"
+		cyan "#7dcfff"
+		black "#2f334d"
+		white "#c0caf5"
+	}
+}

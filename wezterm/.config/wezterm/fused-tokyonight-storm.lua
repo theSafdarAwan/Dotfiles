@@ -1,50 +1,49 @@
 return {
 	-- The default text color
-	foreground = "#f8f8f2",
+	foreground = "#a9b1d6",
 	-- The default background color
-	-- background = "#1C1D26",
-	background = "#0F111A",
+	background = "#21273A",
 
 	-- Overrides the cell background color when the current cell is occupied by the
 	-- cursor and the cursor style is set to Block
-	cursor_bg = "#abb2bf",
+	cursor_bg = "#c0caf5",
 	-- Overrides the text color when the current cell is occupied by the cursor
-	cursor_fg = "#282a36",
+	cursor_fg = "#2f334d",
 	-- Specifies the border color of the cursor when the cursor style is set to Block,
 	-- or the color of the vertical or horizontal bar when the cursor style is set to
 	-- Bar or Underline.
-	cursor_border = "#f8f8f2",
+	cursor_border = "#c0caf5",
 
 	-- the foreground color of selected text
 	selection_fg = "none",
 	-- the background color of selected text
-	selection_bg = "rgba(68,71,90,0.5)",
+	selection_bg = "#2f334d",
 
 	-- The color of the scrollbar "thumb"; the portion that represents the current viewport
-	scrollbar_thumb = "#44475a",
+	scrollbar_thumb = "#565f89",
 
 	-- The color of the split lines between panes
-	split = "#6272a4",
+	split = "#a9b1d6",
 
 	ansi = {
-		"#21222C",
-		"#FF5555",
-		"#50FA7B",
-		"#F1FA8C",
-		"#BD93F9",
-		"#FF79C6",
-		"#8BE9FD",
-		"#F8F8F2",
+		"#21273A",
+		"#db4b4b",
+		"#9ece6a",
+		"#e0af68",
+		"#bb9af7",
+		"#7aa2f7",
+		"#7dcfff",
+		"#a9b1d6",
 	},
 	brights = {
-		"#6272A4",
-		"#FF6E6E",
-		"#69FF94",
-		"#FFFFA5",
-		"#D6ACFF",
-		"#FF92DF",
-		"#A4FFFF",
-		"#FFFFFF",
+		"#565f89",
+		"#f7768e",
+		"#2ac3de",
+		"#FFB86C",
+		"#bb9af7",
+		"#7aa2f7",
+		"#73daca",
+		"#c0caf5",
 	},
 
 	-- Since: nightly builds only
@@ -56,14 +55,14 @@ return {
 	tab_bar = {
 		-- The color of the strip that goes along the top of the window
 		-- (does not apply when fancy tab bar is in use)
-		background = "#282a36",
+		background = "#2f334d",
 
 		-- The active tab is the one that has focus in the window
 		active_tab = {
 			-- The color of the background area for the tab
-			bg_color = "#bd93f9",
+			bg_color = "#21273A",
 			-- The color of the text for the tab
-			fg_color = "#282a36",
+			fg_color = "#7aa2f7",
 
 			-- Specify whether you want "Half", "Normal" or "Bold" intensity for the
 			-- label shown for this tab.
@@ -86,8 +85,8 @@ return {
 
 		-- Inactive tabs are the tabs that do not have focus
 		inactive_tab = {
-			bg_color = "#282a36",
-			fg_color = "#f8f8f2",
+			bg_color = "#2f334d",
+			fg_color = "#a9b1d6",
 
 			-- The same options that were listed under the `active_tab` section above
 			-- can also be used for `inactive_tab`.
@@ -96,8 +95,8 @@ return {
 		-- You can configure some alternate styling when the mouse pointer
 		-- moves over inactive tabs
 		inactive_tab_hover = {
-			bg_color = "#6272a4",
-			fg_color = "#f8f8f2",
+			bg_color = "#545c7e",
+			fg_color = "#c0caf5",
 			italic = true,
 
 			-- The same options that were listed under the `active_tab` section above
@@ -106,8 +105,8 @@ return {
 
 		-- The new tab button that let you create new tabs
 		new_tab = {
-			bg_color = "#282a36",
-			fg_color = "#f8f8f2",
+			bg_color = "#414868",
+			fg_color = "#c0caf5",
 
 			-- The same options that were listed under the `active_tab` section above
 			-- can also be used for `new_tab`.
@@ -116,8 +115,8 @@ return {
 		-- You can configure some alternate styling when the mouse pointer
 		-- moves over the new tab button
 		new_tab_hover = {
-			bg_color = "#ff79c6",
-			fg_color = "#f8f8f2",
+			bg_color = "#545c7e",
+			fg_color = "#c0caf5",
 			italic = true,
 
 			-- The same options that were listed under the `active_tab` section above
