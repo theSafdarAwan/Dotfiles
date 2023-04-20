@@ -1,7 +1,9 @@
 // this is the default layout, i moved the bar to the top rather then at the bottom
 layout {
-	pane size=1 borderless=true {
-		plugin location="zellij:compact-bar"
+	default_tab_template {
+		pane size=1 borderless=true {
+			plugin location="zellij:compact-bar"
+		}
+		pane
 	}
-	pane
 }

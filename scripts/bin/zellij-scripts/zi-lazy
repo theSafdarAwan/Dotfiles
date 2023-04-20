@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# cd to dir
+cd $(zoxide query nvim/lazy)
+# start the shell
+zsh 
