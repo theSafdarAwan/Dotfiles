@@ -40,6 +40,7 @@ source "$ZDOTDIR/extended/zsh-nnn"
 # source "$ZDOTDIR/extended/zsh-nnn-preview"
 source "$ZDOTDIR/extended/zsh-tar"
 source "$ZDOTDIR/extended/zsh-export"
+source "$ZDOTDIR/extended/zsh-zellij"
 
 command_not_found_handler () {
     local life_Warning=(

@@ -112,8 +112,6 @@ keybinds clear-defaults=true {
 		bind "k" "Up" { ScrollUp; }
 		bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
 		bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
-		bind "Ctrl d" { HalfPageScrollDown; }
-		bind "Ctrl u" { HalfPageScrollUp; }
 		// uncomment this and adjust key if using copy_on_select=false
 		// bind "Alt c" { Copy; }
 	}
@@ -130,10 +128,6 @@ keybinds clear-defaults=true {
 		bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
 		// go up by a page
 		bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
-		// go down by half page
-		bind "Ctrl d" { HalfPageScrollDown; }
-		// go up by half page
-		bind "Ctrl u" { HalfPageScrollUp; }
 		// search down
 		bind "n" { Search "down"; }
 		// search up
@@ -186,6 +180,12 @@ keybinds clear-defaults=true {
 		bind "d" { Detach; }
 		bind "Space" { NextSwapLayout; }
 		bind "x" { CloseFocus; SwitchToMode "Normal"; }
+	}
+	shared_among "search" "scroll" {
+		// go down by half page
+		bind "Ctrl d" { HalfPageScrollDown; }
+		// go up by half page
+		bind "Ctrl u" { HalfPageScrollUp; }
 	}
 	shared_except "locked" {
 		bind "Alt x" { SwitchToMode "Locked"; }
@@ -252,7 +252,7 @@ plugins {
 //    - true
 //    - false (Default)
 //
-// simplified_ui true
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -288,6 +288,7 @@ theme "fused-tokyonight-storm"
 // The name of the default layout to load on startup
 // Default: "default"
 //
+// WARN: here i am using my own defined layout which moves the tab bar at the top
 default_layout "_default"
 
 // Choose the mode that zellij uses when starting up.
@@ -302,7 +303,8 @@ default_mode "locked"
 //   - true (default)
 //   - false
 //
-// mouse_mode false
+// :) DON"T Like it
+mouse_mode false
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
