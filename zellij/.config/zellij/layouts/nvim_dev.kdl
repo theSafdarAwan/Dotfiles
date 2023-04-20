@@ -1,43 +1,42 @@
 layout {
-	// status bar at the top
-	pane size=1 borderless=true {
-		plugin location="zellij:compact-bar";
-	}
-
-	pane command="nvim" {
-		cwd "/home/safdar/.config/nvim/"
-	}
-	pane split_direction="vertical" {
-		pane command="tree" {
-			start_suspended true
-			cwd "/home/safdar/.config/nvim"
+	pane_template name="status-bar" {
+		pane {
+			size 1
+			borderless true
+			plugin location="zellij:compact-bar";
 		}
-		pane
 	}
-}
-
-/- layout {
-	pane edit="src/main.rs"
-	floating_panes {
-		pane command="cargo" {
-			args "check"
-			y "55%"
-			width "45%"
-			height "45%"
+	tab name="nvim" {
+		// status bar at the top
+		status-bar
+		pane {
+			split_direction "vertical" 
+			pane {
+				command "nvim" 
+				size "70%" 
+				borderless true;
+				cwd "/home/safdar/.config/nvim/"
+			}
 		}
-		pane command="cargo" {
-			args "run"
-			x "1%"
-			y "1%"
-			width "45%"
-			height "45%"
-		}
-		pane command="cargo" {
-			args "test"
-			x "50%"
-			y "1%"
-			width "45%"
-			height "45%"
+	}
+	tab name="dir" {
+		// status bar at the top
+		status-bar
+		pane {
+			split_direction "horizontal" 
+			stacked true
+			pane {
+				command "tree" 
+				start_suspended true
+				cwd "/home/safdar/.config/nvim"
+			}
+			pane {
+				focus true
+				command "ls"
+				size "30%"
+				start_suspended true
+				args "-1"
+			}
 		}
 	}
 }

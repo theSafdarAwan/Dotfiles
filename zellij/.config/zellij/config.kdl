@@ -190,13 +190,22 @@ keybinds clear-defaults=true {
 	shared_except "locked" {
 		bind "Alt x" { SwitchToMode "Locked"; }
 	}
-	shared_except "locked" {
+	// no string mode string arguments to the shared_except will add these binds to all modes
+	shared_except {
 		bind "Alt q" { Quit; }
 		// bind "Alt n" { NewPane; }
-		bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
-		bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+
+		// move through tabs and panes
+		/- bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
+		/- bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+
+		// move through panes
+		bind "Alt l" "Alt Right" { MoveFocus "Right"; }
+		bind "Alt h" "Alt Left" { MoveFocus "Left"; }
+		bind "Alt l" "Alt Right" { MoveFocus "Right"; }
 		bind "Alt j" "Alt Down" { MoveFocus "Down"; }
 		bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+
 		bind "Alt =" "Alt +" { Resize "Increase"; }
 		bind "Alt -" { Resize "Decrease"; }
 		bind "Alt [" { PreviousSwapLayout; }
@@ -252,7 +261,7 @@ plugins {
 //    - true
 //    - false (Default)
 //
-simplified_ui true
+simplified_ui false
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
