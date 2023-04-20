@@ -6,7 +6,7 @@ layout {
 	pane split_direction="vertical" {
 		pane command="nvim" {
 			// TODO: ???
-			args "~/.config/nvim/"
+			args ".config/nvim/"
 		}
 		pane split_direction="horizontal" {
 			pane
@@ -14,3 +14,29 @@ layout {
 		}
 	}
 }
+
+// layout {
+//     pane edit="src/main.rs"
+//     floating_panes {
+//         pane command="cargo" {
+//             args "check"
+//             y "55%"
+//             width "45%"
+//             height "45%"
+//         }
+//         pane command="cargo" {
+//             args "run"
+//             x "1%"
+//             y "1%"
+//             width "45%"
+//             height "45%"
+//         }
+//         pane command="cargo" {
+//             args "test"
+//             x "50%"
+//             y "1%"
+//             width "45%"
+//             height "45%"
+//         }
+//     }
+// }
