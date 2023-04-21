@@ -49,7 +49,7 @@ keybinds clear-defaults=true {
 		// create a floating pane
 		bind "-" { ToggleFloatingPanes; SwitchToMode "Normal"; }
 		// toggle a pane to floating and vice versa
-		bind "t" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
+		bind "Space" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
 		// rename current pane
 		bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0; }
 		// close current pane
@@ -366,3 +366,11 @@ layout_dir "/home/safdar/.config/zellij/layouts/"
 // The folder in which Zellij will look for themes
 //
 theme_dir "/home/safdar/.config/zellij/themes/"
+
+// UI config
+ui {
+	pane_frames {
+		rounded_corners false
+		hide_session_name true
+	}
+}

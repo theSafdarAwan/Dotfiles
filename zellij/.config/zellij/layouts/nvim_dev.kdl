@@ -1,6 +1,7 @@
 layout {
 	// global cwd
 	cwd "/home/safdar/.config/nvim/"
+	// default tab layout
 	default_tab_template {
 		pane {
 			size 1
@@ -9,6 +10,7 @@ layout {
 		}
 		children
 	}
+	// tab for plugins dev dir
 	tab name="plugin dir" {
 		pane {
 			split_direction "vertical" 
@@ -20,9 +22,11 @@ layout {
 	}
 	tab name="nvim config" {
 		pane {
-			split_direction "vertical" 
+			split_direction "vertical"
 			pane {
-				command "nvim" 
+				// edit will open this file in you default configured editor for git
+				// commits, etc.
+				edit "init.lua"
 				size "70%" 
 				borderless true;
 			}
