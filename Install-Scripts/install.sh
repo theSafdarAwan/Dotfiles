@@ -2,6 +2,7 @@
 
 ##################### install programs through pacman
 # - polybar
+# - handbrake
 # - plasma-desktop
 # - plasma-browser-integration
 # - dolphin

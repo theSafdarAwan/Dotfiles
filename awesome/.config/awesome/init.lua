@@ -300,7 +300,7 @@ globalkeys = gears.table.join(
 	awful.key({ altkey, "Ctrl" }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 	awful.key({ altkey, "Control" }, "h", awful.tag.viewprev, { description = "view previous", group = "tag" }),
 	awful.key({ altkey, "Control" }, "l", awful.tag.viewnext, { description = "view next", group = "tag" }),
-	awful.key({ altkey }, ",", awful.tag.history.restore, { description = "go back", group = "tag" }),
+	awful.key({ altkey, "Shift" }, ",", awful.tag.history.restore, { description = "go back", group = "tag" }),
 
 	awful.key({ altkey, "Shift" }, "j", function()
 		awful.client.focus.byidx(1)
@@ -337,9 +337,9 @@ globalkeys = gears.table.join(
 	awful.key({ altkey }, "Return", function()
 		awful.spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
-	-- awful.key({ altkey }, "r", function()
-	-- 	awful.spawn(rofi)
-	-- end, { description = "Luach Rofi", group = "launcher" }),
+	awful.key({ altkey, "Shift" }, "r", function()
+		awful.spawn(rofi)
+	end, { description = "Luach Rofi", group = "launcher" }),
 	awful.key({ altkey }, ".", function()
 		awful.spawn(rofi_emoji)
 	end, { description = "Luach Rofi Emoji Picker", group = "launcher" }),

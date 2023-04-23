@@ -14,6 +14,8 @@ keybinds clear-defaults=true {
 		bind "Alt s" { SwitchToMode "Search"; }
 		// switch to scroll mode
 		bind "Alt ;" { SwitchToMode "Scroll"; }
+		// go to last tab
+		bind "Alt ," { ToggleTab; }
 	}
 	resize {
 		// increase the pane size on left
@@ -101,8 +103,6 @@ keybinds clear-defaults=true {
 		bind "7" { GoToTab 7; SwitchToMode "Normal"; }
 		bind "8" { GoToTab 8; SwitchToMode "Normal"; }
 		bind "9" { GoToTab 9; SwitchToMode "Normal"; }
-		// go to last tab
-		bind "," { ToggleTab; }
 	}
 	scroll {
 		bind "e" { EditScrollback; SwitchToMode "Normal"; }
