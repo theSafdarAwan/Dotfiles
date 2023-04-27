@@ -12,10 +12,10 @@ keybinds clear-defaults=true {
 		bind "Alt m" { SwitchToMode "Move"; }
 		// switch to search mode
 		bind "Alt s" { SwitchToMode "Search"; }
-		// switch to scroll mode
-		bind "Alt ;" { SwitchToMode "Scroll"; }
 		// go to last tab
 		bind "Alt ," { ToggleTab; }
+		// switch to the session mode
+		bind "Alt d" { SwitchToMode "Session"; }
 	}
 	resize {
 		// increase the pane size on left
@@ -154,7 +154,7 @@ keybinds clear-defaults=true {
 		bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
 	}
 	session {
-		bind "Ctrl o" { SwitchToMode "Normal"; }
+		bind "Ctrl n" { SwitchToMode "Normal"; }
 		bind "Ctrl s" { SwitchToMode "Scroll"; }
 		bind "d" { Detach; }
 	}
@@ -192,6 +192,21 @@ keybinds clear-defaults=true {
 	}
 	// no string mode string arguments to the shared_except will add these binds to all modes
 	shared_except {
+		/- TODO:
+		// switch to nnn zeelij session
+		/- bind "Alt ;" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+
+		// switch tabs
+		bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
+		bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
+		bind "Alt 3" { GoToTab 3; SwitchToMode "Normal"; }
+		bind "Alt 4" { GoToTab 4; SwitchToMode "Normal"; }
+		bind "Alt 5" { GoToTab 5; SwitchToMode "Normal"; }
+		bind "Alt 6" { GoToTab 6; SwitchToMode "Normal"; }
+		bind "Alt 7" { GoToTab 7; SwitchToMode "Normal"; }
+		bind "Alt 8" { GoToTab 8; SwitchToMode "Normal"; }
+		bind "Alt 9" { GoToTab 9; SwitchToMode "Normal"; }
+
 		bind "Alt q" { Quit; }
 		// bind "Alt n" { NewPane; }
 
@@ -312,8 +327,7 @@ default_layout "_default"
 //   - true (default)
 //   - false
 //
-// :) DON"T Like it
-mouse_mode false
+mouse_mode true
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
