@@ -1,7 +1,5 @@
 alias lss="/bin/ls --color=auto"
 
-alias gVim="nvim"
-
 alias ls="exa --icons"
 alias cat="bat"
 
@@ -23,10 +21,6 @@ alias tmsc="tmux switch-client -t"
 
 # stardict dictionary
 alias mean="sdcv"
-
-# vim session restore | obsession
-alias vims="vim -S Session.vim"
-alias nvims="nvim -S Session.vim"
 
 alias todo="todoist-cli --color --project-namespace --indent"
 alias db="deadbeef"
