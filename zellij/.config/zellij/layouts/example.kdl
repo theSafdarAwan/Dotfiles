@@ -10,21 +10,11 @@ layout {
 		}
 		children
 	}
-	// nnn tab
-	tab name="nnn" {
-		pane {
-			pane {
-				command "nnn";
-				borderless true;
-			}
-		}
-	}
 	// tab for plugins dev dir
 	tab name="plugin dir" {
 		pane {
 			split_direction "vertical" 
-			pane {
-				command "/home/safdar/Dotfiles/scripts/bin/zellij-scripts/zi-lazy";
+			pane command="/home/safdar/Dotfiles/scripts/bin/zellij-scripts/zi-lazy" {
 				size "70%" 
 				borderless true;
 			}
@@ -39,6 +29,23 @@ layout {
 				edit "init.lua"
 				size "70%" 
 				borderless true;
+			}
+		}
+	}
+	tab name="dir" {
+		pane {
+			split_direction "horizontal" 
+			stacked true
+			pane {
+				command "tree" 
+				start_suspended true
+			}
+			pane {
+				focus true
+				command "ls"
+				size "30%"
+				start_suspended true
+				args "-1"
 			}
 		}
 	}
