@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "498f3342c112b82f",
+    "type": "split",
+    "children": [
+      {
+        "id": "239fd693abdad3a3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b28848e9be286505",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "zettelkasten.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d072b27f5a8ab0eb",
+    "type": "split",
+    "children": [
+      {
+        "id": "39826dc85cba607e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bb9f510a83f34222",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f8697082b2131228",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#second_brain",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "aa4c52028568dcac",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "31507f387ff4b7e6",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          },
+          {
+            "id": "3bd16c8d933b40eb",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "4d42674f45d78f4c",
+    "type": "split",
+    "children": [
+      {
+        "id": "2575d6bc6a946e42",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "db60b3a7cbaf2598",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "zettelkasten.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4e90c62f1d13d0ed",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "zettelkasten.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5c433b10ae513991",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "309d39b911dc8dd1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "zettelkasten.md"
+              }
+            }
+          },
+          {
+            "id": "15904ebff8575b82",
+            "type": "leaf",
+            "state": {
+              "type": "dictionary-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "b28848e9be286505",
+  "lastOpenFiles": [
+    "hypertext.md",
+    "insights.md",
+    "zettelkasten.md",
+    "assets/zettelkasten-luhmann-note-addressing-system.png",
+    "hlhl.md",
+    "General/zettelkasten.md",
+    "General/hypertext.md",
+    "General/insights.md",
+    "Architecutre/Architecture-study-links.md",
+    "Architecutre",
+    "General",
+    "Second Brain/hypertext.md",
+    "Second Brain/insights.md",
+    "Second Brain/zettelkasten.md",
+    "Second Brain",
+    "Programming/rust-blog-links.md",
+    "Programming/programming langs to learn in future.md",
+    "Programming/bracketed-paste.md",
+    "Programming/todo.md",
+    "Programming/nvim-notes.md",
+    "Programming",
+    "jskf.md",
+    "todo.md",
+    "Home Page.md",
+    "nvim-notes.md",
+    "todos.md",
+    "programming langs to learn in future.md",
+    "hypertextual.md",
+    "Programming/index.md",
+    "rust-blog-links.md",
+    "assets",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "test.norg",
+    "Programming/blog-links",
+    "Second Brain/assets/Architectural Digest - Inside Aaron Paul’s Rustic Riverside Home In Idaho Open Door Architectural Digest [D-qQneOnJl0 - 907x510 - 0m37s].png",
+    "Second Brain/assets",
+    "Second Brain/Architectural Digest - Inside Aaron Paul’s Rustic Riverside Home In Idaho Open Door Architectural Digest [D-qQneOnJl0 - 907x510 - 0m37s].png",
+    "Definitions",
+    "second"
+  ]
+}

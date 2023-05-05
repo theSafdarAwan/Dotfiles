@@ -1,0 +1,19 @@
+/*------------------------------------------------------------------*/
+/*          This file contains css snippets related to the          */
+/*                         fonts, etc, styles                       */
+/*------------------------------------------------------------------*/
+/* Hack to set nowrap for paragraph */
+.cm-line {
+  white-space: pre;
+}
+
+/* set wrap for code blocks */
+/* .HyperMD-codeblock { */
+/*   white-space: pre-wrap; */
+/* } */
+
+/* Center the file name inline title */
+.inline-title {
+  font-size: 2rem;
+  text-align: center;
+}

@@ -10,7 +10,7 @@ end
 --> Auto Start Application's list
 run_once({
     "picom --experimental-backends",
-    "kmonad ~/.config/kmonad/config.kbd&disown",
+    "kmonad ~/.config/kmonad/config.kbd",
     "nm-applet",
     "nitrogen --restore",
     "stardict",

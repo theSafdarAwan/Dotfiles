@@ -36,7 +36,7 @@ layout {
 			pane {
 				// edit will open this file in you default configured editor for git
 				// commits, etc.
-				edit "init.lua"
+				/- edit "init.lua"
 				size "70%" 
 				borderless true;
 			}

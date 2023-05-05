@@ -1,0 +1,315 @@
+{
+  "strategy": "default",
+  "cedictPath": "./cedict_ts.u8",
+  "matchStrategy": "prefix",
+  "fuzzyMatch": true,
+  "matchingWithoutEmoji": true,
+  "treatAccentDiacriticsAsAlphabeticCharacters": false,
+  "maxNumberOfSuggestions": 5,
+  "maxNumberOfWordsAsPhrase": 3,
+  "minNumberOfCharactersTriggered": 0,
+  "minNumberOfWordsTriggeredPhrase": 1,
+  "complementAutomatically": true,
+  "delayMilliSeconds": 0,
+  "disableSuggestionsDuringImeOn": false,
+  "insertAfterCompletion": true,
+  "firstCharactersDisableSuggestions": ":/^",
+  "useCommonPrefixCompletionOfSuggestion": false,
+  "patternsToSuppressTrigger": [
+    "^~~~.*",
+    "^```.*"
+  ],
+  "showMatchStrategy": true,
+  "showComplementAutomatically": true,
+  "showIndexingStatus": true,
+  "descriptionOnSuggestion": "Short",
+  "selectSuggestionKeys": "Enter",
+  "additionalCycleThroughSuggestionsKeys": "None",
+  "disableUpDownKeysForCycleThroughSuggestionsKeys": false,
+  "openSourceFileKey": "None",
+  "propagateEsc": false,
+  "enableCurrentFileComplement": true,
+  "currentFileMinNumberOfCharacters": 0,
+  "onlyComplementEnglishOnCurrentFileComplement": false,
+  "enableCurrentVaultComplement": false,
+  "currentVaultMinNumberOfCharacters": 0,
+  "includeCurrentVaultPathPrefixPatterns": "",
+  "excludeCurrentVaultPathPrefixPatterns": "",
+  "includeCurrentVaultOnlyFilesUnderCurrentDirectory": false,
+  "enableCustomDictionaryComplement": false,
+  "customDictionaryPaths": "https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt",
+  "columnDelimiter": "Tab",
+  "customDictionaryWordRegexPattern": "",
+  "delimiterToHideSuggestion": "",
+  "delimiterToDivideSuggestionsForDisplayFromInsertion": "",
+  "caretLocationSymbolAfterComplement": "",
+  "displayedTextSuffix": " => ...",
+  "enableInternalLinkComplement": true,
+  "suggestInternalLinkWithAlias": false,
+  "excludeInternalLinkPathPrefixPatterns": "",
+  "updateInternalLinksOnSave": true,
+  "insertAliasTransformedFromDisplayedInternalLink": {
+    "enabled": false,
+    "beforeRegExp": "",
+    "after": ""
+  },
+  "enableFrontMatterComplement": true,
+  "frontMatterComplementMatchStrategy": "inherit",
+  "insertCommaAfterFrontMatterCompletion": false,
+  "intelligentSuggestionPrioritization": {
+    "maxDaysToKeepHistory": 30,
+    "maxNumberOfHistoryToKeep": 0
+  },
+  "disableOnMobile": false,
+  "showLogAboutPerformanceInConsole": false,
+  "selectionHistoryTree": {
+    "collection": {
+      "collection": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681682531031
+        }
+      }
+    },
+    "filter": {
+      "filter": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681682534127
+        }
+      }
+    },
+    "second": {
+      "second": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681731886060
+        }
+      }
+    },
+    "zettelkasten": {
+      "zettelkasten": {
+        "internalLink": {
+          "count": 4,
+          "lastUpdated": 1681741325362
+        },
+        "currentFile": {
+          "count": 6,
+          "lastUpdated": 1682103218818
+        }
+      }
+    },
+    "compare": {
+      "compare": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681738448964
+        }
+      }
+    },
+    "highly": {
+      "highly": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681739131690
+        }
+      }
+    },
+    "productivity": {
+      "productivity": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681741004963
+        }
+      }
+    },
+    "reasonable": {
+      "reasonable": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1681745696069
+        }
+      }
+    },
+    "luhmann": {
+      "luhmann": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1681745560053
+        }
+      }
+    },
+    "hypertext": {
+      "hypertext": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1681742139822
+        },
+        "internalLink": {
+          "count": 7,
+          "lastUpdated": 1682103199909
+        }
+      }
+    },
+    "Luhmann": {
+      "Luhmann": {
+        "currentFile": {
+          "count": 4,
+          "lastUpdated": 1681747075175
+        }
+      }
+    },
+    "makes": {
+      "makes": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681742371997
+        }
+      }
+    },
+    "Zettelkasten": {
+      "Zettelkasten": {
+        "currentFile": {
+          "count": 6,
+          "lastUpdated": 1682103354494
+        }
+      }
+    },
+    "knowledge": {
+      "knowledge": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1682100544178
+        }
+      }
+    },
+    "effective": {
+      "effective": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681747220715
+        }
+      }
+    },
+    "notes": {
+      "notes": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681747246430
+        }
+      }
+    },
+    "note-taking": {
+      "note-taking": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681747332029
+        }
+      }
+    },
+    "user_config": {
+      "user_config": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1681980592027
+        }
+      }
+    },
+    "threshold": {
+      "threshold": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1682091914024
+        }
+      }
+    },
+    "bracketed-paste": {
+      "bracketed-paste": {
+        "internalLink": {
+          "count": 1,
+          "lastUpdated": 1682096045852
+        }
+      }
+    },
+    "bracketing": {
+      "bracketing": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1682098011452
+        }
+      }
+    },
+    "consistently": {
+      "consistently": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1682100562565
+        }
+      }
+    },
+    "Benefits": {
+      "Benefits": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1682103101150
+        }
+      }
+    },
+    "connections": {
+      "connections": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1682103310219
+        }
+      }
+    },
+    "bureaucrat": {
+      "bureaucrat": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1682103583290
+        }
+      }
+    },
+    "movement": {
+      "movement": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1682538770609
+        }
+      }
+    },
+    "language-learning": {
+      "language-learning": {
+        "internalLink": {
+          "count": 1,
+          "lastUpdated": 1682581011488
+        }
+      }
+    },
+    "olsonkundig": {
+      "olsonkundig": {
+        "currentFile": {
+          "count": 2,
+          "lastUpdated": 1682694455484
+        }
+      }
+    },
+    "things": {
+      "things": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1682789307884
+        }
+      }
+    },
+    "which": {
+      "which": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683295108081
+        }
+      }
+    }
+  }
+}

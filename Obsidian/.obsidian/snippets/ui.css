@@ -1,0 +1,44 @@
+/*------------------------------------------------------------------*/
+/*         This snippet file contains styles related to UI          */
+/*------------------------------------------------------------------*/
+/* make sidebar appear only on hover */
+/* .workspace-ribbon.is-collapsed:not(:hover) .workspace-ribbon-collapse-btn, */
+/* .workspace-ribbon.is-collapsed:not(:hover) .side-dock-actions, */
+/* .workspace-ribbon.is-collapsed:not(:hover) .side-dock-settings { */
+/*   display: none; */
+/* } */
+/* .workspace-ribbon.is-collapsed:not(:hover) { */
+/*   width: 0; */
+/* } */
+/* .workspace-split.mod-left-split[style="width: 0px;"] { */
+/*   margin-left: 0; */
+/* } */
+/* .workspace-split.mod-right-split[style="width: 0px;"] { */
+/*   margin-right: 0; */
+/* } */
+/* .workspace-ribbon { */
+/*   transition: none; */
+/* } */
+
+/* block cursor */
+/* .CodeMirror-cursor { */
+/*   border-left-width: 0.5em; */
+/*   opacity: 0.75; */
+/* } */
+
+/* Make subtler folding gutter arrows */
+/* .CodeMirror-foldgutter-folded:after, */
+/* .CodeMirror-foldgutter-open:after { */
+/*   opacity: 0.5; */
+/*   font-size: 60%; */
+/* } */
+/* .CodeMirror-foldgutter-folded:hover:after, */
+/* .CodeMirror-foldgutter-open:hover:after { */
+/*   opacity: 1; */
+/* } */
+/* .CodeMirror-foldgutter-folded:after { */
+/*   content: "\25BA"; */
+/* } */
+/* .CodeMirror-foldgutter-open:after { */
+/*   content: "\25BC"; */
+/* } */

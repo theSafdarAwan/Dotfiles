@@ -125,7 +125,7 @@
 # - neovim-nightly-bin
 # - wezterm
 # - klavaro-svn
-# ldoc
+# - ldoc
 
 # - zsh-vi-mode
 # - google-chrome
@@ -282,3 +282,11 @@
 #    </prefer>
 #  </alias>
 # </fontconfig>
+
+
+
+
+# fstab drives config
+# UUID=EA5861CF58619AD9 /home/safdar/Disks/UI     ntfs defaults,noatime 0 2
+# UUID=f6df680a-21ca-4e75-a4ef-1873101e6a28 /home/safdar/Disks/StudyData     ext4 defaults,noatime 0 2
+# UUID=0B9657181CE7893F /home/safdar/Disks/MediaDisk     ntfs defaults,noatime 0 2

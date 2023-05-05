@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+df --human-readable | grep -E 'Disks|sda1'

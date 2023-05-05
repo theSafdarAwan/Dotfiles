@@ -1,0 +1,10 @@
+{
+  "accentColor": "",
+  "cssTheme": "Tokyo Night",
+  "enabledCssSnippets": [
+    "main",
+    "style",
+    "ui",
+    "colors"
+  ]
+}

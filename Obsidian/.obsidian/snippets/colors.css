@@ -1,0 +1,76 @@
+/*------------------------------------------------------------------*/
+/*           This snippet file contains styles related to           */
+/*                              colors                              */
+/*------------------------------------------------------------------*/
+/* Change the bold color */
+/* .cm-strong { */
+/*   color: white; */
+/* } */
+
+/* Change hash tags colors */
+/* .tag { */
+/*   background-color: var(--text-accent); */
+/*   border: none; */
+/*   color: white; */
+/*   font-size: 11px; */
+/*   padding: 1px 8px; */
+/*   text-align: center; */
+/*   text-decoration: none; */
+/*   display: inline-block; */
+/*   margin: 0px 0px; */
+/*   cursor: pointer; */
+/*   border-radius: 14px; */
+/* } */
+/* .cm-hashtag:hover { */
+/*   background-color: white; */
+/* } */
+/* .cm-hashtag:has(+ .cm-hashtag) { */
+/*   background-color: cyan; */
+/* } */
+/* .cm-tag-obsidian { */
+/*   background-color: #4d3ca6; */
+/* } */
+/* .cm-tag-important { */
+/*   background-color: red; */
+/* } */
+/* .cm-tag-complete { */
+/*   background-color: green; */
+/* } */
+/* .cm-tag-progress { */
+/*   background-color: orange; */
+/* } */
+
+/* get search highlights like vim */
+.cm-s-obsidian span.obsidian-search-match-highlight {
+  background-color: #545c7e;
+  box-shadow: 0 0 0px 0px var(--text-accent);
+}
+
+/* change the foreground color of the active file in file explorer */
+body:not(.is-grabbing) .nav-file-title.is-active:hover,
+body:not(.is-grabbing) .nav-folder-title.is-active:hover,
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  color: #7aa2f7;
+}
+
+/* change the font foreground for the explorer tab icon */
+.is-focused
+  .mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-icon,
+.is-focused
+  .mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-title {
+  color: #7aa2f7;
+}
+
+/* change foreground color of the tab file name in the current tab */
+.mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.is-focused
+  .mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-title {
+  color: #7aa2f7;
+}

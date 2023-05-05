@@ -1,0 +1,12 @@
+{
+  "plugins": [],
+  "extends": [],
+  "rules": {
+    "indentation": null,
+    "string-quotes": "double",
+    "no-duplicate-selectors": true,
+    "color-hex-case": "lower",
+    "color-hex-length": "long",
+    "property-no-unknown": true
+  }
+}
