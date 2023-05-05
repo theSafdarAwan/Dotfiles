@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "239fd693abdad3a3",
+        "id": "1fb8d779da053c0b",
         "type": "tabs",
         "children": [
           {
-            "id": "b28848e9be286505",
+            "id": "b3fbec13ece17a2f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#second_brain",
+                "query": "#second-brain",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -172,11 +172,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b28848e9be286505",
+  "active": "b3fbec13ece17a2f",
   "lastOpenFiles": [
-    "hypertext.md",
-    "insights.md",
+    "assets/anatomy-of-a-zettel-unique-identifier.png",
     "zettelkasten.md",
+    "Definitions/zettel.md",
+    "assets/anatomy-of-a-zettel.png",
+    "writing-private.md",
+    "1683303087-GIPK.md",
+    "1683303268-SIQU.md",
+    "Definitions/hypertext.md",
+    "1683301416-DBQZ.md",
+    "assets/luhmanns-entry-register.png",
+    "insights.md",
+    "hypertext.md",
     "assets/zettelkasten-luhmann-note-addressing-system.png",
     "hlhl.md",
     "General/zettelkasten.md",
@@ -198,12 +207,6 @@
     "jskf.md",
     "todo.md",
     "Home Page.md",
-    "nvim-notes.md",
-    "todos.md",
-    "programming langs to learn in future.md",
-    "hypertextual.md",
-    "Programming/index.md",
-    "rust-blog-links.md",
     "assets",
     "Untitled 1.canvas",
     "Untitled.canvas",

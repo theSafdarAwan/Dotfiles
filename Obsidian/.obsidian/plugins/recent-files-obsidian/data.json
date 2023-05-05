@@ -5,16 +5,28 @@
       "path": "zettelkasten.md"
     },
     {
+      "basename": "anatomy-of-a-zettel-unique-identifier",
+      "path": "assets/anatomy-of-a-zettel-unique-identifier.png"
+    },
+    {
+      "basename": "zettel",
+      "path": "Definitions/zettel.md"
+    },
+    {
+      "basename": "writing-private",
+      "path": "writing-private.md"
+    },
+    {
       "basename": "hypertext",
-      "path": "hypertext.md"
+      "path": "Definitions/hypertext.md"
     },
     {
       "basename": "insights",
       "path": "insights.md"
     },
     {
-      "basename": "zettelkasten-luhmann-note-addressing-system",
-      "path": "assets/zettelkasten-luhmann-note-addressing-system.png"
+      "basename": "hypertext",
+      "path": "hypertext.md"
     }
   ],
   "omittedPaths": [],
