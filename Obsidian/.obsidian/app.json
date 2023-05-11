@@ -2,7 +2,9 @@
   "vimMode": true,
   "alwaysUpdateLinks": true,
   "spellcheck": true,
-  "showLineNumber": false,
+  "showLineNumber": true,
   "strictLineBreaks": true,
-  "showFrontmatter": true
+  "showFrontmatter": true,
+  "defaultViewMode": "preview",
+  "attachmentFolderPath": "assets"
 }

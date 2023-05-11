@@ -94,8 +94,8 @@
           "lastUpdated": 1681741325362
         },
         "currentFile": {
-          "count": 6,
-          "lastUpdated": 1682103218818
+          "count": 7,
+          "lastUpdated": 1683555228363
         }
       }
     },
@@ -194,8 +194,8 @@
     "notes": {
       "notes": {
         "currentFile": {
-          "count": 1,
-          "lastUpdated": 1681747246430
+          "count": 2,
+          "lastUpdated": 1683553600425
         }
       }
     },
@@ -308,6 +308,102 @@
         "currentFile": {
           "count": 1,
           "lastUpdated": 1683295108081
+        }
+      }
+    },
+    "learning-resources": {
+      "learning-resources": {
+        "frontMatter": {
+          "count": 1,
+          "lastUpdated": 1683461905837
+        }
+      }
+    },
+    "definition": {
+      "definition": {
+        "frontMatter": {
+          "count": 1,
+          "lastUpdated": 1683461995691
+        }
+      }
+    },
+    "programming": {
+      "programming": {
+        "frontMatter": {
+          "count": 4,
+          "lastUpdated": 1683557543020
+        }
+      }
+    },
+    "resources": {
+      "resources": {
+        "frontMatter": {
+          "count": 1,
+          "lastUpdated": 1683462161978
+        }
+      }
+    },
+    "programming-languagesd": {
+      "programming-languagesd": {
+        "frontMatter": {
+          "count": 1,
+          "lastUpdated": 1683462168554
+        }
+      }
+    },
+    "ourselves": {
+      "ourselves": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683467428874
+        }
+      }
+    },
+    "anatomy-of-a-zettel": {
+      "anatomy-of-a-zettel": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683473039383
+        }
+      }
+    },
+    "zettlers": {
+      "zettlers": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683555222750
+        }
+      }
+    },
+    "management": {
+      "management": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683556099254
+        }
+      }
+    },
+    "learning-goals": {
+      "learning-goals": {
+        "frontMatter": {
+          "count": 1,
+          "lastUpdated": 1683557546604
+        }
+      }
+    },
+    "comprehensive zettelkasten obsidian workflow": {
+      "comprehensive zettelkasten obsidian workflow": {
+        "internalLink": {
+          "count": 1,
+          "lastUpdated": 1683557713918
+        }
+      }
+    },
+    "refactor": {
+      "refactor": {
+        "frontMatter": {
+          "count": 1,
+          "lastUpdated": 1683708634695
         }
       }
     }

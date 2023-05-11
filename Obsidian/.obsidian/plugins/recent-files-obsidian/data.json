@@ -1,32 +1,100 @@
 {
   "recentFiles": [
     {
+      "basename": "todo list",
+      "path": "todo list.md"
+    },
+    {
+      "basename": "Home",
+      "path": "Home.md"
+    },
+    {
       "basename": "zettelkasten",
       "path": "zettelkasten.md"
     },
     {
-      "basename": "anatomy-of-a-zettel-unique-identifier",
-      "path": "assets/anatomy-of-a-zettel-unique-identifier.png"
+      "basename": "personal notes",
+      "path": "personal notes.md"
     },
     {
-      "basename": "zettel",
-      "path": "Definitions/zettel.md"
+      "basename": "simple note",
+      "path": "templates/simple note.md"
     },
     {
-      "basename": "writing-private",
-      "path": "writing-private.md"
+      "basename": "obsidian-learning-resources",
+      "path": "obsidian-learning-resources.md"
+    },
+    {
+      "basename": "programming golas",
+      "path": "programming golas.md"
+    },
+    {
+      "basename": "bucket list",
+      "path": "bucket list.md"
+    },
+    {
+      "basename": "comprehensive zettelkasten obsidian workflow",
+      "path": "comprehensive zettelkasten obsidian workflow.md"
     },
     {
       "basename": "hypertext",
-      "path": "Definitions/hypertext.md"
+      "path": "hypertext.md"
+    },
+    {
+      "basename": "second brain",
+      "path": "second brain.md"
+    },
+    {
+      "basename": "vacations destinations",
+      "path": "vacations destinations.md"
+    },
+    {
+      "basename": "spaced repetition software",
+      "path": "spaced repetition software.md"
+    },
+    {
+      "basename": "personal knowledge management",
+      "path": "personal knowledge management.md"
+    },
+    {
+      "basename": "bracketed-paste",
+      "path": "bracketed-paste.md"
+    },
+    {
+      "basename": "nvim-notes",
+      "path": "nvim-notes.md"
+    },
+    {
+      "basename": "private-writing",
+      "path": "private-writing.md"
+    },
+    {
+      "basename": "anatomy-of-a-zettel-body",
+      "path": "assets/anatomy-of-a-zettel-body.png"
     },
     {
       "basename": "insights",
       "path": "insights.md"
     },
     {
-      "basename": "hypertext",
-      "path": "hypertext.md"
+      "basename": "programming-langs-blogs-resources",
+      "path": "programming-langs-blogs-resources.md"
+    },
+    {
+      "basename": "architecture-resources",
+      "path": "architecture-resources.md"
+    },
+    {
+      "basename": "zettel",
+      "path": "zettel.md"
+    },
+    {
+      "basename": "metadata",
+      "path": "metadata.md"
+    },
+    {
+      "basename": "anatomy-of-a-zettel-unique-identifier",
+      "path": "assets/anatomy-of-a-zettel-unique-identifier.png"
     }
   ],
   "omittedPaths": [],

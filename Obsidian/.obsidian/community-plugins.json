@@ -1,11 +1,10 @@
 [
-  "various-complements",
-  "settings-search",
+  "obsidian-tasks-plugin",
+  "obsidian-admonition",
   "obsidian-dictionary-plugin",
-  "obsidian-banners",
-  "obsidian-kanban",
-  "recent-files-obsidian",
+  "obsidian-emoji-toolbar",
   "obsidian-mind-map",
-  "pseudocode-in-obs",
-  "dataview"
+  "obsidian-relative-line-numbers",
+  "settings-search",
+  "templater-obsidian"
 ]

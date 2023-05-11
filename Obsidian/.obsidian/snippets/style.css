@@ -3,17 +3,20 @@
 /*                         fonts, etc, styles                       */
 /*------------------------------------------------------------------*/
 /* Hack to set nowrap for paragraph */
-.cm-line {
-  white-space: pre;
-}
+/* .cm-line { */
+/*   white-space: pre; */
+/* } */
 
-/* set wrap for code blocks */
+/* Hack to set nowrap for code blocks */
 /* .HyperMD-codeblock { */
-/*   white-space: pre-wrap; */
+/*   white-space: pre; */
 /* } */
 
 /* Center the file name inline title */
+/*                  OR               */
+/* don't display inline title */
 .inline-title {
+  display: none;
   font-size: 2rem;
   text-align: center;
 }

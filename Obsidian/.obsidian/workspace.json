@@ -4,22 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "1fb8d779da053c0b",
+        "id": "d76f923ace98670e",
         "type": "tabs",
         "children": [
           {
-            "id": "b3fbec13ece17a2f",
+            "id": "5d5b1e9ac72401bc",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "zettelkasten.md",
+                "file": "searching in obsidian.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "pinned": true
+            }
+          },
+          {
+            "id": "f39fe9276c75b223",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "personal obsidian workflow.md",
+                "mode": "preview",
+                "source": false
+              },
+              "pinned": true
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -48,29 +65,13 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "#second-brain",
+                "query": "",
                 "matchingCase": false,
-                "explainSearch": false,
+                "explainSearch": true,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
-            }
-          },
-          {
-            "id": "aa4c52028568dcac",
-            "type": "leaf",
-            "state": {
-              "type": "starred",
-              "state": {}
-            }
-          },
-          {
-            "id": "31507f387ff4b7e6",
-            "type": "leaf",
-            "state": {
-              "type": "recent-files",
-              "state": {}
             }
           },
           {
@@ -85,7 +86,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 253.5110321044922,
     "collapsed": true
   },
   "right": {
@@ -102,14 +103,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "zettelkasten.md",
+                "file": "personal obsidian workflow.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -119,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "zettelkasten.md",
+                "file": "personal obsidian workflow.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "zettelkasten.md"
+                "file": "personal obsidian workflow.md"
               }
             }
           },
@@ -153,9 +154,16 @@
               "type": "dictionary-view",
               "state": {}
             }
+          },
+          {
+            "id": "6fe7a95201da2baa",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
@@ -168,54 +176,61 @@
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
+      "command-palette:Open command palette": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "random-note:Open random note": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "b3fbec13ece17a2f",
+  "active": "f39fe9276c75b223",
   "lastOpenFiles": [
-    "assets/anatomy-of-a-zettel-unique-identifier.png",
+    "how i use obsidian tags in my GTD system.md",
+    "personal obsidian workflow.md",
+    "searching in obsidian.md",
+    "spaced repetition software.md",
+    "assets/mpv-shot-0847.png",
+    "mpv-shot-0847.png",
+    "Niklas Luhmann.md",
+    "Untitled.md",
     "zettelkasten.md",
-    "Definitions/zettel.md",
-    "assets/anatomy-of-a-zettel.png",
-    "writing-private.md",
-    "1683303087-GIPK.md",
-    "1683303268-SIQU.md",
-    "Definitions/hypertext.md",
-    "1683301416-DBQZ.md",
-    "assets/luhmanns-entry-register.png",
-    "insights.md",
+    "assets/anatomy-of-a-zettel-unique-identifier.png",
+    "regular expressions.md",
+    "obsid.md",
+    "programming todo list.md",
+    "zettel.md",
+    "[[.md",
+    "programming golas.md",
+    "templates/sample note.md",
+    "private writing.md",
     "hypertext.md",
+    "todo list.md",
+    "comprehensive zettelkasten obsidian workflow.md",
+    "reading bucket list.md",
+    "programming reading resources.md",
+    "Hello, World!.md",
+    "architecture-resources.md",
     "assets/zettelkasten-luhmann-note-addressing-system.png",
-    "hlhl.md",
-    "General/zettelkasten.md",
-    "General/hypertext.md",
-    "General/insights.md",
-    "Architecutre/Architecture-study-links.md",
+    "youtube bucket list.md",
+    "personal knowledge management.md",
+    "Use case for zettelkasten.md",
+    "bucekt.md",
+    "Day Planners",
+    "Untitled.canvas",
+    "templates",
+    "assets/path-to-a-finished-project.png",
+    "assets/anatomy-of-a-zettel-body.png",
+    "assets/anatomy-of-a-zettel.png",
+    "assets/luhmanns-entry-register.png",
     "Architecutre",
     "General",
-    "Second Brain/hypertext.md",
-    "Second Brain/insights.md",
-    "Second Brain/zettelkasten.md",
     "Second Brain",
-    "Programming/rust-blog-links.md",
-    "Programming/programming langs to learn in future.md",
-    "Programming/bracketed-paste.md",
-    "Programming/todo.md",
-    "Programming/nvim-notes.md",
     "Programming",
-    "jskf.md",
-    "todo.md",
-    "Home Page.md",
     "assets",
     "Untitled 1.canvas",
-    "Untitled.canvas",
     "test.norg",
     "Programming/blog-links",
     "Second Brain/assets/Architectural Digest - Inside Aaron Paul’s Rustic Riverside Home In Idaho Open Door Architectural Digest [D-qQneOnJl0 - 907x510 - 0m37s].png",
     "Second Brain/assets",
-    "Second Brain/Architectural Digest - Inside Aaron Paul’s Rustic Riverside Home In Idaho Open Door Architectural Digest [D-qQneOnJl0 - 907x510 - 0m37s].png",
-    "Definitions",
-    "second"
+    "Second Brain/Architectural Digest - Inside Aaron Paul’s Rustic Riverside Home In Idaho Open Door Architectural Digest [D-qQneOnJl0 - 907x510 - 0m37s].png"
   ]
 }
