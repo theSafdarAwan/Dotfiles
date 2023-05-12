@@ -1,10 +1,13 @@
 [
   "obsidian-tasks-plugin",
-  "obsidian-admonition",
   "obsidian-dictionary-plugin",
-  "obsidian-emoji-toolbar",
   "obsidian-mind-map",
   "obsidian-relative-line-numbers",
   "settings-search",
-  "templater-obsidian"
+  "templater-obsidian",
+  "table-editor-obsidian",
+  "obsidian-admonition",
+  "dataview",
+  "obsidian-annotator",
+  "obsidian-banners"
 ]

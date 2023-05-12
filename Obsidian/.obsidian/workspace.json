@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "d76f923ace98670e",
+        "id": "4265a740e1f581d1",
         "type": "tabs",
         "children": [
           {
-            "id": "5d5b1e9ac72401bc",
+            "id": "243ac133f87e91db",
             "type": "leaf",
             "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "searching in obsidian.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true
-            }
-          },
-          {
-            "id": "f39fe9276c75b223",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "personal obsidian workflow.md",
+                "file": "Home.md",
                 "mode": "preview",
                 "source": false
               },
               "pinned": true
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -81,6 +66,17 @@
               "type": "bookmarks",
               "state": {}
             }
+          },
+          {
+            "id": "5c433b10ae513991",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
           }
         ]
       }
@@ -98,56 +94,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "db60b3a7cbaf2598",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "personal obsidian workflow.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
-              }
-            }
-          },
-          {
-            "id": "4e90c62f1d13d0ed",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "personal obsidian workflow.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "5c433b10ae513991",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              }
-            }
-          },
-          {
-            "id": "309d39b911dc8dd1",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "personal obsidian workflow.md"
-              }
-            }
-          },
-          {
             "id": "15904ebff8575b82",
             "type": "leaf",
             "state": {
@@ -162,12 +108,52 @@
               "type": "advanced-tables-toolbar",
               "state": {}
             }
+          },
+          {
+            "id": "309d39b911dc8dd1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Home.md"
+              }
+            }
+          },
+          {
+            "id": "db60b3a7cbaf2598",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Home.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": true,
+                "searchQuery": "tag:#obsidian",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4e90c62f1d13d0ed",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Home.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 366.5,
     "collapsed": true
   },
   "left-ribbon": {
@@ -179,44 +165,51 @@
       "command-palette:Open command palette": false,
       "templates:Insert template": false,
       "random-note:Open random note": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f39fe9276c75b223",
+  "active": "243ac133f87e91db",
   "lastOpenFiles": [
-    "how i use obsidian tags in my GTD system.md",
-    "personal obsidian workflow.md",
+    "favourite.md",
+    "Home.md",
+    "movie.md",
+    "color.md",
+    "programming golas.md",
+    "AI.md",
+    "seedling.md",
+    "how i use obsidian tags.md",
+    "comprehensive zettelkasten obsidian workflow.md",
+    "test.md",
+    "Alan Turing.md",
+    "mathematician.md",
+    "English.md",
+    "tempalates/basic tempalate.md",
+    "World War II.md",
+    "German.md",
+    "The FUN and EFFICIENT note-taking system I use in my PhD.md",
+    "zettelkasten.md",
+    "zettel.md",
+    "youtube bucket list.md",
+    "youtube.md",
+    "tips for reading books effectively.md",
+    "turing test.md",
+    "vacation destinations.md",
     "searching in obsidian.md",
-    "spaced repetition software.md",
+    "reading bucket list.md",
+    "Untitled.canvas",
+    "sedijDqd3",
+    "assets/Mastering Regular Expressions_ Understand Your Data and Be More Productive (3rd ed.) [Friedl 2006-08-18].pdf",
+    "assets/The FUN and EFFICIENT note-taking system I use in my PhD - writing note in your own words.png",
+    "u",
+    "new/a",
+    "new",
     "assets/mpv-shot-0847.png",
     "mpv-shot-0847.png",
-    "Niklas Luhmann.md",
-    "Untitled.md",
-    "zettelkasten.md",
     "assets/anatomy-of-a-zettel-unique-identifier.png",
-    "regular expressions.md",
-    "obsid.md",
-    "programming todo list.md",
-    "zettel.md",
-    "[[.md",
-    "programming golas.md",
-    "templates/sample note.md",
-    "private writing.md",
-    "hypertext.md",
-    "todo list.md",
-    "comprehensive zettelkasten obsidian workflow.md",
-    "reading bucket list.md",
-    "programming reading resources.md",
-    "Hello, World!.md",
-    "architecture-resources.md",
     "assets/zettelkasten-luhmann-note-addressing-system.png",
-    "youtube bucket list.md",
-    "personal knowledge management.md",
-    "Use case for zettelkasten.md",
-    "bucekt.md",
     "Day Planners",
-    "Untitled.canvas",
-    "templates",
+    "tempalates",
     "assets/path-to-a-finished-project.png",
     "assets/anatomy-of-a-zettel-body.png",
     "assets/anatomy-of-a-zettel.png",
@@ -224,13 +217,7 @@
     "Architecutre",
     "General",
     "Second Brain",
-    "Programming",
-    "assets",
     "Untitled 1.canvas",
-    "test.norg",
-    "Programming/blog-links",
-    "Second Brain/assets/Architectural Digest - Inside Aaron Paul’s Rustic Riverside Home In Idaho Open Door Architectural Digest [D-qQneOnJl0 - 907x510 - 0m37s].png",
-    "Second Brain/assets",
-    "Second Brain/Architectural Digest - Inside Aaron Paul’s Rustic Riverside Home In Idaho Open Door Architectural Digest [D-qQneOnJl0 - 907x510 - 0m37s].png"
+    "Second Brain/assets/Architectural Digest - Inside Aaron Paul’s Rustic Riverside Home In Idaho Open Door Architectural Digest [D-qQneOnJl0 - 907x510 - 0m37s].png"
   ]
 }
