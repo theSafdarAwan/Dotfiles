@@ -406,6 +406,30 @@
           "lastUpdated": 1683708634695
         }
       }
+    },
+    "plugin": {
+      "plugin": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683967982779
+        }
+      }
+    },
+    "FRONTMATTER": {
+      "FRONTMATTER": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683967999711
+        }
+      }
+    },
+    "Querying": {
+      "Querying": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683968042608
+        }
+      }
     }
   }
 }

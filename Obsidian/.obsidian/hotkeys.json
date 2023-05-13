@@ -228,5 +228,14 @@
       ],
       "key": "B"
     }
+  ],
+  "editor:open-search": [],
+  "switcher:open": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "F"
+    }
   ]
 }

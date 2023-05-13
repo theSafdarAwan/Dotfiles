@@ -20,8 +20,23 @@
               },
               "pinned": true
             }
+          },
+          {
+            "id": "7278a160408be08c",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "obsidian dataview plugin.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -115,7 +130,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.md"
+                "file": "obsidian dataview plugin.md"
               }
             }
           },
@@ -125,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Home.md",
+                "file": "obsidian dataview plugin.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +157,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Home.md",
+                "file": "obsidian dataview plugin.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -166,37 +181,43 @@
       "templates:Insert template": false,
       "random-note:Open random note": false,
       "templater-obsidian:Templater": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "omnisearch:Omnisearch": false
     }
   },
-  "active": "243ac133f87e91db",
+  "active": "7278a160408be08c",
   "lastOpenFiles": [
-    "favourite.md",
+    "programming todo list.md",
+    "todo list.md",
+    "zettelkasten.md",
+    "obsidian dataview plugin.md",
     "Home.md",
+    "metadata.md",
+    "obsidian YAML FRONTMATTER.md",
+    "The FUN and EFFICIENT note-taking system I use in my PhD.md",
+    "morgan.md",
+    "comprehensive zettelkasten obsidian workflow.md",
+    "bryanjenks.md",
+    "journals/2023_05_13.md",
+    "logseq/custom.css",
+    "pages/contents.md",
+    "pages",
+    "logseq/config.edn",
+    "journals",
+    "logseq",
+    "seedling.md",
+    "how i use obsidian tags.md",
+    "obsidian.md",
+    "javascript.md",
+    "zettel.md",
+    "favourite.md",
     "movie.md",
     "color.md",
     "programming golas.md",
     "AI.md",
-    "seedling.md",
-    "how i use obsidian tags.md",
-    "comprehensive zettelkasten obsidian workflow.md",
     "test.md",
     "Alan Turing.md",
     "mathematician.md",
-    "English.md",
-    "tempalates/basic tempalate.md",
-    "World War II.md",
-    "German.md",
-    "The FUN and EFFICIENT note-taking system I use in my PhD.md",
-    "zettelkasten.md",
-    "zettel.md",
-    "youtube bucket list.md",
-    "youtube.md",
-    "tips for reading books effectively.md",
-    "turing test.md",
-    "vacation destinations.md",
-    "searching in obsidian.md",
-    "reading bucket list.md",
     "Untitled.canvas",
     "sedijDqd3",
     "assets/Mastering Regular Expressions_ Understand Your Data and Be More Productive (3rd ed.) [Friedl 2006-08-18].pdf",
@@ -208,15 +229,10 @@
     "mpv-shot-0847.png",
     "assets/anatomy-of-a-zettel-unique-identifier.png",
     "assets/zettelkasten-luhmann-note-addressing-system.png",
-    "Day Planners",
-    "tempalates",
     "assets/path-to-a-finished-project.png",
     "assets/anatomy-of-a-zettel-body.png",
     "assets/anatomy-of-a-zettel.png",
     "assets/luhmanns-entry-register.png",
-    "Architecutre",
-    "General",
-    "Second Brain",
     "Untitled 1.canvas",
     "Second Brain/assets/Architectural Digest - Inside Aaron Paul’s Rustic Riverside Home In Idaho Open Door Architectural Digest [D-qQneOnJl0 - 907x510 - 0m37s].png"
   ]
