@@ -35,8 +35,7 @@
               "pinned": true
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -65,7 +64,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "FRONTMATTER",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": false,
@@ -130,7 +129,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "obsidian dataview plugin.md"
+                "file": "Home.md"
               }
             }
           },
@@ -140,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "obsidian dataview plugin.md",
+                "file": "Home.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "obsidian dataview plugin.md",
+                "file": "Home.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -185,15 +184,20 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "7278a160408be08c",
+  "active": "243ac133f87e91db",
   "lastOpenFiles": [
-    "programming todo list.md",
-    "todo list.md",
-    "zettelkasten.md",
-    "obsidian dataview plugin.md",
+    "seedling.md",
     "Home.md",
-    "metadata.md",
+    "obsidian dataview plugin.md",
+    "favourite.md",
+    "javascript.md",
     "obsidian YAML FRONTMATTER.md",
+    "test.md",
+    "markdown in obsidian.md",
+    "todo list.md",
+    "programming todo list.md",
+    "zettelkasten.md",
+    "metadata.md",
     "The FUN and EFFICIENT note-taking system I use in my PhD.md",
     "morgan.md",
     "comprehensive zettelkasten obsidian workflow.md",
@@ -205,19 +209,14 @@
     "logseq/config.edn",
     "journals",
     "logseq",
-    "seedling.md",
     "how i use obsidian tags.md",
     "obsidian.md",
-    "javascript.md",
     "zettel.md",
-    "favourite.md",
     "movie.md",
     "color.md",
     "programming golas.md",
     "AI.md",
-    "test.md",
     "Alan Turing.md",
-    "mathematician.md",
     "Untitled.canvas",
     "sedijDqd3",
     "assets/Mastering Regular Expressions_ Understand Your Data and Be More Productive (3rd ed.) [Friedl 2006-08-18].pdf",

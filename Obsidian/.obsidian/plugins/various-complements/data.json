@@ -330,8 +330,8 @@
     "programming": {
       "programming": {
         "frontMatter": {
-          "count": 4,
-          "lastUpdated": 1683557543020
+          "count": 5,
+          "lastUpdated": 1683971478300
         }
       }
     },
@@ -428,6 +428,54 @@
         "currentFile": {
           "count": 1,
           "lastUpdated": 1683968042608
+        }
+      }
+    },
+    "TABLE": {
+      "TABLE": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683968871490
+        }
+      }
+    },
+    "Dataview": {
+      "Dataview": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683969209377
+        }
+      }
+    },
+    "metadata": {
+      "metadata": {
+        "internalLink": {
+          "count": 2,
+          "lastUpdated": 1683970997127
+        }
+      }
+    },
+    "youtube": {
+      "youtube": {
+        "internalLink": {
+          "count": 1,
+          "lastUpdated": 1683971005481
+        }
+      }
+    },
+    "automatically": {
+      "automatically": {
+        "currentFile": {
+          "count": 1,
+          "lastUpdated": 1683971043334
+        }
+      }
+    },
+    "language": {
+      "language": {
+        "frontMatter": {
+          "count": 1,
+          "lastUpdated": 1683971480652
         }
       }
     }
