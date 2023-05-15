@@ -1,0 +1,15 @@
+{
+  "generalSettingsHeading": null,
+  "breadcrumbDisplay": "Show Page name only",
+  "includeParentContent": true,
+  "deckFromLogseqNamespace": true,
+  "defaultDeck": "Default",
+  "othersHeading": null,
+  "addons": [],
+  "renderAnkiClozeMarcosInLogseq": false,
+  "advancedSettingsHeading": null,
+  "skipOnDependencyHashMatch": true,
+  "cacheLogseqAPIv1": true,
+  "debug": [],
+  "disabled": true
+}

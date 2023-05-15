@@ -1,0 +1,88 @@
+{
+  "disabled": true,
+  "theme": "auto",
+  "lightThemeType": "green",
+  "language": "en",
+  "homePage": "dashboard",
+  "defaultView": "month",
+  "weekStartDay": 0,
+  "weekHourStart": 0,
+  "weekHourEnd": 24,
+  "defaultDuration": {
+    "value": 0.5,
+    "unit": "h"
+  },
+  "logKey": {
+    "id": "Daily Log",
+    "bgColor": "#047857",
+    "textColor": "#fff",
+    "borderColor": "#047857",
+    "enabled": true
+  },
+  "journal": {
+    "id": "Journal",
+    "bgColor": "#047857",
+    "textColor": "#fff",
+    "borderColor": "#047857",
+    "enabled": true,
+    "query": [
+      {
+        "script": "\n[:find (pull ?block [*])\n:where\n[?block :block/marker ?marker]\n[(missing? $ ?block :block/deadline)]\n(not [(missing? $ ?block :block/scheduled)])\n[(contains? #{\"TODO\" \"DOING\" \"NOW\" \"LATER\" \"WAITING\" \"DONE\"} ?marker)]]\n        ",
+        "scheduleStart": "scheduled",
+        "dateFormatter": "yyyyMMdd",
+        "queryType": "advanced",
+        "isMilestone": false
+      },
+      {
+        "script": "\n[:find (pull ?block [*])\n:where\n[?block :block/marker ?marker]\n[(missing? $ ?block :block/scheduled)]\n(not [(missing? $ ?block :block/deadline)])\n[(contains? #{\"TODO\" \"DOING\" \"NOW\" \"LATER\" \"WAITING\" \"DONE\"} ?marker)]]\n        ",
+        "scheduleStart": "deadline",
+        "dateFormatter": "yyyyMMdd",
+        "queryType": "advanced",
+        "isMilestone": false
+      },
+      {
+        "script": "\n[:find (pull\n?block\n[:block/uuid\n  :db/id\n  :block/parent\n  :block/left\n  :block/collapsed?\n  :block/format\n  :block/_refs\n  :block/path-refs\n  :block/tags\n  :block/content\n  :block/marker\n  :block/priority\n  :block/properties\n  :block/pre-block?\n  :block/scheduled\n  :block/deadline\n  :block/repeated?\n  :block/created-at\n  :block/updated-at\n  :block/file\n  :block/heading-level\n  {:block/page\n  [:db/id :block/name :block/original-name :block/journal-day :block/journal?]}])\n:where\n[?block :block/page ?page]\n[?page :block/journal? true]\n[?block :block/marker ?marker]\n[(contains? #{\"TODO\" \"DOING\" \"NOW\" \"LATER\" \"WAITING\" \"DONE\"} ?marker)]\n[(missing? $ ?block :block/scheduled)]\n[(missing? $ ?block :block/deadline)]]\n        ",
+        "scheduleStart": "page.journal-day",
+        "dateFormatter": "yyyyMMdd",
+        "isMilestone": false,
+        "queryType": "advanced"
+      },
+      {
+        "script": "\n[:find (pull\n  ?block\n  [:block/uuid\n    :block/parent\n    :db/id\n    :block/left\n    :block/collapsed?\n    :block/format\n    :block/_refs\n    :block/path-refs\n    :block/tags\n    :block/content\n    :block/marker\n    :block/priority\n    :block/properties\n    :block/pre-block?\n    :block/scheduled\n    :block/deadline\n    :block/repeated?\n    :block/created-at\n    :block/updated-at\n    :block/file\n    :block/heading-level\n    {:block/page\n      [:db/id :block/name :block/original-name :block/journal-day :block/journal?]}\n    {:block/refs\n      [:block/journal-day]}])\n  :where\n  [?block :block/marker ?marker]\n  [?rp :block/journal? true]\n  [?block :block/refs ?rp]\n  [(contains? #{\"TODO\" \"DOING\" \"NOW\" \"LATER\" \"WAITING\" \"DONE\"} ?marker)]]\n        ",
+        "scheduleStart": "refs[0].journal-day",
+        "dateFormatter": "yyyyMMdd",
+        "isMilestone": false,
+        "queryType": "advanced"
+      },
+      {
+        "script": "\n[:find (pull ?block [*])\n:where\n[?rp :block/name \"milestone\"]\n[?block :block/scheduled]\n[?block :block/refs ?rp]]\n        ",
+        "scheduleStart": "scheduled",
+        "dateFormatter": "yyyyMMdd",
+        "isMilestone": true,
+        "queryType": "advanced"
+      }
+    ]
+  },
+  "projectList": [],
+  "calendarList": [],
+  "subscriptionList": [],
+  "pomodoro": {
+    "pomodoro": 25,
+    "shortBreak": 5,
+    "longBreak": 15,
+    "autoStartBreaks": false,
+    "autoStartPomodoros": false,
+    "longBreakInterval": 4,
+    "commonPomodoros": [
+      10,
+      15,
+      20,
+      25,
+      40
+    ]
+  },
+  "openai": {
+    "apiBaseUrl": "https://api.openai.com"
+  },
+  "initialized": true
+}

@@ -1,0 +1,42 @@
+{
+  "theme": {
+    "name": "Bonofix Theme",
+    "url": "assets:///home/safdar/.logseq/plugins/logseq-bonofix-theme/custom.css",
+    "description": "A clean theme",
+    "pid": "logseq-bonofix-theme"
+  },
+  "themes": {
+    "mode": "dark",
+    "light": {
+      "name": "GitHub Light Default With Dark Dimmed",
+      "url": "assets:///home/safdar/.logseq/plugins/logseq-github-theme/dist/light-dark-dimmed.css",
+      "description": "😻 GitHub Light/Dark-Dimmed theme for Logseq.",
+      "pid": "logseq-github-theme",
+      "group-first": false,
+      "group-desc": null,
+      "mode": "light",
+      "selected": false
+    },
+    "dark": {
+      "name": "Oxford Blue Theme Dark",
+      "url": "assets:///home/safdar/.logseq/plugins/logseq-oxford-blue-theme/oxford-blue.css",
+      "description": "Oxford blue theme features both dark and light mode ",
+      "mode": "dark",
+      "pid": "logseq-oxford-blue-theme",
+      "selected": false
+    }
+  },
+  "externals": [],
+  "pinnedToolbarItems": [
+    "logseq-graph-analysis:logseq-graph-analysis",
+    "logseq-journals-calendar:open-calendar",
+    "logseq-tocgen:open-toc",
+    "logseq-pomodoro-timer:pomodoro_pause",
+    "logseq-tags:tags-plugin-open",
+    "logseq-awesome-styler:AwesomeStyler",
+    "logseq-journals-calendar:goto-today",
+    "logseq-pomodoro-timer:pomodoro_timer",
+    "logseq-pomodoro-timer:pomodoro_reset",
+    "logseq-batch-op:batch-operations"
+  ]
+}

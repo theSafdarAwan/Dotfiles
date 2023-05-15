@@ -1,0 +1,15 @@
+{
+  "randomMode": "page",
+  "includeJournals": false,
+  "randomTags": "",
+  "advancedQuery": "",
+  "randomStepSize": "1",
+  "enableTelegramBot": false,
+  "telegramBotToken": "",
+  "telegramBotChatId": "",
+  "activeHours": [],
+  "activeMinutes": [
+    "0"
+  ],
+  "disabled": true
+}

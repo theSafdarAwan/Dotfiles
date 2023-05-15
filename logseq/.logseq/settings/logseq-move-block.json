@@ -1,0 +1,7 @@
+{
+  "disabled": true,
+  "keyBindings": {
+    "moveBlock": "mod+shift+m"
+  },
+  "settingsVersion": "v1"
+}

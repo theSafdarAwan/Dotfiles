@@ -1,0 +1,9 @@
+{
+  "enableAutoParse": true,
+  "stateKeybinding": "",
+  "parseSingleBlockKeybinding": "",
+  "parseSingleWordAsTag": false,
+  "parseAsTags": false,
+  "pagesToIgnore": "a,b,c,card,now,later,todo,doing,done,wait,waiting,canceled,cancelled,started,in-progress",
+  "disabled": false
+}

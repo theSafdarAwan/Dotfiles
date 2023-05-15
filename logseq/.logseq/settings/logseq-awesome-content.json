@@ -1,0 +1,13 @@
+{
+  "contentHeading": null,
+  "contentTasks": true,
+  "todayQueriesColumns": "1",
+  "contentColumns": true,
+  "contentQuotes": true,
+  "contentFlashcards": "Awesome",
+  "contentHeadersLabels": true,
+  "contentMermaid": true,
+  "otherHeading": null,
+  "pluginUpdateNotify": true,
+  "disabled": false
+}
