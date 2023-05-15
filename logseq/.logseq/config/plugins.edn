@@ -17,7 +17,7 @@
  :logseq-awesome-links {:version "v1.15.16", :repo "yoyurec/logseq-awesome-links", :effect true, :theme false}
  :logseq-banners-plugin {:version "v3.4.11", :repo "yoyurec/logseq-banners-plugin", :effect true, :theme false}
  :logseq-random-note {:version "1.1.0", :repo "tankcool/logseq-random-note", :effect false, :theme false}
- :logseq-graph-analysis {:version "0.10.1", :repo "trashhalo/logseq-graph-analysis", :effect false, :theme false}
+ :logseq-graph-analysis {:version "0.10.2", :repo "trashhalo/logseq-graph-analysis", :effect false, :theme false}
  :logseq-diagrams-as-code {:version "0.0.20", :repo "npgrosser/logseq-diagrams-as-code", :effect false, :theme false}
  :logseq-oxford-blue-theme {:version "v0.2.0", :repo "blueteafrog/logseq-oxfordblue-theme", :effect false, :theme true}
  :logseq-batch-op {:version "v0.4.5", :repo "sethyuan/logseq-plugin-batch-op", :effect true, :theme false}
