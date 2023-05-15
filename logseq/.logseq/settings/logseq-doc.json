@@ -1,9 +1,9 @@
 {
   "showReferences": false,
-  "unindentLevel": 999,
+  "unindentLevel": "0",
   "shortcut": "mod+shift+d",
   "graphLinks": true,
   "pluginsDir": "",
   "imageWidth": 360,
-  "disabled": true
+  "disabled": false
 }

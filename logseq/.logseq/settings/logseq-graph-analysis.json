@@ -1,5 +1,13 @@
 {
   "journal": false,
-  "filters": [],
-  "disabled": true
+  "filters": [
+    {
+      "id": 0,
+      "searchString": "logseq",
+      "searchColor": "#000000",
+      "searchType": "color",
+      "foundNodeIds": []
+    }
+  ],
+  "disabled": false
 }

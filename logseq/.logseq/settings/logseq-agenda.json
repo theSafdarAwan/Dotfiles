@@ -1,6 +1,6 @@
 {
-  "disabled": true,
-  "theme": "auto",
+  "disabled": false,
+  "theme": "dark",
   "lightThemeType": "green",
   "language": "en",
   "homePage": "dashboard",
@@ -84,5 +84,8 @@
   "openai": {
     "apiBaseUrl": "https://api.openai.com"
   },
-  "initialized": true
+  "initialized": true,
+  "dailyLogTagList": 1,
+  "ignoreTag": null,
+  "todoist": {}
 }
