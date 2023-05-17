@@ -182,8 +182,8 @@
     :editor/follow-link "mod+l mod+g"
     :editor/open-link-in-sidebar "mod+l mod+s"
 
-    :editor/bold "mod+b"
-    :editor/italics "mod+i"
+    :editor/bold "alt+b"
+    :editor/italics "alt+i"
     :editor/highlight "mod+h"
 
     :editor/select-all-blocks "mod+shift+a"
