@@ -3,8 +3,15 @@
   "filters": [
     {
       "id": 0,
-      "searchString": "logseq",
-      "searchColor": "#c03535",
+      "searchString": "",
+      "searchColor": "#de54b9",
+      "searchType": "color",
+      "foundNodeIds": []
+    },
+    {
+      "id": 1,
+      "searchString": "",
+      "searchColor": "#000000",
       "searchType": "color",
       "foundNodeIds": []
     }
