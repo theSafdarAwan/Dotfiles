@@ -307,7 +307,9 @@
  ;; input "{{poem red,blue}}"
  ;; becomes
  ;; Rose is red, violet's blue. Life's ordered: Org assists you.
- :macros {}
+  :macros {
+    "qt" "—"
+  }
 
  ;; The default level to be opened for the linked references.
  ;; For example, if we have some example blocks like this:
@@ -323,7 +325,7 @@
  :ref/linked-references-collapsed-threshold 0
 
  ;; Favorites to list on the left sidebar
- :favorites ["Logseq"]
+ :favorites []
 
  ;; any number between 0 and 1 (the greater it is the faster the changes of the next-interval of card reviews) (default 0.5)
  ;; :srs/learning-fraction 0.5
@@ -336,7 +338,7 @@
  ;; :block-hidden-properties #{}
 
  ;; Enable all your properties to have corresponding pages
- :property-pages/enabled? true
+ :property-pages/enabled? false
 
  ;; Properties to exclude from having property pages
  ;; E.g.:property-pages/excludelist #{:duration :author}
