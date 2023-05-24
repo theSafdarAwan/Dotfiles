@@ -28,6 +28,7 @@
     "logseq-journals-calendar:open-calendar",
     "logseq-tocgen:open-toc",
     "logseq-pomodoro-timer:pomodoro_pause",
+    "logseq-doc:doc-view-exporter",
     "logseq-tags:tags-plugin-open",
     "logseq-awesome-styler:AwesomeStyler",
     "logseq-journals-calendar:goto-today",

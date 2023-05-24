@@ -1,6 +1,6 @@
 {:logseq-vim-shortcuts {:version "v0.1.19", :repo "vipzhicheng/logseq-plugin-vim-shortcuts", :effect true, :theme false}
  :logseq-journals-calendar {:version "v0.10.10", :repo "xyhp915/logseq-journals-calendar", :effect false, :theme false}
- :logseq-bullet-threading {:version "v1.1.1", :repo "pengx17/logseq-plugin-bullet-threading", :effect false, :theme false}
+ :logseq-bullet-threading {:version "v1.1.2", :repo "pengx17/logseq-plugin-bullet-threading", :effect false, :theme false}
  :logseq-agenda {:version "v2.15.2", :repo "haydenull/logseq-plugin-agenda", :effect true, :theme false}
  :logseq-heatmap {:version "v2.4.3", :repo "pengx17/logseq-plugin-heatmap", :effect true, :theme false}
  :logseq-mark-map {:version "v0.3.17", :repo "vipzhicheng/logseq-plugin-mark-map", :effect false, :theme false}
@@ -18,13 +18,13 @@
  :logseq-banners-plugin {:version "v3.4.11", :repo "yoyurec/logseq-banners-plugin", :effect true, :theme false}
  :logseq-random-note {:version "1.1.0", :repo "tankcool/logseq-random-note", :effect false, :theme false}
  :logseq-graph-analysis {:version "0.10.2", :repo "trashhalo/logseq-graph-analysis", :effect false, :theme false}
- :logseq-diagrams-as-code {:version "0.0.20", :repo "npgrosser/logseq-diagrams-as-code", :effect false, :theme false}
+ :logseq-diagrams-as-code {:version "0.0.21", :repo "npgrosser/logseq-diagrams-as-code", :effect false, :theme false}
  :logseq-oxford-blue-theme {:version "v0.2.0", :repo "blueteafrog/logseq-oxfordblue-theme", :effect false, :theme true}
  :logseq-batch-op {:version "v0.4.5", :repo "sethyuan/logseq-plugin-batch-op", :effect true, :theme false}
  :logseq-wrap {:version "v0.7.1", :repo "sethyuan/logseq-plugin-wrap", :effect true, :theme false}
- :logseq-ol {:version "v0.4.3", :repo "sethyuan/logseq-plugin-ol", :effect false, :theme false}
+ :logseq-ol {:version "v0.4.4", :repo "sethyuan/logseq-plugin-ol", :effect false, :theme false}
  :logseq-pomodoro-timer {:version "1.0.1", :repo "sawhney17/logseq-pomodoro-plugin", :effect false, :theme false}
- :logseq-doc {:version "v1.14.10", :repo "sethyuan/logseq-plugin-doc", :effect true, :theme false}
+ :logseq-doc {:version "v1.15.0", :repo "sethyuan/logseq-plugin-doc", :effect true, :theme false}
  :logseq-automatic-linker {:version "1.5.0", :repo "sawhney17/logseq-automatic-linker", :effect false, :theme false}
  :logseq-localassets-plugin {:version "1.6.5", :repo "hkgnp/logseq-localassets-plugin", :effect true, :theme false}
  :logseq-vim-editor {:version "v0.0.6", :repo "vipzhicheng/logseq-plugin-vim-editor", :effect false, :theme false}

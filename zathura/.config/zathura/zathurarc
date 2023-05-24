@@ -1,0 +1,3 @@
+# toggle copying to clipboard
+map <C-c> feedkeys ":set selection-clipboard clipboard<Return>"
+map <C-x> feedkeys ":set selection-clipboard primary<Return>"
