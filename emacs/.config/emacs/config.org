@@ -1,0 +1,206 @@
+* Bootstrap Packages Archieve's
+    #+begin_src emacs-lisp
+	(require 'package)
+	(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
+	(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+	(package-initialize)
+    #+end_src
+
+* Package Manager
+    #+begin_src emacs-lisp
+      ;; ensure that packages are installed
+      (require 'use-package-ensure)
+      (setq use-package-always-ensure t)
+
+      (unless (package-installed-p 'use-package)
+      (package-refresh-contents)
+      (package-install 'use-package))
+    #+end_src
+
+* FONT Setting's
+    #+begin_src emacs-lisp
+    (set-face-attribute 'default nil
+    :font "FiraCode Nerd Font")
+
+    ;; line spacing
+    (setq-default line-spacing 0.09)
+    #+end_src
+
+* Add Vim bindings
+** evil-mode
+    #+begin_src emacs-lisp
+	(use-package evil
+	    :init      ;; tweak evil's configuration before loading it
+	        (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+	        (setq evil-want-keybinding nil)
+	        (setq evil-vsplit-window-right t)
+	        (setq evil-split-window-below t)
+	        (setq evil-want-C-u-scroll t)
+	        (evil-mode)
+       )
+    #+end_src
+** Evil collection
+    #+begin_src emacs-lisp
+	    (use-package evil-collection
+	        :after evil
+	        :config
+		    (setq evil-collection-mode-list '(dashboard dired ibuffer))
+		    (evil-collection-init)
+	    )
+	    ;; install surround
+	    (use-package evil-surround
+	        :config
+		    (global-evil-surround-mode 1)
+            )
+    #+end_src
+
+* Completion
+** Mini Buffer Completion
+    #+begin_src emacs-lisp
+      (use-package counsel
+	:bind (
+		("M-x" . counsel-M-x)
+		("C-x b" . counsel-ibuffer)
+		("C-x C-f" . counsel-find-file)
+		:map minibuffer-local-map
+		  ("C-r" . 'counsel-minibuffer-history)
+	      )
+	:config
+	  (setq ivy-initial-inputs-alist nil) ;; don't start search with ^
+      )	
+      (use-package ivy
+	 :diminish
+	 :demand
+	 :bind(
+	     ("C-s" . swipper)
+	     :map ivy-minibuffer-map
+		 ("TAB" . ivy-alt-done)
+		 ("C-l" . ivy-alt-done)
+		 ;; ("C-j" . ivy-next-line)
+		 ;; ("C-k" . ivy-previous-line)
+	     :map ivy-switch-buffer-map
+		 ("C-l" . ivy-done)
+		 ;; ("C-k" . ivy-previous-line)
+		 ("C-d" . ivy-switch-buffer-kill)
+	     :map ivy-reverse-i-search-map
+		 ;; ("C-k" . ivy-previous-line)
+		 ("C-d" . ivy-reverse-i-search-kill)
+	 )
+	 :config
+	 (ivy-mode 1)
+       )
+       (use-package ivy-rich
+	 :init
+	   (ivy-rich-mode 1)
+       )
+    #+end_src
+
+* Helpful Packages
+** Rainbow Delimiters
+    #+begin_src emacs-lisp
+      (use-package rainbow-delimiters
+	:hook (
+	    (prog-mode . rainbow-delimiters-mode)
+	    (org-mode . rainbow-delimiters-mode)
+	  )
+      )
+    #+end_src
+
+* Note Taking
+** Org
+    #+begin_src emacs-lisp
+	(use-package org
+	    :after evil-collection
+	    ;; ignore org-mode from upstream and use a manually installed version
+	    ;;:pin manual
+	)
+    #+end_src
+
+** Org-bullets
+    #+begin_src emacs-lisp
+    (use-package org-bullets
+        :init
+	    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+    )
+    #+end_src
+
+    #+begin_src emacs-lisp
+	(setq org-todo-keywords        ; This overwrites the default Doom org-todo-keywords
+	    '((sequence
+		"TODO(t)"           ; A task that is ready to be tackled
+		"WAIT(w)"           ; Something is holding up this task
+		"DOING(d)"          ; When i am doing a task
+		"|"                 ; The pipe necessary to separate "active" states and "inactive" states
+		"DONE(D)"           ; Task has been completed
+		"CANCELLED(c)" )))  ; Task has been cancelled
+    #+end_src
+
+* Git
+** Magit
+    #+begin_src emacs-lisp
+      (use-package magit
+	  :init
+	      (message "Loading Magit!")
+	  :config
+	      (message "Loaded Magit!")
+	  :bind (("C-x g" . magit-status)
+		  ("C-x C-g" . magit-status))
+      )
+    #+end_src	    
+
+* Themes
+** Dracula
+    #+begin_src emacs-lisp
+	(use-package dracula-theme
+	    :config
+		(load-theme 'dracula t)
+	)
+    #+end_src
+** Atom
+    #+begin_src emacs-lisp
+	(use-package atom-one-dark-theme
+	:config
+	;;   (load-theme 'atom-one-dark t)
+	)
+    #+end_src
+
+* Configuration
+** Line Numbers
+    #+begin_src emacs-lisp
+	(global-display-line-numbers-mode 1)
+	(setq display-line-numbers-type 'relative)
+    #+end_src
+*** Don't Show Line Numbers in certain modes
+      #+begin_src emacs-lisp
+	(dolist
+	  (mode
+	    '(term-mode-hook eshell-mode-hook shell-mode-hook)
+	  )
+	  (add-hook mode (lambda () (display-line-numbers-mode 0)))
+	)
+      #+end_src
+** Show Column Number Information In the Status Bar
+    #+begin_src emacs-lisp
+      (column-number-mode)
+    #+end_src
+** Disable UI elements of emacs GUI
+    #+begin_src emacs-lisp
+	(menu-bar-mode -1)
+	(scroll-bar-mode -1)
+	(tool-bar-mode -1)
+    #+end_src
+
+** Don't show splash screen on Startup
+    #+begin_src emacs-lisp
+	(setq inhibit-startup-screen t)
+    #+end_src
+** Disable Bell Ring
+    #+begin_src emacs-lisp
+      	(setq ring-bell-function 'ignore)
+    #+end_src
+
+* Key-bindings
+** Get out of a mode with a single <ESCAPE> key rather then 3
+    #+begin_src emacs-lisp
+        (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+    #+end_src

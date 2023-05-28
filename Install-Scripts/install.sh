@@ -1,6 +1,8 @@
 #!/bin/bash
 
 ##################### install programs through pacman
+# - emacs
+# - aspell-en
 # - polybar
 # - handbrake
 # - plasma-desktop

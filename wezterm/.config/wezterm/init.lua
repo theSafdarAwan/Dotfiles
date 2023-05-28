@@ -64,81 +64,81 @@ return {
 
 	disable_default_key_bindings = true,
 	keys = {
-		{
-			key = "-",
-			mods = "CTRL",
-			action = wezterm.action.DecreaseFontSize,
-		},
-		{
-			key = "=",
-			mods = "CTRL",
-			action = wezterm.action.IncreaseFontSize,
-		},
-		{ key = "Backspace", mods = "CTRL", action = wezterm.action.ResetFontSize },
-		{
-			key = "v",
-			mods = "CTRL|ALT",
-			action = wezterm.action({
-				SplitHorizontal = { domain = "CurrentPaneDomain" },
-			}),
-		},
-		{
-			key = "s",
-			mods = "CTRL|ALT",
-			action = wezterm.action({
-				SplitVertical = { domain = "CurrentPaneDomain" },
-			}),
-		},
-		{
-			key = "q",
-			mods = "CTRL",
-			action = wezterm.action({ CloseCurrentPane = { confirm = false } }),
-		},
-		{
-			key = "h",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Left" }),
-		},
-		{
-			key = "l",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Right" }),
-		},
-		{
-			key = "k",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Up" }),
-		},
-		{
-			key = "j",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ ActivatePaneDirection = "Down" }),
-		},
-		{
-			key = "h",
-			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Left", 1 } }),
-		},
-		{
-			key = "l",
-			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Right", 1 } }),
-		},
-		{
-			key = "k",
-			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Up", 1 } }),
-		},
-		{
-			key = "j",
-			mods = "CTRL|SHIFT|ALT",
-			action = wezterm.action({ AdjustPaneSize = { "Down", 1 } }),
-		},
-		{
-			key = "t",
-			mods = "CTRL|SHIFT",
-			action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
-		},
+		-- {
+		-- 	key = "-",
+		-- 	mods = "CTRL",
+		-- 	action = wezterm.action.DecreaseFontSize,
+		-- },
+		-- {
+		-- 	key = "=",
+		-- 	mods = "CTRL",
+		-- 	action = wezterm.action.IncreaseFontSize,
+		-- },
+		-- { key = "Backspace", mods = "CTRL", action = wezterm.action.ResetFontSize },
+		-- {
+		-- 	key = "v",
+		-- 	mods = "CTRL|ALT",
+		-- 	action = wezterm.action({
+		-- 		SplitHorizontal = { domain = "CurrentPaneDomain" },
+		-- 	}),
+		-- },
+		-- {
+		-- 	key = "s",
+		-- 	mods = "CTRL|ALT",
+		-- 	action = wezterm.action({
+		-- 		SplitVertical = { domain = "CurrentPaneDomain" },
+		-- 	}),
+		-- },
+		-- {
+		-- 	key = "q",
+		-- 	mods = "CTRL",
+		-- 	action = wezterm.action({ CloseCurrentPane = { confirm = false } }),
+		-- },
+		-- {
+		-- 	key = "h",
+		-- 	mods = "CTRL|SHIFT",
+		-- 	action = wezterm.action({ ActivatePaneDirection = "Left" }),
+		-- },
+		-- {
+		-- 	key = "l",
+		-- 	mods = "CTRL|SHIFT",
+		-- 	action = wezterm.action({ ActivatePaneDirection = "Right" }),
+		-- },
+		-- {
+		-- 	key = "k",
+		-- 	mods = "CTRL|SHIFT",
+		-- 	action = wezterm.action({ ActivatePaneDirection = "Up" }),
+		-- },
+		-- {
+		-- 	key = "j",
+		-- 	mods = "CTRL|SHIFT",
+		-- 	action = wezterm.action({ ActivatePaneDirection = "Down" }),
+		-- },
+		-- {
+		-- 	key = "h",
+		-- 	mods = "CTRL|SHIFT|ALT",
+		-- 	action = wezterm.action({ AdjustPaneSize = { "Left", 1 } }),
+		-- },
+		-- {
+		-- 	key = "l",
+		-- 	mods = "CTRL|SHIFT|ALT",
+		-- 	action = wezterm.action({ AdjustPaneSize = { "Right", 1 } }),
+		-- },
+		-- {
+		-- 	key = "k",
+		-- 	mods = "CTRL|SHIFT|ALT",
+		-- 	action = wezterm.action({ AdjustPaneSize = { "Up", 1 } }),
+		-- },
+		-- {
+		-- 	key = "j",
+		-- 	mods = "CTRL|SHIFT|ALT",
+		-- 	action = wezterm.action({ AdjustPaneSize = { "Down", 1 } }),
+		-- },
+		-- {
+		-- 	key = "t",
+		-- 	mods = "CTRL|SHIFT",
+		-- 	action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
+		-- },
 		{
 			key = "Tab",
 			mods = "CTRL",

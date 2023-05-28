@@ -17,33 +17,33 @@
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @utl a    s    d    f    g    h    j    k    l    ;    '    ret
+  lctrl a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            @utt rmet cmp  rctl
+  @utl lmet lalt           spc            @utt rmet cmp  rctl
 )
 
 (deflayer utilize
   @t   1    2    3    4    5    6    7    8    9    0    -    =    XX
   XX   XX   XX   esc  XX   XX   XX   pgup XX   XX   XX   XX   XX   XX  
-  @qwe home XX   pgdn XX   end  left down up   rght XX   XX   ret
+  lctl home XX   pgdn XX   end  left down up   rght XX   XX   ret
   lsft XX   del  XX   XX   XX   XX   spc  XX   XX   XX   XX
-  lctl XX   lalt                cmp        XX   XX   XX   XX
+  @qwe XX   lalt                cmp        XX   XX   XX   XX
 )
 
 (deflayer typing
   grv  1    2    3    4    5    6    7    8    9    0    -    =    XX
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @qwe a    s    d    f    g    h    j    k    l    ;    '    ret
+  lctl a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            @utt rmet cmp  rctl
+  @qwe lmet lalt           spc            @utt rmet cmp  rctl
 )
 
 (deflayer disalbe_ctrl_key_for_browser
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @qwe a    s    d    f    g    h    j    k    l    ;    '    ret
+  XX   a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  XX   lmet lalt           spc            ralt rmet cmp  rctl
+  @qwe   lmet lalt           spc            ralt rmet cmp  rctl
 )
 
 (defalias 
