@@ -1,10 +1,10 @@
 * Bootstrap Packages Archieve's
     #+begin_src emacs-lisp
-	(require 'package)
-	(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
-	(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-	(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
-	(package-initialize)
+			(require 'package)
+			(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
+			(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+			(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
+			(package-initialize)
     #+end_src
 
 * FONT Setting's
@@ -64,6 +64,14 @@
 	  (ivy-posframe-mode 1)) ; 1 enables posframe-mode, 0 disables it.
     #+end_src
 
+* RUNTIME PERFORMANCE
+Dial the GC threshold back down so that garbage collection happens
+more frequently but in less time.
+#+begin_src emacs-lisp
+;; Make gc pauses faster by decreasing the threshold.
+(setq gc-cons-threshold (* 2 1000 1000))
+#+end_src
+
 * Add Vim bindings
 ** evil-mode
     #+begin_src emacs-lisp
@@ -79,9 +87,20 @@
 	       (evil-mode 1)
 	       (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
 	       (evil-set-initial-state 'messages-buffer-mode 'normal)
+	       (evil-set-initial-state 'vterm-mode 'insert)
 	       ;; enable the undo functionality
 	       (evil-set-undo-system 'undo-redo) 
 	   )
+           ;; add keybinds for neotree
+	   (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+	   (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
+	   (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+	   (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+	   (evil-define-key 'normal neotree-mode-map (kbd "g") 'neotree-refresh)
+	   (evil-define-key 'normal neotree-mode-map (kbd "n") 'neotree-next-line)
+	   (evil-define-key 'normal neotree-mode-map (kbd "p") 'neotree-previous-line)
+	   (evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
+	   (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
 	  ;; extend evil mode to other modes
 	  (defun rune/evil-hook()
 	      (dolist
@@ -124,6 +143,16 @@
 	     (general-evil-setup t)
      )
    #+end_src
+
+* PERSPECTIVE
+*** TODO what does this do
+    #+begin_src emacs-lisp
+    (use-package perspective
+	:bind
+	    ("C-x C-b" . persp-list-buffers)   ; or use a nicer switcher, see below
+	:config
+	    (persp-mode))
+    #+end_src
 
 * Completion
 ** Mini Buffer Completion
@@ -241,7 +270,6 @@
 ** Org
     #+begin_src emacs-lisp
       (use-package org
-	  :after evil-collection
 	  ;; ignore org-mode from upstream and use a manually installed version
 	  ;;:pin manual
 	  :config
@@ -264,7 +292,7 @@
                           :font "Roboto" :weight 'Bold :height (cdr face))
 	    )
 	    ;; Ensure that anything that should be fixed-pitch in Org files appears that way
-	    (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
+	    (set-face-attribute 'org-block nil    :inherit 'fixed-pitch)
 	    (set-face-attribute 'org-table nil    :inherit 'fixed-pitch)
 	    (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
 	    (set-face-attribute 'org-code nil     :inherit '(shadow fixed-pitch))
@@ -285,27 +313,21 @@
       )
     #+end_src
  
-** Org-bullets
     #+begin_src emacs-lisp
-    (use-package org-bullets
-        :init
-	    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-        :custom
-	    (org-bullets-bullet-list 
-              '("◉" "○" "●" "○" "●" "○" "●")
-            )
-    )
-    #+end_src
+      (setq org-todo-keywords        ; This overwrites the default Doom org-todo-keywords
+	  '((sequence
+	      "TODO(t)"           ; A task that is ready to be tackled
+	      "WAIT(w)"           ; Something is holding up this task
+	      "DOING(d)"          ; When i am doing a task
+	      "|"                 ; The pipe necessary to separate "active" states and "inactive" states
+	      "DONE(D)"           ; Task has been completed
+	      "CANCELLED(c)" )))  ; Task has been cancelled
 
-    #+begin_src emacs-lisp
-	(setq org-todo-keywords        ; This overwrites the default Doom org-todo-keywords
-	    '((sequence
-		"TODO(t)"           ; A task that is ready to be tackled
-		"WAIT(w)"           ; Something is holding up this task
-		"DOING(d)"          ; When i am doing a task
-		"|"                 ; The pipe necessary to separate "active" states and "inactive" states
-		"DONE(D)"           ; Task has been completed
-		"CANCELLED(c)" )))  ; Task has been cancelled
+      ;; (defvar-local my-icon-dir (concat user-emacs-directory "icons/")
+      ;; "directory withthe icons")
+      ;;   (setq org-agenda-category-icon-alist '(
+      ;;   ("todo" ,(concat my-icon-dir "check-box.png") nil nil :ascent center)
+      ;; ))
     #+end_src
 
 ** Org Roam
@@ -318,6 +340,27 @@
     )
     (use-package org-roam-ui)
   #+end_src
+
+** Org-bullets
+    #+begin_src emacs-lisp
+    (use-package org-bullets
+        :init
+	    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+        :custom
+	    (org-bullets-bullet-list 
+              '("◉" "○" "●" "○" "●" "○" "●")
+            )
+    )
+    #+end_src
+
+
+** writeroom
+  A minor mode for Emacs that implements a distraction-free writing mode
+  similar to the famous Writeroom editor for OS X.
+  #+begin_src emacs-lisp
+    (use-package writeroom-mode)
+  #+end_src
+
 * Git
 ** Magit
     #+begin_src emacs-lisp
@@ -330,6 +373,13 @@
 		  ("C-x C-g" . magit-status))
       )
     #+end_src	    
+
+* Cli
+    #+begin_src emacs-lisp
+	(setq shell-file-name "/bin/zsh"
+	    vterm-max-scrollback 5000)
+	(use-package vterm)
+    #+end_src
 
 * Themes
 ** Dracula
@@ -376,7 +426,7 @@
       #+begin_src emacs-lisp
 	(dolist
 	  (mode
-	    '(term-mode-hook eshell-mode-hook shell-mode-hook)
+	    '(term-mode-hook eshell-mode-hook shell-mode-hook neotree-mode-hook vterm-mode-hook)
 	  )
 	  (add-hook mode (lambda () (display-line-numbers-mode 0)))
 	)
