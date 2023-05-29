@@ -31,29 +31,55 @@
 * Add Vim bindings
 ** evil-mode
     #+begin_src emacs-lisp
-	(use-package evil
-	    :init      ;; tweak evil's configuration before loading it
-	        (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
-	        (setq evil-want-keybinding nil)
-	        (setq evil-vsplit-window-right t)
-	        (setq evil-split-window-below t)
-	        (setq evil-want-C-u-scroll t)
-	        (evil-mode)
-       )
+	    (use-package evil
+		:init      ;; tweak evil's configuration before loading it
+		    (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+		    (setq evil-want-keybinding nil)
+		    (setq evil-vsplit-window-right t)
+		    (setq evil-split-window-below t)
+		    (setq evil-want-C-u-scroll t)
+		    (setq evil-want-C-i-jump nil)
+		:config
+		     (evil-mode 1)
+		     (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+		     (evil-set-initial-state 'messages-buffer-mode 'normal)
+		     (evil-set-initial-state 'dashboard-mode 'normal)
+		     ;; enable the undo functionality
+		     (evil-set-undo-system 'undo-redo) 
+		 )
+		;; extend evil mode to other modes
+		(defun rune/evil-hook()
+		    (dolist
+			(mode '(
+				custom-mode
+				eshell-mode
+				git-rebase-mode
+				erc-mode
+				circe-server-mode
+				circe-chat-mode
+				circe-query-mode
+				sauron-mode
+				term-mode
+			    )
+			)
+			(add-to-list 'evil-emacs-state-modes mode)
+		    )
+		)
     #+end_src
 ** Evil collection
     #+begin_src emacs-lisp
-	    (use-package evil-collection
-	        :after evil
-	        :config
-		    (setq evil-collection-mode-list '(dashboard dired ibuffer))
-		    (evil-collection-init)
-	    )
-	    ;; install surround
-	    (use-package evil-surround
-	        :config
-		    (global-evil-surround-mode 1)
-            )
+      (use-package evil-collection
+	  :after evil
+	  :config
+	      (setq evil-collection-mode-list '(dashboard dired ibuffer))
+              (add-to-list 'evil-collection-mode-list '(magit magit-repos))
+	      (evil-collection-init)
+      )
+      ;; install surround
+      (use-package evil-surround
+	  :config
+	      (global-evil-surround-mode 1)
+      )
     #+end_src
 
 * Completion
@@ -63,7 +89,6 @@
 	 :diminish
 	 :demand
 	 :bind(
-	     ("C-s" . swipper)
 	     :map ivy-minibuffer-map
 		 ("TAB" . ivy-alt-done)
 		 ("C-l" . ivy-alt-done)
@@ -90,6 +115,10 @@
 	      )
 	:config
 	  (setq ivy-initial-inputs-alist nil) ;; don't start search with ^
+	  ;; add keymap for swiper
+	  (global-set-key (kbd "M-s") 'swiper)
+          ;; buffer switcher
+	  (global-set-key (kbd "C-M-b") 'counsel-switch-buffer)
       )	
        ;; extend ivy
        (use-package ivy-rich
@@ -98,7 +127,7 @@
        )
     #+end_src
 
-* Helpful Packages
+* Other Helpful Packages
 ** Rainbow Delimiters
     #+begin_src emacs-lisp
       (use-package rainbow-delimiters
@@ -136,6 +165,13 @@
           (setq counsel-describe-variable-function #'helpful-variable)
       )
     #+end_src
+** Undo-tree to get undo functionality
+   #+begin_src emacs-lisp
+     (use-package undo-tree
+       :config
+         (global-undo-tree-mode 1)
+     )
+   #+end_src
 
 * Note Taking
 ** Org
@@ -252,5 +288,5 @@
 * Key-bindings
 ** Get out of a mode with a single <ESCAPE> key rather then 3
     #+begin_src emacs-lisp
-        (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+	(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
     #+end_src
