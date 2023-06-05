@@ -17,7 +17,7 @@
 (deflayer qwerty
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  lctrl a    s    d    f    g    h    j    k    l    ;    '    ret
+  lctl a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   @utl lmet lalt           spc            @utt rmet cmp  rctl
 )
@@ -52,4 +52,5 @@
     utl (multi-tap 1000 caps (layer-switch utilize))
     utt (layer-toggle utilize)
     t   (layer-switch typing)
-)
+    ;; tt (multi-tap 180 s C-z)
+    )
