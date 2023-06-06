@@ -8,16 +8,6 @@
 (package-initialize)
 #+end_src
 
-* FONT Setting's
-
-#+begin_src emacs-lisp
-(set-face-attribute 'default nil
-:font "FiraCode Nerd Font")
-
-;; line spacing
-(setq-default line-spacing 0.09)
-#+end_src
-
 * Package Manager 
 
 #+begin_src emacs-lisp
@@ -87,7 +77,7 @@ more frequently but in less time.
 (use-package hydra
     :init
     :config
-        (defhydra hydra-zoom (global-map "<f2>")
+        (defhydra hydra-zoom (global-map "C-c z")
             "zoom"
             ("i" text-scale-increase "in")
             ("o" text-scale-decrease "out"))
@@ -145,6 +135,7 @@ more frequently but in less time.
       (evil-set-initial-state 'vterm-mode 'insert)
       ;; enable the undo functionality
       (evil-set-undo-system 'undo-redo) 
+      (evil-define-key 'insert org-mode-map "\C-y" #'org-yank)
   )
   ;; add keybinds for neotree
   (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
@@ -201,50 +192,51 @@ more frequently but in less time.
 ** Mini Buffer Completion
 
 #+begin_src emacs-lisp
-  (use-package ivy
-      :diminish
-      :demand
-      :bind(
-          :map ivy-minibuffer-map
-              ("TAB" . ivy-alt-done)
-              ("C-l" . ivy-alt-done)
-              ;; ("C-j" . ivy-next-line)
-              ;; ("C-k" . ivy-previous-line)
-          :map ivy-switch-buffer-map
-              ("C-l" . ivy-done)
-              ;; ("C-k" . ivy-previous-line)
-              ("C-d" . ivy-switch-buffer-kill)
-          :map ivy-reverse-i-search-map
-              ;; ("C-k" . ivy-previous-line)
-              ("C-d" . ivy-reverse-i-search-kill)
-      )
-      :init
-          (setq ivy-re-builders-alist '((t . orderless-ivy-re-builder)))
-          (add-to-list 'ivy-highlight-functions-alist '(orderless-ivy-re-builder . orderless-ivy-highlight))
-      :config
-          (ivy-mode 1)
-  )
-  (use-package counsel
-      :bind (
-              ("M-x" . counsel-M-x)
-              ("C-x b" . counsel-ibuffer)
-              ;; ("C-c f" . counsel-fzf)
-              ("C-x C-f" . counsel-find-file)
-              :map minibuffer-local-map
-                  ("C-r" . 'counsel-minibuffer-history)
-              )
-      :config
-          (setq ivy-initial-inputs-alist nil) ;; don't start search with ^
-          ;; add keymap for swiper
-          (global-set-key (kbd "M-s") 'swiper)
-          ;; buffer switcher
-          (global-set-key (kbd "C-M-b") 'counsel-switch-buffer)
-  )	
-  ;; extend ivy
-  (use-package ivy-rich
-      :init
-      (ivy-rich-mode 1)
-  )
+    (use-package ivy
+        :diminish
+        :demand
+        :bind(
+            :map ivy-minibuffer-map
+                ("TAB" . ivy-alt-done)
+                ("C-l" . ivy-alt-done)
+                ;; ("C-j" . ivy-next-line)
+                ;; ("C-k" . ivy-previous-line)
+            :map ivy-switch-buffer-map
+                ("C-l" . ivy-done)
+                ;; ("C-k" . ivy-previous-line)
+                ("C-d" . ivy-switch-buffer-kill)
+            :map ivy-reverse-i-search-map
+                ;; ("C-k" . ivy-previous-line)
+                ("C-d" . ivy-reverse-i-search-kill)
+        )
+        :init
+            (setq ivy-re-builders-alist '((t . orderless-ivy-re-builder)))
+            (add-to-list 'ivy-highlight-functions-alist
+                '(orderless-ivy-re-builder . orderless-ivy-highlight))
+        :config
+            (ivy-mode 1)
+    )
+    (use-package counsel
+        :bind (
+                ("M-x" . counsel-M-x)
+                ("C-x b" . counsel-ibuffer)
+                ;; ("C-c f" . counsel-fzf)
+                ("C-x C-f" . counsel-find-file)
+                :map minibuffer-local-map
+                    ("C-r" . 'counsel-minibuffer-history)
+                )
+        :config
+            (setq ivy-initial-inputs-alist nil) ;; don't start search with ^
+            ;; add keymap for swiper
+            (global-set-key (kbd "M-s") 'swiper)
+            ;; buffer switcher
+            (global-set-key (kbd "C-M-b") 'counsel-switch-buffer)
+    )	
+    ;; extend ivy
+    (use-package ivy-rich
+        :init
+        (ivy-rich-mode 1)
+    )
 #+end_src
 
 ** Company Mode
@@ -389,6 +381,7 @@ more frequently but in less time.
       ;; ignore org-mode from upstream and use a manually installed version
       ;;:pin manual
       :config
+      (setq org-table-header-line-p t)
       (setq org-startup-with-inline-images t) ;; render images
       (setq org-hide-emphasis-markers t)
       (setq org-ellipsis " ▾")
@@ -400,33 +393,6 @@ more frequently but in less time.
       (setq org-list-allow-alphabetical t)
       ;; (setq org-yank-folded-subtrees nil) ;; don't fold when pasting org sub-trees
           ;; Set faces for heading levels
-      (dolist (face 
-                  '(
-                  (org-level-1 . 1.5)
-                  (org-level-2 . 1.3)
-                  (org-level-3 . 1.2)
-                  (org-level-4 . 1.1)
-                  (org-level-5 . 1.1)
-                  (org-level-6 . 1.1)
-                  (org-level-7 . 1.1)
-                  (org-level-8 . 1.1)
-                  )
-              )
-          (set-face-attribute (car face) nil
-                      :font "Roboto" :weight 'Bold :height (cdr face))
-      )
-      ;; Ensure that anything that should be fixed-pitch in Org files appears that way
-      (set-face-attribute 'org-block nil    :inherit 'fixed-pitch)
-      (set-face-attribute 'org-table nil    :inherit 'fixed-pitch)
-      (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
-      (set-face-attribute 'org-code nil     :inherit '(shadow fixed-pitch))
-      (set-face-attribute 'org-table nil    :inherit '(shadow fixed-pitch))
-      (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
-      (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
-      (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
-      (set-face-attribute 'org-checkbox nil  :inherit 'fixed-pitch)
-      (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
-      (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch)
 
       ;; replace list hypehen(-) with dot
       (font-lock-add-keywords
@@ -434,7 +400,29 @@ more frequently but in less time.
                   '(("^ *\\([-]\\) "
                       (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•")))))
       )
+      ;; enable auto line breaking in org-mode
+      (add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+      ;; add org source block templates
+      (require 'org-tempo)
+      (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+      (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+      (add-to-list 'org-structure-template-alist '("js" . "src javascript"))
+      (add-to-list 'org-structure-template-alist '("lua" . "src lua"))
+      (add-to-list 'org-structure-template-alist '("py" . "src python"))
+      (add-to-list 'org-structure-template-alist '("html" . "src html"))
+      (add-to-list 'org-structure-template-alist '("css" . "src css"))
+      (add-to-list 'org-structure-template-alist '("lisp" . "src lisp"))
   )
+#+end_src
+
+*** buffer-face-mode
+
+Enable ~buffer-face-mode~ in org files in order to customize buffer
+specific font config.
+
+#+begin_src emacs-lisp
+(add-hook 'org-mode-hook (lambda () (buffer-face-mode)))
 #+end_src
 
 *** Activate *org-indent-mode*
@@ -448,23 +436,6 @@ more frequently but in less time.
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
-#+end_src
-
-*** Font's
-
-#+begin_src emacs-lisp
-(defun org-fontify-inline-src-block (limit)
-    "Fontify inline source block."
-    (when (re-search-forward org-babel-inline-src-block-regexp limit t)
-    (add-text-properties
-        (match-beginning 1) (match-end 0)
-        '(font-lock-fontified t face (t (:foreground "#008ED1" :background "#FFFFEA"))))
-    (org-remove-flyspell-overlays-in (match-beginning 0) (match-end 0))
-    t))
-;; Drawers
-'(org-fontify-drawers)
-;; Inline source block
-'(org-fontify-inline-src-block)
 #+end_src
 
 *** Tasks Keywords
@@ -489,30 +460,30 @@ more frequently but in less time.
 ** Org Roam
 
 #+begin_src emacs-lisp
-  (use-package org-roam
-      :init
-          ;; (setq find-file-visit-truename t) ;; resolve the symalink problems
-          (setq org-roam-directory (file-truename "~/safdar-local/org-roam-notes"))
+(use-package org-roam
+    :init
+        ;; (setq find-file-visit-truename t) ;; resolve the symalink problems
+        (setq org-roam-directory (file-truename "~/safdar-local/org-roam-notes"))
 
-          (setq org-roam-node-display-template
-              (concat "${title:*} "
-                      (propertize "${tags:10}" 'face 'org-tag)))
-          (setq org-roam-completion-everywhere t)	
-          (setq org-roam-mode-sections
-          (list #'org-roam-backlinks-section
-                  #'org-roam-reflinks-section
-                  #'org-roam-unlinked-references-section
-                  ))
-      :custom
-          ;; templates
-          (org-roam-capture-templates
-          '(("d" "default" plain
-              "%?"
-              :if-new (file+head "${title}.org" "#+title: ${title}\n")
-              :unnarrowed t)))
-      :config
-          (org-roam-setup)
-          (org-roam-db-autosync-mode)
+        (setq org-roam-node-display-template
+            (concat "${title:*} "
+                    (propertize "${tags:10}" 'face 'org-tag)))
+        (setq org-roam-completion-everywhere t)	
+        (setq org-roam-mode-sections
+        (list #'org-roam-backlinks-section
+                #'org-roam-reflinks-section
+                #'org-roam-unlinked-references-section
+                ))
+    :custom
+        ;; templates
+        (org-roam-capture-templates
+        '(("d" "default" plain
+            "%?"
+            :if-new (file+head "${title}.org" "#+title: ${title}\n")
+            :unnarrowed t)))
+    :config
+        (org-roam-setup)
+        (org-roam-db-autosync-mode)
 
         (defhydra hydra-org-roam ()
         "
@@ -541,8 +512,8 @@ more frequently but in less time.
         ("j T" org-roam-dailies-goto-tomorrow nil)
         ("j y" org-roam-dailies-goto-yesterday nil))
         (global-set-key (kbd "C-c o") 'hydra-org-roam/body)
-  )
-  (use-package org-roam-ui)
+)
+(use-package org-roam-ui)
 #+end_src
 
 ** Org-bullets
@@ -715,6 +686,12 @@ similar to the famous Writeroom editor for OS X.
 )
 #+end_src
 
+** Searching
+
+#+BEGIN_SRC emacs-lisp
+  (setq search-whitespace-regexp ".*")
+#+END_SRC
+
 ** Enable SpellCheck
 
 #+begin_src emacs-lisp
@@ -738,23 +715,26 @@ similar to the famous Writeroom editor for OS X.
 ** Hide Minor Modes in Mode line
 
 #+begin_src emacs-lisp
-  (defun modeline-set-lighter (minor-mode lighter)
-  (when (assq minor-mode minor-mode-alist)
-    (setcar (cdr (assq minor-mode minor-mode-alist)) lighter)))
+(defun modeline-set-lighter (minor-mode lighter)
+(when (assq minor-mode minor-mode-alist)
+(setcar (cdr (assq minor-mode minor-mode-alist)) lighter)))
 
-  (defun modeline-remove-lighter (minor-mode)
-    (modeline-set-lighter minor-mode ""))
+(defun modeline-remove-lighter (minor-mode)
+(modeline-set-lighter minor-mode ""))
 
-  (modeline-remove-lighter 'global-undo-tree-mode)
-  (modeline-remove-lighter 'undo-tree-mode)
-  (modeline-remove-lighter 'org-roam-ui-mode)
-  (modeline-remove-lighter 'ivy-posframe-mode)
-  (modeline-remove-lighter 'company-mode)
-  (modeline-remove-lighter 'ivy-mode)
-  (modeline-remove-lighter 'flyspell-mode)
+(modeline-remove-lighter 'global-undo-tree-mode)
+(modeline-remove-lighter 'undo-tree-mode)
+(modeline-remove-lighter 'org-roam-ui-mode)
+(modeline-remove-lighter 'ivy-posframe-mode)
+(modeline-remove-lighter 'company-mode)
+(modeline-remove-lighter 'ivy-mode)
+(modeline-remove-lighter 'flyspell-mode)
+(modeline-remove-lighter 'buffer-face-mode)
+(modeline-remove-lighter 'org-table-header-line-mode)
 #+end_src
 
 * Key-bindings
+
 ** Get out of a mode with a single <ESCAPE> key rather then 3
 
 #+begin_src emacs-lisp
@@ -765,4 +745,117 @@ similar to the famous Writeroom editor for OS X.
 
 #+begin_src emacs-lisp
 (global-set-key (kbd "C-x C-e") 'eval-region)
+#+end_src
+
+* FONT Setting's
+
+Emacs default font.
+
+#+begin_src emacs-lisp
+    (set-face-attribute 'default nil :font "FiraCode Nerd Font")
+#+end_src
+
+*** Org Mod font configuration
+
+ Set the default font for the Org file type. This needs the
+ ~buffer-face-mode~ turned on, to work, otherwise it won't effect the
+ paragraph and some other buffer font faces.
+ see: [[buffer-face-mode]]
+
+**** Line Spacing
+
+Add some space between lines
+
+#+begin_src emacs-lisp
+(setq-default line-spacing 2)
+#+end_src
+
+**** Paragraph & other text
+
+~org-default~ face effect org paragraphs and some other text, if their
+font faces were not changed.
+
+#+begin_src emacs-lisp
+(set-face-attribute 'org-default nil :font "Montserrat" :height 1.3)
+#+end_src
+
+**** Headings
+
+Change the Org heading font
+
+#+begin_src emacs-lisp
+(dolist (face '(
+    (org-level-1 . 1.6)
+    (org-level-2 . 1.4)
+    (org-level-3 . 1.3)
+    (org-level-4 . 1.2)
+    (org-level-5 . 1.2)
+    (org-level-6 . 1.2)
+    (org-level-7 . 1.2)
+    (org-level-8 . 1.2)))
+(set-face-attribute (car face) nil
+        :font "Lora" :weight 'Bold :height (cdr face))
+)
+#+end_src
+
+**** Code Blocks
+
+#+begin_src emacs-lisp
+(set-face-attribute 'org-block nil :font "FiraCode Nerd Font" :background "#002630")
+#+end_src
+
+**** Other Faces
+
+#+begin_src emacs-lisp
+  (set-face-attribute 'org-table nil  :inherit 'fixed-pitch)
+  (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
+  (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+  (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+
+  ;; todo checkbox
+  (set-face-attribute 'org-checkbox nil :font "FiraCode Nerd Font" :weight 'Bold :inherit 'fixed-pitch :height 0.7)
+
+  ;; org table header -> this appears when the table header is no longer in the screen view
+  (set-face-attribute 'org-table-header nil :font "FiraCode Nerd Font" :weight 'Bold :height 1.0)
+
+  ;; change the list items type style for example: 1., a, etc.
+  (set-face-attribute 'org-list-dt nil :font "Lora" :weight 'Bold :height 1.0)
+
+  ;; change the special property keywords
+  (set-face-attribute 'org-special-keyword nil :font "Lato" :weight 'Bold :height 1.0)
+
+  ;; document information
+  (set-face-attribute 'org-document-title nil :font "FiraCode Nerd Font" :weight 'Bold :height 1.3)
+  (set-face-attribute 'org-document-info-keyword nil :font "FiraCode Nerd Font" :weight 'Bold :height 1.0)
+#+end_src
+
+**** TODO ??
+#+begin_src emacs-lisp
+        ;; (defun org-fontify-inline-src-block (limit)
+        ;;     "Fontify inline source block."
+        ;;     (when (re-search-forward org-babel-inline-src-block-regexp limit t)
+        ;;     (add-text-properties
+        ;;         (match-beginning 1) (match-end 0)
+        ;;         '(font-lock-fontified t face (t (:foreground "#008ED1" :background "#FFFFEA"))))
+        ;;     (org-remove-flyspell-overlays-in (match-beginning 0) (match-end 0))
+        ;;     t))
+        ;; ;; Inline source block
+        ;; '(org-fontify-inline-src-block)
+#+end_src
+
+** Line Number's font configuration
+
+#+begin_src emacs-lisp
+(set-face-attribute 'line-number-current-line nil :font "FiraCode Nerd Font" :weight 'Bold :height 1.0 :inherit 'fixed-pitch)
+(set-face-attribute 'line-number nil :font "FiraCode Nerd Font" :weight 'Bold :height 1.0 :inherit 'fixed-pitch)
+#+end_src
+
+* Theme Tweaks
+
+** Selection Color
+
+Color for selected text. Emacs calls it =region=.
+
+#+begin_src emacs-lisp
+(set-face-attribute 'region nil :background "#073642")
 #+end_src
