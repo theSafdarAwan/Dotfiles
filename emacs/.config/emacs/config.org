@@ -22,7 +22,7 @@
 (package-install 'use-package))
 #+end_src
 
-* STARTUP PERFORMANCE
+* Startup Performance
 
   This section is where it make emacs faster to load.
 
@@ -31,7 +31,7 @@
 Makes startup faster by reducing the frequency of garbage collection
 + ivy-posframe-display-at-frame-top-center
 
-=NOTE:= If the setting for 'ivy-posframe-display' is set to 'nil'
+=Note=: If the setting for 'ivy-posframe-display' is set to 'nil'
 (false), anything that is set to 'ivy-display-function-fallback' will
 just default to their normal position in Doom Emacs (usually a bottom
 split).  However, if this is set to 't' (true), then the fallback
@@ -528,12 +528,31 @@ specific font config.
 )
 #+end_src
 
-** writeroom
+* Org Reading Mode
 
-A minor mode for Emacs that implements a distraction-free writing mode
-similar to the famous Writeroom editor for OS X.
+My minor mode for reading org mode documents.
+
 #+begin_src emacs-lisp
-(use-package writeroom-mode)
+  (defun reading-mode ()
+    (set-window-margins (selected-window) 8 8)
+    (global-display-line-numbers-mode 0)
+  )
+
+  (defun no-reading-mode ()
+    (set-window-margins (selected-window) 0 0)
+    (global-display-line-numbers-mode 1)
+  )
+
+  (defhydra hydra-reading-mode ()
+    "
+             ^Reading Mode Commands^
+    ^^^^^^^^-----------------------------------------
+    _e_: Enable Reading Mode _d_: Disable Reading Mode   
+    "
+    ("e" (reading-mode) nil)
+    ("d" (no-reading-mode) nil)
+  )
+  (global-set-key (kbd "C-c p") 'hydra-reading-mode/body)
 #+end_src
 
 * Git
@@ -617,16 +636,24 @@ similar to the famous Writeroom editor for OS X.
 ** Theme Loading And Disabling Commands
 
 #+begin_src emacs-lisp
-  (defhydra hydra-theme-actions ()
-  "
-  ^Actions^ 
-  ^^^^^^^^-------
-  _l_: Load Theme
-  _d_: Disable Them
-  "
-  ("l" load-theme nil)
-  ("d" disable-theme nil))
-  (global-set-key (kbd "C-c t") 'hydra-theme-actions/body)
+  (defhydra hydra-describe-actions ()
+    "
+    ^Help^                 ^Font Lock^   
+    ^^^^^^^^------------------------------
+    _f_: Function          _F_: Face   
+    _v_: Variable          _-_: Font
+    _k_: Keymap
+    "
+    ;; help describe commands
+    ("f" counsel-describe-function nil)
+    ("v" counsel-describe-variable nil)
+    ("k" describe-keymap nil)
+
+    ;; describe font lock options
+    ("-" describe-font nil)
+    ("F" describe-face nil)
+  )
+  (global-set-key (kbd "C-c d") 'hydra-describe-actions/body)
 #+end_src
 
 * Configuration
@@ -747,6 +774,21 @@ similar to the famous Writeroom editor for OS X.
 (global-set-key (kbd "C-x C-e") 'eval-region)
 #+end_src
 
+** Describe
+
+#+begin_src emacs-lisp
+  (defhydra hydra-describe-commands ()
+    "
+    ^Font Lock^ 
+    ^^^^^^^^-------
+    _l_: Load Theme
+    _d_: Disable Them
+    "
+    ("l" load-theme nil)
+    ("d" disable-theme nil))
+  (global-set-key (kbd "C-c t") 'hydra-theme-actions/body)
+#+end_src
+
 * FONT Setting's
 
 Emacs default font.
@@ -755,7 +797,7 @@ Emacs default font.
     (set-face-attribute 'default nil :font "FiraCode Nerd Font")
 #+end_src
 
-*** Org Mod font configuration
+*** Org Mode font configuration
 
  Set the default font for the Org file type. This needs the
  ~buffer-face-mode~ turned on, to work, otherwise it won't effect the
@@ -776,7 +818,7 @@ Add some space between lines
 font faces were not changed.
 
 #+begin_src emacs-lisp
-(set-face-attribute 'org-default nil :font "Montserrat" :height 1.3)
+(set-face-attribute 'org-default nil :font "Montserrat" :weight 'Regular :height 1.3)
 #+end_src
 
 **** Headings
@@ -816,6 +858,7 @@ Change the Org heading font
   (set-face-attribute 'org-checkbox nil :font "FiraCode Nerd Font" :weight 'Bold :inherit 'fixed-pitch :height 0.7)
 
   ;; org table header -> this appears when the table header is no longer in the screen view
+  ;; this functin is a minor mode called ~org-table-header-line-mode~
   (set-face-attribute 'org-table-header nil :font "FiraCode Nerd Font" :weight 'Bold :height 1.0)
 
   ;; change the list items type style for example: 1., a, etc.
@@ -857,5 +900,5 @@ Change the Org heading font
 Color for selected text. Emacs calls it =region=.
 
 #+begin_src emacs-lisp
-(set-face-attribute 'region nil :background "#073642")
+(set-face-attribute 'region nil :background "#073642" :foreground nil)
 #+end_src
