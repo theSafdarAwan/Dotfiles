@@ -164,7 +164,7 @@ more frequently but in less time.
           )
           (add-to-list 'evil-emacs-state-modes mode)
       )
-  )
+ )
 #+end_src
 
 ** Evil Surround
@@ -355,6 +355,17 @@ more frequently but in less time.
         (global-undo-tree-mode 1))
 #+end_src
 
+** Dired-icon
+
+Add icons in dired, emacs builtin file browser..
+
+#+begin_src emacs-lisp
+  (use-package dired-icon
+    :config
+        (add-hook 'dired-mode-hook 'dired-icon-mode)
+  )
+#+end_src
+
 * Productivity
 
 ** pomidor
@@ -532,15 +543,24 @@ specific font config.
 
 My minor mode for reading org mode documents.
 
+- [ ] when you understand enough ~emacs-lisp~ write this function to
+  enable margins in ~org-mode~ only, without having to enable it
+  everywhere.
+
+- [X] also hide the ~mode-line~
+
 #+begin_src emacs-lisp
   (defun reading-mode ()
-    (set-window-margins (selected-window) 8 8)
-    (global-display-line-numbers-mode 0)
+        (set-window-margins nil 8 8)
+        (global-display-line-numbers-mode 0)
+        (mode-line 0)
+        ;; (hidden-mode-line-mode)
   )
 
   (defun no-reading-mode ()
-    (set-window-margins (selected-window) 0 0)
-    (global-display-line-numbers-mode 1)
+        (set-window-margins nil 0 0)
+        (global-display-line-numbers-mode 1)
+        ;; (hidden-mode-line-mode)
   )
 
   (defhydra hydra-reading-mode ()
@@ -553,6 +573,39 @@ My minor mode for reading org mode documents.
     ("d" (no-reading-mode) nil)
   )
   (global-set-key (kbd "C-c p") 'hydra-reading-mode/body)
+#+end_src
+
+* Toggle Mode-line Mode
+
+Toggle Mode Line
+
+#+begin_src emacs-lisp
+(defvar-local hidden-mode-line-mode nil)
+
+(define-minor-mode hidden-mode-line-mode
+  "Minor mode to hide the mode-line in the current buffer."
+  :init-value nil
+  :global t
+  :variable hidden-mode-line-mode
+  :group 'editing-basics
+  (if hidden-mode-line-mode
+      (setq hide-mode-line mode-line-format
+            mode-line-format nil)
+    (setq mode-line-format hide-mode-line
+          hide-mode-line nil))
+  (force-mode-line-update)
+  ;; Apparently force-mode-line-update is not always enough to
+  ;; redisplay the mode-line
+  (redraw-display)
+  (when (and (called-interactively-p 'interactive)
+             hidden-mode-line-mode)
+    (run-with-idle-timer
+     0 nil 'message
+     (concat "Hidden Mode Line Mode enabled.  "
+             "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
+
+;; If you want to hide the mode-line in every buffer by default
+;; (add-hook 'after-change-major-mode-hook 'hidden-mode-line-mode)
 #+end_src
 
 * Git
@@ -760,6 +813,12 @@ My minor mode for reading org mode documents.
 (modeline-remove-lighter 'org-table-header-line-mode)
 #+end_src
 
+** Disable Line Wrap in every major mode
+
+#+begin_src emacs-lisp
+(add-hook 'after-change-major-mode-hook (lambda () (toggle-truncate-lines t)))
+#+end_src
+
 * Key-bindings
 
 ** Get out of a mode with a single <ESCAPE> key rather then 3
@@ -777,9 +836,9 @@ My minor mode for reading org mode documents.
 ** Describe
 
 #+begin_src emacs-lisp
-  (defhydra hydra-describe-commands ()
+  (defhydra hydra-theme-actions ()
     "
-    ^Font Lock^ 
+    ^Theme Actions^ 
     ^^^^^^^^-------
     _l_: Load Theme
     _d_: Disable Them
