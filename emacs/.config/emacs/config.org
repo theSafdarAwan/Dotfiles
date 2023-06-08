@@ -1,3 +1,13 @@
+* Enable Debugging
+
+#+begin_src emacs-lisp
+
+  (setq debug-on-error t
+      debug-on-signal nil
+      debug-on-quit nil)
+
+#+end_src
+
 * Bootstrap Packages Archive's
 
 #+begin_src emacs-lisp
@@ -74,6 +84,82 @@ Dial the GC threshold back down so that garbage collection happens more frequent
 
 #+end_src
 
+* UI
+
+** Icons
+
+#+begin_src emacs-lisp
+
+  (use-package all-the-icons)
+
+#+end_src
+
+** Themes
+
+*** modus-themes 
+
+#+begin_src emacs-lisp
+
+  (use-package modus-themes)
+
+#+end_src
+
+*** Dracula
+
+#+begin_src emacs-lisp
+
+  (use-package dracula-theme
+      :config
+         ;;(load-theme 'dracula t)
+  )
+
+#+end_src
+
+*** Atom
+
+#+begin_src emacs-lisp
+
+  (use-package atom-one-dark-theme
+      :config
+      ;; (load-theme 'atom-one-dark t)
+      )
+  
+#+end_src
+
+*** Doom Emacs Themes
+
+#+begin_src emacs-lisp
+
+  (use-package doom-themes
+      :config
+          ;; Global settings (defaults)
+          (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+                  doom-themes-enable-italic t) ; if nil, italics is universally disabled
+      ;; (load-theme 'doom-one t)
+
+          ;; Enable flashing mode-line on errors
+          ;; (doom-themes-visual-bell-config)
+          ;; Enable custom neotree theme (all-the-icons must be installed!)
+          ;; (doom-themes-neotree-config)
+          ;; or for treemacs users
+          ;; (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+          ;; (doom-themes-treemacs-config)
+          ;; Corrects (and improves) org-mode's native fontification.
+          ;;(doom-themes-org-config)
+  )
+
+#+end_src
+
+*** Solarized
+
+#+begin_src emacs-lisp
+
+  (use-package solarized-theme
+    :config
+      (load-theme 'solarized-dark t))
+
+#+end_src
+
 * Hydra
 
 #+begin_src emacs-lisp
@@ -140,6 +226,10 @@ Dial the GC threshold back down so that garbage collection happens more frequent
           ;; enable the undo functionality
           (evil-set-undo-system 'undo-redo) 
           (evil-define-key 'insert org-mode-map "\C-y" #'org-yank)
+          ;; move through wraped lines, with need of using gj or gk
+          (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+          (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
           ;; extend evil mode to other modes
           (defun rune/evil-hook()
               (dolist
@@ -166,7 +256,7 @@ Dial the GC threshold back down so that garbage collection happens more frequent
 
 #+end_src
 
-* PERSPECTIVE
+* Perspective
 
 :investigate:
 
@@ -371,6 +461,8 @@ Dial the GC threshold back down so that garbage collection happens more frequent
 
 ** Dired
 
+*** add icon's
+
 Add icons in dired, emacs builtin file browser..
 
 #+begin_src emacs-lisp
@@ -380,6 +472,34 @@ Add icons in dired, emacs builtin file browser..
       (add-hook 'dired-mode-hook 'dired-icon-mode)
   )
 
+#+end_src
+
+*** Dired-single
+
+Don't open multiple buffers for dired directory navigation instead use only one.
+
+#+begin_src emacs-lisp
+  (use-package dired-single
+     :config
+          (defun my-dired-init ()
+          "Bunch of stuff to run for dired, either immediately or when it's
+          loaded."
+          ;; <add other stuff here>
+          (define-key dired-mode-map [remap dired-find-file]
+              'dired-single-buffer)
+          (define-key dired-mode-map [remap dired-mouse-find-file-other-window]
+              'dired-single-buffer-mouse)
+          (define-key dired-mode-map [remap dired-up-directory]
+              'dired-single-up-directory))
+
+          ;; if dired's already loaded, then the keymap will be bound
+          (if (boundp 'dired-mode-map)
+              ;; we're good to go; just add our bindings
+              (my-dired-init)
+          ;; it's not loaded yet, so add our bindings to the load-hook
+          (add-hook 'dired-load-hook 'my-dired-init))
+
+  )
 #+end_src
 
 *** Change Dired Directory sorting
@@ -695,96 +815,6 @@ Toggle Mode Line
 
 #+end_src
 
-* Themes
-
-** modus-themes 
-
-#+begin_src emacs-lisp
-
-  (use-package modus-themes)
-
-#+end_src
-
-** Dracula
-
-#+begin_src emacs-lisp
-
-  (use-package dracula-theme
-      :config
-         ;;(load-theme 'dracula t)
-  )
-
-#+end_src
-
-** Atom
-
-#+begin_src emacs-lisp
-
-  (use-package atom-one-dark-theme
-      :config
-      ;; (load-theme 'atom-one-dark t)
-      )
-  
-#+end_src
-
-** Doom Emacs Themes
-
-#+begin_src emacs-lisp
-
-  (use-package doom-themes
-      :config
-          ;; Global settings (defaults)
-          (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-                  doom-themes-enable-italic t) ; if nil, italics is universally disabled
-      ;; (load-theme 'doom-one t)
-
-          ;; Enable flashing mode-line on errors
-          ;; (doom-themes-visual-bell-config)
-          ;; Enable custom neotree theme (all-the-icons must be installed!)
-          ;; (doom-themes-neotree-config)
-          ;; or for treemacs users
-          ;; (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
-          ;; (doom-themes-treemacs-config)
-          ;; Corrects (and improves) org-mode's native fontification.
-          ;;(doom-themes-org-config)
-  )
-
-#+end_src
-
-** Solarized
-
-#+begin_src emacs-lisp
-
-  (use-package solarized-theme
-    :config
-      (load-theme 'solarized-dark t))
-
-#+end_src
-
-** Theme Loading And Disabling Commands
-
-#+begin_src emacs-lisp
-
-  (defhydra hydra-describe-actions ()
-    "
-    ^Help^                 ^Font Lock^   
-    ^^^^^^^^------------------------------
-    _f_: Function          _F_: Face   
-    _v_: Variable          _-_: Font
-    _k_: Keymap
-    "
-    ;; help describe commands
-    ("f" counsel-describe-function nil)
-    ("v" counsel-describe-variable nil)
-    ("k" describe-keymap nil)
-
-    ;; describe font lock options
-    ("-" describe-font nil)
-    ("F" describe-face nil)
-  )
-  (global-set-key (kbd "C-c d") 'hydra-describe-actions/body)
-
-#+end_src
 
 * Configuration
 
@@ -822,6 +852,7 @@ Toggle Mode Line
 #+end_src
 
 ** Disable UI elements of emacs GUI
+
 #+begin_src emacs-lisp
 
   (menu-bar-mode -1)
@@ -831,6 +862,7 @@ Toggle Mode Line
 #+end_src
 
 ** Don't show splash screen on Startup
+
 #+begin_src emacs-lisp
 
   (setq inhibit-startup-screen t)
@@ -838,6 +870,7 @@ Toggle Mode Line
 #+end_src
 
 ** Disable Bell Ring
+
 #+begin_src emacs-lisp
 
   (setq ring-bell-function 'ignore)
@@ -846,6 +879,7 @@ Toggle Mode Line
 
 ** Disable Saving Lock Files
 #+begin_src emacs-lisp
+  
 
   (add-hook 'after-init-hook (lambda () (setq-default create-lockfiles nil)))
 
@@ -885,16 +919,6 @@ Toggle Mode Line
 #+begin_src emacs-lisp
 
   (electric-pair-mode 1)
-
-#+end_src
-
-** Enable Debugging
-
-#+begin_src emacs-lisp
-
-  (setq debug-on-error t
-      debug-on-signal nil
-      debug-on-quit nil)
 
 #+end_src
 
@@ -954,7 +978,32 @@ Toggle Mode Line
 
 #+end_src
 
-** Describe
+** Describe Functions
+
+#+begin_src emacs-lisp
+
+  (defhydra hydra-describe-actions ()
+    "
+    ^Help^                 ^Font Lock^   
+    ^^^^^^^^------------------------------
+    _f_: Function          _F_: Face   
+    _v_: Variable          _-_: Font
+    _k_: Keymap
+    "
+    ;; help describe commands
+    ("f" counsel-describe-function nil)
+    ("v" counsel-describe-variable nil)
+    ("k" describe-keymap nil)
+
+    ;; describe font lock options
+    ("-" describe-font nil)
+    ("F" describe-face nil)
+  )
+  (global-set-key (kbd "C-c d") 'hydra-describe-actions/body)
+
+#+end_src
+
+** Load/Disable Themes Easily
 
 #+begin_src emacs-lisp
 
@@ -996,6 +1045,27 @@ Add some space between lines
 
 #+end_src
 
+**** Headings
+
+Change the Org heading font
+
+#+begin_src emacs-lisp
+
+  (dolist (face '(
+      (org-level-1 . 1.9)
+      (org-level-2 . 1.7)
+      (org-level-3 . 1.6)
+      (org-level-4 . 1.4)
+      (org-level-5 . 1.4)
+      (org-level-6 . 1.4)
+      (org-level-7 . 1.4)
+      (org-level-8 . 1.4)))
+      (set-face-attribute (car face) nil
+              :font "Lora" :weight 'Bold :height (cdr face))
+  )
+
+#+end_src
+
 **** Paragraph & other text
 
 ~org-default~ face effect org paragraphs and some other text, if their font faces were not changed.
@@ -1004,29 +1074,8 @@ Add some space between lines
 
   (set-face-attribute 'org-default nil 
        :font "Montserrat" 
-       :weight 'Regular 
-       :height 1.15)
-
-#+end_src
-
-**** Headings
-
-Change the Org heading font
-
-#+begin_src emacs-lisp
-
-  (dolist (face '(
-      (org-level-1 . 1.6)
-      (org-level-2 . 1.4)
-      (org-level-3 . 1.3)
-      (org-level-4 . 1.2)
-      (org-level-5 . 1.2)
-      (org-level-6 . 1.2)
-      (org-level-7 . 1.2)
-      (org-level-8 . 1.2)))
-      (set-face-attribute (car face) nil
-              :font "Lora" :weight 'Bold :height (cdr face))
-  )
+       :weight 'Regular
+       :height 1.1)
 
 #+end_src
 
@@ -1060,7 +1109,7 @@ Change the Org heading font
        :inherit 'fixed-pitch 
        :height 0.7)
 
-  ;; org table header -> this appears when the table header is no longer in the screen view
+  ;; org table header, this appears when the table header is no longer in the screen view
   ;; this functin is a minor mode called ~org-table-header-line-mode~
   (set-face-attribute 'org-table-header nil 
        :font "FiraCode Nerd Font" 
