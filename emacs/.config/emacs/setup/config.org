@@ -1,10 +1,505 @@
+* Perspective
+
+:investigate:
+
 #+begin_src emacs-lisp
-(org-babel-load-file (expand-file-name "setup/boot-strap.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/UI.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/bindings.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/completion.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/language-support.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/navigation.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/note-taking.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/cfg.org" user-emacs-directory))
+
+  (use-package perspective
+    :bind
+    ("C-x C-b" . persp-list-buffers)   ; or use a nicer switcher, see below
+    :config
+    (persp-mode))
+
+#+end_src
+
+
+* Other Helpful Packages
+
+** Rainbow Delimiters
+
+#+begin_src emacs-lisp
+
+  (use-package rainbow-delimiters
+    :hook ((prog-mode . rainbow-delimiters-mode)
+           ;; (org-mode . rainbow-delimiters-mode)
+           ))
+
+#+end_src
+
+** Helpful make documenation nice
+
+#+begin_src emacs-lisp
+
+  (use-package helpful
+    :config
+    ;; Note that the built-in `describe-function' includes both functions
+    ;; and macros. `helpful-function' is functions only, so we provide
+    ;; `helpful-callable' as a drop-in replacement.
+    (global-set-key (kbd "C-h f") #'helpful-callable)
+
+    (global-set-key (kbd "C-h v") #'helpful-variable)
+    (global-set-key (kbd "C-h k") #'helpful-key)
+    (global-set-key (kbd "C-h x") #'helpful-command)
+
+    ;; Lookup the current symbol at point. C-c C-d is a common keybinding
+    ;; for this in lisp modes.
+    (global-set-key (kbd "C-c C-d") #'helpful-at-point)
+
+    ;; Look up *F*unctions (excludes macros).
+    ;;
+    ;; By default, C-h F is bound to `Info-goto-emacs-command-node'. Helpful
+    ;; already links to the manual, if a function is referenced there.
+    (global-set-key (kbd "C-h F") #'helpful-function)
+
+    ;; For ivy
+    (setq counsel-describe-function-function #'helpful-callable)
+    (setq counsel-describe-variable-function #'helpful-variable))
+
+#+end_src
+
+** Undo-tree to get undo functionality
+
+#+begin_src emacs-lisp
+
+  (use-package undo-tree
+    :diminish global-undo-tree-mode
+    :init
+    (setq undo-tree-auto-save-history t)
+    (setq undo-tree-history-directory-alist '(("." . "~/.cache/emacs-backup-files")))
+    :config
+    (global-undo-tree-mode 1))
+
+#+end_src
+
+* Toggle Mode-line Mode
+
+Toggle Mode Line
+
+#+begin_src emacs-lisp
+
+  (defvar-local hidden-mode-line-mode nil)
+
+  (define-minor-mode hidden-mode-line-mode
+    "Minor mode to hide the mode-line in the current buffer."
+    :init-value nil
+    :global t
+    :variable hidden-mode-line-mode
+    :group 'editing-basics
+    (if hidden-mode-line-mode
+        (setq hide-mode-line mode-line-format
+              mode-line-format nil)
+      (setq mode-line-format hide-mode-line
+            hide-mode-line nil))
+    (force-mode-line-update)
+    ;; Apparently force-mode-line-update is not always enough to
+    ;; redisplay the mode-line
+    (redraw-display)
+    (when (and (called-interactively-p 'interactive)
+               hidden-mode-line-mode)
+      (run-with-idle-timer
+       0 nil 'message
+       (concat "Hidden Mode Line Mode enabled.  "
+               "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
+
+  ;; If you want to hide the mode-line in every buffer by default
+  ;; (add-hook 'after-change-major-mode-hook 'hidden-mode-line-mode)
+
+#+end_src
+
+* Git
+
+** Magit
+
+#+begin_src emacs-lisp
+
+  (use-package magit
+    :init
+    (message "Loading Magit!")
+    :config
+    (message "Loaded Magit!")
+    :bind (("C-x g" . magit-status)
+           ("C-x C-g" . magit-status)))
+
+#+end_src	    
+
+* Cli
+
+** Vterm
+
+#+begin_src emacs-lisp
+
+  (setq shell-file-name "/bin/zsh"
+        vterm-max-scrollback 5000)
+  (use-package vterm)
+
+#+end_src
+
+
+* Configuration
+
+** Enable Line Numbers
+
+#+begin_src emacs-lisp
+
+    (global-display-line-numbers-mode 1)
+    (setq display-line-numbers-type 'relative)
+    (add-hook 'after-change-major-mode-hook (lambda ()
+                                       (menu-bar--display-line-numbers-mode-visual))) 
+
+
+#+end_src
+
+** Hide  Line Numbers in certain modes
+#+begin_src emacs-lisp
+
+  (dolist (mode '(term-mode-hook
+                  eshell-mode-hook
+                  shell-mode-hook
+                  neotree-mode-hook
+                  dired-mode-hook
+                  vterm-mode-hook))
+    (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+#+end_src
+
+** Show Column Number Information In the Status Bar
+
+#+begin_src emacs-lisp
+
+  (column-number-mode)
+
+#+end_src
+
+** Disable UI elements of emacs GUI
+
+#+begin_src emacs-lisp
+
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+
+#+end_src
+
+** Don't show splash screen on Startup
+
+#+begin_src emacs-lisp
+
+  (setq inhibit-startup-screen t)
+
+#+end_src
+
+** Disable Bell Ring
+
+#+begin_src emacs-lisp
+
+  (setq ring-bell-function 'ignore)
+
+#+end_src
+
+** Disable Saving Lock Files
+#+begin_src emacs-lisp
+
+  (add-hook 'after-init-hook (lambda () (setq-default create-lockfiles nil)))
+
+#+end_src
+
+** Change The Backup files location
+#+begin_src emacs-lisp
+
+  (setq backup-directory-alist '(("." . "~/.cache/emacs-backup-files"))
+        backup-by-copying t    ; Don't delink hardlinks
+        version-control t      ; Use version numbers on backups
+        delete-old-versions t  ; Automatically delete excess backups
+        kept-new-versions 20   ; how many of the newest versions to keep
+        kept-old-versions 5    ; and how many of the old
+        )
+
+#+end_src
+
+** Searching
+
+#+BEGIN_SRC emacs-lisp
+
+  (setq search-whitespace-regexp ".*")
+
+#+END_SRC
+
+** Enable SpellCheck
+
+#+begin_src emacs-lisp
+
+  (add-hook 'org-mode-hook (lambda () (flyspell-mode 1)))
+
+#+end_src
+
+** Enable Auto Pairing
+
+#+begin_src emacs-lisp
+
+  (electric-pair-mode 1)
+
+#+end_src
+
+** Hide Minor Modes in Mode line
+
+#+begin_src emacs-lisp
+
+  (defun modeline-set-lighter (minor-mode lighter)
+    (when (assq minor-mode minor-mode-alist)
+      (setcar (cdr (assq minor-mode minor-mode-alist)) lighter)))
+
+  (defun modeline-remove-lighter (minor-mode)
+    (modeline-set-lighter minor-mode ""))
+
+  (modeline-remove-lighter 'global-undo-tree-mode)
+  (modeline-remove-lighter 'undo-tree-mode)
+  (modeline-remove-lighter 'org-roam-ui-mode)
+  (modeline-remove-lighter 'ivy-posframe-mode)
+  (modeline-remove-lighter 'company-mode)
+  (modeline-remove-lighter 'ivy-mode)
+  (modeline-remove-lighter 'flyspell-mode)
+  (modeline-remove-lighter 'buffer-face-mode)
+  (modeline-remove-lighter 'org-table-header-line-mode)
+
+#+end_src
+
+** Disable Line Wrap in every major mode
+
+#+begin_src emacs-lisp
+
+  ;; solution 1
+  ;; (add-hook 'after-change-major-mode-hook (lambda () (toggle-truncate-lines t))) 
+
+  ;; solution 2
+  ;; (setq-default word-wrap t)
+
+  ;; solution 3
+  (add-hook 'org-mode-hook 'visual-line-mode)
+
+#+end_src
+
+* Key-bindings
+
+** Get out of a mode with a single <ESCAPE> key rather then 3
+
+#+begin_src emacs-lisp
+
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+#+end_src
+
+** Set C-x C-e to execute selected region
+
+#+begin_src emacs-lisp
+
+  (global-set-key (kbd "C-x C-e") 'eval-region)
+
+#+end_src
+
+** Describe Functions
+
+#+begin_src emacs-lisp
+
+  (defhydra hydra-describe-actions ()
+    "
+    ^Help^                 ^Font Lock^   
+    ^^^^^^^^------------------------------
+    _f_: Function          _F_: Face   
+    _v_: Variable          _-_: Font
+    _k_: Keymap
+    "
+    ;; help describe commands
+    ("f" counsel-describe-function nil)
+    ("v" counsel-describe-variable nil)
+    ("k" describe-keymap nil)
+
+    ;; describe font lock options
+    ("-" describe-font nil)
+    ("F" describe-face nil))
+  (global-set-key (kbd "C-c d") 'hydra-describe-actions/body)
+
+#+end_src
+
+** Load/Disable Themes Easily
+
+#+begin_src emacs-lisp
+
+  (defhydra hydra-theme-actions ()
+    "
+    ^Theme Actions^ 
+    ^^^^^^^^-------
+    _l_: Load Theme
+    _d_: Disable Them
+    "
+    ("l" load-theme nil)
+    ("d" disable-theme nil))
+
+  (global-set-key (kbd "C-c t") 'hydra-theme-actions/body)
+
+#+end_src
+
+* FONT Setting's
+
+Emacs default font.
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'default nil :font "FiraCode Nerd Font")
+
+#+end_src
+
+*** Org Mode font configuration
+
+ Set the default font for the Org file type. This needs the ~buffer-face-mode~ turned on, to work, otherwise it won't effect the paragraph and some other buffer font faces. see: [[buffer-face-mode]]
+
+**** Line Spacing
+
+Add some space between lines
+
+#+begin_src emacs-lisp
+
+  (setq-default line-spacing 2)
+
+#+end_src
+
+**** Headings
+
+Change the Org heading font
+
+#+begin_src emacs-lisp
+
+  (dolist (face '(
+                  (org-level-1 . 1.9)
+                  (org-level-2 . 1.7)
+                  (org-level-3 . 1.6)
+                  (org-level-4 . 1.4)
+                  (org-level-5 . 1.4)
+                  (org-level-6 . 1.4)
+                  (org-level-7 . 1.4)
+                  (org-level-8 . 1.4)))
+    (set-face-attribute (car face) nil
+                        :font "Lora" :weight 'Bold :height (cdr face))
+    )
+
+#+end_src
+
+**** Paragraph & other text
+
+~org-default~ face effect org paragraphs and some other text, if their font faces were not changed.
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'org-default nil 
+                      :font "Montserrat" 
+                      :weight 'Regular
+                      :height 1.1)
+
+#+end_src
+
+**** Code Blocks
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'org-block nil 
+                      :font "FiraCode Nerd Font" 
+                      :background "#002630")
+
+#+end_src
+
+**** Other Faces
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'org-table nil 
+                      :inherit 'fixed-pitch)
+  (set-face-attribute 'org-formula nil 
+                      :inherit 'fixed-pitch)
+  (set-face-attribute 'org-verbatim nil 
+                      :inherit '(shadow fixed-pitch))
+  (set-face-attribute 'org-meta-line nil 
+                      :inherit '(font-lock-comment-face fixed-pitch))
+
+  ;; todo checkbox
+  (set-face-attribute 'org-checkbox nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Bold 
+                      :inherit 'fixed-pitch 
+                      :height 0.7)
+
+  ;; org table header, this appears when the table header is no longer in the screen view
+  ;; this functin is a minor mode called ~org-table-header-line-mode~
+  (set-face-attribute 'org-table-header nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Bold 
+                      :height 1.0)
+
+  ;; change the list items type style for example: 1., a, etc.
+  (set-face-attribute 'org-list-dt nil 
+                      :font "Lora" 
+                      :weight 'Bold 
+                      :height 1.0)
+
+  ;; change the special property keywords
+  (set-face-attribute 'org-special-keyword nil 
+                      :font "Lato" 
+                      :weight 'Bold 
+                      :height 1.0)
+
+  ;; document information
+  (set-face-attribute 'org-document-title nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Bold 
+                      :height 1.3)
+
+  (set-face-attribute 'org-document-info-keyword nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Bold
+                      :height 1.0)
+
+#+end_src
+
+**** TODO ??
+
+#+begin_src emacs-lisp
+
+  ;; (defun org-fontify-inline-src-block (limit)
+  ;;     "Fontify inline source block."
+  ;;     (when (re-search-forward org-babel-inline-src-block-regexp limit t)
+  ;;     (add-text-properties
+  ;;         (match-beginning 1) (match-end 0)
+  ;;         '(font-lock-fontified t face (t (:foreground "#008ED1" :background "#FFFFEA"))))
+  ;;     (org-remove-flyspell-overlays-in (match-beginning 0) (match-end 0))
+  ;;     t))
+  ;; ;; Inline source block
+  ;; '(org-fontify-inline-src-block)
+
+#+end_src
+
+** Line Number's font configuration
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'line-number-current-line nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Normal 
+                      :height 1.0 
+                      :inherit 'fixed-pitch)
+  (set-face-attribute 'line-number nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Normal
+                      :height 1.0 
+                      :inherit 'fixed-pitch)
+
+#+end_src
+
+* Theme Tweaks
+
+** Selection Color
+
+Color for selected text. Emacs calls it =region=.
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'region nil :background "#073642" :foreground nil)
+
 #+end_src
