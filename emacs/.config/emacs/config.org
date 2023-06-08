@@ -1,7 +1,7 @@
 * Enable Debugging
 
 #+begin_src emacs-lisp
-
+  ;; 
   (setq debug-on-error t
       debug-on-signal nil
       debug-on-quit nil)
@@ -91,6 +91,17 @@ Dial the GC threshold back down so that garbage collection happens more frequent
 #+begin_src emacs-lisp
 
   (use-package all-the-icons)
+
+#+end_src
+
+*** Icons for Completion
+
+#+begin_src emacs-lisp
+
+  (use-package all-the-icons-ivy-rich
+      :init
+        (setq all-the-icons-ivy-rich-color-icon t)
+        (all-the-icons-ivy-rich-mode 1))
 
 #+end_src
 
@@ -467,9 +478,11 @@ Add icons in dired, emacs builtin file browser..
 
 #+begin_src emacs-lisp
 
-  (use-package dired-icon
+  (use-package all-the-icons-dired
+  :init
+     (setq all-the-icons-dired-monochrome nil)
   :config
-      (add-hook 'dired-mode-hook 'dired-icon-mode)
+      (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
   )
 
 #+end_src
