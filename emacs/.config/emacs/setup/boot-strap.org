@@ -1,3 +1,16 @@
+* Native compilation cache
+
+In Emacs 29, the location of the native compilation cache can be changed.
+
+#+begin_src emacs-lisp
+
+  (when (fboundp 'startup-redirect-eln-cache)
+  (startup-redirect-eln-cache
+   (convert-standard-filename
+    (expand-file-name  "etc/eln-cache/" user-emacs-directory))))
+
+#+end_src
+
 * Enable Debugging
 
 #+begin_src emacs-lisp
@@ -97,5 +110,54 @@ Dial the GC threshold back down so that garbage collection happens more frequent
 
   ;; Make gc pauses faster by decreasing the threshold.
   (setq gc-cons-threshold (* 2 1000 1000))
+
+#+end_src
+
+* Kitchen
+
+#+begin_src emacs-lisp
+
+  (use-package no-littering
+    :init
+    (setq no-littering-etc-directory (expand-file-name "etc/config" user-emacs-directory))
+    (setq no-littering-var-directory (expand-file-name "etc/data" user-emacs-directory))
+    :config
+    (no-littering-theme-backups)
+    ;; ignore recent files from the no-littering directories
+    (require 'recentf)
+    (add-to-list 'recentf-exclude
+                 (recentf-expand-file-name no-littering-var-directory))
+    (add-to-list 'recentf-exclude
+                 (recentf-expand-file-name no-littering-etc-directory)))
+
+  ;; (defun meliache-file-is-root-p (name)
+  ;;   "Check whether tramp su/sudo method is used for opening filepath NAME."
+  ;;   ;; Adopted from https://www.gnu.org/software/emacs/manual/html_node/tramp/Auto_002dsave-File-Lock-and-Backup.html
+  ;;   (let ((method (file-remote-p name 'method)))
+  ;;     (when (stringp method)
+  ;; 	(member method '("su" "sudo")))))
+  ;; (defun meliache-file-is-not-root-p (name)
+  ;;   (not (meliache-file-is-root-p name)))
+  ;; (defun my-backup-enable-predicate (name)
+  ;;   (and (normal-backup-enable-predicate name)
+  ;; 	 ;; don't save password files
+  ;; 	 (not (s-starts-with? "/dev/shm" name))
+  ;; 	 (not (s-contains? "password-store" name))
+  ;; 	 (meliache-file-is-not-root-p name)))
+  ;; (setq backup-enable-predicate #'my-backup-enable-predicate)
+
+
+
+  ;; ;; disable auto-save on certain tramp profiles
+  ;; (connection-local-set-profile-variables
+  ;;  'no-remote-auto-save-profile
+  ;;  '((buffer-auto-save-file-name . nil)
+  ;;    (remote-file-name-inhibit-auto-save-visited . t)
+  ;;    (remote-file-name-inhibit-auto-save . t)))
+
+  ;; ;; disable auto-save for specific protocols
+  ;; (dolist (protocol '("sudo" "doas" "su" "sudoedit" "ssh"))
+  ;;   (connection-local-set-profiles
+  ;;    `(:application tramp :protocol ,protocol 'no-remote-auto-sav
 
 #+end_src
