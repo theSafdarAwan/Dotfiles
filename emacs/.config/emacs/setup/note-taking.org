@@ -196,6 +196,16 @@ Enable ~buffer-face-mode~ in org files in order to customize buffer specific fon
 
 #+end_src
 
+** Anki Integration
+
+Write Anki cards  in org-mode
+
+#+begin_src emacs-lisp
+
+  (use-package anki-editor)
+
+#+end_src
+
 * Org Reading Mode
 
 My minor mode for reading org mode documents.
