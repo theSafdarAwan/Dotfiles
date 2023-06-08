@@ -1,0 +1,95 @@
+* Hydra
+
+#+begin_src emacs-lisp
+
+  (use-package hydra
+    :init
+    :config
+    (defhydra hydra-zoom (global-map "C-c z")
+      "zoom"
+      ("i" text-scale-increase "in")
+      ("o" text-scale-decrease "out"))
+
+    (defhydra hydra-buffer-menu (:color pink :hint nil)
+      "
+          ^Mark^             ^Unmark^           ^Actions^          ^Search
+          ^^^^^^^^-----------------------------------------------------------------
+          _m_: mark          _u_: unmark        _x_: execute       _R_: re-isearch
+          _s_: save          _U_: unmark up     _b_: bury          _I_: isearch
+          _d_: delete        ^ ^                _g_: refresh       _O_: multi-occur
+          _D_: delete up     ^ ^                _T_: files only: % -28`Buffer-menu-files-only
+          _~_: modified
+          "
+      ("m" Buffer-menu-mark)
+      ("u" Buffer-menu-unmark)
+      ("U" Buffer-menu-backup-unmark)
+      ("d" Buffer-menu-delete)
+      ("D" Buffer-menu-delete-backwards)
+      ("s" Buffer-menu-save)
+      ("~" Buffer-menu-not-modified)
+      ("x" Buffer-menu-execute)
+      ("b" Buffer-menu-bury)
+      ("g" revert-buffer)
+      ("T" Buffer-menu-toggle-files-only)
+      ("O" Buffer-menu-multi-occur :color blue)
+      ("I" Buffer-menu-isearch-buffers :color blue)
+      ("R" Buffer-menu-isearch-buffers-regexp :color blue)
+      ("c" nil "cancel")
+      ("v" Buffer-menu-select "select" :color blue)
+      ("o" Buffer-menu-other-window "other-window" :color blue)
+      ("q" quit-window "quit" :color blue))
+
+    (define-key Buffer-menu-mode-map "." 'hydra-buffer-menu/body))
+
+#+end_src
+
+* Add Vim bindings
+
+** evil-mode
+
+#+begin_src emacs-lisp
+
+  (use-package evil
+    :init      ;; tweak evil's configuration before loading it
+    ;; (setq evil-want-keybinding nil)
+    (setq evil-vsplit-window-right t)
+    (setq evil-split-window-below t)
+    (setq evil-want-C-u-scroll t)
+    (setq evil-want-C-i-jump t)
+    :config
+    (evil-mode 1)
+    (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+    (evil-set-initial-state 'messages-buffer-mode 'normal)
+    (evil-set-initial-state 'vterm-mode 'insert)
+    ;; enable the undo functionality
+    (evil-set-undo-system 'undo-redo) 
+    (evil-define-key 'insert org-mode-map "\C-y" #'org-yank)
+    ;; move through wraped lines, with need of using gj or gk
+    (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+    (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
+          ;; extend evil mode to other modes
+          (defun rune/evil-hook()
+              (dolist
+                  (mode '(custom-mode
+                          eshell-mode
+                          git-rebase-mode
+                          erc-mode
+                          circe-server-mode
+                          circe-chat-mode
+                          circe-query-mode
+                          sauron-mode
+                          term-mode))
+                  (add-to-list 'evil-emacs-state-modes mode))))
+
+#+end_src
+
+** Evil Surround
+
+#+begin_src emacs-lisp
+
+  (use-package evil-surround
+    :config
+    (global-evil-surround-mode 1))
+
+#+end_src
