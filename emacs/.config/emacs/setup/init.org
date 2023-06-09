@@ -2,6 +2,8 @@
 
   (org-babel-load-file (expand-file-name "setup/boot-strap.org" user-emacs-directory))
 
+  (org-babel-load-file (expand-file-name "setup/config.org" user-emacs-directory))
+
   (org-babel-load-file (expand-file-name "setup/UI.org" user-emacs-directory))
 
   (org-babel-load-file (expand-file-name "setup/navigation.org" user-emacs-directory))
@@ -9,6 +11,8 @@
   (org-babel-load-file (expand-file-name "setup/completion.org" user-emacs-directory))
 
   (org-babel-load-file (expand-file-name "setup/note-taking.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/other-packages.org" user-emacs-directory))
 
   (org-babel-load-file (expand-file-name "setup/vim-bindings.org" user-emacs-directory))
   (org-babel-load-file (expand-file-name "setup/keybindings.org" user-emacs-directory))
@@ -18,6 +22,6 @@
 
   (org-babel-load-file (expand-file-name "setup/language-support.org" user-emacs-directory))
 
-  (org-babel-load-file (expand-file-name "setup/config.org" user-emacs-directory))
+  (org-babel-load-file (expand-file-name "setup/custom-functions.org" user-emacs-directory))
 
 #+end_src

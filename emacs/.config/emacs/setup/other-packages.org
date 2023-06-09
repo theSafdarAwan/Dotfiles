@@ -1,0 +1,88 @@
+* Git
+
+** Magit
+
+#+begin_src emacs-lisp
+
+  (use-package magit
+    :init
+    (message "Loading Magit!")
+    :config
+    (message "Loaded Magit!")
+    :bind (("C-x g" . magit-status)
+           ("C-x C-g" . magit-status)))
+
+#+end_src	    
+
+* Rainbow Delimiters
+
+#+begin_src emacs-lisp
+
+  (use-package rainbow-delimiters
+    :hook ((prog-mode . rainbow-delimiters-mode)
+           ;; (org-mode . rainbow-delimiters-mode)
+           ))
+
+#+end_src
+
+* Helpful
+
+Make the doc-string look beautiful and add additional context.
+
+#+begin_src emacs-lisp
+
+  (use-package helpful
+    :config
+    ;; Note that the built-in `describe-function' includes both functions
+    ;; and macros. `helpful-function' is functions only, so we provide
+    ;; `helpful-callable' as a drop-in replacement.
+    (global-set-key (kbd "C-h f") #'helpful-callable)
+
+    (global-set-key (kbd "C-h v") #'helpful-variable)
+    (global-set-key (kbd "C-h k") #'helpful-key)
+    (global-set-key (kbd "C-h x") #'helpful-command)
+
+    ;; Lookup the current symbol at point. C-c C-d is a common keybinding
+    ;; for this in lisp modes.
+    (global-set-key (kbd "C-c C-d") #'helpful-at-point)
+
+    ;; Look up *F*unctions (excludes macros).
+    ;;
+    ;; By default, C-h F is bound to `Info-goto-emacs-command-node'. Helpful
+    ;; already links to the manual, if a function is referenced there.
+    (global-set-key (kbd "C-h F") #'helpful-function)
+
+    ;; For ivy
+    (setq counsel-describe-function-function #'helpful-callable)
+    (setq counsel-describe-variable-function #'helpful-variable))
+
+#+end_src
+
+* Undo-tree
+
+Get undo history in a tree, very helpful because normally undo and redo work in linear way. But with this you can undo in non-linear way. This is show you a tree and you can move through tree to get to your desired position in undo history.
+
+#+begin_src emacs-lisp
+
+  (use-package undo-tree
+    :diminish global-undo-tree-mode
+    :init
+    (setq undo-tree-auto-save-history t)
+    (setq undo-tree-history-directory-alist '(("." . "~/.cache/emacs-backup-files")))
+    :config
+    (global-undo-tree-mode 1))
+
+#+end_src
+
+* Cli
+
+** Vterm
+
+#+begin_src emacs-lisp
+
+  (setq shell-file-name "/bin/zsh"
+        vterm-max-scrollback 5000)
+  (use-package vterm)
+
+#+end_src
+

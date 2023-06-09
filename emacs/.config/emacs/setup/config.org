@@ -1,143 +1,4 @@
-* Perspective
-
-:investigate:
-
-#+begin_src emacs-lisp
-
-  (use-package perspective
-    :bind
-    ("C-x C-b" . persp-list-buffers)   ; or use a nicer switcher, see below
-    :config
-    (persp-mode))
-
-#+end_src
-
-
-* Other Helpful Packages
-
-** Rainbow Delimiters
-
-#+begin_src emacs-lisp
-
-  (use-package rainbow-delimiters
-    :hook ((prog-mode . rainbow-delimiters-mode)
-           ;; (org-mode . rainbow-delimiters-mode)
-           ))
-
-#+end_src
-
-** Helpful make documenation nice
-
-#+begin_src emacs-lisp
-
-  (use-package helpful
-    :config
-    ;; Note that the built-in `describe-function' includes both functions
-    ;; and macros. `helpful-function' is functions only, so we provide
-    ;; `helpful-callable' as a drop-in replacement.
-    (global-set-key (kbd "C-h f") #'helpful-callable)
-
-    (global-set-key (kbd "C-h v") #'helpful-variable)
-    (global-set-key (kbd "C-h k") #'helpful-key)
-    (global-set-key (kbd "C-h x") #'helpful-command)
-
-    ;; Lookup the current symbol at point. C-c C-d is a common keybinding
-    ;; for this in lisp modes.
-    (global-set-key (kbd "C-c C-d") #'helpful-at-point)
-
-    ;; Look up *F*unctions (excludes macros).
-    ;;
-    ;; By default, C-h F is bound to `Info-goto-emacs-command-node'. Helpful
-    ;; already links to the manual, if a function is referenced there.
-    (global-set-key (kbd "C-h F") #'helpful-function)
-
-    ;; For ivy
-    (setq counsel-describe-function-function #'helpful-callable)
-    (setq counsel-describe-variable-function #'helpful-variable))
-
-#+end_src
-
-** Undo-tree to get undo functionality
-
-#+begin_src emacs-lisp
-
-  (use-package undo-tree
-    :diminish global-undo-tree-mode
-    :init
-    (setq undo-tree-auto-save-history t)
-    (setq undo-tree-history-directory-alist '(("." . "~/.cache/emacs-backup-files")))
-    :config
-    (global-undo-tree-mode 1))
-
-#+end_src
-
-* Toggle Mode-line Mode
-
-Toggle Mode Line
-
-#+begin_src emacs-lisp
-
-  (defvar-local hidden-mode-line-mode nil)
-
-  (define-minor-mode hidden-mode-line-mode
-    "Minor mode to hide the mode-line in the current buffer."
-    :init-value nil
-    :global t
-    :variable hidden-mode-line-mode
-    :group 'editing-basics
-    (if hidden-mode-line-mode
-        (setq hide-mode-line mode-line-format
-              mode-line-format nil)
-      (setq mode-line-format hide-mode-line
-            hide-mode-line nil))
-    (force-mode-line-update)
-    ;; Apparently force-mode-line-update is not always enough to
-    ;; redisplay the mode-line
-    (redraw-display)
-    (when (and (called-interactively-p 'interactive)
-               hidden-mode-line-mode)
-      (run-with-idle-timer
-       0 nil 'message
-       (concat "Hidden Mode Line Mode enabled.  "
-               "Use M-x hidden-mode-line-mode to make the mode-line appear."))))
-
-  ;; If you want to hide the mode-line in every buffer by default
-  ;; (add-hook 'after-change-major-mode-hook 'hidden-mode-line-mode)
-
-#+end_src
-
-* Git
-
-** Magit
-
-#+begin_src emacs-lisp
-
-  (use-package magit
-    :init
-    (message "Loading Magit!")
-    :config
-    (message "Loaded Magit!")
-    :bind (("C-x g" . magit-status)
-           ("C-x C-g" . magit-status)))
-
-#+end_src	    
-
-* Cli
-
-** Vterm
-
-#+begin_src emacs-lisp
-
-  (setq shell-file-name "/bin/zsh"
-        vterm-max-scrollback 5000)
-  (use-package vterm)
-
-#+end_src
-
-
-* Configuration
-
-** Enable Line Numbers
+* Enable Line Numbers
 
 #+begin_src emacs-lisp
 
@@ -151,7 +12,8 @@ Toggle Mode Line
 
 #+end_src
 
-** Hide  Line Numbers in certain modes
+* Hide  Line Numbers
+
 #+begin_src emacs-lisp
 
   (dolist (mode '(term-mode-hook
@@ -164,7 +26,7 @@ Toggle Mode Line
 
 #+end_src
 
-** Show Column Number Information In the Status Bar
+* Column Number
 
 #+begin_src emacs-lisp
 
@@ -172,7 +34,7 @@ Toggle Mode Line
 
 #+end_src
 
-** Disable UI elements of emacs GUI
+* Disable UI elements of emacs GUI
 
 #+begin_src emacs-lisp
 
@@ -182,7 +44,7 @@ Toggle Mode Line
 
 #+end_src
 
-** Don't show splash screen on Startup
+* Don't show splash screen on Startup
 
 #+begin_src emacs-lisp
 
@@ -190,7 +52,7 @@ Toggle Mode Line
 
 #+end_src
 
-** Disable Bell Ring
+* Disable Bell Ring
 
 #+begin_src emacs-lisp
 
@@ -198,14 +60,15 @@ Toggle Mode Line
 
 #+end_src
 
-** Disable Saving Lock Files
+* Disable Saving Lock Files
 #+begin_src emacs-lisp
 
   (add-hook 'after-init-hook (lambda () (setq-default create-lockfiles nil)))
 
 #+end_src
 
-** Change The Backup files location
+* Change The Backup files location
+
 #+begin_src emacs-lisp
 
   (setq backup-directory-alist '(("." . "~/.cache/emacs-backup-files"))
@@ -218,7 +81,7 @@ Toggle Mode Line
 
 #+end_src
 
-** Searching
+* Searching
 
 #+BEGIN_SRC emacs-lisp
 
@@ -226,7 +89,7 @@ Toggle Mode Line
 
 #+END_SRC
 
-** Enable SpellCheck
+* Enable SpellCheck
 
 #+begin_src emacs-lisp
 
@@ -234,15 +97,19 @@ Toggle Mode Line
 
 #+end_src
 
-** Enable Auto Pairing
+* Enable Auto Pairing
 
 #+begin_src emacs-lisp
 
-  (electric-pair-mode 1)
+  (dolist (mode '(emacs-lisp-mode
+                  lisp-mode
+                  javascript-mode
+                  html-mode))
+    (add-hook mode (lambda () ((electric-pair-mode 1)))))
 
 #+end_src
 
-** Hide Minor Modes in Mode line
+* Hide Minor Modes list in Mode line
 
 #+begin_src emacs-lisp
 
@@ -265,7 +132,7 @@ Toggle Mode Line
 
 #+end_src
 
-** Disable Line Wrap in every major mode
+* Disable Line Wrap
 
 #+begin_src emacs-lisp
 

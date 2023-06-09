@@ -71,3 +71,16 @@ Don't open multiple buffers for dired directory navigation instead use only one.
     )
 
 #+end_src
+* Perspective
+
+:investigate:
+
+#+begin_src emacs-lisp
+
+  (use-package perspective
+    :bind
+    ("C-x C-b" . persp-list-buffers)   ; or use a nicer switcher, see below
+    :config
+    (persp-mode))
+
+#+end_src

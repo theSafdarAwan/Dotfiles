@@ -28,8 +28,7 @@ Change the Org heading font
 
 #+begin_src emacs-lisp
 
-  (dolist (face '(
-                  (org-level-1 . 1.9)
+  (dolist (face '((org-level-1 . 1.9)
                   (org-level-2 . 1.7)
                   (org-level-3 . 1.6)
                   (org-level-4 . 1.4)
@@ -38,8 +37,7 @@ Change the Org heading font
                   (org-level-7 . 1.4)
                   (org-level-8 . 1.4)))
     (set-face-attribute (car face) nil
-                        :font "Lora" :weight 'Bold :height (cdr face))
-    )
+                        :font "Lora" :weight 'Bold :height (cdr face)))
 
 #+end_src
 
@@ -128,8 +126,7 @@ Change the Org heading font
   ;;     (add-text-properties
   ;;         (match-beginning 1) (match-end 0)
   ;;         '(font-lock-fontified t face (t (:foreground "#008ED1" :background "#FFFFEA"))))
-  ;;     (org-remove-flyspell-overlays-in (match-beginning 0) (match-end 0))
-  ;;     t))
+  ;;     (org-remove-flyspell-overlays-in (match-beginning 0) (match-end 0)) t))
   ;; ;; Inline source block
   ;; '(org-fontify-inline-src-block)
 
