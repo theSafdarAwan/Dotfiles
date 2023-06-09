@@ -1,7 +1,6 @@
-* UI
+* Icons
 
-** Icons
-
+** All Icons
 #+begin_src emacs-lisp
 
   (use-package all-the-icons
@@ -13,7 +12,7 @@
 
 #+end_src
 
-*** Icons for Completion
+** All Icons for Completion
 
 #+begin_src emacs-lisp
 
@@ -24,9 +23,9 @@
 
 #+end_src
 
-** Themes
+* Themes
 
-*** modus-themes 
+** modus-themes 
 
 #+begin_src emacs-lisp
 
@@ -34,7 +33,7 @@
 
 #+end_src
 
-*** Dracula
+** Dracula
 
 #+begin_src emacs-lisp
 
@@ -45,7 +44,7 @@
 
 #+end_src
 
-*** Atom
+** Atom
 
 #+begin_src emacs-lisp
 
@@ -56,7 +55,7 @@
 
 #+end_src
 
-*** Doom Emacs Themes
+** Doom Emacs Themes
 
 #+begin_src emacs-lisp
 
@@ -79,7 +78,7 @@
 
 #+end_src
 
-*** Solarized
+** Solarized
 
 #+begin_src emacs-lisp
 

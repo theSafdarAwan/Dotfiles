@@ -69,15 +69,17 @@
 
 * Change The Backup files location
 
+Don't need this anymore because i am using ~no-littering~ package.
+
 #+begin_src emacs-lisp
 
-  (setq backup-directory-alist '(("." . "~/.cache/emacs-backup-files"))
-        backup-by-copying t    ; Don't delink hardlinks
-        version-control t      ; Use version numbers on backups
-        delete-old-versions t  ; Automatically delete excess backups
-        kept-new-versions 20   ; how many of the newest versions to keep
-        kept-old-versions 5    ; and how many of the old
-        )
+  ;; (setq backup-directory-alist '(("." . "~/.cache/emacs-backup-files"))
+  ;;       backup-by-copying t    ; Don't delink hardlinks
+  ;;       version-control t      ; Use version numbers on backups
+  ;;       delete-old-versions t  ; Automatically delete excess backups
+  ;;       kept-new-versions 20   ; how many of the newest versions to keep
+  ;;       kept-old-versions 5    ; and how many of the old
+  ;;       )
 
 #+end_src
 

@@ -6,6 +6,7 @@
 
   (org-babel-load-file (expand-file-name "setup/UI.org" user-emacs-directory))
 
+  (org-babel-load-file (expand-file-name "setup/dired.org" user-emacs-directory))
   (org-babel-load-file (expand-file-name "setup/navigation.org" user-emacs-directory))
 
   (org-babel-load-file (expand-file-name "setup/completion.org" user-emacs-directory))
@@ -24,4 +25,20 @@
 
   (org-babel-load-file (expand-file-name "setup/custom-functions.org" user-emacs-directory))
 
+  ;; (loop for file in '("setup/boot-strap.org"
+  ;; 		    "setup/config.org"
+  ;; 		    "setup/UI.org"
+  ;; 		    "setup/dired.org"
+  ;; 		    "setup/navigation.org"
+  ;; 		    "setup/completion.org"
+  ;; 		    "setup/note-taking.org"
+  ;; 		    "setup/other-packages.org"
+  ;; 		    "setup/vim-bindings.org"
+  ;; 		    "setup/keybindings.org"
+  ;; 		    "setup/fonts-setting.org"
+  ;; 		    "setup/theme-settings.org"
+  ;; 		    "setup/language-support.org"
+  ;; 		    "setup/custom-functions.org")
+  ;; do (org-babel-load-file (expand-file-name file user-emacs-directory)))
+  
 #+end_src
