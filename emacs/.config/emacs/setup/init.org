@@ -1,10 +1,23 @@
 #+begin_src emacs-lisp
-(org-babel-load-file (expand-file-name "setup/boot-strap.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/UI.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/bindings.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/completion.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/language-support.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/navigation.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/note-taking.org" user-emacs-directory))
-(org-babel-load-file (expand-file-name "setup/config.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/boot-strap.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/UI.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/navigation.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/completion.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/note-taking.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/vim-bindings.org" user-emacs-directory))
+  (org-babel-load-file (expand-file-name "setup/keybindings.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/fonts-setting.org" user-emacs-directory))
+  (org-babel-load-file (expand-file-name "setup/theme-settings.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/language-support.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/config.org" user-emacs-directory))
+
 #+end_src

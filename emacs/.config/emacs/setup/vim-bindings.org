@@ -1,0 +1,48 @@
+* evil-mode
+
+#+begin_src emacs-lisp
+
+  (use-package evil
+    :init      ;; tweak evil's configuration before loading it
+    ;; (setq evil-want-keybinding nil)
+    (setq evil-vsplit-window-right t)
+    (setq evil-split-window-below t)
+    (setq evil-want-C-u-scroll t)
+    (setq evil-want-C-i-jump t)
+    :config
+    (evil-mode 1)
+    (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+    (evil-set-initial-state 'messages-buffer-mode 'normal)
+    (evil-set-initial-state 'vterm-mode 'insert)
+    ;; enable the undo functionality
+    (evil-set-undo-system 'undo-redo) 
+    (evil-define-key 'insert org-mode-map "\C-y" #'org-yank)
+    ;; move through wraped lines, with need of using gj or gk
+    (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+    (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
+          ;; extend evil mode to other modes
+          (defun rune/evil-hook()
+              (dolist
+                  (mode '(custom-mode
+                          eshell-mode
+                          git-rebase-mode
+                          erc-mode
+                          circe-server-mode
+                          circe-chat-mode
+                          circe-query-mode
+                          sauron-mode
+                          term-mode))
+                  (add-to-list 'evil-emacs-state-modes mode))))
+
+#+end_src
+
+* Evil Surround
+
+#+begin_src emacs-lisp
+
+  (use-package evil-surround
+    :config
+    (global-evil-surround-mode 1))
+
+#+end_src

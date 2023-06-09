@@ -43,53 +43,62 @@
 
 #+end_src
 
-* Add Vim bindings
+* Key-bindings
 
-** evil-mode
+** Get out of a mode with a single <ESCAPE> key rather then 3
 
 #+begin_src emacs-lisp
 
-  (use-package evil
-    :init      ;; tweak evil's configuration before loading it
-    ;; (setq evil-want-keybinding nil)
-    (setq evil-vsplit-window-right t)
-    (setq evil-split-window-below t)
-    (setq evil-want-C-u-scroll t)
-    (setq evil-want-C-i-jump t)
-    :config
-    (evil-mode 1)
-    (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-    (evil-set-initial-state 'messages-buffer-mode 'normal)
-    (evil-set-initial-state 'vterm-mode 'insert)
-    ;; enable the undo functionality
-    (evil-set-undo-system 'undo-redo) 
-    (evil-define-key 'insert org-mode-map "\C-y" #'org-yank)
-    ;; move through wraped lines, with need of using gj or gk
-    (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-    (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-
-          ;; extend evil mode to other modes
-          (defun rune/evil-hook()
-              (dolist
-                  (mode '(custom-mode
-                          eshell-mode
-                          git-rebase-mode
-                          erc-mode
-                          circe-server-mode
-                          circe-chat-mode
-                          circe-query-mode
-                          sauron-mode
-                          term-mode))
-                  (add-to-list 'evil-emacs-state-modes mode))))
+  (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 #+end_src
 
-** Evil Surround
+** Set C-x C-e to execute selected region
 
 #+begin_src emacs-lisp
 
-  (use-package evil-surround
-    :config
-    (global-evil-surround-mode 1))
+  (global-set-key (kbd "C-x C-e") 'eval-region)
+
+#+end_src
+
+** Describe Functions
+
+#+begin_src emacs-lisp
+
+  (defhydra hydra-describe-actions ()
+    "
+    ^Help^                 ^Font Lock^   
+    ^^^^^^^^------------------------------
+    _f_: Function          _F_: Face   
+    _v_: Variable          _-_: Font
+    _k_: Keymap
+    "
+    ;; help describe commands
+    ("f" counsel-describe-function nil)
+    ("v" counsel-describe-variable nil)
+    ("k" describe-keymap nil)
+
+    ;; describe font lock options
+    ("-" describe-font nil)
+    ("F" describe-face nil))
+  (global-set-key (kbd "C-c d") 'hydra-describe-actions/body)
+
+#+end_src
+
+** Load/Disable Themes Easily
+
+#+begin_src emacs-lisp
+
+  (defhydra hydra-theme-actions ()
+    "
+    ^Theme Actions^ 
+    ^^^^^^^^-------
+    _l_: Load Theme
+    _d_: Disable Them
+    "
+    ("l" load-theme nil)
+    ("d" disable-theme nil))
+
+  (global-set-key (kbd "C-c t") 'hydra-theme-actions/body)
 
 #+end_src

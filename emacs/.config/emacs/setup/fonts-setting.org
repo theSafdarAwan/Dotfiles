@@ -1,0 +1,153 @@
+
+Emacs default font.
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'default nil :font "FiraCode Nerd Font")
+
+#+end_src
+
+
+* Line Spacing
+
+Add some space between lines
+
+#+begin_src emacs-lisp
+
+  (setq-default line-spacing 2)
+
+#+end_src
+
+* Org Mode font configuration
+
+ Set the default font for the Org file type. This needs the ~buffer-face-mode~ turned on, to work, otherwise it won't effect the paragraph and some other buffer font faces. see: [[buffer-face-mode]]
+
+** Headings
+
+Change the Org heading font
+
+#+begin_src emacs-lisp
+
+  (dolist (face '(
+                  (org-level-1 . 1.9)
+                  (org-level-2 . 1.7)
+                  (org-level-3 . 1.6)
+                  (org-level-4 . 1.4)
+                  (org-level-5 . 1.4)
+                  (org-level-6 . 1.4)
+                  (org-level-7 . 1.4)
+                  (org-level-8 . 1.4)))
+    (set-face-attribute (car face) nil
+                        :font "Lora" :weight 'Bold :height (cdr face))
+    )
+
+#+end_src
+
+** Paragraph & other text
+
+~org-default~ face effect org paragraphs and some other text, if their font faces were not changed.
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'org-default nil 
+                      :font "Montserrat" 
+                      :weight 'Regular
+                      :height 1.1)
+
+#+end_src
+
+** Code Blocks
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'org-block nil 
+                      :font "FiraCode Nerd Font" 
+                      :background "#002630")
+
+#+end_src
+
+** Other Faces
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'org-table nil 
+                      :inherit 'fixed-pitch)
+  (set-face-attribute 'org-formula nil 
+                      :inherit 'fixed-pitch)
+  (set-face-attribute 'org-verbatim nil 
+                      :inherit '(shadow fixed-pitch))
+  (set-face-attribute 'org-meta-line nil 
+                      :inherit '(font-lock-comment-face fixed-pitch))
+
+  ;; todo checkbox
+  (set-face-attribute 'org-checkbox nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Bold 
+                      :inherit 'fixed-pitch 
+                      :height 0.7)
+
+  ;; org table header, this appears when the table header is no longer in the screen view
+  ;; this functin is a minor mode called ~org-table-header-line-mode~
+  (set-face-attribute 'org-table-header nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Bold 
+                      :height 1.0)
+
+  ;; change the list items type style for example: 1., a, etc.
+  (set-face-attribute 'org-list-dt nil 
+                      :font "Lora" 
+                      :weight 'Bold 
+                      :height 1.0)
+
+  ;; change the special property keywords
+  (set-face-attribute 'org-special-keyword nil 
+                      :font "Lato" 
+                      :weight 'Bold 
+                      :height 1.0)
+
+  ;; document information
+  (set-face-attribute 'org-document-title nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Bold 
+                      :height 1.3)
+
+  (set-face-attribute 'org-document-info-keyword nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Bold
+                      :height 1.0)
+
+#+end_src
+
+** TODO ??
+
+#+begin_src emacs-lisp
+
+  ;; (defun org-fontify-inline-src-block (limit)
+  ;;     "Fontify inline source block."
+  ;;     (when (re-search-forward org-babel-inline-src-block-regexp limit t)
+  ;;     (add-text-properties
+  ;;         (match-beginning 1) (match-end 0)
+  ;;         '(font-lock-fontified t face (t (:foreground "#008ED1" :background "#FFFFEA"))))
+  ;;     (org-remove-flyspell-overlays-in (match-beginning 0) (match-end 0))
+  ;;     t))
+  ;; ;; Inline source block
+  ;; '(org-fontify-inline-src-block)
+
+#+end_src
+
+** Line Number's font configuration
+
+#+begin_src emacs-lisp
+
+  (set-face-attribute 'line-number-current-line nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Normal 
+                      :height 1.0 
+                      :inherit 'fixed-pitch)
+  (set-face-attribute 'line-number nil 
+                      :font "FiraCode Nerd Font" 
+                      :weight 'Normal
+                      :height 1.0 
+                      :inherit 'fixed-pitch)
+
+#+end_src
