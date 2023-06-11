@@ -25,6 +25,8 @@
 
   (use-package org
     :config
+    (setq org-link-search-must-match-exact-headline nil)
+    (setq org-id-link-to-org-use-id t)
     ;; (setq org-table-header-line-p t)
     (setq org-startup-with-inline-images t) ;; render images
     (setq org-hide-emphasis-markers t)
@@ -87,6 +89,12 @@ Enable ~buffer-face-mode~ in org files in order to customize buffer specific fon
   (global-set-key (kbd "C-c l") #'org-store-link)
   (global-set-key (kbd "C-c a") #'org-agenda)
   ;; (global-set-key (kbd "C-c c") #'org-capture)
+
+  ;; use ~M-n~ and ~M-p~ to go through links in buffer
+  (with-eval-after-load 'org
+    (define-key org-mode-map (kbd "M-n") #'org-next-link)
+    (define-key org-mode-map (kbd "M-p") #'org-previous-link))
+
 
 #+end_src
 
