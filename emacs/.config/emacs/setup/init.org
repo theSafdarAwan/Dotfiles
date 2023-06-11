@@ -40,5 +40,5 @@
   ;; 		    "setup/language-support.org"
   ;; 		    "setup/custom-functions.org")
   ;; do (org-babel-load-file (expand-file-name file user-emacs-directory)))
-  
+
 #+end_src
