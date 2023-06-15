@@ -1,12 +1,21 @@
+* Solarized 
 
 These tweaks are intended to work with the *solarized-dark* theme.
 
-* Selection Color
+** Selection Color
 
 Color for selected text. Emacs calls it =region=.
 
 #+begin_src emacs-lisp
 
-  (set-face-attribute 'region nil :background "#073642" :foreground nil)
+  ;;  (set-face-attribute 'region nil :background "#073642" :foreground nil)
+
+#+end_src
+
+** Code Blocks
+
+#+begin_src emacs-lisp
+
+  ;; (set-face-attribute 'org-block nil :background "#002630")
 
 #+end_src

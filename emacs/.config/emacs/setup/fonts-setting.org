@@ -59,8 +59,7 @@ Change the Org heading font
 #+begin_src emacs-lisp
 
   (set-face-attribute 'org-block nil 
-                      :font "FiraCode Nerd Font" 
-                      :background "#002630")
+                      :font "FiraCode Nerd Font")
 
 #+end_src
 

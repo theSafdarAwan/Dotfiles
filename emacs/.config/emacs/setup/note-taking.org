@@ -17,6 +17,7 @@
 
 #+END_SRC
 
+
 * Note Taking
 
 ** Org
@@ -25,15 +26,24 @@
 
   (use-package org
     :config
+    (setq org-enforce-todo-dependencies t)
+    (setq org-agenda-dim-blocked-tasks t)
+    (setq org-enforce-todo-checkbox-dependencies t)
+
+    (setq org-log-into-drawer t)
+
     (setq org-link-search-must-match-exact-headline nil)
     (setq org-id-link-to-org-use-id t)
+
     ;; (setq org-table-header-line-p t)
     (setq org-startup-with-inline-images t) ;; render images
     (setq org-hide-emphasis-markers t)
+
     (setq org-ellipsis " ▾")
     ;; (setq org-hide-block-startup t)
     (setq org-list-demote-modify-bullet
           '(("-" . "+") ("+" . "-") ("*" . "+")))
+
     (setq-default org-list-indent-offset 1)
     (setq org-yank-adjusted-subtrees t) ;; lets me use C-y as the C-c C-x C-y
     (setq org-list-allow-alphabetical t)
@@ -50,17 +60,23 @@
 
     ;; enable auto line breaking in org-mode
     ;; (add-hook 'org-mode-hook (lambda() ((turn-on-auto-fill))))
+    )
 
-    ;; add org source block templates
-    (require 'org-tempo)
-    (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
-    (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
-    (add-to-list 'org-structure-template-alist '("js" . "src javascript"))
-    (add-to-list 'org-structure-template-alist '("lua" . "src lua"))
-    (add-to-list 'org-structure-template-alist '("py" . "src python"))
-    (add-to-list 'org-structure-template-alist '("html" . "src html"))
-    (add-to-list 'org-structure-template-alist '("css" . "src css"))
-    (add-to-list 'org-structure-template-alist '("lisp" . "src lisp")))
+#+end_src
+
+*** SRC snippets
+
+#+begin_src emacs-lisp
+
+  (require 'org-tempo)
+  (add-to-list 'org-structure-template-alist '("sh" . "SRC shell"))
+  (add-to-list 'org-structure-template-alist '("el" . "SRC emacs-lisp"))
+  (add-to-list 'org-structure-template-alist '("js" . "SRC javascript"))
+  (add-to-list 'org-structure-template-alist '("lua" . "SRC lua"))
+  (add-to-list 'org-structure-template-alist '("py" . "SRC python"))
+  (add-to-list 'org-structure-template-alist '("html" . "SRC html"))
+  (add-to-list 'org-structure-template-alist '("css" . "SRC css"))
+  (add-to-list 'org-structure-template-alist '("lisp" . "SRC lisp"))
 
 #+end_src
 
@@ -83,6 +99,9 @@ Enable ~buffer-face-mode~ in org files in order to customize buffer specific fon
 #+end_src
 
 *** Add Org keybindings.
+:PROPERTIES:
+:ID:       2f84b850-334b-4494-ab2e-1fcfd6e833d7
+:END:
 
 #+begin_src emacs-lisp
 
@@ -98,22 +117,53 @@ Enable ~buffer-face-mode~ in org files in order to customize buffer specific fon
 
 #+end_src
 
-*** Tasks Keywords
+*** Tasks
+
+**** Logging Tasks
+
+Add closing time stamp when a task is done.
+
+=NOTE=: currently not using this option, this is achieved by the [[id:2f84b850-334b-4494-ab2e-1fcfd6e833d7][Add Org keybindings]] using ~!~ and ~@~ in _global keywords_ and _fast access_ keys.
+
+#+begin_SRC emacs-lisp
+
+  ;; (add-hook 'org-mode-hook (lambda() (setq org-log-done 'time)))
+
+#+end_SRC
+
+**** Extend Tasks States
+:PROPERTIES:
+:ID:       f62cf80d-09ca-40e1-84be-4a9536e49f9f
+:END:
+
+   The vertical bar(~|~) separates the TODO keywords (states that _need action_) from the DONE states (which need _no further action_).  If you do not provide the separator bar, the last state is used as the DONE state.
+
+  ~@~ is used for adding _logging notes_, ~!~ for _timestamp_ and ~/~ is a special case to add timestamp when _leaving_ this state.
 
 #+begin_src emacs-lisp
-
-  (setq org-todo-keywords
-      '((sequence
-          "TODO(t)"         ; A task that is ready to be tackled
-          "WAIT(w)"         ; Something is holding up this task
-          "DOING(d)"        ; When i am doing a task
-          "|"               ; The pipe to separate "active" and "inactive" states
-          "DONE(D)"         ; Task has been completed
-          "CANCELLED(c)" ))); Task has been cancelled
+  (setq org-todo-keywords '(
+          (sequence "TODO(t)" "WAIT(w@/!)" "DOING(d!)" "|" "DONE(D@/!)" "CANCELLED(c@/!)")
+          ;; (sequence "FIXME(f)" "BUG(b)" "|" "FIXED(F)")
+          ))
 
 #+end_src
 
-*** TODO ??
+**** Make tasks keywords look beautiful 
+
+Setting Faces for tasks Keywords
+
+#+begin_src emacs-lisp
+
+  (setq org-todo-keyword-faces
+        '(("TODO" . (:foreground "#9ece6a" :weight Bold :box t))
+          ("WAIT" . (:foreground "#7aa2f7" :weight Bold :box t))
+          ("DOING" . (:foreground "#ff9e64" :weight Bold :box t))
+          ("DONE" . (:foreground "#bb9af7" :weight Bold :box t))
+          ("CANCELLED" . (:foreground "#bb9af7" :weight Bold :box t))))
+
+#+end_src
+
+**** TODO ??
 
 #+begin_src emacs-lisp
 
@@ -161,7 +211,7 @@ Enable ~buffer-face-mode~ in org files in order to customize buffer specific fon
           _f_: Find node   _b t_: Buffer toggle    _j t_: Today     _c c_: Choose Node
           _i_: Insert Node _b d_: Dedicated buffer _j T_: Tomorrow  _c t_: Today Journal
           ^ ^              _b r_: Refresh Buffer   _j y_: Yesterday _c T_: Tomorrow Journal
-          "
+      "
       ;; node
       ("f" org-roam-node-find nil)
       ("i" org-roam-node-insert nil)
@@ -214,16 +264,40 @@ Write Anki cards  in org-mode
 
 #+end_src
 
-* Org Reading Mode
+* Custom Functions for Reading and Writing Org files
 
-My minor mode for reading org mode documents.
-
+** TODO 
 - [ ] when you understand enough ~emacs-lisp~ write this function to enable margins in ~org-mode~ only, without having to enable it everywhere.
+- [ ] also hide the ~mode-line~
 
-- [X] also hide the ~mode-line~
+#+begin_SRC emacs-lisp
 
-#+begin_src emacs-lisp
+  ;; change size of the org headlines faces
+  (defun make-org-headings-small()
+    (dolist (face '((org-level-1 . 1.2)
+                    (org-level-2 . 1.2)
+                    (org-level-3 . 1.2)
+                    (org-level-4 . 1.2)
+                    (org-level-5 . 1.2)
+                    (org-level-6 . 1.2)
+                    (org-level-7 . 1.2)
+                    (org-level-8 . 1.2)))
+      (set-face-attribute (car face) nil
+                          :font "Lora" :weight 'Bold :height (cdr face))))
 
+  (defun make-org-headings-large()
+    (dolist (face '((org-level-1 . 1.9)
+                    (org-level-2 . 1.7)
+                    (org-level-3 . 1.6)
+                    (org-level-4 . 1.4)
+                    (org-level-5 . 1.4)
+                    (org-level-6 . 1.4)
+                    (org-level-7 . 1.4)
+                    (org-level-8 . 1.4)))
+      (set-face-attribute (car face) nil
+                          :font "Lora" :weight 'Bold :height (cdr face))))
+
+  ;; make file look beautiful when reading
   (defun reading-mode ()
     (set-window-margins nil 8 8)
     (global-display-line-numbers-mode 0)
@@ -239,12 +313,16 @@ My minor mode for reading org mode documents.
 
   (defhydra hydra-reading-mode ()
     "
-             ^Reading Mode Commands^
-    ^^^^^^^^-----------------------------------------
-    _e_: Enable Reading Mode _d_: Disable Reading Mode   
+                ^Reading Actions^               ^Writing Actions^
+    ^^^^^^^^-----------------------------------------------------------------
+            _e_: Enable Reading Mode        _h_: Make Headings small 
+            _d_: Disable Reading Mode       _H_: Make Headings Large 
     "
     ("e" (reading-mode) nil)
-    ("d" (no-reading-mode) nil))
+    ("d" (no-reading-mode) nil)
+    ("h" (make-org-headings-small) nil)
+    ("H" (make-org-headings-large) nil)
+  )
   (global-set-key (kbd "C-c p") 'hydra-reading-mode/body)
 
 #+end_src

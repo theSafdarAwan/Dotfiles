@@ -51,7 +51,7 @@
     ;; add keymap for swiper
     (global-set-key (kbd "M-s") 'swiper)
     ;; buffer switcher
-    (global-set-key (kbd "C-M-b") 'counsel-switch-buffer))	
+    (global-set-key (kbd "M-C-b") 'counsel-switch-buffer))
 
   ;; extend ivy
   (use-package ivy-rich
