@@ -3,21 +3,24 @@
 # check if the neovim directory exists if yes then pull the changes from github
 # if not then make directory and clone the neovim repo
 if [ -d ~/.local/temp/builds/neovim/ ]; then
-    cd ~/.local/temp/builds/neovim
 
-    # ask before pulling the changes from github
-    read -p "Do you want to pull the changes from Github(yes/no): " pullAnswer 
-    if [[ $pullAnswer == "yes" || $pullAnswer == "y" || $pullAnswer == "ye" ]]; then
-        git pull
-    fi
+		cd ~/.local/temp/builds/neovim
 
-    # if the nvim binary from the previous build exists then remove it
-    if [ -d ~/.local/temp/builds/neovim/build/bin/nvim ]; then
-        rm -rf ~/.local/temp/builds/neovim/build/bin/nvim 
-    fi
+		# ask before pulling the changes from github
+		read -p "Do you want to pull the changes from Github(yes/no): " pullAnswer 
+		if [[ $pullAnswer == "yes" || $pullAnswer == "y" || $pullAnswer == "ye" ]]; then
+			git pull
+		fi
+
+		# if the nvim binary from the previous build exists then remove it
+		if [ -d ~/.local/temp/builds/neovim/build/bin/nvim ]; then
+			rm -rf ~/.local/temp/builds/neovim/build/bin/nvim 
+		fi
 else
-    mkdir -p ~/.local/temp/builds/
-    git clone https://github.com/neovim/neovim
+		mkdir -p ~/.local/temp/builds/
+		cd ~/.local/temp/builds/
+		git clone https://github.com/neovim/neovim
+		cd neovim
 fi
 
 # ask the user for input whether to build the neovim or not
@@ -26,18 +29,18 @@ read -p "Build the neovim(yes/no): " answer
 # checking for the use answer to be yes or not if y|ye|yes then make otherwise
 # exit
 if [[ $answer == "yes" || $answer == "y" || $answer == "ye" ]]; then
-    echo "Building the neovim"
-    # make neovim
-    sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
-    sudo make install 
+	echo "Building the neovim"
+	# make neovim
+	sudo make CMAKE_BUILD_TYPE=RelWithDebInfo
+	sudo make install 
 else
-    echo "Exiting the Script"
-    exit
+	echo "Exiting the Script"
+	exit
 fi
 
 # ask user input to move nvim binary to /usr/bin
 read -p "Do you want to move the nvim binary to /usr/bin(yes/no): " moveNvimBin
 
 if [[ $moveNvimBin == "yes" || $moveNvimBin == "y" || $moveNvimBin == "ye" ]]; then
-    sudo mv ~/.local/temp/builds/neovim/build/bin/nvim /usr/bin/
+	sudo mv ~/.local/temp/builds/neovim/build/bin/nvim /usr/bin/
 fi

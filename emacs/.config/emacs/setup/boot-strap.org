@@ -28,9 +28,9 @@ In Emacs 29, the location of the native compilation cache can be changed.
 
 #+begin_src emacs-lisp
 
-  (setq debug-on-error t
-        debug-on-signal nil
-        debug-on-quit nil)
+  ;; (setq debug-on-error t
+  ;;       debug-on-signal nil
+  ;;       debug-on-quit nil)
 
 #+end_src
 

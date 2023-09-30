@@ -7,6 +7,7 @@
   fallthrough true
   allow-cmd false
 ) (defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
@@ -15,6 +16,7 @@
 )
 
 (deflayer qwerty
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   lctl a    s    d    f    g    h    j    k    l    ;    '    ret
@@ -23,27 +25,30 @@
 )
 
 (deflayer utilize
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   @t   1    2    3    4    5    6    7    8    9    0    -    =    XX
   XX   XX   XX   esc  XX   XX   XX   pgup XX   XX   XX   XX   XX   XX  
   lctl home XX   pgdn XX   end  left down up   rght XX   XX   ret
   lsft XX   del  XX   XX   XX   XX   spc  XX   XX   XX   XX
-  @qwe XX   lalt                cmp        XX   XX   XX   XX
+  lctl XX   lalt                cmp        XX   XX   XX   XX
 )
 
 (deflayer typing
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    XX
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   lctl a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  @qwe lmet lalt           spc            @utt rmet cmp  rctl
+  XX lmet lalt           spc            @utt rmet cmp  rctl
 )
 
 (deflayer disalbe_ctrl_key_for_browser
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   XX   a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  @qwe   lmet lalt           spc            ralt rmet cmp  rctl
+  lctl   lmet lalt           spc            ralt rmet cmp  rctl
 )
 
 (defalias 

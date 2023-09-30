@@ -42,6 +42,7 @@
 # - zoxide
 # - clisp
 # - rust
+# - dabtap
 # - rust-analyzer
 # - luarocks
 # - discord
@@ -60,8 +61,9 @@
 # - virtualbox
 # - keepassxc
 # - figlet
+# - tree-sitter-cli
 
-# screenkey
+# - screenkey
 
 # - dust
 # - bat
@@ -128,6 +130,7 @@
 # - wezterm
 # - klavaro-svn
 # - ldoc
+# - figma-linux
 
 # - zsh-vi-mode
 # - google-chrome
@@ -170,25 +173,38 @@
 # - protonvpn-cli
 # - powershell-bin
 
+
+
+
+
+
+---------------------------------
+
+
+
+
+
+
 ########################## Fonts
 # - ttf-ms-fonts
 # - ttf-vista-fonts
 # - nerd-fonts-complete
 
 ####################### Install through Snaps
-# - xonotic
 # - todoist
 # - fortune-cm
+#----- Game
+# - xonotic
 
 ########### Cargo
 # sudo cargo install stylua
 # sudo cargo install ttyper
-# sudo cargo install tree-sitter-cli
 # sudo cargo install deno --locked
 # cargo install --git https://github.com/loichyan/nerdfix
 
 ########## go
 # go install golang.org/x/tools/gopls@latest
+
 ### install github cli
 # git clone https://github.com/cli/cli.git gh-cli
 # cd gh-cli
@@ -292,3 +308,17 @@
 # UUID=EA5861CF58619AD9 /home/safdar/Disks/UI     ntfs defaults,noatime 0 2
 # UUID=f6df680a-21ca-4e75-a4ef-1873101e6a28 /home/safdar/Disks/StudyData     ext4 defaults,noatime 0 2
 # UUID=0B9657181CE7893F /home/safdar/Disks/MediaDisk     ntfs defaults,noatime 0 2
+
+
+# kmonad
+
+# Add self to the input and uinput groups
+sudo usermod -aG input $USER
+sudo groupadd uinput
+sudo usermod -aG uinput $USER
+
+echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/90-uinput.rules
+
+# This seems to be needed because uinput isn't compiled as a loadable module these days.
+# See https://github.com/chrippa/ds4drv/issues/93#issuecomment-265300511
+echo uinput | sudo tee /etc/modules-load.d/uinput.conf

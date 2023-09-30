@@ -10,7 +10,7 @@
     (setq evil-want-C-u-scroll t)
     (setq evil-want-C-i-jump t)
     :config
-    (evil-mode 1)
+    ;; (evil-mode 1)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
     (evil-set-initial-state 'messages-buffer-mode 'normal)
     (evil-set-initial-state 'vterm-mode 'insert)
