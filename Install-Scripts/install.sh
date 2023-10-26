@@ -141,6 +141,7 @@
 # - htop-vim
 # - btop
 # - weechat-git
+# - zotero
 
 # slop
 
@@ -322,3 +323,25 @@ echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinpu
 # This seems to be needed because uinput isn't compiled as a loadable module these days.
 # See https://github.com/chrippa/ds4drv/issues/93#issuecomment-265300511
 echo uinput | sudo tee /etc/modules-load.d/uinput.conf
+
+
+
+
+
+### to solve the buzzing noise for microphone
+sudo vim /etc/pulse/default.pa
+## Add Below line
+load-module module-echo-cancel  
+## Save & Close 
+pulseaudio -k
+pulseaudio --start 
+
+
+### Solve the buzzing from the front audio port
+
+sudo vim /etc/modprobe.d/audio_disable_powersave.conf
+options snd-hda-intel power_save=1
+
+sudo mkinitcpio -p linux*
+
+reboot

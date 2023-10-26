@@ -206,12 +206,12 @@ awful.screen.connect_for_each_screen(function(s)
 	local l = awful.layout.suit
 	local layouts = {
 		l.max,
-		l.magnifier,
 		l.max,
 		l.max,
 		l.max,
 		l.max,
-		l.spiral,
+		l.max,
+		l.max,
 		l.max.fullscreen,
 		l.max,
 	}
@@ -542,11 +542,8 @@ awful.rules.rules = {
 				"Arandr",
 				"Blueman-manager",
 				"Gpick",
-				"thunderbird*",
 				"ksnip",
-				-- "tabbed",
 				"Kruler",
-				"Anki",
 				"MessageWin", -- kalarm.
 				"Sxiv",
 				"Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
@@ -588,15 +585,18 @@ awful.rules.rules = {
 				"qBittorrent",
 			},
 		},
-		properties = { tag = taglist_names[1] },
+		properties = { tag = taglist_names[1], floating = false },
 	},
 	--> Tag 2
-	-- {
-	-- 	rule = {
-	-- 		class = "org.wezfurlong.wezterm",
-	-- 	},
-	-- 	properties = { screen = 1, tag = taglist_names[2] },
-	-- },
+	{
+		rule_any = {
+			class = {
+				"org.wezfurlong.wezterm",
+				"Emacs",
+			},
+		},
+		properties = { tag = taglist_names[2], floating = false },
+	},
 	--> Tag 3
 	{
 		rule_any = {
@@ -609,21 +609,21 @@ awful.rules.rules = {
 				"Peazip",
 			},
 		},
-		properties = { tag = taglist_names[3] },
+		properties = { tag = taglist_names[3], floating = false },
 	},
 	--> Tag 4
 	{
 		rule_any = {
 			class = { "TIPP10", "Todoist", "Stardict", "logseq", "Anki" },
 		},
-		properties = { screen = 1, tag = taglist_names[4] },
+		properties = { screen = 1, tag = taglist_names[4], floating = false },
 	},
 	--> Tag 5
 	{
 		rule_any = {
 			class = { "Nitrogen", "stacer", "BleachBit" },
 		},
-		properties = { screen = 1, tag = taglist_names[5] },
+		properties = { screen = 1, tag = taglist_names[5], floating = false },
 	},
 	--> Tag 7
 	{
@@ -718,9 +718,10 @@ end)
 client.connect_signal("focus", function(c)
 	c.border_color = beautiful.border_focus
 end)
-client.connect_signal("unfocus", function(c)
-	c.border_color = beautiful.border_normal
-end)
+-- why is this giving me error
+-- client.connect_signal("unfocus", function(c)
+--	c.border_color = beautiful.border_normal
+-- end)
 
 beautiful.maximized_hide_border = true
 beautiful.tasklist_align = "left"

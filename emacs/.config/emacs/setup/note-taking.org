@@ -37,6 +37,15 @@
 
     (setq org-use-tag-inheritance nil)
 
+    (setq org-special-ctrl-a/e t)
+    (setq org-special-ctrl-k t)
+    (setq org-ctrl-k-protect-subtree t)
+    (setq org-cycle-global-at-bob t)
+
+    ;; sparse
+    (setq org-agenda-custom-commands
+      '(("t" occur-tree "TODO")))
+
     ;; (setq org-tag-alist '(("Programming") ("IT")))
 
     (setq org-tag-persistent-alist '((:startgroup . nil)
@@ -59,7 +68,7 @@
     (setq org-list-demote-modify-bullet
           '(("-" . "+") ("+" . "-") ("*" . "+")))
 
-    (setq-default org-list-indent-offset 1)
+    (setq-default org-list-indent-offset 0)
     (setq org-yank-adjusted-subtrees t) ;; lets me use C-y as the C-c C-x C-y
     (setq org-list-allow-alphabetical t)
     ;; (setq org-yank-folded-subtrees nil) ;; don't fold when pasting org sub-trees
@@ -78,6 +87,13 @@
     )
 
 #+end_src
+
+*** Org Clocking Work Time Tracking
+
+#+BEGIN_SRC lisp
+     (setq org-clock-persist 'history)
+     (org-clock-persistence-insinuate)
+#+END_SRC
 
 *** load Habits module
 

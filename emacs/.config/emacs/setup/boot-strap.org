@@ -17,10 +17,10 @@ In Emacs 29, the location of the native compilation cache can be changed.
 
 #+begin_src emacs-lisp
 
-  (when (fboundp 'startup-redirect-eln-cache)
-  (startup-redirect-eln-cache
-   (convert-standard-filename
-    (expand-file-name  "etc/eln-cache/" user-emacs-directory))))
+;;  (when (fboundp 'startup-redirect-eln-cache)
+;;  (startup-redirect-eln-cache
+;;   (convert-standard-filename
+;;    (expand-file-name  "etc/eln-cache/" user-emacs-directory))))
 
 #+end_src
 

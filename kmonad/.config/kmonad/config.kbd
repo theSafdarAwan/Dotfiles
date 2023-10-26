@@ -1,9 +1,10 @@
 (defcfg
-  input  (device-file "/dev/input/by-id/usb-413c_Dell_KB216_Wired_Keyboard-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-413c_Dell_KB216_Wired_Keyboard-event-kbd")
+  input  (device-file "/dev/input/by-id/usb-SEM_USB_Keyboard-event-kbd")
   output (uinput-sink "My KMonad output"
   "/bin/sleep 1 && /bin/setxkbmap -option compose:ralt")
   cmp-seq ralt 
-  cmp-seq-delay 5
+  ;; cmp-seq-delay 5
   fallthrough true
   allow-cmd false
 ) (defsrc
@@ -29,7 +30,7 @@
   @t   1    2    3    4    5    6    7    8    9    0    -    =    XX
   XX   XX   XX   esc  XX   XX   XX   pgup XX   XX   XX   XX   XX   XX  
   lctl home XX   pgdn XX   end  left down up   rght XX   XX   ret
-  lsft XX   del  XX   XX   XX   XX   spc  XX   XX   XX   XX
+  lsft XX   del  XX   XX   XX   XX   spc  left XX   XX   XX
   lctl XX   lalt                cmp        XX   XX   XX   XX
 )
 

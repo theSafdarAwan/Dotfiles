@@ -50,7 +50,7 @@ Change the Org heading font
   (set-face-attribute 'org-default nil 
                       :font "Montserrat" 
                       :weight 'Regular
-                      :height 1.1)
+                      :height 1.2)
 
 #+end_src
 
@@ -58,8 +58,9 @@ Change the Org heading font
 
 #+begin_src emacs-lisp
 
-  (set-face-attribute 'org-block nil 
-                      :font "FiraCode Nerd Font")
+    (set-face-attribute 'org-block nil 
+                        :font "FiraCode Nerd Font"
+                        :height 0.9)
 
 #+end_src
 
@@ -138,12 +139,12 @@ Change the Org heading font
   (set-face-attribute 'line-number-current-line nil 
                       :font "FiraCode Nerd Font" 
                       :weight 'Normal 
-                      :height 1.0 
+                      :height 1.2
                       :inherit 'fixed-pitch)
   (set-face-attribute 'line-number nil 
                       :font "FiraCode Nerd Font" 
                       :weight 'Normal
-                      :height 1.0 
+                      :height 1.2 
                       :inherit 'fixed-pitch)
 
 #+end_src
