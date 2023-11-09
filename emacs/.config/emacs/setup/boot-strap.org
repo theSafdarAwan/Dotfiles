@@ -1,3 +1,9 @@
+* Start the Sever Mode
+
+#+BEGIN_SRC emacs-lisp
+  (server-mode 1)
+#+end_src
+
 * Display Startup Time
 
 #+begin_src emacs-lisp
