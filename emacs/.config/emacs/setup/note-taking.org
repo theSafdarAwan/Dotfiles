@@ -32,6 +32,8 @@
 
     (setq org-log-into-drawer t)
 
+    (setq org-image-actual-width nil)
+
     (setq org-link-search-must-match-exact-headline nil)
     (setq org-id-link-to-org-use-id t)
 
@@ -239,28 +241,38 @@ Setting Faces for tasks Keywords
 
   (use-package org-roam
     :init
-    ;; (setq find-file-visit-truename t) ;; resolve the symalink problems
+    (setq find-file-visit-truename t) ;; resolve the symalink problems
     (setq org-roam-directory (file-truename "~/safdar-local/org-roam-notes"))
 
     (setq org-roam-node-display-template
           (concat "${title:*} "
                   (propertize "${tags:10}" 'face 'org-tag)))
-    (setq org-roam-completion-everywhere t)	
+
+    (setq org-roam-completion-everywhere t)
+
     (setq org-roam-mode-sections
-          (list #'org-roam-backlinks-section
-                #'org-roam-reflinks-section
-                #'org-roam-unlinked-references-section
+          (list #'(org-roam-backlinks-section :unique t)
+                #'(org-roam-reflinks-section :unique t)
+               ;; #'org-roam-unlinked-references-section
                 ))
+     ;; (setq org-roam-mode-sections
+     ;;       '((org-roam-backlinks-section :unique t)
+     ;;         (org-roam-reflinks-section :unique t)
+     ;;         (org-roam-unlinked-references-section)))
+
     :custom
     ;; templates
     (org-roam-capture-templates
      '(("d" "default" plain
         "%?"
-        :if-new (file+head "${title}.org" "#+title: ${title}\n")
-        :unnarrowed t)))
+        :if-new (file+head "${title}.org" "#+title: ${title}\n#+tags: \n")
+        :unnarrowed t)
+       ))
     :config
     (org-roam-setup)
     (org-roam-db-autosync-mode)
+    (setq org-roam-db-update-on-save t)
+
 
     (defhydra hydra-org-roam ()
       "

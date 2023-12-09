@@ -64,6 +64,14 @@ Change the Org heading font
 
 #+end_src
 
+** Quotes
+
+*** TODO the code for this section is in the init.org
+
+#+BEGIN_SRC lisp
+
+#+END_SRC
+
 ** Other Faces
 
 #+begin_src emacs-lisp

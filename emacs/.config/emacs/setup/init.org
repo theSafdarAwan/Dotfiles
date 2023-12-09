@@ -18,12 +18,18 @@
   (org-babel-load-file (expand-file-name "setup/vim-bindings.org" user-emacs-directory))
   (org-babel-load-file (expand-file-name "setup/keybindings.org" user-emacs-directory))
 
-  (org-babel-load-file (expand-file-name "setup/fonts-setting.org" user-emacs-directory))
-  (org-babel-load-file (expand-file-name "setup/theme-settings.org" user-emacs-directory))
-
   (org-babel-load-file (expand-file-name "setup/language-support.org" user-emacs-directory))
 
   (org-babel-load-file (expand-file-name "setup/custom-functions.org" user-emacs-directory))
+
+  (org-babel-load-file (expand-file-name "setup/fonts-setting.org" user-emacs-directory))
+  (org-babel-load-file (expand-file-name "setup/theme-settings.org" user-emacs-directory))
+
+  (setq org-fontify-quote-and-verse-blocks t)
+
+  (set-face-attribute 'org-quote nil 
+                      :background "#353b47"
+                      :height 1.2)
 
   ;; (loop for file in '("setup/boot-strap.org"
   ;; 		    "setup/config.org"

@@ -3,6 +3,9 @@
 ** Mini Buffer Completion System
 
 *** Ivy
+:PROPERTIES:
+:ID:       cdc04fab-4367-4fde-bb77-3827387f796e
+:END:
 
 #+begin_src emacs-lisp
 
@@ -24,6 +27,7 @@
           ("C-d" . ivy-reverse-i-search-kill)
           )
     :init
+    (setq ivy-use-selectable-prompt t) ;; make ivy minibifufer items un-selectable
     (setq ivy-re-builders-alist '((t . orderless-ivy-re-builder)))
     (add-to-list 'ivy-highlight-functions-alist
                  '(orderless-ivy-re-builder . orderless-ivy-highlight))
@@ -48,7 +52,7 @@
            )
     :config
     (setq ivy-initial-inputs-alist nil) ;; don't start search with ^
-    ;; add keymap for swiper
+    ;; add keymap  swiper
     (global-set-key (kbd "M-s") 'swiper)
     ;; buffer switcher
     (global-set-key (kbd "M-C-b") 'counsel-switch-buffer))
