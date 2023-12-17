@@ -33,4 +33,50 @@ Toggle Mode Line
 
 #+end_src
 
+* Delete Current File
 
+#+BEGIN_SRC lisp
+   (defun xah-delete-current-file-make-backup ()
+     "Delete current file, makes a backup~, close the buffer.
+   If buffer is not a file, copy content to `kill-ring', delete buffer.
+   If buffer is a file, the file's directory is shown with cursor at the next file.
+
+   Backup filename is “‹name›~‹dateTimeStamp›~”. Existing file of the same name is overwritten. If buffer is not a file,
+  the backup file name starts with “xx_”.
+
+   Call `xah-open-last-closed' to open the backup file.
+
+   URL `http://xahlee.info/emacs/emacs/elisp_delete-current-file.html'
+   Version: 2018-05-15 2023-08-11 2023-10-28"
+     (interactive)
+     (when (eq major-mode 'dired-mode)
+       (user-error "%s: In dired. Nothing is done." real-this-command))
+     (let ((xfname buffer-file-name)
+           (xbuffname (buffer-name))
+           xbackupPath)
+       (setq xbackupPath
+             (concat (if xfname xfname (format "%sxx" default-directory))
+                     (format "~%s~" (format-time-string "%Y-%m-%d_%H%M%S"))))
+       (if xfname
+           (progn
+             (save-buffer xfname)
+             (rename-file xfname xbackupPath t)
+             (kill-buffer xbuffname)
+             ;; (dired-jump nil xbackupPath)
+             ;; (revert-buffer t t t)
+             ;; (dired-goto-file xbackupPath)
+             ;; (dired-next-line 1)
+             (message "File deleted.
+   Backup at
+   %s
+   Call `xah-open-last-closed' to open." xbackupPath)
+             (when (boundp 'xah-recently-closed-buffers)
+               (push (cons nil xbackupPath) xah-recently-closed-buffers)))
+         (progn
+           (widen)
+           (kill-new (buffer-string))
+           (kill-buffer xbuffname)
+           (message "non-file buffer killed. buffer text copied to `kill-ring'."))))
+     (when (eq major-mode 'dired-mode) (revert-buffer)))
+
+#+END_SRC

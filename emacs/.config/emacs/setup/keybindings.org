@@ -65,7 +65,7 @@
 
 #+begin_src emacs-lisp
 
-  (defhydra hydra-describe-actions ()
+  (defhydra hydra-describe-actions-help ()
     "
     ^Help^                 ^Font Lock^   
     ^^^^^^^^------------------------------
@@ -81,7 +81,7 @@
     ;; describe font lock options
     ("-" describe-font nil)
     ("F" describe-face nil))
-  (global-set-key (kbd "C-c d") 'hydra-describe-actions/body)
+  (global-set-key (kbd "C-c h") 'hydra-describe-actions-help/body)
 
 #+end_src
 

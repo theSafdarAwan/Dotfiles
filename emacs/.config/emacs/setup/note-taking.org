@@ -23,70 +23,95 @@
 ** Org
 
 #+begin_src emacs-lisp
+  ;; (add-to-list 'load-path "~/Temp/org-mode/lisp")
+  ;; (require 'org-loaddefs)
+  ;; (use-package org)
 
-  (use-package org
-    :config
-    (setq org-enforce-todo-dependencies t)
-    (setq org-agenda-dim-blocked-tasks t)
-    (setq org-enforce-todo-checkbox-dependencies t)
+  ;; (custom-set-variables
+  ;;   '(org-directory "~/safdar-local/org-roam-notes/")
+  ;;   '(org-agenda-files (list org-directory)))
+  ;; (setq org-agenda-files '("~/safdar-local/org-roam-notes/" "~/safdar-local/org-roam-notes/daily/"))
+  (setq org-enforce-todo-dependencies t)
+  (setq org-agenda-dim-blocked-tasks t)
+  (setq org-enforce-todo-checkbox-dependencies t)
+  (setq org-agenda-include-diary t)
 
-    (setq org-log-into-drawer t)
+  (setq org-log-into-drawer t)
 
-    (setq org-image-actual-width nil)
+  (setq org-image-actual-width nil)
 
-    (setq org-link-search-must-match-exact-headline nil)
-    (setq org-id-link-to-org-use-id t)
+  (setq org-link-search-must-match-exact-headline nil)
 
-    (setq org-use-tag-inheritance nil)
+  (setq org-special-ctrl-a/e t)
+  (setq org-special-ctrl-k t)
+  (setq org-ctrl-k-protect-subtree t)
+  (setq org-cycle-global-at-bob t)
 
-    (setq org-special-ctrl-a/e t)
-    (setq org-special-ctrl-k t)
-    (setq org-ctrl-k-protect-subtree t)
-    (setq org-cycle-global-at-bob t)
+  ;; (setq org-agenda-custom-commands
+  ;;       '(("x" agenda)
+  ;;         ("y" agenda*)
+  ;;         ("w" todo "WAITING")
+  ;;         ("W" todo-tree "WAITING")
+  ;;         ;; ("u" tags "+WORK-DONE")
+  ;;         ;; ("v" tags-todo "+boss-urgent")
+  ;;         ;; ("U" tags-tree "+boss-urgent")
+  ;;         ;; ("f" occur-tree "\\<FIXME\\>")
+  ;;         ;; ("h" . "HOME+Name tags searches") ;description for "h" prefix
+  ;;         ;; ("hl" tags "+Home+Lisa")
+  ;;         ;; ("hp" tags "+Home+Peter")
+  ;;         ;; ("hk" tags "+Home+Kim")
+  ;;         ("s" . "Sparse File")
+  ;;         ("s t" occur-tree "TODO")
+  ;;         ))
 
-    ;; sparse
-    (setq org-agenda-custom-commands
-      '(("t" occur-tree "TODO")))
+  ;; (setq org-agenda-custom-commands
+  ;;   '(("h" "Agenda and Home-related tasks"
+  ;;      ((agenda "")
+  ;;       (tags-todo "Home")
+  ;;       (tags "GrassCutting")))
+  ;;     ("o" "Agenda and Office-related tasks"
+  ;;      ((agenda "")
+  ;;       (tags-todo "Work")
+  ;;       (tags "Org")))))
 
-    ;; (setq org-tag-alist '(("Programming") ("IT")))
+  ;; (setq -tag-persistent-alist '((:startgroup . nil)
+  ;;                        ("Technology" . ?T) ("Science" . ?S)
+  ;;                        ("Philosophy" . ?P) ("Relegion" . ?R)
+  ;;                        (:endgroup . nil) (:newline . nil)
+  ;;                        (:startgroup . nil)
+  ;;                        ("_islam" . ?i) ("_programming" . ?p)
+  ;;                        ("_christianity" . ?c)
+  ;;                        (:endgroup)))
 
-    (setq org-tag-persistent-alist '((:startgroup . nil)
-                           ("Technology" . ?T) ("Science" . ?S)
-                           ("Philosophy" . ?P) ("Relegion" . ?R)
-                           (:endgroup . nil) (:newline . nil)
-                           (:startgroup . nil)
-                           ("_islam" . ?i) ("_programming" . ?p)
-                           ("_christianity" . ?c)
-                           (:endgroup)))
+  (setq org-time-stamp-formats '("%Y-%m-%d %a %I:%M %P" . "%Y-%m-%d %a"))
 
-    (setq org-group-tags nil) ;; disable group tags completely
+  (setq org-group-tags nil) ;; disable group tags completely
 
-    ;; (setq org-table-header-line-p t)
-    (setq org-startup-with-inline-images t) ;; render images
-    (setq org-hide-emphasis-markers t)
+  ;; (setq org-table-header-line-p t)
+  (setq org-startup-with-inline-images t) ;; render images
+  (setq org-hide-emphasis-markers t)
 
-    (setq org-ellipsis " ▾")
-    ;; (setq org-hide-block-startup t)
-    (setq org-list-demote-modify-bullet
-          '(("-" . "+") ("+" . "-") ("*" . "+")))
+  (setq org-ellipsis " ▾")
+  ;; (setq org-hide-block-startup t)
+  (setq org-list-demote-modify-bullet
+        '(("-" . "+") ("+" . "-") ("*" . "+")))
 
-    (setq-default org-list-indent-offset 0)
-    (setq org-yank-adjusted-subtrees t) ;; lets me use C-y as the C-c C-x C-y
-    (setq org-list-allow-alphabetical t)
-    ;; (setq org-yank-folded-subtrees nil) ;; don't fold when pasting org sub-trees
-    ;; Set faces for heading levels
+  (setq-default org-list-indent-offset 0)
+  (setq org-yank-adjusted-subtrees t) ;; lets me use C-y as the C-c C-x C-y
+  (setq org-list-allow-alphabetical t)
+  ;; (setq org-yank-folded-subtrees nil) ;; don't fold when pasting org sub-trees
+  ;; Set faces for heading levels
 
-    ;; replace list hypehen(-) with dot
-    (font-lock-add-keywords
-     'org-mode
-     '(("^ *\\([-]\\) "
-        (0 (prog1 () (compose-region 
-                      (match-beginning 1)
-                      (match-end 1) "•"))))))
+  ;; replace list hypehen(-) with dot
+  (font-lock-add-keywords
+   'org-mode
+   '(("^ *\\([-]\\) "
+      (0 (prog1 () (compose-region 
+                    (match-beginning 1)
+                    (match-end 1) "•"))))))
 
-    ;; enable auto line breaking in org-mode
-    ;; (add-hook 'org-mode-hook (lambda() ((turn-on-auto-fill))))
-    )
+  ;; enable auto line breaking in org-mode
+  ;; (add-hook 'org-mode-hook (lambda() ((turn-on-auto-fill))))
 
 #+end_src
 
@@ -173,14 +198,11 @@ Add closing time stamp when a task is done.
 
 #+begin_SRC emacs-lisp
 
-  ;; (add-hook 'org-mode-hook (lambda() (setq org-log-done 'time)))
+  ;; (add-hook 'org-mode-hook (lambda() (org-log-done 'time)))
 
 #+end_SRC
 
 **** Extend Tasks States
-:PROPERTIES:
-:ID:       f62cf80d-09ca-40e1-84be-4a9536e49f9f
-:END:
 
 The vertical bar(~|~) separates the TODO keywords (states that _need action_) from the DONE states (which need _no further action_).  If you do not provide the separator bar, the last state is used as the DONE state.
 
@@ -189,7 +211,7 @@ The vertical bar(~|~) separates the TODO keywords (states that _need action_) fr
 #+begin_src emacs-lisp
 
   (setq org-todo-keywords '(
-          (sequence "TODO(t)" "WAIT(w@/!)" "DOING(d!)" "|" "DONE(D@/!)" "CANCELLED(c@/!)")
+          (sequence "TODO(t)" "WAITING(w@/!)" "DOING(d!)" "|" "DONE(D@/!)" "CANCELLED(c@/!)")
           ;; (sequence "FIXME(f)" "BUG(b)" "|" "FIXED(F)")
           ))
 
@@ -203,7 +225,7 @@ Setting Faces for tasks Keywords
 
   (setq org-todo-keyword-faces
         '(("TODO" . (:foreground "#9ece6a" :weight Bold :box t))
-          ("WAIT" . (:foreground "#7aa2f7" :weight Bold :box t))
+          ("WAITING" . (:foreground "#7aa2f7" :weight Bold :box t))
           ("DOING" . (:foreground "#ff9e64" :weight Bold :box t))
           ("DONE" . (:foreground "#bb9af7" :weight Bold :box t))
           ("CANCELLED" . (:foreground "#bb9af7" :weight Bold :box t))))
@@ -229,7 +251,7 @@ Setting Faces for tasks Keywords
 
   ;; (defvar-local my-icon-dir (concat user-emacs-directory "icons/")
   ;; "directory withthe icons")
-  ;;   (setq org-agenda-category-icon-alist '(
+  ;;   (org-agenda-category-icon-alist '(
   ;;   ("todo" ,(concat my-icon-dir "check-box.png") nil nil :ascent center)
   ;; ))
 
@@ -238,15 +260,16 @@ Setting Faces for tasks Keywords
 ** Org Roam
 
 #+begin_src emacs-lisp
-
   (use-package org-roam
     :init
-    (setq find-file-visit-truename t) ;; resolve the symalink problems
+    ;; ;; temp work around for org-roam-ui graph not showing all file tags
+    ;; (setq org-roam-database-connector 'sqlite)
+    ;; (setq find-file-visit-truename nil) ;; resolve the symalink problems
     (setq org-roam-directory (file-truename "~/safdar-local/org-roam-notes"))
 
     (setq org-roam-node-display-template
           (concat "${title:*} "
-                  (propertize "${tags:10}" 'face 'org-tag)))
+                  (propertize "${tags:50}" 'face 'org-tag)))
 
     (setq org-roam-completion-everywhere t)
 
@@ -265,7 +288,7 @@ Setting Faces for tasks Keywords
     (org-roam-capture-templates
      '(("d" "default" plain
         "%?"
-        :if-new (file+head "${title}.org" "#+title: ${title}\n#+tags: \n")
+        :if-new (file+head "${title}.org" "#+TITLE: ${title}\n#+FILETAGS: \n")
         :unnarrowed t)
        ))
     :config
@@ -273,34 +296,68 @@ Setting Faces for tasks Keywords
     (org-roam-db-autosync-mode)
     (setq org-roam-db-update-on-save t)
 
-
     (defhydra hydra-org-roam ()
-      "
-          ^Node Actions^   ^Buffer^               ^Journal^         ^Capture
-          ^^^^^^^^-------------------------------------------------------------------------
-          _f_: Find node   _b t_: Buffer toggle    _j t_: Today     _c c_: Choose Node
-          _i_: Insert Node _b d_: Dedicated buffer _j T_: Tomorrow  _c t_: Today Journal
-          ^ ^              _b r_: Refresh Buffer   _j y_: Yesterday _c T_: Tomorrow Journal
-      "
-      ;; node
-      ("f" org-roam-node-find nil)
-      ("i" org-roam-node-insert nil)
+     "
+         ^Node Actions^   ^Buffer^               ^Journal^         ^Capture^              
+         ^^^^^^^^-------------------------------------------------------------------------
+         _f_: Find node   _b t_: Buffer toggle    _j t_: Today     _c c_: Choose Node     
+         _i_: Insert Node _b d_: Dedicated buffer _j T_: Tomorrow  _c t_: Today Journal   
+         ^ ^              _b r_: Refresh Buffer   _j y_: Yesterday _c T_: Tomorrow Journal
+     "
+     ;; node
+     ("f" org-roam-node-find nil)
+     ("i" org-roam-node-insert nil)
+     ;; buffer
+     ("b t" org-roam-buffer-toggle nil)
+     ("b d" org-roam-buffer-display-dedicated nil)
+     ("b r" org-roam-buffer-refresh nil)
+     ;; capture
+     ("c c" org-roam-capture nil)
+     ("c t" org-roam-dailies-capture-today nil)
+     ("c T" org-roam-dailies-capture-tomorrow nil)
+     ;; journal
+     ("j t" org-roam-dailies-goto-today nil)
+     ("j T" org-roam-dailies-goto-tomorrow nil)
+     ("j y" org-roam-dailies-goto-yesterday nil))
 
-      ;; buffer
-      ("b t" org-roam-buffer-toggle nil)
-      ("b d" org-roam-buffer-display-dedicated nil)
-      ("b r" org-roam-buffer-refresh nil)
+    (global-set-key (kbd "C-c r o") 'hydra-org-roam/body)
 
-      ;; capture
-      ("c c" org-roam-capture nil)
-      ("c t" org-roam-dailies-capture-today nil)
-      ("c T" org-roam-dailies-capture-tomorrow nil)
-
-      ;; journal
-      ("j t" org-roam-dailies-goto-today nil)
-      ("j T" org-roam-dailies-goto-tomorrow nil)
-      ("j y" org-roam-dailies-goto-yesterday nil))
-    (global-set-key (kbd "C-c o") 'hydra-org-roam/body))
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;        Org Roam DB Actions
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    (defhydra hydra-org-roam-db-actions ()
+    "
+       ^DB Actions^
+       ^^^^^^-----------
+       _s_: DB Sync
+       _c_: DB Clear
+    "
+    ;; DB Options
+    ("s" org-roam-db-sync nil)
+    ("c" org-roam-db-clear-all nil))
+    (global-set-key (kbd "C-c r d") 'hydra-org-roam-db-actions/body)
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;    Org Roam Properties Actions
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (defhydra hydra-org-roam-properties-actions ()
+    "
+       ^Tags Actions^    ^Alias Actions^     ^Ref Actions
+       ^^^^^^------------------------------------------------
+       _t a_: Add Tag    _a a_: Add Alias    _r a_: Add Ref
+       _t r_: remove Tag _a r_: remove Alias _r r_: remove Ref
+       ^ ^               ^ ^                 _r f_: Find Ref
+    "
+    ;; Tags actions
+    ("t a" org-roam-tag-add nil)
+    ("t r" org-roam-tag-remove nil)
+    ;; Alias Actions
+    ("a a" org-roam-alias-add nil)
+    ("a r" org-roam-alias-remove nil)
+    ;; Refs Actions
+    ("r a" org-roam-ref-add nil)
+    ("r r" org-roam-ref-remove nil)
+    ("r f" org-roma-ref-find nil))
+    (global-set-key (kbd "C-c r p") 'hydra-org-roam-properties-actions/body))
 
 #+end_src
 
@@ -308,9 +365,36 @@ Setting Faces for tasks Keywords
 
 #+begin_src emacs-lisp
 
-  (use-package org-roam-ui)
+   (use-package org-roam-ui)
+   (defhydra hydra-org-roam-ui ()
+   "
+       ^UI Options^            ^Grpah Options^              
+       ^^^^^^^^-------------------------------------------------------------
+       _o_: ui open             _l_:   Open Local graph view for current node
+       _f_: Follow mode         _z_:   zoom current node in graph
+       ^ ^                      _a l_: add to local grpah      
+       ^ ^                      _r l_: ove from local grpah 
+   "
+   ;; UI Options
+   ("o" org-roam-ui-open nil)
+   ("f" org-roam-ui-follow-mode nil)
+  ;; Grpah Options
+   ("l" org-roam-ui-node-local nil)
+   ("z" org-roam-ui-node-zoom nil)
+   ("a l" org-roam-ui-add-to-local-graph nil)
+   ("r l" org-roam-ui-remove-from-local-graph nil))
+;;   (keymap-global-set "C-c r n" 'hydra-org-roam-ui/body)
+     (global-set-key (kbd "C-c r u") 'hydra-org-roam-ui/body)
 
 #+end_src
+
+*** org-ql
+
+This package provides a query language for Org files. It offers two syntax styles: Lisp-like sexps and search engine-like keywords.
+
+#+BEGIN_SRC lisp
+(use-package org-ql :ensure t)
+#+END_SRC
 
 ** Org-bullets
 #+begin_src emacs-lisp
@@ -330,7 +414,7 @@ Write Anki cards  in org-mode
 
 #+begin_src emacs-lisp
 
-  (use-package anki-editor)
+  (use-package anki-editor :ensure t)
 
 #+end_src
 

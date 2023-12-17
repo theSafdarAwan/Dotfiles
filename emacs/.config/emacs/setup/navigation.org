@@ -11,3 +11,14 @@
     (persp-mode))
 
 #+end_src
+
+* Multiple Cursors
+
+#+BEGIN_SRC emacs-lisp
+  (use-package multiple-cursors
+  :bind
+  ("C-S-c C-S-c" . mc/edit-lines))
+  ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+#+END_SRC
