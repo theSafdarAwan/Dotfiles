@@ -46,7 +46,7 @@
 # - rust-analyzer
 # - luarocks
 # - discord
-# - ksnip
+# - flameshot
 # - nodejs
 # - npm
 # - go
@@ -59,6 +59,7 @@
 # - blender
 # - viewnior
 # - virtualbox
+# - linux-headers
 # - keepassxc
 # - figlet
 # - tree-sitter-cli

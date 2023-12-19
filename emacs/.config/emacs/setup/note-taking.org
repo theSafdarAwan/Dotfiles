@@ -30,7 +30,12 @@
   ;; (custom-set-variables
   ;;   '(org-directory "~/safdar-local/org-roam-notes/")
   ;;   '(org-agenda-files (list org-directory)))
-  ;; (setq org-agenda-files '("~/safdar-local/org-roam-notes/" "~/safdar-local/org-roam-notes/daily/"))
+
+  ;; add all the journel entries to org-agenda-files
+  (custom-set-variables
+      '(org-directory "~/safdar-local/org-roam-notes/daily/")
+      '(org-agenda-files (list org-directory)))
+
   (setq org-enforce-todo-dependencies t)
   (setq org-agenda-dim-blocked-tasks t)
   (setq org-enforce-todo-checkbox-dependencies t)
@@ -46,42 +51,6 @@
   (setq org-special-ctrl-k t)
   (setq org-ctrl-k-protect-subtree t)
   (setq org-cycle-global-at-bob t)
-
-  ;; (setq org-agenda-custom-commands
-  ;;       '(("x" agenda)
-  ;;         ("y" agenda*)
-  ;;         ("w" todo "WAITING")
-  ;;         ("W" todo-tree "WAITING")
-  ;;         ;; ("u" tags "+WORK-DONE")
-  ;;         ;; ("v" tags-todo "+boss-urgent")
-  ;;         ;; ("U" tags-tree "+boss-urgent")
-  ;;         ;; ("f" occur-tree "\\<FIXME\\>")
-  ;;         ;; ("h" . "HOME+Name tags searches") ;description for "h" prefix
-  ;;         ;; ("hl" tags "+Home+Lisa")
-  ;;         ;; ("hp" tags "+Home+Peter")
-  ;;         ;; ("hk" tags "+Home+Kim")
-  ;;         ("s" . "Sparse File")
-  ;;         ("s t" occur-tree "TODO")
-  ;;         ))
-
-  ;; (setq org-agenda-custom-commands
-  ;;   '(("h" "Agenda and Home-related tasks"
-  ;;      ((agenda "")
-  ;;       (tags-todo "Home")
-  ;;       (tags "GrassCutting")))
-  ;;     ("o" "Agenda and Office-related tasks"
-  ;;      ((agenda "")
-  ;;       (tags-todo "Work")
-  ;;       (tags "Org")))))
-
-  ;; (setq -tag-persistent-alist '((:startgroup . nil)
-  ;;                        ("Technology" . ?T) ("Science" . ?S)
-  ;;                        ("Philosophy" . ?P) ("Relegion" . ?R)
-  ;;                        (:endgroup . nil) (:newline . nil)
-  ;;                        (:startgroup . nil)
-  ;;                        ("_islam" . ?i) ("_programming" . ?p)
-  ;;                        ("_christianity" . ?c)
-  ;;                        (:endgroup)))
 
   (setq org-time-stamp-formats '("%Y-%m-%d %a %I:%M %P" . "%Y-%m-%d %a"))
 
@@ -150,6 +119,12 @@
   (add-to-list 'org-structure-template-alist '("lisp" . "SRC lisp"))
 
 #+end_src
+
+*** Drawer
+
+#+BEGIN_SRC lisp
+(add-to-list 'org-structure-template-alist '("quote" . "QUOTE"))
+#+END_SRC
 
 *** buffer-face-mode
 
@@ -408,17 +383,7 @@ This package provides a query language for Org files. It offers two syntax style
 
 #+end_src
 
-** Anki Integration
-
-Write Anki cards  in org-mode
-
-#+begin_src emacs-lisp
-
-  (use-package anki-editor :ensure t)
-
-#+end_src
-
-* Custom Functions for Reading and Writing Org files
+* Custom Function for Reading and Writing Org files
 
 ** TODO 
 - [ ] when you understand enough ~emacs-lisp~ write this function to enable margins in ~org-mode~ only, without having to enable it everywhere.
@@ -480,3 +445,21 @@ Write Anki cards  in org-mode
   (global-set-key (kbd "C-c p") 'hydra-reading-mode/body)
 
 #+end_src
+
+* Images Drag And Drop
+
+#+BEGIN_SRC emacs-lisp
+  (use-package org-download :ensure t
+    :config
+    ;; org-download use buffer-local variables. Set it individually in files. Otherwise, put things flatly in misc folder.
+    (setq-default org-download-method 'directory
+                  org-download-image-dir "~/safdar-local/org-roam-notes/assets/"
+                  org-download-heading-lvl nil
+                  org-download-delete-image-after-download t
+                  org-download-screenshot-method "flameshot gui --raw --delay 2000 > %s"
+                  org-download-image-org-width 600
+                  org-download-annotate-function (lambda (link) "") ;; Don't annotate
+                  )
+    (add-hook 'dired-mode-hook 'org-download-enable)
+    (global-set-key (kbd "<print>") 'org-download-screenshot))
+#+END_SRC

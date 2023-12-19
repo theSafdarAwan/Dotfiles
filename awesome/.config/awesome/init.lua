@@ -441,7 +441,8 @@ local clientkeys = gears.table.join(
 	awful.key({ win_key }, "m", function(c)
 		c.maximized_horizontal = not c.maximized_horizontal
 		c:raise()
-	end, { description = "(un)maximize horizontally", group = "client" })
+	end, { description = "(un)maximize horizontally", group = "client" }),
+
 )
 
 -- Bind all key numbers to tags.

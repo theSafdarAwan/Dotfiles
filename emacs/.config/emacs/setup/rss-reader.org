@@ -1,0 +1,279 @@
+* elfeed
+
+#+BEGIN_SRC emacs-lisp 
+  (use-package elfeed
+  :ensure t
+  :config
+  (add-hook 'elfeed-new-entry-hook
+    (elfeed-make-tagger :feed-url "youtube\\.com"
+                        :add '(video youtube)))
+  ;; data is stored in ~/.elfeed
+  (setq elfeed-feeds
+          '(
+            ;; Youtube
+            ("https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ" theprimeagen programming youtube)
+            ;; Tech
+            ("https://forums.guru3d.com/forums/laptops-notebooks.49/index.rss" tech laptop notebook reviews guru3d)
+            ("https://forums.guru3d.com/forums/hardware-reviews-and-news.14/index.rss" tech hardware reviews news guru3d)
+            ;;
+            ;; Editors Related
+            ("https://yiufung.net/index.xml" emacs org-mode)
+            ("https://this-week-in-neovim.org/rss" neovim)
+            ;;
+            ;; Linux
+            ("https://www.linux-magazine.com/rss/feed/lmi_news" linux)
+            ;;
+            ;; programming
+            ("https://news.ycombinator.com/rss" hacker)
+            ("https://www.reddit.com/r/programming.rss" programming)
+            ("https://www.reddit.com/r/emacs.rss" emacs)
+            ("https://habr.com/ru/rss/all/all/?fl=ru" habr-all)
+            ("https://habr.com/ru/rss/news/?fl=ru" habr-news russian)
+            ("https://nuancesprog.ru/feed" nop)
+            ("https://dev.to/feed" dev-to)
+            ;;
+            ;; hobby
+            ("https://www.reddit.com/r/nasa.rss" nasa)
+            ("https://habr.com/ru/rss/hub/astronomy/all/?fl=ru" habr-astronomy)
+            ("https://habr.com/ru/rss/flows/popsci/all/?fl=ru" habr-popsci)
+            ;;
+            ;; programming languages
+            ("https://www.reddit.com/r/javascript.rss" javascript)
+            ("https://www.reddit.com/r/typescript.rss" typescript)
+            ("https://www.reddit.com/r/golang.rss" golang)
+            ("https://www.reddit.com/r/rust.rss" rust)
+            ;;
+            ;; cloud
+            ;;("https://www.reddit.com/r/aws.rss" aws)
+            ;;("https://www.reddit.com/r/googlecloud.rss" googlecloud)
+            ;;("https://www.reddit.com/r/azure.rss" azure)
+            ;; ("https://www.reddit.com/r/devops.rss" devops)
+            ;; ("https://www.reddit.com/r/kubernetes.rss" kubernetes)
+            ))
+
+  (setq-default elfeed-search-filter "@3-days-ago +unread")
+  (setq-default elfeed-search-title-max-width 100)
+  (setq-default elfeed-search-title-min-width 100))
+#+END_SRC
+* Custom Functions
+
+** Playing rss Youtube videos in mpv
+
+these snippets are from this reddit post: [[https://www.reddit.com/r/emacs/comments/g3mo8u/a_tiny_tip_for_those_using_elfeed_for_youtube_subs/][link]]
+
+*** Playing in mpv
+
+#+BEGIN_SRC emacs-lisp :tangle no
+    (defun browse-url-mpv (url &optional new-window)
+      (start-process "mpv" "*mpv*" "mpv" url))
+
+  (setq browse-url-browser-function '(("https:\\/\\/www\\.youtube." . browse-url-mpv)
+      ("." . browse-url-firefox)))
+#+END_SRC
+
+*** Adding videos to que for Mpv
+
+#+BEGIN_SRC emacs-lisp :tangle no
+(defun elfeed-mpv-enqueue-play ()
+  (interactive)
+  (mpv-enqueue-play (elfeed-entry-link (elfeed-search-selected :single)))
+  (elfeed-search-untag-all-unread))
+
+(defun elfeed-mpv-build-playlist ()
+  (interactive)
+  (mpv-build-playlist (elfeed-entry-link (elfeed-search-selected :single)))
+  (elfeed-search-untag-all-unread))
+
+(defun mpv-enqueue-play (&optional link noarchive)
+  (interactive)
+  (unless link (setq link (current-kill 0)))
+  (if (eq (process-status "mpv-enqueue") 'run)
+      (let ((inhibit-message t))
+        (write-region
+         (concat "loadfile \"" link "\" append-play" "\n") nil
+         "/home/ji99/.config/mpv/.mpvfifo"))
+    (make-process
+     :name "mpv-enqueue"
+     :connection-type 'pty
+     :command (list
+               "mpv" "--geometry=360x200-0+400"
+               "--input-file=/home/ji99/.config/mpv/.mpvfifo"
+               "--player-operation-mode=pseudo-gui" link)))
+  (unless noarchive
+    (mpv-add-to-archive link)))
+
+(defun mpv-build-playlist (&optional link)
+  (interactive)
+  (unless link (setq link (current-kill 0)))
+  (write-region
+   (concat link "\n") nil
+   "/home/ji99/.cache/emacs/appended-playlist.m3u" t)
+  (mpv-add-to-archive link))
+
+(defun mpv-add-to-archive (link)
+  (let ((buffer (generate-new-buffer "*mpv-archive*")))
+    (make-process
+     :name "mpv-archive"
+     :connection-type 'pipe
+     :buffer buffer
+     :command (list
+               "youtube-dl" "--ignore-config"
+               "--get-title" "--get-duration"
+               link)
+     :sentinel `(lambda (p e)
+                  (message "Process %s %s" p
+                           (replace-regexp-in-string
+                            "\n\\'" "" e))
+                  (set-buffer ',buffer)
+                  (goto-char (point-min))
+                  (unless
+                      (or
+                       (save-excursion
+                         (let ((case-fold-search nil))
+                           (search-forward "ERROR: " nil t)))
+                       (save-excursion
+                         (let ((case-fold-search nil))
+                           (search-forward "WARNING: " nil t))))
+                    (insert ',link "\n")
+                    (write-region
+                     nil nil "/home/ji99/.cache/emacs/mpvarchive" t))
+                  (kill-buffer)))))
+#+END_SRC
+
+**** Archiving
+
+#+BEGIN_SRC emacs-lisp :tangle no
+(defun mpv-archive-search (query)
+  (interactive
+   (list
+    (read-from-minibuffer
+     "Search mpv archive: " nil nil nil 'mpv-history)))
+  (let ((link)(title)(time)(lines))
+    (with-temp-buffer
+      (insert-file-contents
+       "/home/ji99/.cache/emacs/mpvarchive")
+      (goto-char (point-min))
+      (while (search-forward query nil t)
+        (re-search-backward "^https?://")
+        (setq link (thing-at-point 'url))
+        (forward-line 1)
+        (setq title
+              (buffer-substring
+               (line-beginning-position)(line-end-position)))
+        (forward-line 1)
+        (setq time
+              (buffer-substring
+               (line-beginning-position)(line-end-position)))
+        (setq lines (cons
+                     (cons
+                      (concat title " [" time "]") link)
+                     lines))))
+    (delq nil (delete-dups lines))
+    (ivy-read
+     "mpv archive result(s): " lines
+     :sort nil
+     :re-builder #'regexp-quote
+     :action '(1
+               ("o" (lambda (x)
+                      (mpv-enqueue-play
+                       (cdr x) t))
+                "play")
+               ("x" (lambda (x)
+                      (mpv-music-player
+                       (cdr x) nil nil t))
+                "music")
+               ("b" (lambda (x)
+                      (qutebrowser
+                       (cdr x)))
+                "browse")
+               ("w" (lambda (x)
+                      (kill-new
+                       (cdr x)))
+                "copy url")
+               ("d" (lambda (x)
+                      (ivy-youtube-dl
+                       (cdr x)))
+                "download")))))
+
+(defun ivy-youtube-dl (&optional link)
+  (interactive)
+  (unless link (setq link (current-kill 0)))
+  (let ((buffer (generate-new-buffer "*ytd-formats*")))
+    (make-process
+     :name "ytd-formats"
+     :buffer buffer
+     :command (list "youtube-dl" "--list-formats" link)
+     :connection-type 'pipe
+     :sentinel `(lambda (p e)
+                  (set-buffer ',buffer)
+                  (goto-char (point-min))
+                  (unless (search-forward "format code" nil t)
+                    (kill-buffer)
+                    (error "url not supported"))
+                  (forward-line 1)
+                  (let (list)
+                    (while (not (eobp))
+                      (setq list
+                            (cons
+                             (split-string
+                              (buffer-substring-no-properties
+                               (point)(point-at-eol))
+                              "\n" t nil)
+                             list))
+                      (forward-line 1))
+                    (setq list (nreverse list))
+                    (kill-buffer "*ytd-formats*")
+                    (ivy-read
+                     "youtube-dl formats (vid+aud): "
+                     list
+                     :action (lambda (x)
+                               (youtube-dl
+                                (substring-no-properties
+                                 (format "%s" x)
+                                 (if (string-match "(" (format "%s" x))
+                                     (match-end 0)
+                                   nil)
+                                 (string-match "[[:space:]]" (format "%s" x))) ',link))
+                     :sort nil
+                     :history 'youtube-dl
+                     :re-builder #'regexp-quote
+                     :preselect "best"))))))
+(defun youtube-dl (fmt link)
+  (write-region
+   (format "youtube-dl --format %s %s\n" fmt link) nil
+   "/home/ji99/.cache/emacs/youtube-dl" t)
+  (let ((buffer (generate-new-buffer "*youtube-dl*")))
+    (with-current-buffer buffer
+      (ansi-color-for-comint-mode-on)
+      (comint-mode))
+    (make-process
+     :name "youtube-dl"
+     :buffer buffer
+     :command (list
+               "youtube-dl" "--flat-playlist" "--format"
+               fmt link)
+     :connection-type 'pty
+     :filter 'comint-output-filter)))
+
+(defun mpv-music-player (&optional link repeat position noarchive)
+  (unless link (setq link (current-kill 0)))
+  (if (eq (process-status "mpv-music") 'run)
+      (let ((inhibit-message t))
+        (write-region
+         (concat "loadfile \"" link "\" append-play" "\n") nil
+         "/home/ji99/.config/mpv/.musicfifo"))
+    (if repeat
+        (setq repeat "--loop-playlist")
+      (setq repeat ""))
+    (if position
+        (setq position "--save-position-on-quit")
+      (setq position ""))
+    (make-process
+     :name "mpv-music"
+     :command (list "mpv" repeat position
+                    "--input-file=/home/ji99/.config/mpv/.musicfifo"
+                    "--audio-display=no" "--vid=no" link)
+     :connection-type 'pty))
+  (unless noarchive
+    (mpv-add-to-archive link)))
+#+END_SRC
