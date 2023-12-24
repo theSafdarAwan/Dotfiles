@@ -7,55 +7,189 @@
   (add-hook 'elfeed-new-entry-hook
     (elfeed-make-tagger :feed-url "youtube\\.com"
                         :add '(video youtube)))
-  ;; data is stored in ~/.elfeed
+
   (setq elfeed-feeds
           '(
             ;; Youtube
-            ("https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ" theprimeagen programming youtube)
+            ;; Programming
+            ("https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ" ThePrimeagen Programming Youtube)
+            ("https://www.youtube.com/feeds/videos.xml?channel_id=UCd3dNckv1Za2coSaHGHl5aA" TjDeVries Programming Youtube)
+            ("https://www.youtube.com/feeds/videos.xml?channel_id=UC9H0HzpKf5JlazkADWnW1Jw" BashBunni Programming Youtube)
+            ("https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA" NoBoilerplate Programming Youtube)
+            ("https://www.youtube.com/feeds/videos.xml?channel_id=UC9-y-6csu5WGm29I7JiwpnA" Computerphile Programming Youtube)
+            ;;Science
+            ("https://www.youtube.com/feeds/videos.xml?channel_id=UC2D2CMWXMOVWx7giW1n3LIg" Huberman Science Youtube Health Psychology MentalHealth Harvard)
+            ;;
             ;; Tech
-            ("https://forums.guru3d.com/forums/laptops-notebooks.49/index.rss" tech laptop notebook reviews guru3d)
-            ("https://forums.guru3d.com/forums/hardware-reviews-and-news.14/index.rss" tech hardware reviews news guru3d)
+            ("https://forums.guru3d.com/forums/laptops-notebooks.49/index.rss" Tech Laptop Notebook Reviews guru3d)
+            ("https://forums.guru3d.com/forums/hardware-reviews-and-news.14/index.rss" Tech Hardware Review News guru3d)
             ;;
             ;; Editors Related
-            ("https://yiufung.net/index.xml" emacs org-mode)
-            ("https://this-week-in-neovim.org/rss" neovim)
+            ("https://yiufung.net/index.xml" Emacs OrgMode)
+            ("https://this-week-in-neovim.org/rss" Neovim)
             ;;
             ;; Linux
-            ("https://www.linux-magazine.com/rss/feed/lmi_news" linux)
+            ("https://www.linux-magazine.com/rss/feed/lmi_news" Linux)
+            ;;
+            ;; Prot Silaos
+            ("https://www.youtube.com/feeds/videos.xml?channel_id=UC0uTPqBCFIpZxlz_Lv1tk_g" Prot Youtube)
+            ("https://protesilaos.com/news.xml" Prot News)
+            ("https://protesilaos.com/books.xml" Prot Literature)
+            ("https://protesilaos.com/politics.xml" Prot Politics)
+            ("https://protesilaos.com/codelog.xml" Prot Programming)
+            ("https://protesilaos.com/poems.xml" Prot Poetry)
+            ("https://protesilaos.com/commentary.xml" Prot Philosophy)
+            ("https://protesilaos.com/interpretations.xml" Prot Critique)
             ;;
             ;; programming
-            ("https://news.ycombinator.com/rss" hacker)
-            ("https://www.reddit.com/r/programming.rss" programming)
-            ("https://www.reddit.com/r/emacs.rss" emacs)
-            ("https://habr.com/ru/rss/all/all/?fl=ru" habr-all)
-            ("https://habr.com/ru/rss/news/?fl=ru" habr-news russian)
-            ("https://nuancesprog.ru/feed" nop)
-            ("https://dev.to/feed" dev-to)
-            ;;
-            ;; hobby
-            ("https://www.reddit.com/r/nasa.rss" nasa)
-            ("https://habr.com/ru/rss/hub/astronomy/all/?fl=ru" habr-astronomy)
-            ("https://habr.com/ru/rss/flows/popsci/all/?fl=ru" habr-popsci)
+            ("https://news.ycombinator.com/rss" Hacker)
+            ;; dev.to
+            ("https://dev.to/feed" DevTo)
+            ("https://dev.to/feed/arjuncodess/" DevTo Person)
+            ("https://dev.to/feed/tag/javascript/" DevTo Tag JavaScript)
+            ("https://dev.to/feed/tag/typescript/" DevTo Tag TypeScript)
+            ("https://dev.to/feed/tag/css/" DevTo Tag CSS)
+            ;; 
+            ;; technical Reddit
+            ("https://www.reddit.com/r/programming.rss" Reddit Programming)
+            ("https://www.reddit.com/r/bash.rss" Linux Bash Reddit)
+            ("https://www.reddit.com/r/linux.rss" Linux Reddit)
+            ("https://www.reddit.com/r/linuxadin.rss" Linux Reddit)
+            ("https://www.reddit.com/r/commandline.rss" Linux cli Reddit)
+            ("https://www.reddit.com/r/ffmpeg.rss" Linux ffmpeg cli Reddit)
+            ("https://www.reddit.com/r/git.rss" Linux git cli Reddit)
+            ("https://www.reddit.com/r/emacs.rss" Emacs Reddit)
+            ("https://www.reddit.com/r/chatgpt.rss" AI ChatGpt Reddit)
+            ("https://www.reddit.com/r/orgmode.rss" Emacs OrgMode Reddit)
+            ("https://www.reddit.com/r/orgroam.rss" Emacs OrgMode OrgRoam Reddit)
+            ("https://www.reddit.com/r/anki.rss" Anki SecondBrain Reddit)
+            ("https://www.reddit.com/r/neovim.rss" Neovim Reddit)
+            ("https://www.reddit.com/r/vim.rss" Vim Reddit)
+            ("https://www.reddit.com/r/cs50.rss" Harvard cs50 Reddit)
+            ("https://www.reddit.com/r/freesoftware.rss" FreeSoftware Gnu)
+            ;; privacy reddit
+            ("https://www.reddit.com/r/cybersecurity.rss" CyberSecurity Reddit)
+            ("https://www.reddit.com/r/privacy.rss" Privacy Reddit)
+            ;; language learning related
+            ("https://www.reddit.com/r/duolingo.rss" Duolingo Reddit)
+            ;; Non Technical Reddit
+            ("https://www.reddit.com/r/Anarchy4Everyone.rss" Anarchy Reddit)
+            ("https://www.reddit.com/r/books.rss" Books Reddit)
+            ("https://www.reddit.com/r/literature.rss" Literature Reddit)
+            ("https://www.reddit.com/r/chomsky.rss" Chomsky Reddit)
+            ("https://www.reddit.com/r/jordanpeterson.rss" JordanPeterson Reddit)
+            ("https://www.reddit.com/r/literature.rss" Literature Reddit)
+            ;; History
+            ("https://www.reddit.com/r/history.rss" History Reddit)
+            ("https://www.reddit.com/r/artefact.rss" History Archeology Artifact Reddit)
+            ;; Space
+            ("https://www.reddit.com/r/nasa.rss" NASA Reddit)
             ;;
             ;; programming languages
-            ("https://www.reddit.com/r/javascript.rss" javascript)
-            ("https://www.reddit.com/r/typescript.rss" typescript)
-            ("https://www.reddit.com/r/golang.rss" golang)
-            ("https://www.reddit.com/r/rust.rss" rust)
+            ("https://www.reddit.com/r/javascript.rss" JavaScript Reddit)
+            ;; ("https://www.reddit.com/r/typescript.rss" TypeScript Reddit)
+            ;; ("https://www.reddit.com/r/golang.rss" GoLang Reddit)
+            ;; ("https://www.reddit.com/r/rust.rss" Rust Reddit)
             ;;
             ;; cloud
-            ;;("https://www.reddit.com/r/aws.rss" aws)
-            ;;("https://www.reddit.com/r/googlecloud.rss" googlecloud)
-            ;;("https://www.reddit.com/r/azure.rss" azure)
-            ;; ("https://www.reddit.com/r/devops.rss" devops)
-            ;; ("https://www.reddit.com/r/kubernetes.rss" kubernetes)
+            ;; ("https://www.reddit.com/r/aws.rss" AWS Reddit)
+            ;; ("https://www.reddit.com/r/googlecloud.rss" GoogleCloud Reddit)
+            ;; ("https://www.reddit.com/r/azure.rss" Azure Reddit)
+            ;; ("https://www.reddit.com/r/devops.rss" Devops Reddit)
+            ;; ("https://www.reddit.com/r/kubernetes.rss" Kubernetes Reddit)
             ))
 
   (setq-default elfeed-search-filter "@3-days-ago +unread")
   (setq-default elfeed-search-title-max-width 100)
   (setq-default elfeed-search-title-min-width 100))
 #+END_SRC
+
+* elfeed-tube
+
+#+BEGIN_SRC emacs-lisp
+  (use-package elfeed-tube
+    :ensure t ;; or :straight t
+    :after elfeed
+    :demand t
+    :config
+    ;; (setq elfeed-tube-auto-save-p nil) ; default value
+    (setq elfeed-tube-auto-fetch-p nil)
+    (elfeed-tube-setup)
+
+    :bind (:map elfeed-show-mode-map
+           ("F" . elfeed-tube-fetch)
+           ([remap save-buffer] . elfeed-tube-save)
+           :map elfeed-search-mode-map
+           ("F" . elfeed-tube-fetch)
+           ([remap save-buffer] . elfeed-tube-save)))
+
+  (use-package elfeed-tube-mpv
+  :ensure t ;; or :straight t
+  :bind (:map elfeed-show-mode-map
+              ("C-c C-f" . elfeed-tube-mpv-follow-mode)
+              ("C-c C-w" . elfeed-tube-mpv-where)))
+#+END_SRC
+
 * Custom Functions
+
+** Create a file with the current date as its name or choose it if it exists.
+
+*Usefulness*:
+1. No longer need to worry about managing a long file.
+2. Keep the history, if i need to come back and re-edit the cards.
+
+#+BEGIN_SRC emacs-lisp
+
+  (defun create-or-open-file-with-current-date ()
+    "Create or open a file with the current date as its name in ~/safdar-local/org-anki-editor/"
+    (interactive)
+    (let* ((base-directory "~/safdar-local/org-anki-editor/")
+           (current-date (format-time-string "%Y-%m-%d"))
+           (default-file-name (concat current-date ".org"))
+           (file-name (read-file-name "File name: " base-directory nil nil default-file-name)))
+      (find-file file-name)))
+
+  (global-set-key (kbd "C-c C-x n") 'create-or-open-file-with-current-date)
+
+#+END_SRC
+
+** Anki editor template selector
+
+#+BEGIN_SRC emacs-lisp
+(defun anki-editor-template-selector ()
+  "Insert an Org mode template with a top-level heading containing the current hour and minutes as headline, a drawer named ':PROPERTIES:', and sub-headings based on the selected ':ANKI_NOTE_TYPE:'. Prompt for the values of ':ANKI_NOTE_TYPE:' and ':ANKI_DECK:' with options. Add a tag with the current date to the top-level headline and move the cursor to that headline."
+  (interactive)
+  (insert "\n") ; Always add an empty line before the top-level headline
+
+  (let ((current-time (format-time-string "%H:%M"))
+        (current-date (format-time-string "%Y_%m_%d"))
+        (anki-note-type (completing-read "Select Anki Note Type: "
+                                          '("Cloze" "Basic")))
+        (anki-deck (completing-read "Select Anki Deck Name: "
+                                     '("Org-mode" "Emacs"))))
+    (insert (format "* %s    :%s:\n" current-time current-date anki-note-type))
+    (insert "  :PROPERTIES:\n")
+    (insert (format "  :ANKI_NOTE_TYPE: %s\n" anki-note-type))
+    (insert (format "  :ANKI_DECK: %s\n" anki-deck))
+    (insert "  :ANKI_NOTE_ID: \n")
+    (insert "  :END:\n\n")
+    (when (string= anki-note-type "Basic")
+      (insert "** Front\n\n")
+      (org-mark-ring-push))
+    (when (string= anki-note-type "Cloze")
+      (insert "** Text\n\n")
+      (org-mark-ring-push))
+    (when (string= anki-note-type "Basic")
+      (insert "** Back\n\n"))
+    (when (string= anki-note-type "Cloze")
+      (insert "** Extra\n\n"))
+    (org-set-tags-command '(4)))
+
+  ;; Move the cursor to the top level headline
+  (outline-up-heading 1))
+
+(global-set-key (kbd "C-c r a") 'anki-editor-template-selector)
+#+END_SRC
 
 ** Playing rss Youtube videos in mpv
 

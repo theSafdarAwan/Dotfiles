@@ -626,6 +626,18 @@ awful.rules.rules = {
 		},
 		properties = { screen = 1, tag = taglist_names[5], floating = false },
 	},
+	--> Tag 6
+	{
+	   rule_any = {
+	      class = {
+		 "Chat-gpt"
+	      }
+	   },
+	   properties = {
+	      floating = false,
+	      tag = taglist_names[6]
+	   }
+	},
 	--> Tag 7
 	{
 		rule_any = {

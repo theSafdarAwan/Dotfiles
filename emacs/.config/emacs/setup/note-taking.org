@@ -463,3 +463,47 @@ This package provides a query language for Org files. It offers two syntax style
     (add-hook 'dired-mode-hook 'org-download-enable)
     (global-set-key (kbd "<print>") 'org-download-screenshot))
 #+END_SRC
+
+* Key-binds
+
+** Hide all :PROPERTIES: drawers
+#+BEGIN_SRC emacs-lisp
+
+  ;; (defun my-org-hide-all-drawers ()
+    ;;   "Hide all drawers in the current buffer."
+    ;;   (interactive)
+    ;;   (save-excursion
+    ;;     (goto-char (point-min))
+    ;;     (while (re-search-forward ":PROPERTIES:" nil t)
+    ;;       (org-cycle-hide-drawers 'all))))
+
+    ;; (global-set-key (kbd "C-c C-x h") 'my-org-hide-all-drawers)
+
+   (defun my-org-toggle-all-drawers ()
+    "Toggle visibility of all drawers in the current buffer."
+    (interactive)
+    (save-excursion
+      (goto-char (point-min))
+      (while (re-search-forward ":PROPERTIES:" nil t)
+        (org-cycle))))
+   (global-set-key (kbd "C-c C-x t") 'my-org-toggle-all-drawers)
+
+#+END_SRC
+
+** Allow me to mark the current position in org-mode
+
+#+BEGIN_SRC emacs-lisp
+(defun my-org-mark-current-position ()
+  "Mark the current position in an Org mode buffer."
+  (interactive)
+  (org-mark-ring-push))
+
+(defun my-org-goto-marked-position ()
+  "Return to the marked position in an Org mode buffer."
+  (interactive)
+  (org-mark-ring-goto))
+
+;; Bindings for marking and returning
+(define-key org-mode-map (kbd "C-c C-x m") 'my-org-mark-current-position)
+(define-key org-mode-map (kbd "C-c C-x g") 'my-org-goto-marked-position)
+#+END_SRC
