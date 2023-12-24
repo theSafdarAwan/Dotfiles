@@ -156,9 +156,11 @@
 
 ** Anki editor template selector
 
+- [ ] after creating template prompt for under which headline should the clipboard text be pasted.
+  
 #+BEGIN_SRC emacs-lisp
   (defun my/anki-editor-template-selector ()
-    "Insert an Org mode template with a top-level heading containing the current hour and minutes as headline, a drawer named ':PROPERTIES:', and sub-headings based on the selected ':ANKI_NOTE_TYPE:'. Prompt for the values of ':ANKI_NOTE_TYPE:' and ':ANKI_DECK:' with options. Add a tag with the current date to the top-level headline and move the cursor to that headline."
+    "Insert an Org mode template with a top-level heading containing the current hour and minutes as headline, a drawer named ':PROPERTIES:', and sub-headings based on the selected ':ANKI_NOTE_TYPE:'. Prompt for the values of ':ANKI_NOTE_TYPE:' and ':ANKI_DECK:' with options. Then paste the clipboard contents. Add a tag with the current date to the top-level headline and move the cursor to that headline."
     (interactive)
     (insert "\n") ; Always add an empty line before the top-level headline
 
@@ -167,20 +169,22 @@
           (anki-note-type (completing-read "Select Anki Note Type: "
                                             '("Cloze" "Basic")))
           (anki-deck (completing-read "Select Anki Deck Name: "
-                                       '("Org-mode" "Emacs"))))
+                                      '("Org-mode" "Emacs"))))
       (insert (format "* %s    :%s:\n" current-time current-date anki-note-type))
       (insert "  :PROPERTIES:\n")
       (insert (format "  :ANKI_NOTE_TYPE: %s\n" anki-note-type))
       (insert (format "  :ANKI_DECK: %s\n" anki-deck))
       (insert "  :ANKI_NOTE_ID: \n")
       (insert "  :END:\n\n")
+      (when (y-or-n-p "Paste Clipboard?") ;; paste the clipboard contents for later card creation
+        (insert "** Clipboard\n\n")
+        (yank)
+        (insert "\n\n"))
       (when (string= anki-note-type "Basic")
         (insert "** Front\n")
-        (yank)
         (insert "\n** Back\n"))
       (when (string= anki-note-type "Cloze")
         (insert "** Text\n")
-        (yank)
         (insert "\n** Extra\n"))
       (org-set-tags-command '(4)))
 
@@ -201,7 +205,7 @@
       (message "Anki Note Template inserted at the end of %s" file-path)
       (let ((switch-to-buffer (y-or-n-p "Switch to the buffer where the template has been inserted? ")))
         (when switch-to-buffer
-          (switch-to-buffer (current-buffer))))))
+          (switch-to-buffer (concat current-date ".org"))))))
 
   (global-set-key (kbd "C-c r a") 'my/anki-editor-insert-template-at-end)
 #+END_SRC
