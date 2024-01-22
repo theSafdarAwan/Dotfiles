@@ -441,8 +441,7 @@ local clientkeys = gears.table.join(
 	awful.key({ win_key }, "m", function(c)
 		c.maximized_horizontal = not c.maximized_horizontal
 		c:raise()
-	end, { description = "(un)maximize horizontally", group = "client" }),
-
+	end, { description = "(un)maximize horizontally", group = "client" })
 )
 
 -- Bind all key numbers to tags.
@@ -538,6 +537,7 @@ awful.rules.rules = {
 				"DTA", -- Firefox addon DownThemAll.
 				"copyq", -- Includes session name in class.
 				"pinentry",
+				"Anki"
 			},
 			class = {
 				"Arandr",
@@ -572,7 +572,6 @@ awful.rules.rules = {
 		rule_any = { type = { "normal", "dialog" } },
 		properties = {
 			titlebars_enabled = false,
-			floating = true, --[[ remove this floating property when you get a new monitor ]]
 		},
 	},
 	--> Tag 1

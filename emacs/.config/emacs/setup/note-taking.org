@@ -28,12 +28,12 @@
   ;; (use-package org)
 
   ;; (custom-set-variables
-  ;;   '(org-directory "~/safdar-local/org-roam-notes/")
+  ;;   '(org-directory "~/safdar-local/org-files/org-roam-notes/")
   ;;   '(org-agenda-files (list org-directory)))
 
   ;; add all the journel entries to org-agenda-files
   (custom-set-variables
-      '(org-directory "~/safdar-local/org-roam-notes/daily/")
+      '(org-directory "~/safdar-local/org-files/org-roam-notes/daily/")
       '(org-agenda-files (list org-directory)))
 
   (setq org-enforce-todo-dependencies t)
@@ -145,9 +145,6 @@ Enable ~buffer-face-mode~ in org files in order to customize buffer specific fon
 #+end_src
 
 *** Add Org keybindings.
-:PROPERTIES:
-:ID:       2f84b850-334b-4494-ab2e-1fcfd6e833d7
-:END:
 
 #+begin_src emacs-lisp
 
@@ -240,7 +237,7 @@ Setting Faces for tasks Keywords
     ;; ;; temp work around for org-roam-ui graph not showing all file tags
     ;; (setq org-roam-database-connector 'sqlite)
     ;; (setq find-file-visit-truename nil) ;; resolve the symalink problems
-    (setq org-roam-directory (file-truename "~/safdar-local/org-roam-notes"))
+    (setq org-roam-directory (file-truename "~/safdar-local/org-files/org-roam-notes"))
 
     (setq org-roam-node-display-template
           (concat "${title:*} "
@@ -407,8 +404,8 @@ This package provides a query language for Org files. It offers two syntax style
   (defun make-org-headings-large()
     (dolist (face '((org-level-1 . 1.9)
                     (org-level-2 . 1.7)
-                    (org-level-3 . 1.6)
                     (org-level-4 . 1.4)
+                    (org-level-3 . 1.6)
                     (org-level-5 . 1.4)
                     (org-level-6 . 1.4)
                     (org-level-7 . 1.4)
@@ -442,7 +439,7 @@ This package provides a query language for Org files. It offers two syntax style
     ("h" (make-org-headings-small) nil)
     ("H" (make-org-headings-large) nil)
   )
-  (global-set-key (kbd "C-c p") 'hydra-reading-mode/body)
+  (global-set-key (kbd "C-c C-; r") 'hydra-reading-mode/body)
 
 #+end_src
 
@@ -453,7 +450,7 @@ This package provides a query language for Org files. It offers two syntax style
     :config
     ;; org-download use buffer-local variables. Set it individually in files. Otherwise, put things flatly in misc folder.
     (setq-default org-download-method 'directory
-                  org-download-image-dir "~/safdar-local/org-roam-notes/assets/"
+                  org-download-image-dir "~/safdar-local/org-files/org-roam-notes/assets/"
                   org-download-heading-lvl nil
                   org-download-delete-image-after-download t
                   org-download-screenshot-method "flameshot gui --raw --delay 2000 > %s"
@@ -465,6 +462,12 @@ This package provides a query language for Org files. It offers two syntax style
 #+END_SRC
 
 * Key-binds
+
+** Veal Buffer
+
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-c C-; C-e") 'eval-buffer)
+#+END_SRC
 
 ** Hide all :PROPERTIES: drawers
 #+BEGIN_SRC emacs-lisp
@@ -486,24 +489,59 @@ This package provides a query language for Org files. It offers two syntax style
       (goto-char (point-min))
       (while (re-search-forward ":PROPERTIES:" nil t)
         (org-cycle))))
-   (global-set-key (kbd "C-c C-x t") 'my-org-toggle-all-drawers)
+   (global-set-key (kbd "C-c C-; d") 'my-org-toggle-all-drawers)
 
 #+END_SRC
 
 ** Allow me to mark the current position in org-mode
 
 #+BEGIN_SRC emacs-lisp
-(defun my-org-mark-current-position ()
-  "Mark the current position in an Org mode buffer."
-  (interactive)
-  (org-mark-ring-push))
+  (defun my-org-mark-current-position ()
+    "Mark the current position in an Org mode buffer."
+    (interactive)
+    (org-mark-ring-push))
 
-(defun my-org-goto-marked-position ()
-  "Return to the marked position in an Org mode buffer."
-  (interactive)
-  (org-mark-ring-goto))
+  (defun my-org-goto-marked-position ()
+    "Return to the marked position in an Org mode buffer."
+    (interactive)
+    (org-mark-ring-goto))
 
-;; Bindings for marking and returning
-(define-key org-mode-map (kbd "C-c C-x m") 'my-org-mark-current-position)
-(define-key org-mode-map (kbd "C-c C-x g") 'my-org-goto-marked-position)
+  ;; Bindings for marking and returning
+  (define-key org-mode-map (kbd "C-c C-; m") 'my-org-mark-current-position)
+  (define-key org-mode-map (kbd "C-c C-; g") 'my-org-goto-marked-position)
+#+END_SRC
+
+** Search for zettel property files
+
+#+BEGIN_SRC emacs-lisp
+  (defun export-files-based-on-zettel-property ()
+    "Prompt user to choose whether to export files with or without the #+zettel property from org-roam-notes directory."
+    (interactive)
+    (let* ((roam-dir "~/safdar-local/org-files/org-roam-notes/")
+           (zettel-files '())
+           (export-with-zettel (y-or-n-p "Export files with #+zettel property? ")))
+
+      ;; Find files with or without #+zettel property
+      (dolist (file (directory-files roam-dir t "\\.org$"))
+        (with-temp-buffer
+          (insert-file-contents file)
+          (goto-char (point-min))
+          (if export-with-zettel
+              (when (re-search-forward "^\\s-*#\\+zettel:[ \t]*\\<\\(t\\|true\\)\\>" nil t)
+                (push file zettel-files))
+            (unless (re-search-forward "^\\s-*#\\+zettel:" nil t)
+              (push file zettel-files)))))
+
+      ;; Export files to an Org buffer as links
+      (if zettel-files
+          (with-current-buffer (get-buffer-create "*Exported Files*")
+            (erase-buffer)
+            (dolist (file zettel-files)
+              (insert (format "[[file:%s][%s]]\n" file (file-name-nondirectory file))))
+            (org-mode)
+            (pop-to-buffer "*Exported Files*")
+            (message "Files listed in Org buffer based on #+zettel property."))
+        (message "No files found based on the chosen criteria."))))
+
+  (global-set-key (kbd "C-c C-; z") 'export-files-based-on-zettel-property)
 #+END_SRC

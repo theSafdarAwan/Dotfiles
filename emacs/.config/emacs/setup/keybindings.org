@@ -106,16 +106,15 @@
 ** Copy the github token into clipboard when in Magit buffer
 
 #+BEGIN_SRC emacs-lisp
-(defun my-copy-token-file-contents ()
-  "Copy the contents of ~/token.txt into the kill-ring. When in magit buffer."
-  (interactive)
-  (let ((file-contents (with-temp-buffer
-                         (insert-file-contents "~/token.txt")
-                         (buffer-string))))
-    (kill-new file-contents)
-    (message "Contents of ~/token.txt copied to kill-ring.")))
+  (defun my-copy-token-file-contents ()
+    "Copy the contents of ~/token.txt into the kill-ring. When in magit buffer."
+    (interactive)
+    (let ((file-contents (with-temp-buffer
+                           (insert-file-contents "~/token.txt")
+                           (buffer-string))))
+      (kill-new file-contents)
+      (message "Contents of ~/token.txt copied to kill-ring.")))
 
-(eval-after-load 'magit
-  '(define-key magit-mode-map (kbd "C-c M-w") 'my-copy-token-file-contents))
-
+  (eval-after-load 'magit
+    '(define-key magit-mode-map (kbd "C-c M-w") 'my-copy-token-file-contents))
 #+END_SRC

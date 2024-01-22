@@ -50,7 +50,7 @@ Change the Org heading font
   (set-face-attribute 'org-default nil 
                       :font "Montserrat" 
                       :weight 'Regular
-                      :height 1.2)
+                      :height 1.4)
 
 #+end_src
 

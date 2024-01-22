@@ -22,3 +22,9 @@
   ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 #+END_SRC
+
+* RG(RipGrep)
+
+#+BEGIN_SRC emacs-lisp
+  (use-package rg)
+#+END_SRC

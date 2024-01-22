@@ -15,6 +15,7 @@
   (org-babel-load-file (expand-file-name "setup/anki-editor.org" user-emacs-directory))
 
   (org-babel-load-file (expand-file-name "setup/rss-reader.org" user-emacs-directory))
+  (org-babel-load-file (expand-file-name "setup/zotero.org" user-emacs-directory))
 
   (org-babel-load-file (expand-file-name "setup/other-packages.org" user-emacs-directory))
 
