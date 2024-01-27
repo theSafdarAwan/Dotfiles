@@ -545,3 +545,15 @@ This package provides a query language for Org files. It offers two syntax style
 
   (global-set-key (kbd "C-c C-; z") 'export-files-based-on-zettel-property)
 #+END_SRC
+
+** Script to Paste Text from Clipboard and Add new line after it
+This script can be very useful when trying to copy text from blogs for note taking.
+
+#+BEGIN_SRC emacs-lisp
+  (defun my/paste-text-and-save ()
+    (with-current-buffer (window-buffer)
+      (progn (yank)
+             (end-of-buffer)
+             (insert "\n\n")
+             (write-buffer))))
+#+END_SRC

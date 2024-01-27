@@ -1,43 +1,101 @@
 * Adding Anki integration with org-mode
 
 #+BEGIN_SRC emacs-lisp
-  (use-package anki-editor
-    :ensure t
-    :after org
-    :bind (:map org-mode-map
-                ("<f12>" . anki-editor-cloze-region-auto-incr)
-                ("<f11>" . anki-editor-cloze-region-dont-incr)
-                ("<f10>" . anki-editor-reset-cloze-number)
-                ("<f9>"  . anki-editor-push-tree))
-    :hook (org-capture-after-finalize . anki-editor-reset-cloze-number) ; Reset cloze-number after each capture.
-    :config
-    (setq anki-editor-create-decks t ;; Allow anki-editor to create a new deck if it doesn't exist
-          anki-editor-org-tags-as-anki-tags t)
+    (use-package anki-editor
+      :after org
+      :ensure t
+      :bind (:map org-mode-map
+                  ("<f12>" . anki-editor-cloze-region-auto-incr)
+                  ("<f11>" . anki-editor-cloze-region-dont-incr)
+                  ("<f10>" . anki-editor-reset-cloze-number)
+                  ("<f8>"  . anki-editor-push-tree)
+                  ("<f9>" . anki-editor-push-all-level-one-headings))
+      :hook (org-capture-after-finalize . anki-editor-reset-cloze-number) ; Reset cloze-number after each capture.
+      :config
+      (defun anki-editor-push-all-level-one-headings ()
+        "Push notes under level one headings that do not have :ANKI_ID: property."
+        (interactive)
+        (org-map-entries
+         (lambda ()
+           (unless (org-entry-get (point) "ANKI_ID")
+             (anki-editor-push-notes '(4))
+             (anki-editor-reset-cloze-number)))
+         "LEVEL=1"))
 
-    (defun anki-editor-cloze-region-auto-incr (&optional arg)
-      "Cloze region without hint and increase card number."
-      (interactive)
-      (anki-editor-cloze-region my-anki-editor-cloze-number "")
-      (setq my-anki-editor-cloze-number (1+ my-anki-editor-cloze-number))
-      (forward-sexp))
-    (defun anki-editor-cloze-region-dont-incr (&optional arg)
-      "Cloze region without hint using the previous card number."
-      (interactive)
-      (anki-editor-cloze-region (1- my-anki-editor-cloze-number) "")
-      (forward-sexp))
-    (defun anki-editor-reset-cloze-number (&optional arg)
-      "Reset cloze number to ARG or 1"
-      (interactive)
-      (setq my-anki-editor-cloze-number (or arg 1)))
-    (defun anki-editor-push-tree ()
-      "Push all notes under a tree."
-      (interactive)
-      (anki-editor-push-notes '(4))
+      (setq anki-editor-create-decks t ;; Allow anki-editor to create a new deck if it doesn't exist
+            anki-editor-org-tags-as-anki-tags t)
+
+      (defun anki-editor-cloze-region-auto-incr (&optional arg)
+        "Cloze region without hint and increase card number."
+        (interactive)
+        (anki-editor-cloze-region my-anki-editor-cloze-number "")
+        (setq my-anki-editor-cloze-number (1+ my-anki-editor-cloze-number))
+        (forward-sexp))
+      (defun anki-editor-cloze-region-dont-incr (&optional arg)
+        "Cloze region without hint using the previous card number."
+        (interactive)
+        (anki-editor-cloze-region (1- my-anki-editor-cloze-number) "")
+        (forward-sexp))
+      (defun anki-editor-reset-cloze-number (&optional arg)
+        "Reset cloze number to ARG or 1"
+        (interactive)
+        (setq my-anki-editor-cloze-number (or arg 1)))
+      (defun anki-editor-push-tree ()
+        "Push all notes under a tree."
+        (interactive)
+        (anki-editor-push-notes '(4))
+        (anki-editor-reset-cloze-number))
+
+      ;; Initialize
       (anki-editor-reset-cloze-number))
-    ;; Initialize
-    (anki-editor-reset-cloze-number)
-    )
-#+end_src
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+
+  (defun my/insert-anki-card-from-clipboard ()
+    "Insert a new Anki card with the current time and clipboard content."
+    (interactive)
+    (progn
+    (insert "\n")
+    (let* ((current-time (format-time-string "%H:%M"))
+           (anki-note-type "Basic")
+           (anki-deck "Languages::🇺🇸 English::Vocabulary::Personal English Vocabulary")
+           (front-text "Front")
+           (back-text "Back")
+           (current-date (format-time-string "%Y-%m-%d"))
+           (file-path (expand-file-name (concat "~/safdar-local/org-files/org-anki-editor/" current-date ".org")))
+           (file-name-no-ext (file-name-sans-extension (file-name-nondirectory file-path)))
+           (file-name-no-ext-with-underscore (replace-regexp-in-string "-" "_" file-name-no-ext))
+           (clipboard-content (current-kill 0 t)))
+      (with-current-buffer (find-file file-path)
+        (goto-char (point-max))
+        ;; Append top-level headline with current time and file name as tag
+        (insert (format "* %s :%s: " current-time file-name-no-ext-with-underscore))
+        ;; Add properties on the next line under the top-level headline
+        (insert "\n:PROPERTIES:\n"
+                (format ":ANKI_NOTE_TYPE: %s\n" anki-note-type)
+                (format ":ANKI_DECK: %s\n" anki-deck)
+                ":END:\n")
+        ;; Add subheadlines "Front" and "Back"
+        (insert "\n") ;; New line before "Front"
+        (insert (format "** %s\n" front-text))
+        (insert "\n")
+        ;; Insert clipboard content under "Front" headline
+        (yank)
+        ;; Add two new lines after pasting the text
+        (insert "\n\n")
+        ;; Add subheadline "Back"
+        (insert (format "** %s\n\n" back-text))
+        ;; Save the buffer
+        (save-buffer)
+        ;; Set tags on the top-level headline
+        (save-excursion
+          (org-with-wide-buffer
+           (goto-char (point-min))
+           (outline-next-heading) ;; Move to the first headline
+           (org-set-tags-command '(4))))))))
+    (global-set-key (kbd "C-c C-; i") 'my/insert-anki-card-from-clipboard)
+#+END_SRC
 
 ** Templates
 
@@ -116,7 +174,8 @@
                                         "Computer Science::Emacs::emacs-lisp"
                                         "Computer Science::Programming Languages::C Language"
                                         "History::History Buff Quizzes"
-                                        "Languages::🇺🇸 English::Vocabulary::Personal English Vocabulary"))))
+                                        "Languages::🇺🇸 English::Vocabulary::Personal English Vocabulary"
+                                        "Languages::🇺🇸 English::Personal Senteces and Expressions"))))
       (insert (format "* %s    :%s:\n" current-time current-date anki-note-type))
       (insert "  :PROPERTIES:\n")
       (insert (format "  :ANKI_NOTE_TYPE: %s\n" anki-note-type))
