@@ -236,6 +236,18 @@
 # xdg-mime default browser.desktop x-scheme-handler/http
 # xdg-mime default browser.desktop x-scheme-handler/https
 
+### paste this to /usr/share/applications/google-chrome-stable.desktop
+#****
+# [Desktop Entry]
+# Type=Application
+# Name=google-chrome-stable
+# Comment=Google Chrome Browser
+# Terminal=false
+# Exec=google-chrome-stable
+# Categories=Network;WebBrowser
+#****
+
+
 #>>>>>>>>>>> Enable redshift
 # systemctl --user enable redshift.service --now
 

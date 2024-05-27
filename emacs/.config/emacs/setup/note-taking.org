@@ -5,6 +5,7 @@
 #+BEGIN_SRC emacs-lisp
 
   (use-package pomidor
+    :ensure t
     :bind (("<f12>" . pomidor))
     :config (setq pomidor-sound-tick nil
                   pomidor-sound-tack nil)
@@ -260,7 +261,7 @@ Setting Faces for tasks Keywords
     (org-roam-capture-templates
      '(("d" "default" plain
         "%?"
-        :if-new (file+head "${title}.org" "#+TITLE: ${title}\n#+FILETAGS: \n")
+        :if-new (file+head "${title}.org" "#+TITLE: ${title}\n#+FILETAGS: \n#+TOPICS: \n")
         :unnarrowed t)
        ))
     :config

@@ -13,7 +13,7 @@ Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
 URxvt*saveLines: 5000
 URxvt*termName: kitty
 URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: firefox
+URxvt.urlLauncher: google-chrome-stable
 URxvt.matcher.button: 1
 xterm*font: xft:Fira Code Nerd Font:pixelsize=15,xft:DejaVuSansMono Nerd Font:size=8
 

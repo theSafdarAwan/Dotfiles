@@ -1,1 +1,1 @@
-export BROWSER=/bin/firefox
+export BROWSER=/bin/google-chrome-stable

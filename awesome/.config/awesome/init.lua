@@ -294,6 +294,15 @@ end)
 -- 	awful.button({}, 5, awful.tag.viewprev)
 -- ))
 
+-- Function to execute the command in Emacs
+
+function execute_paste_text_and_save_emacs()
+   awful.spawn("emacsclient -e '(my/paste-text-and-save)'")
+end
+
+function execute_insert_anki_card_from_clipboard_emacs()
+   awful.spawn("emacsclient -e '(my/insert-anki-card-from-clipboard)'")
+end
 --> Key bindings
 globalkeys = gears.table.join(
 	awful.key({ win_key, "Ctrl" }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
@@ -342,6 +351,9 @@ globalkeys = gears.table.join(
 	awful.key({ win_key }, ".", function()
 		awful.spawn(rofi_emoji)
 	end, { description = "Luach Rofi Emoji Picker", group = "launcher" }),
+	awful.key({ win_key  }, "`", function()
+		awful.spawn("flameshot gui")
+	end, { description = "Launch Flameshot", group = "launcher" }),
 	awful.key({ win_key, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	awful.key({ win_key, "Control", "Shift" }, "x", awesome.quit, { description = "quit awesome", group = "awesome" }),
 
@@ -394,7 +406,14 @@ globalkeys = gears.table.join(
 	-- end, { description = "run prompt", group = "launcher" }),
 	awful.key({ win_key }, "d", function()
 		awful.spawn(dmenu)
-	end, { description = "Run dmenu", group = "launcher" })
+	end, { description = "Run dmenu", group = "launcher" }),
+
+	awful.key({ win_key }, "w", function()
+	        execute_paste_text_and_save_emacs()
+	end, { description = "Emacs Paste text in file", group = "client" }),
+	awful.key({ win_key }, "e", function()
+	      execute_insert_anki_card_from_clipboard_emacs()
+	end, { description = "Emacs Create Anki Vocabulary Card", group = "client" })
 
 	-- Menubar
 	-- awful.key({ altkey }, "p", function()
@@ -604,6 +623,7 @@ awful.rules.rules = {
 				"mpv",
 				"Evince",
 				"tabbed",
+				"sioyek",
 				"Com.github.johnfactotum.Foliate",
 				"Deadbeef",
 				"Peazip",
@@ -614,7 +634,7 @@ awful.rules.rules = {
 	--> Tag 4
 	{
 		rule_any = {
-			class = { "TIPP10", "Todoist", "Stardict", "logseq", "Anki" },
+			class = { "TIPP10", "Todoist", "Stardict", "Zotero", "logseq", "Anki" },
 		},
 		properties = { screen = 1, tag = taglist_names[4], floating = false },
 	},
