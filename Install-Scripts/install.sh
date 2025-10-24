@@ -2,6 +2,8 @@
 
 ##################### install programs through pacman
 # - emacs
+# - tlp
+# - tlpui
 # - aspell-en
 # - polybar
 # - handbrake
