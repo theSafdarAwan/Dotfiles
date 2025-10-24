@@ -4,6 +4,8 @@
 # - emacs
 # - tlp
 # - tlpui
+# - ethtool
+# - smartmontools
 # - aspell-en
 # - polybar
 # - handbrake
