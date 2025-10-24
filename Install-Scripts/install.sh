@@ -126,6 +126,8 @@
 # - cool-retro-term
 
 ##################### install through yay
+# - blight
+# - evtest
 # - awesome-git
 # - neovim-nightly-bin
 # - wezterm
