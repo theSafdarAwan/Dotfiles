@@ -15,5 +15,6 @@ run_once({
     "nitrogen --restore",
     "stardict",
     "nitrogen",
+	  -- "xrandr --output eDP --scale 0.8x0.8",
 --    "deadbeef",
 })

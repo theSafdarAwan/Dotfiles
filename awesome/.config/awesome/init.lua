@@ -4,6 +4,8 @@ local globalkeys = globalkeys
 local awesome = awesome
 local client = client
 local screen = screen
+-- Import module:
+local battery_widget = require("battery-widget")
 
 --> Install package's through luarocks if installed
 pcall(require, "luarocks.loader")
@@ -103,9 +105,9 @@ local myawesomemenu = {
 			hotkeys_popup.show_help(nil, awful.screen.focused())
 		end,
 	},
-	{ "manual", terminal .. " start " .. "man awesome" },
+	{ "manual",      terminal .. " start " .. "man awesome" },
 	{ "edit config", editor_cmd .. " " .. awesome.conffile },
-	{ "restart", awesome.restart },
+	{ "restart",     awesome.restart },
 	{
 		"quit",
 		function()
@@ -116,7 +118,7 @@ local myawesomemenu = {
 
 local mymainmenu = awful.menu({
 	items = {
-		{ "awesome", myawesomemenu, beautiful.awesome_icon },
+		{ "awesome",       myawesomemenu, beautiful.awesome_icon },
 		{ "open terminal", terminal },
 	},
 })
@@ -275,8 +277,31 @@ awful.screen.connect_for_each_screen(function(s)
 			s.mypromptbox,
 		},
 		s.mytasklist, -- Middle widget
-		{ -- Right widgets
+		{           -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			battery_widget {
+				ac = "AC",
+				adapter = "BAT0",
+				ac_prefix = "AC: ",
+				battery_prefix = "Bat: ",
+				percent_colors = {
+					{ 25,  "red" },
+					{ 50,  "orange" },
+					{ 999, "green" },
+				},
+				listen = true,
+				timeout = 10,
+				widget_text = "${AC_BAT}${color_on}${percent}%${color_off}",
+				widget_font = "Deja Vu Sans Mono 16",
+				tooltip_text = "Battery ${state}${time_est}\nCapacity: ${capacity_percent}%",
+				alert_threshold = 5,
+				alert_timeout = 0,
+				alert_title = "Low battery !",
+				alert_text = "${AC_BAT}${time_est}",
+				alert_icon = "~/Downloads/low_battery_icon.png",
+				warn_full_battery = true,
+				full_battery_icon = "~/Downloads/full_battery_icon.png",
+			},
 			mykeyboardlayout,
 			wibox.widget.systray(),
 			mytextclock,
@@ -297,19 +322,19 @@ end)
 -- Function to execute the command in Emacs
 
 function execute_paste_text_and_save_emacs()
-   awful.spawn("emacsclient -e '(my/paste-text-and-save)'")
+	awful.spawn("emacsclient -e '(my/paste-text-and-save)'")
 end
 
 function execute_insert_anki_card_from_clipboard_emacs()
-   awful.spawn("emacsclient -e '(my/insert-anki-card-from-clipboard)'")
+	awful.spawn("emacsclient -e '(my/insert-anki-card-from-clipboard)'")
 end
+
 --> Key bindings
 globalkeys = gears.table.join(
 	awful.key({ win_key, "Ctrl" }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
 	awful.key({ win_key, "Control" }, "h", awful.tag.viewprev, { description = "view previous", group = "tag" }),
 	awful.key({ win_key, "Control" }, "l", awful.tag.viewnext, { description = "view next", group = "tag" }),
 	awful.key({ win_key }, ",", awful.tag.history.restore, { description = "go back", group = "tag" }),
-
 	awful.key({ win_key }, "j", function()
 		awful.client.focus.byidx(1)
 	end, { description = "focus next by index", group = "client" }),
@@ -351,12 +376,11 @@ globalkeys = gears.table.join(
 	awful.key({ win_key }, ".", function()
 		awful.spawn(rofi_emoji)
 	end, { description = "Luach Rofi Emoji Picker", group = "launcher" }),
-	awful.key({ win_key  }, "`", function()
+	awful.key({ win_key }, "`", function()
 		awful.spawn("flameshot gui")
 	end, { description = "Launch Flameshot", group = "launcher" }),
 	awful.key({ win_key, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
 	awful.key({ win_key, "Control", "Shift" }, "x", awesome.quit, { description = "quit awesome", group = "awesome" }),
-
 	awful.key({ win_key, "Control" }, "a", function()
 		awful.spawn(terminal .. " start " .. "alsamixer")
 	end, { description = "Alsa audio controller", group = "launcher" }),
@@ -409,16 +433,16 @@ globalkeys = gears.table.join(
 	end, { description = "Run dmenu", group = "launcher" }),
 
 	awful.key({ win_key }, "w", function()
-	        execute_paste_text_and_save_emacs()
+		execute_paste_text_and_save_emacs()
 	end, { description = "Emacs Paste text in file", group = "client" }),
 	awful.key({ win_key }, "e", function()
-	      execute_insert_anki_card_from_clipboard_emacs()
+		execute_insert_anki_card_from_clipboard_emacs()
 	end, { description = "Emacs Create Anki Vocabulary Card", group = "client" })
 
-	-- Menubar
-	-- awful.key({ altkey }, "p", function()
-	-- 	menubar.show()
-	-- end, { description = "show the menubar", group = "launcher" })
+-- Menubar
+-- awful.key({ altkey }, "p", function()
+-- 	menubar.show()
+-- end, { description = "show the menubar", group = "launcher" })
 )
 
 local clientkeys = gears.table.join(
@@ -580,7 +604,7 @@ awful.rules.rules = {
 			role = {
 				"AlarmWindow", -- Thunderbird's calendar.
 				"ConfigManager", -- Thunderbird's about:config.
-				"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
+				"pop-up",    -- e.g. Google Chrome's (detached) Developer Tools.
 			},
 		},
 		properties = { floating = true },
@@ -647,15 +671,15 @@ awful.rules.rules = {
 	},
 	--> Tag 6
 	{
-	   rule_any = {
-	      class = {
-		 "Chat-gpt"
-	      }
-	   },
-	   properties = {
-	      floating = false,
-	      tag = taglist_names[6]
-	   }
+		rule_any = {
+			class = {
+				"Chat-gpt"
+			}
+		},
+		properties = {
+			floating = false,
+			tag = taglist_names[6]
+		}
 	},
 	--> Tag 7
 	{
