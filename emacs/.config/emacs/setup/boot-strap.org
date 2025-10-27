@@ -64,7 +64,7 @@ In Emacs 29, the location of the native compilation cache can be changed.
   (require 'use-package-ensure)
   ;; OR
   ;; (require 'use-package)
-  (setq use-package-always-ensure t)
+  ;;(setq use-package-always-ensure t)
 
 #+end_src
 

@@ -1,11 +1,12 @@
 #!/bin/bash
 
+# TODO: add script for enabling finger print using fprintd
+
 ##################### install programs through pacman
 # - emacs
-# - tlp
-# - tlpui
-# - ethtool
-# - smartmontools
+# - fwupd
+# - fprintd
+# - nvtop
 # - aspell-en
 # - polybar
 # - handbrake
@@ -131,6 +132,7 @@
 
 ##################### install through yay
 # - blight
+# - auto-cpufreq
 # - evtest
 # - awesome-git
 # - neovim-nightly-bin
