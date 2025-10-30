@@ -1,6 +1,5 @@
 (defcfg
-  input  (device-file "/dev/input/event14")
-  ;; input  (device-file "/dev/input/event16")
+  input  (device-file "/dev/input/event15")
   output (uinput-sink "My KMonad output"
   "/bin/sleep 1 && /bin/setxkbmap -option compose:ralt")
   cmp-seq ralt 

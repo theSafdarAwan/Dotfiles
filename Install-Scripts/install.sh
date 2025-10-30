@@ -4,6 +4,8 @@
 
 ##################### install programs through pacman
 # - emacs
+# - tlp
+# - tlp-rdw
 # - fwupd
 # - fprintd
 # - nvtop
