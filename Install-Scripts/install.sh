@@ -238,6 +238,11 @@
 # pip install flake8
 # pip install black
 
+#>>>>>>>>>>>>>>>> Install yay
+# https://aur.archlinux.org/yay.git
+# cd yay
+# makepkg -si
+
 #>>>>>>>>>>>>>>>> Install zsh-antigen
 # mkdir ~/zsh-plugins
 # curl -L git.io/antigen > ~/zsh-plugins/antigen.zsh
