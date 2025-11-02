@@ -34,3 +34,5 @@ alias clear=" /bin/clear; macchina --config ~/.config/macchina/macchina2.toml"
 alias c="/bin/clear; fortune-cm.fortune"
 
 alias cava="TERM=st-256color cava"
+
+alias vim="nvim --clean -c 'set nu rnu'"
