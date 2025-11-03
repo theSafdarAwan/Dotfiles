@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dir="$HOME/Dotfiles/wallpaper"
+dir="$HOME/Wallpapers/others/"
 
 while true; do 
     feh --randomize --recursive --bg-fill $dir
