@@ -24,8 +24,6 @@
                                                                left down rght
 )
 
-(defalias __E (multi-tap 300 lalt esc))
-
 (deflayer qwerty
        mute vold volu
  caps   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
@@ -33,6 +31,40 @@
 	  tab  q    w    e    r    t    y    u    i    o    p    [     ]    \
 	  lctl a    s    d    f    g    h    j    k    l    ;    '          ret
 	  lsft z    x    c    v    b    n    m    ,    .    /               rsft
-	  wkup esc lmet @__E           spc            ralt sys  rctl  pgdn up   pgup
+	  wkup esc lmet @__E           spc            @utl sys  rctl  pgdn up   pgup
                                                                left down rght
+) ;; ^^^^^^^^^^^^^^^^^ first `deflayer` is used as the base layer ^^^^^^
+
+
+;; other layers function as the secondary or will work only when called upon
+
+(deflayer util
+       XX   XX   XX  
+    XX   XX   XX   XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX 
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   X    XX    XX  @qwt 
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX  XX
+	  lctl XX   XX   XX   XX   XX  left down  up  right XX   XX         XX 
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX              XX  
+	  XX   XX   XX   XX             XX            XX   XX   XX    XX   XX   XX  
+                                                               XX   XX   XX  
 )
+
+
+#|
+(deflayer blank_layer
+       XX   XX   XX  
+    XX   XX   XX   XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX 
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   X    XX    XX  XX   
+	  XX   XX   XX   XX   XX   Xx   XX   XX   XX   XX   XX   XX    XX  XX
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX         XX 
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX              XX  
+	  XX   XX   XX   XX             XX            XX   XX   XX    XX   XX   XX  
+                                                               XX   XX   XX  
+)
+|#
+
+(defalias 
+	__E (multi-tap 300 lalt esc)
+	utl (layer-toggle util)
+	qwt (layer-switch qwerty))
+
