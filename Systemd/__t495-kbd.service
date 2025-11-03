@@ -1,0 +1,14 @@
+# location >>>> /etc/systemd/system/
+[Unit]
+Description=t495-kbd
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/kmonad /home/malik/.config/kmonad/t495.kbd
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
