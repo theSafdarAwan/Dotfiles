@@ -1,0 +1,2 @@
+# cat /etc/udev/rules.d/keychron-k7.rules
+ATTRS{name}=="ANXIN-203", SYMLINK+="ANXIN-203"
