@@ -1,0 +1,91 @@
+- thunar
+- keepassxc
+- firefox
+- wezterm
+- 7zip
+- dmenu
+- man
+- evtest
+- python
+- git
+- stow
+- starship
+- fzf
+- macchina
+- exa
+- bat
+- lolcat
+- zoxide
+- tlp
+- tlp-rdw
+- cmake
+- tree-sitter-cli
+- xclip
+- nodejs
+- bluetui
+- nvtop
+- gparte
+- wmcrl
+- python-setuptools
+- rofi
+- rofi-emoji
+- tmux
+- mpv
+- flameshot
+- libreoffice
+- gimp
+- inkscape
+- foliate
+- lxappearance
+- stardict
+- kdenlive
+- blender
+- xplr
+- virtualbox
+- virtualbox-host-modules-arch
+- thunderbird
+- qalculate-gtk
+- links
+- klavaro
+- pavucontrol
+- rust
+- gvfs-mtp
+- >> For Tabbed
+- sxiv
+- zathura
+- pulsemixer
+- qbittorrent
+- waydroid
+
+# --- yay
+- brave-nightly-bin
+- blight
+- gestures
+- anki
+- discord
+- figma-linux
+- stardict-wordnet
+- scid
+
+
+#>>>> tabbed
+TODO: add a script for curling and patching
+
+#>>>>>>>>>> Cargo
+- sudo cargo install ttyper
+- sudo cargo install deno --locked
+- cargo install --git https://github.com/loichyan/nerdfix
+
+#>>>>>>>>> Install the tmux plugin manager
+- git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+
+
+#>>>>>>>>>> Install LTS Kernel
+- linux-lts
+- linux-lts-headers
+- TODO: ????
+
+
+
+#>>>>>>>>>>>>>>>> zsh
+# chsh -s `which zsh`
