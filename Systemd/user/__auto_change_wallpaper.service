@@ -1,0 +1,10 @@
+# location >>>> /etc/systemd/system/
+[Unit]
+Description= Wallpaper Changer
+
+[Service]
+ExecStart=/home/malik/bin/auto_change_wallpaper.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

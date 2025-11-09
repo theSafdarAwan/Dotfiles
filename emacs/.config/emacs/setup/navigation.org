@@ -1,17 +1,3 @@
-* Perspective
-
-:investigate:
-
-#+begin_src emacs-lisp
-
-  (use-package perspective
-    :bind
-    ("C-x C-b" . persp-list-buffers)   ; or use a nicer switcher, see below
-    :config
-    (persp-mode))
-
-#+end_src
-
 * Multiple Cursors
 
 #+BEGIN_SRC emacs-lisp
@@ -21,10 +7,4 @@
   ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-#+END_SRC
-
-* RG(RipGrep)
-
-#+BEGIN_SRC emacs-lisp
-  (use-package rg)
 #+END_SRC

@@ -1,3 +1,5 @@
+- not-fonts-emoji
+- nerd-fonts
 - thunar
 - keepassxc
 - firefox
@@ -56,6 +58,7 @@
 - pulsemixer
 - qbittorrent
 - waydroid
+- ripgrep
 
 # --- yay
 - brave-nightly-bin

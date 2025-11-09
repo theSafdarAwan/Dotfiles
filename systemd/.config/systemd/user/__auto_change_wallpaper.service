@@ -1,0 +1,13 @@
+# location >>>> /etc/systemd/system/
+[Unit]
+Description= Wallpaper Changer
+After=xdg-desktop-autostart.target
+
+[Service]
+Type=forking
+ExecStart=/home/malik/bin/auto_change_wallpaper.sh&disown
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target

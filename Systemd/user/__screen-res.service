@@ -1,14 +1,10 @@
 # location >>>> /etc/systemd/system/
 [Unit]
-Description= Screen Resolution using Xrandr
-After=network.target
+Description= Screen Resolution Changer
 
 [Service]
-Type=simple
 ExecStart=/home/malik/bin/screen-res.sh
 Restart=always
-User=root
-Group=root
 
 [Install]
 WantedBy=multi-user.target

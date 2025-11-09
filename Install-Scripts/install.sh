@@ -3,42 +3,15 @@
 # TODO: add script for enabling finger print using fprintd
 
 ##################### install programs through pacman
-# - emacs
-# - tlp
-# - tlp-rdw
 # - fwupd
 # - fprintd
-# - nvtop
 # - aspell-en
-# - polybar
-# - handbrake
-# - plasma-desktop
-# - plasma-browser-integration
-# - dolphin
-# - rofi
-# - rofi-emoji
-# - firefox
-# - zsh
-# - starship
-# - git
-# - stow
-# - alacritty
-# - kitty
-# - yay 
-# - pulseaudio
-# - fzf
-# - tmux
-# - zellij
-# - exa
-# - lolcat
-# - mpv
 # - imv
 # - viewnior
 # - mpd 
 # - ncmpcpp
 # - mpc
 # - fd
-# - clang
 # - nasm
 # - ninja
 # - gparted
@@ -52,31 +25,20 @@
 # - dabtap
 # - rust-analyzer
 # - luarocks
-# - discord
-# - flameshot
-# - nodejs
 # - npm
 # - go
-# - python
 # - python-pip
 # - stardict
 # - qbittorrent
 # - gimp
 # - inkscape
-# - blender
 # - viewnior
-# - virtualbox
-# - linux-headers
-# - keepassxc
 # - figlet
-# - tree-sitter-cli
 
 # - screenkey
 
 # - dust
-# - bat
 # - darktable
-# - kdenlive
 # - lazygit
 # - obs-studio
 # - tipp10
@@ -118,7 +80,6 @@
 # - 0ad
 
 # - obsidian
-# - qalculate-qt
 # - wmctrl
 # - cmatrix
 # - links
@@ -126,28 +87,17 @@
 # - nitrogen
 # - ardour
 # - audacity
-# - libreoffice
-# - wallutils
-# - thunderbird
 # - clipgrab
 # - cool-retro-term
 
 ##################### install through yay
-# - blight
 # - auto-cpufreq
-# - evtest
-# - awesome-git
-# - neovim-nightly-bin
-# - wezterm
-# - klavaro-svn
 # - ldoc
-# - figma-linux
 
 # - zsh-vi-mode
 # - google-chrome
 # - giara-git
 # - stacer
-# - stardict-wordnet
 # - scid
 # - htop-vim
 # - btop
@@ -169,18 +119,13 @@
 # - bleachbit
 # - macchina
 # - autotiling-git
-# - nnn-nerd
 # - deadbeef
-# - tabbed-git
 # - picom-ibhagwan-git
 
 # - peazip-gtk2-bin
 # - kmonad-git
 # - todoist
-# - anki
 # - dasht
-
-# - vim-clipboard
 
 # - protonvpn-cli
 # - powershell-bin
@@ -198,6 +143,7 @@
 
 
 ########################## Fonts
+# TODO: these fonts might not be needed use pacman -S nerd-fonts
 # - ttf-ms-fonts
 # - ttf-vista-fonts
 # - nerd-fonts-complete
@@ -207,12 +153,6 @@
 # - fortune-cm
 #----- Game
 # - xonotic
-
-########### Cargo
-# sudo cargo install stylua
-# sudo cargo install ttyper
-# sudo cargo install deno --locked
-# cargo install --git https://github.com/loichyan/nerdfix
 
 ########## go
 # go install golang.org/x/tools/gopls@latest
@@ -282,9 +222,6 @@
 
 # sudo systemctl enable --now snapd.socket
 # sudo ln -s /var/lib/snapd/snap /snap
-
-#>>>>>>>>> Install the tmux plugin manager
-# git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 
 #>>>>>>>>> Install c libraries
 # git clone https://github.com/zoelabbb/conio.h.git

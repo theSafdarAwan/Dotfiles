@@ -1,0 +1,14 @@
+# location >>>> /etc/systemd/system/
+[Unit]
+Description=anxin-bt-kbd
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/kmonad /home/malik/.config/kmonad/anxin.kbd
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

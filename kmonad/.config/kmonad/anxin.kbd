@@ -1,0 +1,70 @@
+(defcfg
+  input  (device-file "/dev/ANXIN-203")
+  output (uinput-sink "Thinkpad KBD"
+  "/bin/sleep 1 && /bin/setxkbmap -option compose:ralt")
+  cmp-seq ralt 
+
+;;important for different keyboards heaving different buttons to not block keycodes not specified in the layer
+  fallthrough true
+
+;;`true` means allow shell commands
+  allow-cmd false
+) 
+
+;;           default keyboard layer for t495 thinkpad
+
+(defsrc
+       mute vold volu
+	esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
+	  grv  1    2    3    4    5    6    7    8    9    0    -     =    bspc
+	  tab  q    w    e    r    t    y    u    i    o    p    [     ]    \
+	  caps a    s    d    f    g    h    j    k    l    ;    '          ret
+	  lsft z    x    c    v    b    n    m    ,    .    /               rsft
+	  wkup lctl lmet lalt           spc            ralt sys  rctl  pgdn up   pgup
+                                                               left down rght
+) ;; swapped the lmet to lalt because anxin is an apple based keyboard
+
+(deflayer qwerty
+       mute vold volu
+ caps   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
+	  grv  1    2    3    4    5    6    7    8    9    0    -     =    bspc
+	  tab  q    w    e    r    t    y    u    i    o    p    [     ]    \
+	  lctl a    s    d    f    g    h    j    k    l    ;    '          ret
+	  lsft z    x    c    v    b    n    m    ,    .    /               rsft
+	  wkup esc @__E  lmet          spc            @utl sys  rctl  pgdn up   pgup
+                                                               left down rght
+) ;; ^^^^^^^^^^^^^^^^^ first `deflayer` is used as the base layer ^^^^^^
+
+
+;; other layers function as the secondary or will work only when called upon
+
+(deflayer util
+       XX   XX   XX  
+    XX   XX   XX   XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX 
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   X    XX    XX  @qwt 
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX    XX  XX
+	  lctl XX   XX   XX   XX   XX  left down  up  right XX   XX         XX 
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX              XX  
+	  XX   XX   XX   XX             XX            XX   XX   XX    XX   XX   XX  
+                                                               XX   XX   XX  
+)
+
+
+#|
+(deflayer blank_layer
+       XX   XX   XX  
+    XX   XX   XX   XX  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX 
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   X    XX    XX  XX   
+	  XX   XX   XX   XX   XX   Xx   XX   XX   XX   XX   XX   XX    XX  XX
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX         XX 
+	  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX              XX  
+	  XX   XX   XX   XX             XX            XX   XX   XX    XX   XX   XX  
+                                                               XX   XX   XX  
+)
+|#
+
+(defalias 
+	__E (multi-tap 300 lalt esc)
+	utl (layer-toggle util)
+	qwt (layer-switch qwerty))
+
