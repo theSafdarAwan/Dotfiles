@@ -1,0 +1,394 @@
+(use-package pomidor
+  :ensure t
+  :bind (("<f12>" . pomidor))
+  :config (setq pomidor-sound-tick nil
+                pomidor-sound-tack nil)
+  :hook (pomidor-mode . (lambda ()
+                          (display-line-numbers-mode -1) ; Emacs 26.1+
+                          (setq left-fringe-width 0 right-fringe-width 0)
+                          (setq left-margin-width 2 right-margin-width 0)
+                          ;; force fringe update
+                          (set-window-buffer nil (current-buffer)))))
+
+;; (add-to-list 'load-path "~/Temp/org-mode/lisp")
+;; (require 'org-loaddefs)
+;; (use-package org)
+
+;; (custom-set-variables
+;;   '(org-directory "~/safdar-local/org-files/org-roam-notes/")
+;;   '(org-agenda-files (list org-directory)))
+
+;; add all the journel entries to org-agenda-files
+(custom-set-variables
+    '(org-directory "~/safdar-local/org-files/org-roam-notes/daily/")
+    '(org-agenda-files (list org-directory)))
+
+(setq org-enforce-todo-dependencies t)
+(setq org-agenda-dim-blocked-tasks t)
+(setq org-enforce-todo-checkbox-dependencies t)
+(setq org-agenda-include-diary t)
+
+(setq org-log-into-drawer t)
+
+(setq org-image-actual-width nil)
+
+(setq org-link-search-must-match-exact-headline nil)
+
+(setq org-special-ctrl-a/e t)
+(setq org-special-ctrl-k t)
+(setq org-ctrl-k-protect-subtree t)
+(setq org-cycle-global-at-bob t)
+
+(setq org-time-stamp-formats '("%Y-%m-%d %a %I:%M %P" . "%Y-%m-%d %a"))
+
+(setq org-group-tags nil) ;; disable group tags completely
+
+;; (setq org-table-header-line-p t)
+(setq org-startup-with-inline-images t) ;; render images
+(setq org-hide-emphasis-markers t)
+
+(setq org-ellipsis " ▾")
+;; (setq org-hide-block-startup t)
+(setq org-list-demote-modify-bullet
+      '(("-" . "+") ("+" . "-") ("*" . "+")))
+
+(setq-default org-list-indent-offset 0)
+(setq org-yank-adjusted-subtrees t) ;; lets me use C-y as the C-c C-x C-y
+(setq org-list-allow-alphabetical t)
+;; (setq org-yank-folded-subtrees nil) ;; don't fold when pasting org sub-trees
+;; Set faces for heading levels
+
+;; replace list hypehen(-) with dot
+(font-lock-add-keywords
+ 'org-mode
+ '(("^ *\\([-]\\) "
+    (0 (prog1 () (compose-region 
+                  (match-beginning 1)
+                  (match-end 1) "•"))))))
+
+;; enable auto line breaking in org-mode
+;; (add-hook 'org-mode-hook (lambda() ((turn-on-auto-fill))))
+
+;; (add-to-list 'org-modules 'org-habits) (require 'org-habit)
+(setq org-habits '(ol-doi ol-w3m ol-bbdb ol-bibtex ol-docview ol-gnus ol-info ol-irc ol-mhe ol-rmail ol-eww ol-habits))
+
+;; configuration for org-habits agenda view
+(setq org-habit-preceding-days 7)
+(setq org-habit-following-days 3)
+
+(require 'org-tempo)
+(add-to-list 'org-structure-template-alist '("sh" . "SRC shell"))
+(add-to-list 'org-structure-template-alist '("el" . "SRC emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("js" . "SRC javascript"))
+(add-to-list 'org-structure-template-alist '("lua" . "SRC lua"))
+(add-to-list 'org-structure-template-alist '("py" . "SRC python"))
+(add-to-list 'org-structure-template-alist '("html" . "SRC html"))
+(add-to-list 'org-structure-template-alist '("css" . "SRC css"))
+(add-to-list 'org-structure-template-alist '("lisp" . "SRC lisp"))
+
+(add-hook 'org-mode-hook (lambda () (buffer-face-mode)))
+
+(add-hook 'org-mode-hook (lambda () (org-indent-mode 1)))
+
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+;; (global-set-key (kbd "C-c c") #'org-capture)
+
+;; use ~M-n~ and ~M-p~ to go through links in buffer
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "M-n") #'org-next-link)
+  (define-key org-mode-map (kbd "M-p") #'org-previous-link))
+
+;; (add-hook 'org-mode-hook (lambda() (org-log-done 'time)))
+
+(setq org-todo-keywords '(
+        (sequence "TODO(t)" "WAITING(w@/!)" "DOING(d!)" "|" "DONE(D@/!)" "CANCELLED(c@/!)")
+        ;; (sequence "FIXME(f)" "BUG(b)" "|" "FIXED(F)")
+        ))
+
+(setq org-todo-keyword-faces
+      '(("TODO" . (:foreground "#9ece6a" :weight Bold :box t))
+        ("WAITING" . (:foreground "#7aa2f7" :weight Bold :box t))
+        ("DOING" . (:foreground "#ff9e64" :weight Bold :box t))
+        ("DONE" . (:foreground "#bb9af7" :weight Bold :box t))
+        ("CANCELLED" . (:foreground "#bb9af7" :weight Bold :box t))))
+
+(defun org-summary-todo (n-done n-not-done)
+  "Switch entry to DONE when all subentries are done, to TODO otherwise."
+  (let (org-log-done org-log-states)   ; turn off logging
+    (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+
+(add-hook 'org-after-todo-statistics-hook #'org-summary-todo)
+
+;; (defvar-local my-icon-dir (concat user-emacs-directory "icons/")
+;; "directory withthe icons")
+;;   (org-agenda-category-icon-alist '(
+;;   ("todo" ,(concat my-icon-dir "check-box.png") nil nil :ascent center)
+;; ))
+
+(use-package org-roam
+  :init
+  ;; ;; temp work around for org-roam-ui graph not showing all file tags
+  ;; (setq org-roam-database-connector 'sqlite)
+  ;; (setq find-file-visit-truename nil) ;; resolve the symalink problems
+  (setq org-roam-directory (file-truename "~/safdar-local/org-files/org-roam-notes"))
+
+  (setq org-roam-node-display-template
+        (concat "${title:*} "
+                (propertize "${tags:50}" 'face 'org-tag)))
+
+  (setq org-roam-completion-everywhere t)
+
+  (setq org-roam-mode-sections
+        (list #'(org-roam-backlinks-section :unique t)
+              #'(org-roam-reflinks-section :unique t)
+             ;; #'org-roam-unlinked-references-section
+              ))
+   ;; (setq org-roam-mode-sections
+   ;;       '((org-roam-backlinks-section :unique t)
+   ;;         (org-roam-reflinks-section :unique t)
+   ;;         (org-roam-unlinked-references-section)))
+
+  :custom
+  ;; templates
+  (org-roam-capture-templates
+   '(("d" "default" plain
+      "%?"
+      :if-new (file+head "${title}.org" "#+TITLE: ${title}\n#+FILETAGS: \n#+TOPICS: \n")
+      :unnarrowed t)
+     ))
+  :config
+  (org-roam-setup)
+  (org-roam-db-autosync-mode)
+  (setq org-roam-db-update-on-save t)
+
+  (defhydra hydra-org-roam ()
+   "
+       ^Node Actions^   ^Buffer^               ^Journal^         ^Capture^              
+       ^^^^^^^^-------------------------------------------------------------------------
+       _f_: Find node   _b t_: Buffer toggle    _j t_: Today     _c c_: Choose Node     
+       _i_: Insert Node _b d_: Dedicated buffer _j T_: Tomorrow  _c t_: Today Journal   
+       ^ ^              _b r_: Refresh Buffer   _j y_: Yesterday _c T_: Tomorrow Journal
+   "
+   ;; node
+   ("f" org-roam-node-find nil)
+   ("i" org-roam-node-insert nil)
+   ;; buffer
+   ("b t" org-roam-buffer-toggle nil)
+   ("b d" org-roam-buffer-display-dedicated nil)
+   ("b r" org-roam-buffer-refresh nil)
+   ;; capture
+   ("c c" org-roam-capture nil)
+   ("c t" org-roam-dailies-capture-today nil)
+   ("c T" org-roam-dailies-capture-tomorrow nil)
+   ;; journal
+   ("j t" org-roam-dailies-goto-today nil)
+   ("j T" org-roam-dailies-goto-tomorrow nil)
+   ("j y" org-roam-dailies-goto-yesterday nil))
+
+  (global-set-key (kbd "C-c r o") 'hydra-org-roam/body)
+
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  ;;        Org Roam DB Actions
+  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (defhydra hydra-org-roam-db-actions ()
+  "
+     ^DB Actions^
+     ^^^^^^-----------
+     _s_: DB Sync
+     _c_: DB Clear
+  "
+  ;; DB Options
+  ("s" org-roam-db-sync nil)
+  ("c" org-roam-db-clear-all nil))
+  (global-set-key (kbd "C-c r d") 'hydra-org-roam-db-actions/body)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;    Org Roam Properties Actions
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defhydra hydra-org-roam-properties-actions ()
+  "
+     ^Tags Actions^    ^Alias Actions^     ^Ref Actions
+     ^^^^^^------------------------------------------------
+     _t a_: Add Tag    _a a_: Add Alias    _r a_: Add Ref
+     _t r_: remove Tag _a r_: remove Alias _r r_: remove Ref
+     ^ ^               ^ ^                 _r f_: Find Ref
+  "
+  ;; Tags actions
+  ("t a" org-roam-tag-add nil)
+  ("t r" org-roam-tag-remove nil)
+  ;; Alias Actions
+  ("a a" org-roam-alias-add nil)
+  ("a r" org-roam-alias-remove nil)
+  ;; Refs Actions
+  ("r a" org-roam-ref-add nil)
+  ("r r" org-roam-ref-remove nil)
+  ("r f" org-roma-ref-find nil))
+  (global-set-key (kbd "C-c r p") 'hydra-org-roam-properties-actions/body))
+
+(use-package org-roam-ui)
+   (defhydra hydra-org-roam-ui ()
+   "
+       ^UI Options^            ^Grpah Options^              
+       ^^^^^^^^-------------------------------------------------------------
+       _o_: ui open             _l_:   Open Local graph view for current node
+       _f_: Follow mode         _z_:   zoom current node in graph
+       ^ ^                      _a l_: add to local grpah      
+       ^ ^                      _r l_: ove from local grpah 
+   "
+   ;; UI Options
+   ("o" org-roam-ui-open nil)
+   ("f" org-roam-ui-follow-mode nil)
+  ;; Grpah Options
+   ("l" org-roam-ui-node-local nil)
+   ("z" org-roam-ui-node-zoom nil)
+   ("a l" org-roam-ui-add-to-local-graph nil)
+   ("r l" org-roam-ui-remove-from-local-graph nil))
+;;   (keymap-global-set "C-c r n" 'hydra-org-roam-ui/body)
+     (global-set-key (kbd "C-c r u") 'hydra-org-roam-ui/body)
+
+(use-package org-bullets
+  :init
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  :custom
+  (org-bullets-bullet-list 
+   '("◉" "○" "●" "○" "●" "○" "●")))
+
+;; change size of the org headlines faces
+(defun make-org-headings-small()
+  (dolist (face '((org-level-1 . 1.2)
+                  (org-level-2 . 1.2)
+                  (org-level-3 . 1.2)
+                  (org-level-4 . 1.2)
+                  (org-level-5 . 1.2)
+                  (org-level-6 . 1.2)
+                  (org-level-7 . 1.2)
+                  (org-level-8 . 1.2)))
+    (set-face-attribute (car face) nil
+                        :font "Lora" :weight 'Bold :height (cdr face))))
+
+(defun make-org-headings-large()
+  (dolist (face '((org-level-1 . 1.9)
+                  (org-level-2 . 1.7)
+                  (org-level-4 . 1.4)
+                  (org-level-3 . 1.6)
+                  (org-level-5 . 1.4)
+                  (org-level-6 . 1.4)
+                  (org-level-7 . 1.4)
+                  (org-level-8 . 1.4)))
+    (set-face-attribute (car face) nil
+                        :font "Lora" :weight 'Bold :height (cdr face))))
+
+;; make file look like a presentation
+(defun reading-mode ()
+  (set-window-margins nil 8 8)
+  (global-display-line-numbers-mode 0)
+  (mode-line 0)
+  ;; (hidden-mode-line-mode)
+  )
+
+(defun no-reading-mode ()
+  (set-window-margins nil 0 0)
+  (global-display-line-numbers-mode 1)
+  ;; (hidden-mode-line-mode)
+  )
+
+(defhydra hydra-reading-mode ()
+  "
+              ^Reading Actions^               ^Writing Actions^
+  ^^^^^^^^-----------------------------------------------------------------
+          _e_: Enable Reading Mode        _h_: Make Headings small 
+          _d_: Disable Reading Mode       _H_: Make Headings Large 
+  "
+  ("e" (reading-mode) nil)
+  ("d" (no-reading-mode) nil)
+  ("h" (make-org-headings-small) nil)
+  ("H" (make-org-headings-large) nil)
+)
+(global-set-key (kbd "C-c C-; r") 'hydra-reading-mode/body)
+
+(use-package org-download :ensure t
+  :config
+  ;; org-download use buffer-local variables. Set it individually in files. Otherwise, put things flatly in misc folder.
+  (setq-default org-download-method 'directory
+                org-download-image-dir "~/safdar-local/org-files/org-roam-notes/assets/"
+                org-download-heading-lvl nil
+                org-download-delete-image-after-download t
+                org-download-screenshot-method "flameshot gui --raw --delay 2000 > %s"
+                org-download-image-org-width 600
+                org-download-annotate-function (lambda (link) "") ;; Don't annotate
+                )
+  (add-hook 'dired-mode-hook 'org-download-enable)
+  (global-set-key (kbd "<print>") 'org-download-screenshot))
+
+(global-set-key (kbd "C-c C-; C-e") 'eval-buffer)
+
+;; (defun my-org-hide-all-drawers ()
+  ;;   "Hide all drawers in the current buffer."
+  ;;   (interactive)
+  ;;   (save-excursion
+  ;;     (goto-char (point-min))
+  ;;     (while (re-search-forward ":PROPERTIES:" nil t)
+  ;;       (org-cycle-hide-drawers 'all))))
+
+  ;; (global-set-key (kbd "C-c C-x h") 'my-org-hide-all-drawers)
+
+ (defun my-org-toggle-all-drawers ()
+  "Toggle visibility of all drawers in the current buffer."
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward ":PROPERTIES:" nil t)
+      (org-cycle))))
+ (global-set-key (kbd "C-c C-; d") 'my-org-toggle-all-drawers)
+
+(defun my-org-mark-current-position ()
+  "Mark the current position in an Org mode buffer."
+  (interactive)
+  (org-mark-ring-push))
+
+(defun my-org-goto-marked-position ()
+  "Return to the marked position in an Org mode buffer."
+  (interactive)
+  (org-mark-ring-goto))
+
+;; Bindings for marking and returning
+(define-key org-mode-map (kbd "C-c C-; m") 'my-org-mark-current-position)
+(define-key org-mode-map (kbd "C-c C-; g") 'my-org-goto-marked-position)
+
+(defun export-files-based-on-zettel-property ()
+  "Prompt user to choose whether to export files with or without the #+zettel property from org-roam-notes directory."
+  (interactive)
+  (let* ((roam-dir "~/safdar-local/org-files/org-roam-notes/")
+         (zettel-files '())
+         (export-with-zettel (y-or-n-p "Export files with #+zettel property? ")))
+
+    ;; Find files with or without #+zettel property
+    (dolist (file (directory-files roam-dir t "\\.org$"))
+      (with-temp-buffer
+        (insert-file-contents file)
+        (goto-char (point-min))
+        (if export-with-zettel
+            (when (re-search-forward "^\\s-*#\\+zettel:[ \t]*\\<\\(t\\|true\\)\\>" nil t)
+              (push file zettel-files))
+          (unless (re-search-forward "^\\s-*#\\+zettel:" nil t)
+            (push file zettel-files)))))
+
+    ;; Export files to an Org buffer as links
+    (if zettel-files
+        (with-current-buffer (get-buffer-create "*Exported Files*")
+          (erase-buffer)
+          (dolist (file zettel-files)
+            (insert (format "[[file:%s][%s]]\n" file (file-name-nondirectory file))))
+          (org-mode)
+          (pop-to-buffer "*Exported Files*")
+          (message "Files listed in Org buffer based on #+zettel property."))
+      (message "No files found based on the chosen criteria."))))
+
+(global-set-key (kbd "C-c C-; z") 'export-files-based-on-zettel-property)
+
+(defun my/paste-text-and-save ()
+  (with-current-buffer (window-buffer)
+    (progn (yank)
+           (end-of-buffer)
+           (insert "\n\n")
+           (write-buffer))))
