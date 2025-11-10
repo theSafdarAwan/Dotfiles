@@ -370,6 +370,9 @@ globalkeys = gears.table.join(
 	awful.key({ win_key }, "Return", function()
 		awful.spawn(terminal)
 	end, { description = "open a terminal", group = "launcher" }),
+	awful.key({ win_key }, "e", function()
+		awful.spawn("emacsclient" .. " --create-frame")
+	end, { description = "Create Emacs Frame", group = "launcher" }),
 	awful.key({ win_key }, "r", function()
 		awful.spawn(rofi)
 	end, { description = "Luach Rofi", group = "launcher" }),
@@ -435,7 +438,7 @@ globalkeys = gears.table.join(
 	awful.key({ win_key }, "w", function()
 		execute_paste_text_and_save_emacs()
 	end, { description = "Emacs Paste text in file", group = "client" }),
-	awful.key({ win_key }, "e", function()
+	awful.key({ win_key }, "a", function()
 		execute_insert_anki_card_from_clipboard_emacs()
 	end, { description = "Emacs Create Anki Vocabulary Card", group = "client" })
 

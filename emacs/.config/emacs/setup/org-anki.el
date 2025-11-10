@@ -45,7 +45,18 @@
     (anki-editor-reset-cloze-number))
 
   ;; Initialize
-  (anki-editor-reset-cloze-number))
+  (anki-editor-reset-cloze-number)
+
+  (add-to-list 'org-capture-templates
+               '("o" "Anki basic"
+		 entry
+		 (file+headline org-my-anki-file "Anki Cards")
+		 "\n* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: MyDeck\n:END:\n** Front\n%?\n** Back\n%x\n"))
+  (add-to-list 'org-capture-templates
+               '("A" "Anki cloze"
+		 entry
+		 (file+headline org-my-anki-file "Anki Cards")
+		 "\n* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: MyDeck\n:END:\n** Text\n%x\n** Extra\n")))
 
 
 ;; isnert my anki card from clipboard
@@ -101,16 +112,6 @@
 
 ;; Org-capture templates
 (setq org-my-anki-file "~/safdar-local/anki.org")
-(add-to-list 'org-capture-templates
-             '("o" "Anki basic"
-               entry
-               (file+headline org-my-anki-file "Anki Cards")
-               "\n* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: MyDeck\n:END:\n** Front\n%?\n** Back\n%x\n"))
-(add-to-list 'org-capture-templates
-             '("A" "Anki cloze"
-               entry
-               (file+headline org-my-anki-file "Anki Cards")
-               "\n* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: MyDeck\n:END:\n** Text\n%x\n** Extra\n"))
 
 ;; Allow Emacs to access content from clipboard.
 (setq x-select-enable-clipboard t  

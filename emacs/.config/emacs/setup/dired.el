@@ -1,8 +1,8 @@
 ;; Dired Icons
-(use-package all-the-icons
-  :ensure t
-  :config
-  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
+;; (use-package all-the-icons
+;;   :ensure t
+;;   :config
+;;   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode))
 
 ;; move delted files to trash
 (setq delete-by-moving-to-trash t)

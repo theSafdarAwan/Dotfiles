@@ -1,3 +1,4 @@
+- tree
 - not-fonts-emoji
 - nerd-fonts
 - thunar
