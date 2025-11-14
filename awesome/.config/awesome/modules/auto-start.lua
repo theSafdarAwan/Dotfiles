@@ -14,7 +14,7 @@ run_once({
     "nm-applet",
     "nitrogen --restore",
     "stardict",
-    "nitrogen",
+    -- "nitrogen",
 	  -- "xrandr --output eDP --scale 0.8x0.8",
 --    "deadbeef",
 })

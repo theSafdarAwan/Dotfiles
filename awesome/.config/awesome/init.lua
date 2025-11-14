@@ -65,7 +65,7 @@ beautiful.init(os.getenv("HOME") .. "/.config/awesome/dracula/theme.lua")
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-local terminal = "wezterm"
+local terminal = "ghostty +new-window"
 local editor = os.getenv("EDITOR") or "vim"
 local editor_cmd = terminal .. " start " .. editor
 
