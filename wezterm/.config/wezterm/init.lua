@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local tokyonight_storm = require("fused-tokyonight-storm")
+local tokyonight_storm = require("vscode-dark")
 
 local italic_font = "Victor Mono Nerd Font"
 local normal_font = "FiraCode Nerd Font"
@@ -28,7 +28,7 @@ return {
 	window_background_opacity = 1.0,
 	audible_bell = "Disabled",
 
-	font_size = 11.0,
+	font_size = 12.0,
 	-- Font config
 	font = font_with_fallback(default_font_name),
 	font_rules = {
