@@ -1,0 +1,5 @@
+window-decoration = false
+
+theme = Dark Modern
+
+quit-after-last-window-closed-delay = 5m

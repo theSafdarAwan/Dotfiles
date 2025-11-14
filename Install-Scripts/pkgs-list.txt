@@ -1,3 +1,8 @@
+- fd
+- ghostty
+- okular
+- nitrogen # requirs gtk2
+- unzip
 - tree
 - not-fonts-emoji
 - nerd-fonts
