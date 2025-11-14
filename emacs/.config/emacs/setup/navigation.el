@@ -11,3 +11,5 @@
 ;; ripgrep
 (use-package rg
   :ensure t)
+
+(global-set-key (kbd "C-s-f") 'counsel-fzf)

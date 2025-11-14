@@ -1,6 +1,9 @@
 ;; TODO: 
 (load-file (expand-file-name "setup/boot-strap.el" user-emacs-directory))
 
+;; vim
+(load-file (expand-file-name "setup/evil.el" user-emacs-directory))
+
 (load-file (expand-file-name "setup/defaults.el" user-emacs-directory))
 (load-file (expand-file-name "setup/UI.el" user-emacs-directory))
 (load-file (expand-file-name "setup/dired.el" user-emacs-directory))
