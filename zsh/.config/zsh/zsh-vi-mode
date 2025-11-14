@@ -1,21 +1,19 @@
 # bindkey -e will be emacs mode
 bindkey -v
 export KEYTIMEOUT=1
-# ZVM_CURSOR_STYLE_ENABLED=false
-ZVM_INSERT_MODE_CURSOR=true
 
-# Change cursor shape for different vi modes.
-# function zle-keymap-select () {
-#     case $KEYMAP in
-#         vicmd) echo -ne '\e[1 q';;      # block
-#         viins|main) echo -ne '\e[5 q';; # beam
-#     esac
-# }
-# zle -N zle-keymap-select
-# zle-line-init() {
-#     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-#     echo -ne "\e[5 q"
-# }
-# zle -N zle-line-init
-# echo -ne '\e[5 q' # Use beam shape cursor on startup.
-# preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+# Always force block cursor
+zle-block-cursor() {
+    echo -ne '\e[2 q'
+}
+
+# Run at shell startup and upon keymap switches
+zle -N zle-line-init zle-block-cursor
+zle -N zle-keymap-select zle-block-cursor
+
+# Set cursor shape immediately on startup
+echo -ne '\e[2 q'
+
+# to solve Ghostty bug
+bindkey -M viins '^[[91;5u' vi-cmd-mode
+bindkey -M vicmd '^[[91;5u' vi-cmd-mode
