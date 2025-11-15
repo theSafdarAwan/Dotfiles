@@ -1,10 +1,10 @@
 #!/bin/bash
-vscode_dark_black="#0F111A"
+vscode_dark_black="#1F111A"
 vscode_dark_black2="#1f1f1f"
-vscode_dark_blue="#61afef"
-vscode_dark_yellow="#e2c08d"
-vscode_dark_red="#ec6b64"
 vscode_dark_white="#abb2bf"
+vscode_dark_yellow="#e09577"
+vscode_dark_red="#D16969"
+vscode_dark_blue="#61afef"
 vscode_dark_green="#007100"
 vscode_dark_visual_grey="#373844"
 vscode_dark_comment_grey="#5a5c68"
@@ -40,7 +40,7 @@ set "clock-mode-colour" "$vscode_dark_red"
 
 set "fill-character" "-"
 
-set "popup-border-style" "fg=$vscode_dark_yellow"
+set "popup-border-style" "fg=$vscode_dark_blue"
 set "popup-border-lines" "rounded"
 
 set "status" "on"
