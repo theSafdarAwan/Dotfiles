@@ -61,7 +61,7 @@ end
 
 --> Variable definitions
 --> Themes define colours, icons, font and wallpapers.
-beautiful.init(os.getenv("HOME") .. "/.config/awesome/dracula/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/vscode-dark/theme.lua")
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
