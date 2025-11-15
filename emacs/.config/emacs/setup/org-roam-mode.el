@@ -4,7 +4,7 @@
   ;; ;; temp work around for org-roam-ui graph not showing all file tags
   ;; (setq org-roam-database-connector 'sqlite)
   ;; (setq find-file-visit-truename nil) ;; resolve the symalink problems
-  (setq org-roam-directory (file-truename "~/safdar-local/org-files/org-roam-notes"))
+  (setq org-roam-directory (file-truename "~/safdar-local/org-files/org-roam-notes/"))
 
   (setq org-roam-node-display-template
         (concat "${title:*} "
