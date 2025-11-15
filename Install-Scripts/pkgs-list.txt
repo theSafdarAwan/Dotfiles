@@ -1,3 +1,4 @@
+- gcolor3
 - fd
 - ghostty
 - okular
@@ -75,6 +76,7 @@
 - figma-linux
 - stardict-wordnet
 - scid
+- localsend
 
 
 #>>>> tabbed
