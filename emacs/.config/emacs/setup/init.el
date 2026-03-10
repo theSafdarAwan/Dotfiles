@@ -19,6 +19,3 @@
 (load-file (expand-file-name "setup/org-anki.el" user-emacs-directory))
 (load-file (expand-file-name "setup/org-roam-mode.el" user-emacs-directory))
 (load-file (expand-file-name "setup/hydra.el" user-emacs-directory))
-
-;; (load-file (expand-file-name "setup/packages.el" user-emacs-directory))
-

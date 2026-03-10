@@ -7,7 +7,7 @@
 (use-package solarized-theme
   :ensure t
   :config
-  ;; (load-theme 'solarized-selenized-dark t)
+  ; (load-theme 'solarized-selenized-dark t)
   )
 
 ;; Modus Vivendi

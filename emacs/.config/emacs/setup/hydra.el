@@ -157,4 +157,16 @@
     ("a l" org-roam-ui-add-to-local-graph nil)
     ("r l" org-roam-ui-remove-from-local-graph nil))
   ;;   (keymap-global-set "C-c r n" 'hydra-org-roam-ui/body)
-  (global-set-key (kbd "C-c r u") 'hydra-org-roam-ui/body))
+  (global-set-key (kbd "C-c r u") 'hydra-org-roam-ui/body)
+
+  ;; Org Mode functions
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (defhydra hydra-org-mode-functions ()
+    "
+       ^Org Mode Functions^
+       ^^^^^^-----------
+       _i_: Org Inline Image toggle
+    "
+    ;; functions
+    ("i" org-toggle-inline-images nil))
+  (global-set-key (kbd "C-c o") 'hydra-org-mode-functions/body))

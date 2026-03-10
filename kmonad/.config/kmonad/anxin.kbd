@@ -1,5 +1,5 @@
 (defcfg
-  input  (device-file "/dev/ANXIN-203")
+  input  (device-file "/dev/input/event15")
   output (uinput-sink "Thinkpad KBD"
   "/bin/sleep 1 && /bin/setxkbmap -option compose:ralt")
   cmp-seq ralt 

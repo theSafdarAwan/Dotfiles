@@ -9,11 +9,11 @@ end
 
 --> Auto Start Application's list
 run_once({
-    "picom --experimental-backends",
-    "kmonad ~/.config/kmonad/config.kbd",
-    "nm-applet",
-    "nitrogen --restore",
-    "stardict",
+    -- "picom --experimental-backends",
+    "kmonad ~/.config/kmonad/t495.kbd",
+    -- "nm-applet",
+    -- "nitrogen --restore",
+    -- "stardict",
     -- "nitrogen",
 	  -- "xrandr --output eDP --scale 0.8x0.8",
 --    "deadbeef",

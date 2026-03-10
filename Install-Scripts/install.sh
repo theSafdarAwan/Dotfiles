@@ -3,6 +3,7 @@
 # TODO: add script for enabling finger print using fprintd
 
 ##################### install programs through pacman
+# - xf86-input-synaptics # touchpad config
 # - fwupd
 # - fprintd
 # - aspell-en

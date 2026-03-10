@@ -4,12 +4,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(all-the-icons-dired anki-editor auto-package-update base16-theme
-			 counsel embark evil hydra ivy-posframe
-			 ivy-rich lua-mode no-littering orderless
-			 org-roam-ui rg solarized-theme
-			 vscode-dark-plus-theme vterm)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

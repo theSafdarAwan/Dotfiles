@@ -1,0 +1,8 @@
+*Install using pacman*
+texlive-binextra 
+
+perl-yaml-tiny
+
+perl-file-homedir
+
+perl-unicode-linebreak
