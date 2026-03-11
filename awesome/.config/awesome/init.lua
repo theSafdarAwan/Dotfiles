@@ -106,9 +106,9 @@ local myawesomemenu = {
 			hotkeys_popup.show_help(nil, awful.screen.focused())
 		end,
 	},
-	{ "manual",      terminal .. " start " .. "man awesome" },
+	{ "manual", terminal .. " start " .. "man awesome" },
 	{ "edit config", editor_cmd .. " " .. awesome.conffile },
-	{ "restart",     awesome.restart },
+	{ "restart", awesome.restart },
 	{
 		"quit",
 		function()
@@ -119,7 +119,7 @@ local myawesomemenu = {
 
 local mymainmenu = awful.menu({
 	items = {
-		{ "awesome",       myawesomemenu, beautiful.awesome_icon },
+		{ "awesome", myawesomemenu, beautiful.awesome_icon },
 		{ "open terminal", terminal },
 	},
 })
@@ -194,7 +194,7 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
-local taglist_names = { "  ", " ", " ", " ", " ", " ", " ", " ", " " }
+local taglist_names = { "  ", " ", " ", " ", " ", " ", " ", " ", " " }
 
 awful.screen.connect_for_each_screen(function(s)
 	-- Wallpaper
@@ -278,16 +278,16 @@ awful.screen.connect_for_each_screen(function(s)
 			s.mypromptbox,
 		},
 		s.mytasklist, -- Middle widget
-		{           -- Right widgets
+		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
-			battery_widget {
+			battery_widget({
 				ac = "AC",
 				adapter = "BAT0",
 				ac_prefix = "AC: ",
 				battery_prefix = "Bat: ",
 				percent_colors = {
-					{ 25,  "red" },
-					{ 50,  "orange" },
+					{ 25, "red" },
+					{ 50, "orange" },
 					{ 999, "green" },
 				},
 				listen = true,
@@ -302,7 +302,7 @@ awful.screen.connect_for_each_screen(function(s)
 				alert_icon = "~/Downloads/low_battery_icon.png",
 				warn_full_battery = true,
 				full_battery_icon = "~/Downloads/full_battery_icon.png",
-			},
+			}),
 			mykeyboardlayout,
 			wibox.widget.systray(),
 			mytextclock,
@@ -313,486 +313,486 @@ end)
 
 --> Mouse bindings
 -- root.buttons(gears.table.join(
-	-- 	awful.button({}, 3, function()
-		-- 		mymainmenu:toggle()
-		-- 	end),
-		-- 	awful.button({}, 4, awful.tag.viewnext),
-		-- 	awful.button({}, 5, awful.tag.viewprev)
-		-- ))
+-- 	awful.button({}, 3, function()
+-- 		mymainmenu:toggle()
+-- 	end),
+-- 	awful.button({}, 4, awful.tag.viewnext),
+-- 	awful.button({}, 5, awful.tag.viewprev)
+-- ))
 
-		-- Function to execute the command in Emacs
+-- Function to execute the command in Emacs
 
-		function execute_paste_text_and_save_emacs()
-			awful.spawn("emacsclient -e '(my/paste-text-and-save)'")
-		end
+function execute_paste_text_and_save_emacs()
+	awful.spawn("emacsclient -e '(my/paste-text-and-save)'")
+end
 
-		function execute_insert_anki_card_from_clipboard_emacs()
-			awful.spawn("emacsclient -e '(my/insert-anki-card-from-clipboard)'")
-		end
+function execute_insert_anki_card_from_clipboard_emacs()
+	awful.spawn("emacsclient -e '(my/insert-anki-card-from-clipboard)'")
+end
 
-		function ibus_witch_layout()
-			awful.spawn("/home/malik/bin/ibus.sh")
-		end
+function ibus_witch_layout()
+	awful.spawn("/home/malik/bin/ibus.sh")
+end
 
-		--> Key bindings
-		globalkeys = gears.table.join(
-			awful.key({ win_key, "Ctrl" }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
-			awful.key({ win_key, "Control" }, "h", awful.tag.viewprev, { description = "view previous", group = "tag" }),
-			awful.key({ win_key, "Control" }, "l", awful.tag.viewnext, { description = "view next", group = "tag" }),
-			awful.key({ win_key }, ",", awful.tag.history.restore, { description = "go back", group = "tag" }),
-			awful.key({ win_key }, "j", function()
-				awful.client.focus.byidx(1)
-			end, { description = "focus next by index", group = "client" }),
-			awful.key({ win_key }, "k", function()
-				awful.client.focus.byidx(-1)
-			end, { description = "focus previous by index", group = "client" }),
-			-- awful.key({ altkey }, "w", function()
-				-- 	mymainmenu:show()
-				-- end, { description = "show main menu", group = "awesome" }),
+--> Key bindings
+globalkeys = gears.table.join(
+	awful.key({ win_key, "Ctrl" }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
+	awful.key({ win_key, "Control" }, "h", awful.tag.viewprev, { description = "view previous", group = "tag" }),
+	awful.key({ win_key, "Control" }, "l", awful.tag.viewnext, { description = "view next", group = "tag" }),
+	awful.key({ win_key }, ",", awful.tag.history.restore, { description = "go back", group = "tag" }),
+	awful.key({ win_key }, "j", function()
+		awful.client.focus.byidx(1)
+	end, { description = "focus next by index", group = "client" }),
+	awful.key({ win_key }, "k", function()
+		awful.client.focus.byidx(-1)
+	end, { description = "focus previous by index", group = "client" }),
+	-- awful.key({ altkey }, "w", function()
+	-- 	mymainmenu:show()
+	-- end, { description = "show main menu", group = "awesome" }),
 
-				--> Layout manipulation
-				awful.key({ win_key }, "j", function()
-					awful.client.swap.byidx(1)
-				end, { description = "swap with next client by index", group = "client" }),
-				awful.key({ win_key }, "k", function()
-					awful.client.swap.byidx(-1)
-				end, { description = "swap with previous client by index", group = "client" }),
-				--[[awful.key({ modkey, "Ctrol" }, "j", function()
+	--> Layout manipulation
+	awful.key({ win_key }, "j", function()
+		awful.client.swap.byidx(1)
+	end, { description = "swap with next client by index", group = "client" }),
+	awful.key({ win_key }, "k", function()
+		awful.client.swap.byidx(-1)
+	end, { description = "swap with previous client by index", group = "client" }),
+	--[[awful.key({ modkey, "Ctrol" }, "j", function()
 					awful.screen.focus_relative(1)
 				end, { description = "focus the next screen", group = "screen" }),
 				awful.key({ modkey, "Control" }, "k", function()
 					awful.screen.focus_relative(-1)
 				end, { description = "focus the previous screen", group = "screen" }), --]]
-				awful.key({ win_key }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
-				awful.key({ win_key }, "Tab", function()
-					awful.client.focus.history.previous()
-					if client.focus then
-						client.focus:raise()
-					end
-				end, { description = "go back", group = "client" }),
+	awful.key({ win_key }, "u", awful.client.urgent.jumpto, { description = "jump to urgent client", group = "client" }),
+	awful.key({ win_key }, "Tab", function()
+		awful.client.focus.history.previous()
+		if client.focus then
+			client.focus:raise()
+		end
+	end, { description = "go back", group = "client" }),
 
-				-- Standard program
-				awful.key({ win_key }, "Return", function()
-					awful.spawn(terminal)
-				end, { description = "open a terminal", group = "launcher" }),
-				awful.key({ win_key }, "e", function()
-					awful.spawn("emacsclient" .. " --create-frame")
-				end, { description = "Create Emacs Frame", group = "launcher" }),
-				awful.key({ win_key }, "r", function()
-					awful.spawn(rofi)
-				end, { description = "Luach Rofi", group = "launcher" }),
-				awful.key({ win_key }, ".", function()
-					awful.spawn(rofi_emoji)
-				end, { description = "Luach Rofi Emoji Picker", group = "launcher" }),
-				awful.key({ win_key }, "`", function()
-					awful.spawn("flameshot gui")
-				end, { description = "Launch Flameshot", group = "launcher" }),
-				awful.key({ win_key, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
-				awful.key({ win_key, "Control", "Shift" }, "x", awesome.quit, { description = "quit awesome", group = "awesome" }),
-				awful.key({ win_key, "Control" }, "a", function()
-					awful.spawn(terminal .. " start " .. "alsamixer")
-				end, { description = "Alsa audio controller", group = "launcher" }),
+	-- Standard program
+	awful.key({ win_key }, "Return", function()
+		awful.spawn(terminal)
+	end, { description = "open a terminal", group = "launcher" }),
+	awful.key({ win_key }, "e", function()
+		awful.spawn("emacsclient" .. " --create-frame")
+	end, { description = "Create Emacs Frame", group = "launcher" }),
+	awful.key({ win_key }, "r", function()
+		awful.spawn(rofi)
+	end, { description = "Luach Rofi", group = "launcher" }),
+	awful.key({ win_key }, ".", function()
+		awful.spawn(rofi_emoji)
+	end, { description = "Luach Rofi Emoji Picker", group = "launcher" }),
+	awful.key({ win_key }, "`", function()
+		awful.spawn("flameshot gui")
+	end, { description = "Launch Flameshot", group = "launcher" }),
+	awful.key({ win_key, "Control" }, "r", awesome.restart, { description = "reload awesome", group = "awesome" }),
+	awful.key({ win_key, "Control", "Shift" }, "x", awesome.quit, { description = "quit awesome", group = "awesome" }),
+	awful.key({ win_key, "Control" }, "a", function()
+		awful.spawn(terminal .. " start " .. "alsamixer")
+	end, { description = "Alsa audio controller", group = "launcher" }),
 
-				awful.key({ win_key }, "l", function()
-					awful.tag.incmwfact(0.01)
-				end, { description = "increase master width factor", group = "layout" }),
-				awful.key({ win_key }, "h", function()
-					awful.tag.incmwfact(-0.01)
-				end, { description = "decrease master width factor", group = "layout" }),
-				awful.key({ win_key, "Ctrl" }, "h", function()
-					awful.tag.incnmaster(1, nil, true)
-				end, {
-				description = "increase the number of master clients",
-				group = "layout",
-			}),
-			awful.key({ win_key, "Ctrl" }, "l", function()
-				awful.tag.incnmaster(-1, nil, true)
-			end, {
-			description = "decrease the number of master clients",
-			group = "layout",
-		}),
-		awful.key({ win_key, "Control" }, "h", function()
-			awful.tag.incncol(1, nil, true)
-		end, { description = "increase the number of columns", group = "layout" }),
-		--[[awful.key({ modkey, "Control" }, "l", function()
+	awful.key({ win_key }, "l", function()
+		awful.tag.incmwfact(0.01)
+	end, { description = "increase master width factor", group = "layout" }),
+	awful.key({ win_key }, "h", function()
+		awful.tag.incmwfact(-0.01)
+	end, { description = "decrease master width factor", group = "layout" }),
+	awful.key({ win_key, "Ctrl" }, "h", function()
+		awful.tag.incnmaster(1, nil, true)
+	end, {
+		description = "increase the number of master clients",
+		group = "layout",
+	}),
+	awful.key({ win_key, "Ctrl" }, "l", function()
+		awful.tag.incnmaster(-1, nil, true)
+	end, {
+		description = "decrease the number of master clients",
+		group = "layout",
+	}),
+	awful.key({ win_key, "Control" }, "h", function()
+		awful.tag.incncol(1, nil, true)
+	end, { description = "increase the number of columns", group = "layout" }),
+	--[[awful.key({ modkey, "Control" }, "l", function()
 			awful.tag.incncol(-1, nil, true)
 		end, { description = "decrease the number of columns", group = "layout" }), --]]
-		awful.key({ win_key }, "space", function()
-			awful.layout.inc(1)
-		end, { description = "select next", group = "layout" }),
-		awful.key({ win_key, "Shift" }, "space", function()
-			awful.layout.inc(-1)
-		end, { description = "select previous", group = "layout" }),
+	awful.key({ win_key }, "space", function()
+		awful.layout.inc(1)
+	end, { description = "select next", group = "layout" }),
+	awful.key({ win_key, "Shift" }, "space", function()
+		awful.layout.inc(-1)
+	end, { description = "select previous", group = "layout" }),
 
-		awful.key({ win_key, "Control" }, "n", function()
-			local c = awful.client.restore()
-			-- Focus restored client
-			if c then
-				c:emit_signal("request::activate", "key.unminimize", { raise = true })
+	awful.key({ win_key, "Control" }, "n", function()
+		local c = awful.client.restore()
+		-- Focus restored client
+		if c then
+			c:emit_signal("request::activate", "key.unminimize", { raise = true })
+		end
+	end, { description = "restore minimized", group = "client" }),
+
+	-- IBus layout switch
+	-- awful.key({ alt_key, "Shift" }, "s", function()
+	-- 	ibus_witch_layout()
+	-- end, {description = "execute script", group = "custom"}),
+
+	-- Prompt
+	-- awful.key({ altkey }, "r", function()
+	-- 	awful.screen.focused().mypromptbox:run()
+	-- end, { description = "run prompt", group = "launcher" }),
+	awful.key({ win_key }, "d", function()
+		awful.spawn(dmenu)
+	end, { description = "Run dmenu", group = "launcher" }),
+
+	awful.key({ win_key }, "w", function()
+		execute_paste_text_and_save_emacs()
+	end, { description = "Emacs Paste text in file", group = "client" }),
+	awful.key({ win_key }, "a", function()
+		execute_insert_anki_card_from_clipboard_emacs()
+	end, { description = "Emacs Create Anki Vocabulary Card", group = "client" })
+
+	-- Menubar
+	-- awful.key({ altkey }, "p", function()
+	-- 	menubar.show()
+	-- end, { description = "show the menubar", group = "launcher" })
+)
+
+local clientkeys = gears.table.join(
+	awful.key({ win_key }, "f", function(c)
+		c.fullscreen = not c.fullscreen
+		c:raise()
+	end, { description = "toggle fullscreen", group = "client" }),
+	awful.key({ win_key }, "q", function(c)
+		c:kill()
+	end, { description = "close", group = "client" }),
+	awful.key(
+		{ win_key, "Control" },
+		"space",
+		awful.client.floating.toggle,
+		{ description = "toggle floating", group = "client" }
+	),
+	awful.key({ win_key, "Control" }, "Return", function(c)
+		c:swap(awful.client.getmaster())
+	end, { description = "move to master", group = "client" }),
+	-- awful.key({ altkey }, "o", function(c)
+	-- 	c:move_to_screen()
+	-- end, { description = "move to screen", group = "client" }),
+	-- awful.key({ altkey }, "t", function(c)
+	-- 	c.ontop = not c.ontop
+	-- end, { description = "toggle keep on top", group = "client" }),
+	-- awful.key({ altkey }, "n", function(c)
+	-- The client currently has the input focus, so it cannot be
+	-- minimized, since minimized clients can't have the focus.
+	-- 	c.minimized = true
+	-- end, { description = "minimize", group = "client" }),
+	awful.key({ win_key, "Ctrl" }, "m", function(c)
+		c.maximized = not c.maximized
+		c:raise()
+	end, { description = "(un)maximize", group = "client" }),
+	awful.key({ win_key, "Control" }, "m", function(c)
+		c.maximized_vertical = not c.maximized_vertical
+		c:raise()
+	end, { description = "(un)maximize vertically", group = "client" }),
+	awful.key({ win_key }, "m", function(c)
+		c.maximized_horizontal = not c.maximized_horizontal
+		c:raise()
+	end, { description = "(un)maximize horizontally", group = "client" })
+)
+
+-- Bind all key numbers to tags.
+-- Be careful: we use keycodes to make it work on any keyboard layout.
+-- This should map on the top row of your keyboard, usually 1 to 9.
+for i = 1, 9 do
+	globalkeys = gears.table.join(
+		globalkeys,
+		-- View tag only.
+		awful.key({ win_key }, "#" .. i + 9, function()
+			local screen = awful.screen.focused()
+			local tag = screen.tags[i]
+			if tag then
+				tag:view_only()
 			end
-		end, { description = "restore minimized", group = "client" }),
+		end, { description = "view tag #" .. i, group = "tag" }),
+		-- Toggle tag display.
+		awful.key({ win_key, "Control" }, "#" .. i + 9, function()
+			local screen = awful.screen.focused()
+			local tag = screen.tags[i]
+			if tag then
+				awful.tag.viewtoggle(tag)
+			end
+		end, { description = "toggle tag #" .. i, group = "tag" }),
+		-- Move client to tag.
+		awful.key({ win_key, "Shift" }, "#" .. i + 9, function()
+			if client.focus then
+				local tag = client.focus.screen.tags[i]
+				if tag then
+					client.focus:move_to_tag(tag)
+				end
+			end
+		end, { description = "move focused client to tag #" .. i, group = "tag" }),
+		-- Toggle tag on focused client.
+		awful.key({ win_key, "Control" }, "#" .. i + 9, function()
+			if client.focus then
+				local tag = client.focus.screen.tags[i]
+				if tag then
+					client.focus:toggle_tag(tag)
+				end
+			end
+		end, { description = "toggle focused client on tag #" .. i, group = "tag" })
+	)
+end
 
-		-- IBus layout switch
-		-- awful.key({ alt_key, "Shift" }, "s", function()
-		-- 	ibus_witch_layout()
-		-- end, {description = "execute script", group = "custom"}),
+local clientbuttons = gears.table.join(
+	awful.button({}, 1, function(c)
+		c:emit_signal("request::activate", "mouse_click", { raise = true })
+	end),
+	awful.button({ win_key }, 1, function(c)
+		c:emit_signal("request::activate", "mouse_click", { raise = true })
+		awful.mouse.client.move(c)
+	end),
+	awful.button({ win_key }, 3, function(c)
+		c:emit_signal("request::activate", "mouse_click", { raise = true })
+		awful.mouse.client.resize(c)
+	end)
+)
 
-		-- Prompt
-		-- awful.key({ altkey }, "r", function()
-			-- 	awful.screen.focused().mypromptbox:run()
-			-- end, { description = "run prompt", group = "launcher" }),
-			awful.key({ win_key }, "d", function()
-				awful.spawn(dmenu)
-			end, { description = "Run dmenu", group = "launcher" }),
+-- Set keys
+root.keys(globalkeys)
 
-			awful.key({ win_key }, "w", function()
-				execute_paste_text_and_save_emacs()
-			end, { description = "Emacs Paste text in file", group = "client" }),
-			awful.key({ win_key }, "a", function()
-				execute_insert_anki_card_from_clipboard_emacs()
-			end, { description = "Emacs Create Anki Vocabulary Card", group = "client" })
+--> Rules
+-- Rules to apply to new clients (through the "manage" signal).
+function custom_focus_filter(c)
+	if global_focus_disable then
+		return nil
+	end
+	return awful.client.focus.filter(c)
+end
 
-			-- Menubar
-			-- awful.key({ altkey }, "p", function()
-				-- 	menubar.show()
-				-- end, { description = "show the menubar", group = "launcher" })
-			)
+awful.rules.rules = {
+	-- All clients will match this rule.
+	{
+		rule = {},
+		properties = {
+			border_width = beautiful.border_width,
+			border_color = beautiful.border_normal,
+			focus = awful.client.focus.filter,
+			raise = true,
+			keys = clientkeys,
+			buttons = clientbuttons,
+			screen = awful.screen.preferred,
+			placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+		},
+	},
+	{ rule = { instance = "scratch" }, properties = { floating = true } },
 
-			local clientkeys = gears.table.join(
-				awful.key({ win_key }, "f", function(c)
-					c.fullscreen = not c.fullscreen
-					c:raise()
-				end, { description = "toggle fullscreen", group = "client" }),
-				awful.key({ win_key }, "q", function(c)
-					c:kill()
-				end, { description = "close", group = "client" }),
-				awful.key(
-					{ win_key, "Control" },
-					"space",
-					awful.client.floating.toggle,
-					{ description = "toggle floating", group = "client" }
-				),
-				awful.key({ win_key, "Control" }, "Return", function(c)
-					c:swap(awful.client.getmaster())
-				end, { description = "move to master", group = "client" }),
-				-- awful.key({ altkey }, "o", function(c)
-					-- 	c:move_to_screen()
-					-- end, { description = "move to screen", group = "client" }),
-					-- awful.key({ altkey }, "t", function(c)
-						-- 	c.ontop = not c.ontop
-						-- end, { description = "toggle keep on top", group = "client" }),
-						-- awful.key({ altkey }, "n", function(c)
-							-- The client currently has the input focus, so it cannot be
-							-- minimized, since minimized clients can't have the focus.
-							-- 	c.minimized = true
-							-- end, { description = "minimize", group = "client" }),
-							awful.key({ win_key, "Ctrl" }, "m", function(c)
-								c.maximized = not c.maximized
-								c:raise()
-							end, { description = "(un)maximize", group = "client" }),
-							awful.key({ win_key, "Control" }, "m", function(c)
-								c.maximized_vertical = not c.maximized_vertical
-								c:raise()
-							end, { description = "(un)maximize vertically", group = "client" }),
-							awful.key({ win_key }, "m", function(c)
-								c.maximized_horizontal = not c.maximized_horizontal
-								c:raise()
-							end, { description = "(un)maximize horizontally", group = "client" })
-						)
+	-- Floating clients.
+	{
+		rule_any = {
+			instance = {
+				"DTA", -- Firefox addon DownThemAll.
+				"copyq", -- Includes session name in class.
+				"pinentry",
+				"Anki",
+			},
+			class = {
+				"Arandr",
+				"Blueman-manager",
+				"Gpick",
+				"ksnip",
+				"Kruler",
+				"MessageWin", -- kalarm.
+				"Sxiv",
+				"Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
+				"Wpa_gui",
+				"veromix",
+				"xtightvncviewer",
+			},
 
-						-- Bind all key numbers to tags.
-						-- Be careful: we use keycodes to make it work on any keyboard layout.
-						-- This should map on the top row of your keyboard, usually 1 to 9.
-						for i = 1, 9 do
-							globalkeys = gears.table.join(
-								globalkeys,
-								-- View tag only.
-								awful.key({ win_key }, "#" .. i + 9, function()
-									local screen = awful.screen.focused()
-									local tag = screen.tags[i]
-									if tag then
-										tag:view_only()
-									end
-								end, { description = "view tag #" .. i, group = "tag" }),
-								-- Toggle tag display.
-								awful.key({ win_key, "Control" }, "#" .. i + 9, function()
-									local screen = awful.screen.focused()
-									local tag = screen.tags[i]
-									if tag then
-										awful.tag.viewtoggle(tag)
-									end
-								end, { description = "toggle tag #" .. i, group = "tag" }),
-								-- Move client to tag.
-								awful.key({ win_key, "Shift" }, "#" .. i + 9, function()
-									if client.focus then
-										local tag = client.focus.screen.tags[i]
-										if tag then
-											client.focus:move_to_tag(tag)
-										end
-									end
-								end, { description = "move focused client to tag #" .. i, group = "tag" }),
-								-- Toggle tag on focused client.
-								awful.key({ win_key, "Control" }, "#" .. i + 9, function()
-									if client.focus then
-										local tag = client.focus.screen.tags[i]
-										if tag then
-											client.focus:toggle_tag(tag)
-										end
-									end
-								end, { description = "toggle focused client on tag #" .. i, group = "tag" })
-							)
-						end
+			-- Note that the name property shown in xprop might be set slightly after creation of the client
+			-- and the name shown there might not match defined rules here.
+			name = {
+				"Event Tester", -- xev.
+			},
+			role = {
+				"AlarmWindow", -- Thunderbird's calendar.
+				"ConfigManager", -- Thunderbird's about:config.
+				"pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
+			},
+		},
+		properties = { floating = true },
+	},
 
-						local clientbuttons = gears.table.join(
-							awful.button({}, 1, function(c)
-								c:emit_signal("request::activate", "mouse_click", { raise = true })
-							end),
-							awful.button({ win_key }, 1, function(c)
-								c:emit_signal("request::activate", "mouse_click", { raise = true })
-								awful.mouse.client.move(c)
-							end),
-							awful.button({ win_key }, 3, function(c)
-								c:emit_signal("request::activate", "mouse_click", { raise = true })
-								awful.mouse.client.resize(c)
-							end)
-						)
+	-- Add titlebars to normal clients and dialogs
+	{
+		rule_any = { type = { "normal", "dialog" } },
+		properties = {
+			titlebars_enabled = false,
+		},
+	},
+	--> Tag 1
+	{
+		rule_any = {
+			class = {
+				"firefox",
+				"firefox-nightly",
+				"Google-chrome",
+				"Google-chrome-unstable",
+				"qBittorrent",
+			},
+		},
+		properties = { tag = taglist_names[1], floating = false },
+	},
+	--> Tag 2
+	{
+		rule = {
+			class = "Pcmanfm",
+		},
+		properties = { screen = 1, tag = taglist_names[2] },
+	},
+	--> Tag 3
+	{
+		rule_any = {
+			class = {
+				"^obs$",
+				"Gcolor2",
+				"Blender",
+				"figma-linux",
+				"VirtualBox",
+				"kdenlive",
+				"Ardour",
+				"Inkscape",
+				"Gimp",
+			},
+		},
+		properties = { screen = 1, tag = taglist_names[3] },
+	},
+	--> Tag 4
+	{
+		rule_any = {
+			class = { "TIPP10", "Todoist", "Stardict", "Zotero", "logseq", "Anki" },
+		},
+		properties = { screen = 1, tag = taglist_names[4], floating = false },
+	},
+	--> Tag 5
+	{
+		rule_any = {
+			class = { "Nitrogen", "stacer", "BleachBit" },
+		},
+		properties = { screen = 1, tag = taglist_names[5], floating = false },
+	},
+	--> Tag 6
+	{
+		rule_any = {
+			class = {
+				"Chat-gpt",
+			},
+		},
+		properties = {
+			floating = false,
+			tag = taglist_names[6],
+		},
+	},
+	--> Tag 7
+	{
+		rule_any = {
+			class = { "thunderbird", "discord", "org.gabmus.giara" },
+		},
+		properties = { screen = 1, tag = taglist_names[7] },
+	},
+	--> Tag 8
+	{
+		rule_any = {
+			class = {
+				"mpv",
+				"Evince",
+				"tabbed",
+				"sioyek",
+				"Com.github.johnfactotum.Foliate",
+				"Deadbeef",
+				"Peazip",
+			},
+		},
+		properties = { tag = taglist_names[8], floating = false },
+	},
+	--> Tag 9
+	{
+		rule_any = {
+			class = {
+				"org.wezfurlong.wezterm",
+				"Emacs",
+			},
+		},
+		properties = { tag = taglist_names[9], floating = false },
+	},
+}
 
-						-- Set keys
-						root.keys(globalkeys)
+--> Signals
+-- Signal function to execute when a new client appears.
+client.connect_signal("manage", function(c)
+	-- Set the windows at the slave,
+	-- i.e. put it at the end of others instead of setting it master.
+	-- if not awesome.startup then awful.client.setslave(c) end
 
-						--> Rules
-						-- Rules to apply to new clients (through the "manage" signal).
-						function custom_focus_filter(c)
-							if global_focus_disable then
-								return nil
-							end
-							return awful.client.focus.filter(c)
-						end
+	if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
+		-- Prevent clients from being unreachable after screen count changes.
+		awful.placement.no_offscreen(c)
+	end
+end)
 
-						awful.rules.rules = {
-							-- All clients will match this rule.
-							{
-								rule = {},
-								properties = {
-									border_width = beautiful.border_width,
-									border_color = beautiful.border_normal,
-									focus = awful.client.focus.filter,
-									raise = true,
-									keys = clientkeys,
-									buttons = clientbuttons,
-									screen = awful.screen.preferred,
-									placement = awful.placement.no_overlap + awful.placement.no_offscreen,
-								},
-							},
-							{ rule = { instance = "scratch" }, properties = { floating = true } },
+client.connect_signal("request::titlebars", function(c)
+	-- buttons for the titlebar
+	local buttons = gears.table.join(
+		awful.button({}, 1, function()
+			c:emit_signal("request::activate", "titlebar", { raise = true })
+			awful.mouse.client.move(c)
+		end),
+		awful.button({}, 3, function()
+			c:emit_signal("request::activate", "titlebar", { raise = true })
+			awful.mouse.client.resize(c)
+		end)
+	)
 
-							-- Floating clients.
-							{
-								rule_any = {
-									instance = {
-										"DTA", -- Firefox addon DownThemAll.
-										"copyq", -- Includes session name in class.
-										"pinentry",
-										"Anki"
-									},
-									class = {
-										"Arandr",
-										"Blueman-manager",
-										"Gpick",
-										"ksnip",
-										"Kruler",
-										"MessageWin", -- kalarm.
-										"Sxiv",
-										"Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-										"Wpa_gui",
-										"veromix",
-										"xtightvncviewer",
-									},
+	awful.titlebar(c):setup({
+		{ -- Left
+			awful.titlebar.widget.iconwidget(c),
+			buttons = buttons,
+			layout = wibox.layout.fixed.horizontal,
+		},
+		{ -- Middle
+			{ -- Title
+				align = "left",
+				widget = awful.titlebar.widget.titlewidget(c),
+			},
+			buttons = buttons,
+			layout = wibox.layout.flex.horizontal,
+		},
+		{ -- Right
+			awful.titlebar.widget.floatingbutton(c),
+			awful.titlebar.widget.maximizedbutton(c),
+			awful.titlebar.widget.stickybutton(c),
+			awful.titlebar.widget.ontopbutton(c),
+			awful.titlebar.widget.closebutton(c),
+			layout = wibox.layout.fixed.horizontal(),
+		},
+		layout = wibox.layout.align.horizontal,
+	})
+end)
 
-									-- Note that the name property shown in xprop might be set slightly after creation of the client
-									-- and the name shown there might not match defined rules here.
-									name = {
-										"Event Tester", -- xev.
-									},
-									role = {
-										"AlarmWindow", -- Thunderbird's calendar.
-										"ConfigManager", -- Thunderbird's about:config.
-										"pop-up",    -- e.g. Google Chrome's (detached) Developer Tools.
-									},
-								},
-								properties = { floating = true },
-							},
+-- Enable sloppy focus, so that focus follows mouse.
+client.connect_signal("mouse::enter", function(c)
+	c:emit_signal("request::nil", "mouse_enter", { raise = false })
+end)
 
-							-- Add titlebars to normal clients and dialogs
-							{
-								rule_any = { type = { "normal", "dialog" } },
-								properties = {
-									titlebars_enabled = false,
-								},
-							},
-							--> Tag 1
-							{
-								rule_any = {
-									class = {
-										"firefox",
-										"firefox-nightly",
-										"Google-chrome",
-										"Google-chrome-unstable",
-										"qBittorrent",
-									},
-								},
-								properties = { tag = taglist_names[1], floating = false },
-							},
-							--> Tag 2
-							{
-								rule_any = {
-									class = {
-										"org.wezfurlong.wezterm",
-										"Emacs",
-									},
-								},
-								properties = { tag = taglist_names[2], floating = false },
-							},
-							--> Tag 3
-							{
-								rule_any = {
-									class = {
-										"mpv",
-										"Evince",
-										"tabbed",
-										"sioyek",
-										"Com.github.johnfactotum.Foliate",
-										"Deadbeef",
-										"Peazip",
-									},
-								},
-								properties = { tag = taglist_names[3], floating = false },
-							},
-							--> Tag 4
-							{
-								rule_any = {
-									class = { "TIPP10", "Todoist", "Stardict", "Zotero", "logseq", "Anki" },
-								},
-								properties = { screen = 1, tag = taglist_names[4], floating = false },
-							},
-							--> Tag 5
-							{
-								rule_any = {
-									class = { "Nitrogen", "stacer", "BleachBit" },
-								},
-								properties = { screen = 1, tag = taglist_names[5], floating = false },
-							},
-							--> Tag 6
-							{
-								rule_any = {
-									class = {
-										"Chat-gpt"
-									}
-								},
-								properties = {
-									floating = false,
-									tag = taglist_names[6]
-								}
-							},
-							--> Tag 7
-							{
-								rule_any = {
-									class = { "thunderbird", "discord", "org.gabmus.giara" },
-								},
-								properties = { screen = 1, tag = taglist_names[7] },
-							},
-							--> Tag 8
-							{
-								rule_any = {
-									class = {
-										"^obs$",
-										"Gcolor2",
-										"Blender",
-										"figma-linux",
-										"VirtualBox",
-										"kdenlive",
-										"Ardour",
-										"Inkscape",
-										"Gimp",
-									},
-								},
-								properties = { screen = 1, tag = taglist_names[8] },
-							},
-							--> Tag 9
-							{
-								rule = {
-									class = "Pcmanfm",
-								},
-								properties = { screen = 1, tag = taglist_names[9] },
-							},
-						}
+client.connect_signal("focus", function(c)
+	c.border_color = beautiful.border_focus
+end)
+-- why is this giving me error
+-- client.connect_signal("unfocus", function(c)
+--	c.border_color = beautiful.border_normal
+-- end)
 
-						--> Signals
-						-- Signal function to execute when a new client appears.
-						client.connect_signal("manage", function(c)
-							-- Set the windows at the slave,
-							-- i.e. put it at the end of others instead of setting it master.
-							-- if not awesome.startup then awful.client.setslave(c) end
-
-							if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
-								-- Prevent clients from being unreachable after screen count changes.
-								awful.placement.no_offscreen(c)
-							end
-						end)
-
-						client.connect_signal("request::titlebars", function(c)
-							-- buttons for the titlebar
-							local buttons = gears.table.join(
-								awful.button({}, 1, function()
-									c:emit_signal("request::activate", "titlebar", { raise = true })
-									awful.mouse.client.move(c)
-								end),
-								awful.button({}, 3, function()
-									c:emit_signal("request::activate", "titlebar", { raise = true })
-									awful.mouse.client.resize(c)
-								end)
-							)
-
-							awful.titlebar(c):setup({
-								{ -- Left
-									awful.titlebar.widget.iconwidget(c),
-									buttons = buttons,
-									layout = wibox.layout.fixed.horizontal,
-								},
-								{ -- Middle
-									{ -- Title
-										align = "left",
-										widget = awful.titlebar.widget.titlewidget(c),
-									},
-									buttons = buttons,
-									layout = wibox.layout.flex.horizontal,
-								},
-								{ -- Right
-									awful.titlebar.widget.floatingbutton(c),
-									awful.titlebar.widget.maximizedbutton(c),
-									awful.titlebar.widget.stickybutton(c),
-									awful.titlebar.widget.ontopbutton(c),
-									awful.titlebar.widget.closebutton(c),
-									layout = wibox.layout.fixed.horizontal(),
-								},
-								layout = wibox.layout.align.horizontal,
-							})
-						end)
-
-						-- Enable sloppy focus, so that focus follows mouse.
-						client.connect_signal("mouse::enter", function(c)
-							c:emit_signal("request::nil", "mouse_enter", { raise = false })
-						end)
-
-						client.connect_signal("focus", function(c)
-							c.border_color = beautiful.border_focus
-						end)
-						-- why is this giving me error
-						-- client.connect_signal("unfocus", function(c)
-							--	c.border_color = beautiful.border_normal
-							-- end)
-
-							beautiful.maximized_hide_border = true
-							beautiful.tasklist_align = "left"
-							beautiful.tasklist_disable_task_name = true
-							beautiful.tasklist_disable_icon = false
+beautiful.maximized_hide_border = true
+beautiful.tasklist_align = "left"
+beautiful.tasklist_disable_task_name = true
+beautiful.tasklist_disable_icon = false
