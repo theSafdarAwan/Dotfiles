@@ -92,6 +92,7 @@
 # - cool-retro-term
 
 ##################### install through yay
+# - sdcv
 # - auto-cpufreq
 # - ldoc
 
