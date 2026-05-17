@@ -1,0 +1,11 @@
+[Unit]
+Description=Awesome Wm startup scripts
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/bin/awesome.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=graphical-session.target
